@@ -7,6 +7,12 @@ import java.util.Set;
 
 @Entity
 //O cliente é uma empresa.
+@NamedQueries({
+        @NamedQuery(
+                name = "getAllClientes",
+                query = "SELECT c FROM Cliente c ORDER BY c.nome" // JPQL
+        )
+})
 public class Cliente implements Serializable {
 
     private String nome;
@@ -27,6 +33,38 @@ public class Cliente implements Serializable {
         this.nome = nome;
         this.pc = pc;
         this.morada = morada;
+        this.email = email;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public PessoaDeContacto getPc() {
+        return pc;
+    }
+
+    public void setPc(PessoaDeContacto pc) {
+        this.pc = pc;
+    }
+
+    public String getMorada() {
+        return morada;
+    }
+
+    public void setMorada(String morada) {
+        this.morada = morada;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
 }

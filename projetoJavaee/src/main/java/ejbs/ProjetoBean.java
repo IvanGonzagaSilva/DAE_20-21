@@ -6,8 +6,9 @@ import entities.Projeto;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
-@Stateless
+@Stateless(name = "ProjetoEJB")
 public class ProjetoBean {
 
     @PersistenceContext
@@ -35,4 +36,10 @@ public class ProjetoBean {
 
         return projeto;
     }
+
+    public List<Projeto> getAllProjetos() {
+        return em.createNamedQuery("getAllProjetos", Projeto.class).getResultList();
+    }
+
+
 }

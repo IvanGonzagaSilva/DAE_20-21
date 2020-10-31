@@ -1,29 +1,21 @@
-package entities;
+package dtos;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
 
-@Entity
-@Table(name="PESSOAS")
-public class Pessoa implements Serializable {
-
-    @Id
+public class PessoaDTO implements Serializable {
     private String username;
 
-    @Email
     private String email;
 
     private String nome;
 
     private String contactoTelefonico;
 
-    public Pessoa() {
+    public PessoaDTO() {
     }
 
-    public Pessoa(String username, @Email String email, String nome, String contactoTelefonico) {
+    public PessoaDTO(String username, String email, String nome, String contactoTelefonico) {
         this.username = username;
         this.email = email;
         this.nome = nome;

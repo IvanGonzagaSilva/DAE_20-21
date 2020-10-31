@@ -1,8 +1,6 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
 import java.util.LinkedHashSet;
@@ -10,6 +8,12 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(
+                name = "getAllProjetistas",
+                query = "SELECT p FROM Projetista p ORDER BY p.nome" // JPQL
+        )
+})
 public class Projetista extends Pessoa {
 
     @OneToMany

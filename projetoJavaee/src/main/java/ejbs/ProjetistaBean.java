@@ -8,7 +8,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Stateless
+@Stateless(name = "ProjetistaEJB")
 public class ProjetistaBean {
 
     @PersistenceContext
