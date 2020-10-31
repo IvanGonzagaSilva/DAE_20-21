@@ -1,6 +1,7 @@
 package entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 //projeto de estrutura metálica
@@ -18,6 +19,7 @@ public class Projeto implements Serializable {
     private String nome;
 
     @ManyToOne
+    @NotNull
     private Cliente cliente;
     //private Set<ficheiro> ficheiros;
     //private Set<Estrutura> estruturas;

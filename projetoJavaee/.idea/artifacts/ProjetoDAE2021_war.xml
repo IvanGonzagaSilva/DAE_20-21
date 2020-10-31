@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="ProjetoDAE2021-1.0-SNAPSHOT.war">
+    <root id="archive" name="projetodae.war">
       <element id="artifact" artifact-name="ProjetoDAE2021:war exploded" />
     </root>
   </artifact>

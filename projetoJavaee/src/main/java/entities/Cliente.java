@@ -3,6 +3,7 @@ package entities;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
@@ -26,15 +27,21 @@ public class Cliente implements Serializable {
     @Email
     private String email;
 
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
+    private Set<Projeto> projetos;
+
     public Cliente() {
+        projetos = new LinkedHashSet<>();
     }
 
     public Cliente(String nome, PessoaDeContacto pc, String morada, @Email String email) {
+        this();
         this.nome = nome;
         this.pc = pc;
         this.morada = morada;
         this.email = email;
     }
+
 
     public String getNome() {
         return nome;
@@ -66,5 +73,29 @@ public class Cliente implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Projeto> getProjetos() {
+        return projetos;
+    }
+
+    public void setProjetos(Set<Projeto> projetos) {
+        this.projetos = projetos;
+    }
+
+    public void addProjeto(Projeto projeto){
+        if(this.projetos.contains(projeto)){
+            return;
+        }
+
+        this.projetos.add(projeto);
+    }
+
+    public void removeProjeto(Projeto projeto){
+        if(!this.projetos.contains(projeto)){
+            return;
+        }
+
+        this.projetos.remove(projeto);
     }
 }

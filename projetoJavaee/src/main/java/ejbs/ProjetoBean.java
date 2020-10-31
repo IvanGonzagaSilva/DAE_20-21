@@ -32,6 +32,8 @@ public class ProjetoBean {
 
         Projeto projeto = new Projeto(id, nome, cliente);
 
+        cliente.addProjeto(projeto);
+
         em.persist(projeto);
 
         return projeto;
