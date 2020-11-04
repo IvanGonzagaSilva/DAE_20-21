@@ -794,3 +794,721 @@
 2020-10-23 16:17:56,780 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0002: Unbound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
 2020-10-23 16:17:56,781 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
 2020-10-23 16:17:56,781 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0019: Host default-host stopping
+2020-11-04 18:56:48,431 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-7) WFLYDS0013: Started FileSystemDeploymentService for directory C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\deployments
+2020-11-04 18:56:48,445 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "academics.war" (runtime-name: "academics.war")
+2020-11-04 18:56:48,451 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-4) MSC000001: Failed to start service jboss.deployment.unit."academics.war".STRUCTURE: org.jboss.msc.service.StartException in service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:189)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1739)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1701)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1559)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:95)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:182)
+	... 8 more
+Caused by: java.io.FileNotFoundException: C:\Users\joaok\IdeaProjects\AcademicManagement\target\academics.war (O sistema não conseguiu localizar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.spi.RootFileSystem.openInputStream(RootFileSystem.java:51)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VirtualFile.openStream(VirtualFile.java:318)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VFS.mountZipExpanded(VFS.java:533)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.mountDeploymentContent(DeploymentMountProvider.java:110)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:91)
+	... 9 more
+
+2020-11-04 18:56:48,483 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0493: EJB subsystem suspension complete
+2020-11-04 18:56:48,499 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2020-11-04 18:56:48,529 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2020-11-04 18:56:48,529 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0001: Bound data source [java:jboss/datasources/dae]
+2020-11-04 18:56:48,561 INFO  [org.jboss.ws.common.management] (MSC service thread 1-8) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2020-11-04 18:56:48,657 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([("deployment" => "academics.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"academics.war\".STRUCTURE" => "WFLYSRV0153: Failed to process phase STRUCTURE of deployment \"academics.war\"
+    Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+    Caused by: java.io.FileNotFoundException: C:\\Users\\joaok\\IdeaProjects\\AcademicManagement\\target\\academics.war (O sistema não conseguiu localizar o caminho especificado)"}}
+2020-11-04 18:56:48,666 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "academics.war" (runtime-name : "academics.war")
+2020-11-04 18:56:48,675 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-11-04 18:56:48,760 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2020-11-04 18:56:48,762 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) started (with errors) in 2814ms - Started 325 of 592 services (1 services failed or missing dependencies, 371 services are lazy, passive or on-demand)
+2020-11-04 18:56:48,764 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2020-11-04 18:56:48,764 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2020-11-04 18:56:49,444 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "projetodae.war" (runtime-name: "projetodae.war")
+2020-11-04 18:56:50,700 INFO  [org.jboss.as.jpa] (MSC service thread 1-6) WFLYJPA0002: Read persistence.xml for NewPersistenceUnit
+2020-11-04 18:56:50,803 ERROR [org.jboss.as.controller.management-operation] (management-handler-thread - 1) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "projetodae.war")]) - failure description: {
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.naming.context.java.jboss.datasources.projetodae"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["jboss.persistenceunit.\"projetodae.war#NewPersistenceUnit\" is missing [jboss.naming.context.java.jboss.datasources.projetodae]"]
+}
+2020-11-04 18:56:50,806 ERROR [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0021: Deploy of deployment "projetodae.war" was rolled back with the following failure message: 
+{
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.naming.context.java.jboss.datasources.projetodae"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["jboss.persistenceunit.\"projetodae.war#NewPersistenceUnit\" is missing [jboss.naming.context.java.jboss.datasources.projetodae]"]
+}
+2020-11-04 18:56:50,844 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment projetodae.war (runtime-name: projetodae.war) in 33ms
+2020-11-04 18:56:50,845 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-11-04 18:57:37,675 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0272: Suspending server
+2020-11-04 18:57:37,682 INFO  [org.jboss.as.ejb3] (management-handler-thread - 1) WFLYEJB0493: EJB subsystem suspension complete
+2020-11-04 18:57:37,684 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+2020-11-04 18:57:37,697 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0002: Unbound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-11-04 18:57:37,697 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2020-11-04 18:57:37,697 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2020-11-04 18:57:37,698 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0019: Host default-host stopping
+2020-11-04 18:57:45,468 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2020-11-04 18:57:45,829 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
+2020-11-04 18:57:45,835 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2020-11-04 18:57:45,925 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) starting
+2020-11-04 18:57:45,926 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	file.encoding = Cp1252
+	file.separator = \
+	java.class.path = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar
+	java.class.version = 59.0
+	java.home = C:\Users\ivang\.jdks\openjdk-15
+	java.io.tmpdir = C:\Users\ivang\AppData\Local\Temp\
+	java.library.path = C:\Users\ivang\.jdks\openjdk-15\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\ivang\AppData\Local\Microsoft\WindowsApps;;C:\Users\ivang\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ivang\AppData\Roaming\npm;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 15+36-1562
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 15
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = https://java.oracle.com/
+	java.vendor.url.bug = https://bugreport.java.com/bugreport/
+	java.version = 15
+	java.version.date = 2020-09-15
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 15
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 15+36-1562
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final
+	jboss.host.name = desktop-qkm7n73
+	jboss.modules.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = desktop-qkm7n73
+	jboss.qualified.host.name = desktop-qkm7n73
+	jboss.server.base.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone
+	jboss.server.config.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration
+	jboss.server.data.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\data
+	jboss.server.deploy.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\data\content
+	jboss.server.log.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\log
+	jboss.server.name = desktop-qkm7n73
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties
+	module.path = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\modules
+	org.jboss.boot.log.file = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Windows 10
+	os.version = 10.0
+	path.separator = ;
+	program.name = standalone.bat
+	sun.arch.data.model = 64
+	sun.boot.library.path = C:\Users\ivang\.jdks\openjdk-15\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar -mp C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\modules org.jboss.as.standalone -Djboss.home.dir=C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	user.country = PT
+	user.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\bin
+	user.home = C:\Users\ivang
+	user.language = pt
+	user.name = ivang
+	user.script = 
+	user.timezone = Europe/Lisbon
+	user.variant = 
+2020-11-04 18:57:45,927 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -Dprogram.name=standalone.bat -Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED -Dorg.jboss.boot.log.file=C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log -Dlogging.configuration=file:C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties 
+2020-11-04 18:57:46,494 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 1.12.1.Final
+2020-11-04 18:57:46,937 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-11-04 18:57:46,957 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 20) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-11-04 18:57:47,069 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2020-11-04 18:57:47,116 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.8.1.Final
+2020-11-04 18:57:47,122 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.8.1.Final
+2020-11-04 18:57:47,176 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 54) WFLYRS0016: RESTEasy version 3.12.1.Final
+2020-11-04 18:57:47,195 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0001: Activating Infinispan subsystem.
+2020-11-04 18:57:47,202 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 62) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2020-11-04 18:57:47,205 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 63) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+2020-11-04 18:57:47,206 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 61) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2020-11-04 18:57:47,209 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 66) WFLYNAM0001: Activating Naming Subsystem
+2020-11-04 18:57:47,217 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 65) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2020-11-04 18:57:47,219 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2020-11-04 18:57:47,230 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 59) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2020-11-04 18:57:47,257 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 72) WFLYSEC0002: Activating Security Subsystem
+2020-11-04 18:57:47,279 INFO  [org.jboss.as.connector] (MSC service thread 1-8) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.22.Final)
+2020-11-04 18:57:47,295 INFO  [org.jboss.as.naming] (MSC service thread 1-7) WFLYNAM0003: Starting Naming Service
+2020-11-04 18:57:47,298 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0003: Undertow 2.1.3.Final starting
+2020-11-04 18:57:47,300 INFO  [org.jboss.as.security] (MSC service thread 1-4) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00005
+2020-11-04 18:57:47,326 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path 'C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2020-11-04 18:57:47,378 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2020-11-04 18:57:47,461 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+2020-11-04 18:57:47,454 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2020-11-04 18:57:47,468 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0001: Bound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-11-04 18:57:47,525 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2020-11-04 18:57:47,558 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = h2
+2020-11-04 18:57:47,799 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 53) WFLYIO001: Worker 'default' has auto-configured to 16 IO threads with 128 max task threads based on your 8 available processors
+2020-11-04 18:57:47,802 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 128 (per class), which is derived from thread worker pool sizing.
+2020-11-04 18:57:47,804 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 32 (per class), which is derived from the number of CPUs on this host.
+2020-11-04 18:57:47,825 INFO  [org.jboss.remoting] (MSC service thread 1-6) JBoss Remoting version 5.0.18.Final
+2020-11-04 18:57:47,827 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0012: Started server default-server.
+2020-11-04 18:57:47,831 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0018: Host default-host starting
+2020-11-04 18:57:47,874 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2020-11-04 18:57:47,895 INFO  [org.jboss.as.patching] (MSC service thread 1-8) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2020-11-04 18:57:47,909 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-1) WFLYDM0111: Keystore C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration\application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2020-11-04 18:57:47,909 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-6) WFLYDS0013: Started FileSystemDeploymentService for directory C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\deployments
+2020-11-04 18:57:47,917 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "academics.war" (runtime-name: "academics.war")
+2020-11-04 18:57:47,923 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0493: EJB subsystem suspension complete
+2020-11-04 18:57:47,929 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-7) MSC000001: Failed to start service jboss.deployment.unit."academics.war".STRUCTURE: org.jboss.msc.service.StartException in service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:189)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1739)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1701)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1559)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:95)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:182)
+	... 8 more
+Caused by: java.io.FileNotFoundException: C:\Users\joaok\IdeaProjects\AcademicManagement\target\academics.war (O sistema não conseguiu localizar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.spi.RootFileSystem.openInputStream(RootFileSystem.java:51)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VirtualFile.openStream(VirtualFile.java:318)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VFS.mountZipExpanded(VFS.java:533)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.mountDeploymentContent(DeploymentMountProvider.java:110)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:91)
+	... 9 more
+
+2020-11-04 18:57:47,983 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2020-11-04 18:57:47,983 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/dae]
+2020-11-04 18:57:48,013 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2020-11-04 18:57:48,121 INFO  [org.jboss.ws.common.management] (MSC service thread 1-7) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2020-11-04 18:57:48,256 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([("deployment" => "academics.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"academics.war\".STRUCTURE" => "WFLYSRV0153: Failed to process phase STRUCTURE of deployment \"academics.war\"
+    Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+    Caused by: java.io.FileNotFoundException: C:\\Users\\joaok\\IdeaProjects\\AcademicManagement\\target\\academics.war (O sistema não conseguiu localizar o caminho especificado)"}}
+2020-11-04 18:57:48,274 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "academics.war" (runtime-name : "academics.war")
+2020-11-04 18:57:48,276 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-11-04 18:57:48,324 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2020-11-04 18:57:48,327 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) started (with errors) in 3162ms - Started 325 of 592 services (1 services failed or missing dependencies, 371 services are lazy, passive or on-demand)
+2020-11-04 18:57:48,331 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2020-11-04 18:57:48,331 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2020-11-04 18:57:48,819 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "projetodae.war" (runtime-name: "projetodae.war")
+2020-11-04 18:57:50,164 INFO  [org.jboss.as.jpa] (MSC service thread 1-7) WFLYJPA0002: Read persistence.xml for NewPersistenceUnit
+2020-11-04 18:57:50,276 ERROR [org.jboss.as.controller.management-operation] (management-handler-thread - 1) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "projetodae.war")]) - failure description: {
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.naming.context.java.jboss.datasources.projetodae"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["jboss.persistenceunit.\"projetodae.war#NewPersistenceUnit\" is missing [jboss.naming.context.java.jboss.datasources.projetodae]"]
+}
+2020-11-04 18:57:50,277 ERROR [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0021: Deploy of deployment "projetodae.war" was rolled back with the following failure message: 
+{
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.naming.context.java.jboss.datasources.projetodae"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["jboss.persistenceunit.\"projetodae.war#NewPersistenceUnit\" is missing [jboss.naming.context.java.jboss.datasources.projetodae]"]
+}
+2020-11-04 18:57:50,302 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment projetodae.war (runtime-name: projetodae.war) in 23ms
+2020-11-04 18:57:50,302 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-11-04 18:59:15,716 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0272: Suspending server
+2020-11-04 18:59:15,718 INFO  [org.jboss.as.ejb3] (management-handler-thread - 1) WFLYEJB0493: EJB subsystem suspension complete
+2020-11-04 18:59:15,719 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+2020-11-04 18:59:15,723 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0010: Unbound data source [java:jboss/datasources/dae]
+2020-11-04 18:59:15,723 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2020-11-04 18:59:15,730 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0019: Host default-host stopping
+2020-11-04 18:59:15,730 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment academics.war (runtime-name: academics.war) in 5ms
+2020-11-04 18:59:15,730 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2020-11-04 18:59:15,731 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0002: Unbound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-11-04 18:59:15,732 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0008: Undertow HTTPS listener https suspending
+2020-11-04 18:59:15,733 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2020-11-04 18:59:15,734 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0008: Undertow HTTP listener default suspending
+2020-11-04 18:59:15,734 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2020-11-04 18:59:15,735 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0004: Undertow 2.1.3.Final stopping
+2020-11-04 19:00:05,796 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2020-11-04 19:00:06,148 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
+2020-11-04 19:00:06,163 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2020-11-04 19:00:06,259 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) starting
+2020-11-04 19:00:06,260 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	file.encoding = Cp1252
+	file.separator = \
+	java.class.path = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar
+	java.class.version = 59.0
+	java.home = C:\Users\ivang\.jdks\openjdk-15
+	java.io.tmpdir = C:\Users\ivang\AppData\Local\Temp\
+	java.library.path = C:\Users\ivang\.jdks\openjdk-15\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\ivang\AppData\Local\Microsoft\WindowsApps;;C:\Users\ivang\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ivang\AppData\Roaming\npm;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 15+36-1562
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 15
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = https://java.oracle.com/
+	java.vendor.url.bug = https://bugreport.java.com/bugreport/
+	java.version = 15
+	java.version.date = 2020-09-15
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 15
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 15+36-1562
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final
+	jboss.host.name = desktop-qkm7n73
+	jboss.modules.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = desktop-qkm7n73
+	jboss.qualified.host.name = desktop-qkm7n73
+	jboss.server.base.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone
+	jboss.server.config.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration
+	jboss.server.data.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\data
+	jboss.server.deploy.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\data\content
+	jboss.server.log.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\log
+	jboss.server.name = desktop-qkm7n73
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties
+	module.path = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\modules
+	org.jboss.boot.log.file = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Windows 10
+	os.version = 10.0
+	path.separator = ;
+	program.name = standalone.bat
+	sun.arch.data.model = 64
+	sun.boot.library.path = C:\Users\ivang\.jdks\openjdk-15\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar -mp C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\modules org.jboss.as.standalone -Djboss.home.dir=C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	user.country = PT
+	user.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\bin
+	user.home = C:\Users\ivang
+	user.language = pt
+	user.name = ivang
+	user.script = 
+	user.timezone = Europe/Lisbon
+	user.variant = 
+2020-11-04 19:00:06,262 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -Dprogram.name=standalone.bat -Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED -Dorg.jboss.boot.log.file=C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log -Dlogging.configuration=file:C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties 
+2020-11-04 19:00:06,833 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 1.12.1.Final
+2020-11-04 19:00:07,281 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-11-04 19:00:07,312 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 21) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-11-04 19:00:07,382 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2020-11-04 19:00:07,398 INFO  [org.xnio] (MSC service thread 1-6) XNIO version 3.8.1.Final
+2020-11-04 19:00:07,398 INFO  [org.xnio.nio] (MSC service thread 1-6) XNIO NIO Implementation Version 3.8.1.Final
+2020-11-04 19:00:07,478 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0001: Activating Infinispan subsystem.
+2020-11-04 19:00:07,486 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 54) WFLYRS0016: RESTEasy version 3.12.1.Final
+2020-11-04 19:00:07,486 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 63) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+2020-11-04 19:00:07,488 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 62) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2020-11-04 19:00:07,491 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2020-11-04 19:00:07,494 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 72) WFLYSEC0002: Activating Security Subsystem
+2020-11-04 19:00:07,508 INFO  [org.jboss.as.security] (MSC service thread 1-1) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00005
+2020-11-04 19:00:07,499 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.22.Final)
+2020-11-04 19:00:07,511 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2020-11-04 19:00:07,513 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2020-11-04 19:00:07,515 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0003: Undertow 2.1.3.Final starting
+2020-11-04 19:00:07,516 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+2020-11-04 19:00:07,527 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 66) WFLYNAM0001: Activating Naming Subsystem
+2020-11-04 19:00:07,532 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 61) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2020-11-04 19:00:07,562 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 65) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2020-11-04 19:00:07,575 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 59) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2020-11-04 19:00:07,591 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+2020-11-04 19:00:07,606 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: Starting Naming Service
+2020-11-04 19:00:07,608 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-11-04 19:00:07,608 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2020-11-04 19:00:07,704 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path 'C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2020-11-04 19:00:07,984 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 53) WFLYIO001: Worker 'default' has auto-configured to 16 IO threads with 128 max task threads based on your 8 available processors
+2020-11-04 19:00:07,989 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 128 (per class), which is derived from thread worker pool sizing.
+2020-11-04 19:00:07,989 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 32 (per class), which is derived from the number of CPUs on this host.
+2020-11-04 19:00:08,019 INFO  [org.jboss.remoting] (MSC service thread 1-2) JBoss Remoting version 5.0.18.Final
+2020-11-04 19:00:08,028 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0012: Started server default-server.
+2020-11-04 19:00:08,033 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+2020-11-04 19:00:08,066 INFO  [org.jboss.as.patching] (MSC service thread 1-5) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2020-11-04 19:00:08,071 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2020-11-04 19:00:08,084 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-7) WFLYDM0111: Keystore C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration\application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2020-11-04 19:00:08,098 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) WFLYDS0013: Started FileSystemDeploymentService for directory C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\deployments
+2020-11-04 19:00:08,108 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "academics.war" (runtime-name: "academics.war")
+2020-11-04 19:00:08,118 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC000001: Failed to start service jboss.deployment.unit."academics.war".STRUCTURE: org.jboss.msc.service.StartException in service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:189)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1739)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1701)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1559)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:95)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:182)
+	... 8 more
+Caused by: java.io.FileNotFoundException: C:\Users\joaok\IdeaProjects\AcademicManagement\target\academics.war (O sistema não conseguiu localizar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.spi.RootFileSystem.openInputStream(RootFileSystem.java:51)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VirtualFile.openStream(VirtualFile.java:318)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VFS.mountZipExpanded(VFS.java:533)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.mountDeploymentContent(DeploymentMountProvider.java:110)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:91)
+	... 9 more
+
+2020-11-04 19:00:08,143 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0493: EJB subsystem suspension complete
+2020-11-04 19:00:08,177 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2020-11-04 19:00:08,221 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2020-11-04 19:00:08,254 INFO  [org.jboss.ws.common.management] (MSC service thread 1-3) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2020-11-04 19:00:08,259 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/dae]
+2020-11-04 19:00:08,473 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([("deployment" => "academics.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"academics.war\".STRUCTURE" => "WFLYSRV0153: Failed to process phase STRUCTURE of deployment \"academics.war\"
+    Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+    Caused by: java.io.FileNotFoundException: C:\\Users\\joaok\\IdeaProjects\\AcademicManagement\\target\\academics.war (O sistema não conseguiu localizar o caminho especificado)"}}
+2020-11-04 19:00:08,514 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "academics.war" (runtime-name : "academics.war")
+2020-11-04 19:00:08,568 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-11-04 19:00:08,656 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2020-11-04 19:00:08,659 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) started (with errors) in 3155ms - Started 325 of 592 services (1 services failed or missing dependencies, 371 services are lazy, passive or on-demand)
+2020-11-04 19:00:08,663 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2020-11-04 19:00:08,663 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2020-11-04 19:00:09,446 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "projetodae.war" (runtime-name: "projetodae.war")
+2020-11-04 19:00:10,819 INFO  [org.jboss.as.jpa] (MSC service thread 1-2) WFLYJPA0002: Read persistence.xml for NewPersistenceUnit
+2020-11-04 19:00:10,942 ERROR [org.jboss.as.controller.management-operation] (management-handler-thread - 1) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "projetodae.war")]) - failure description: {
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.naming.context.java.jboss.datasources.projetodae"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["jboss.persistenceunit.\"projetodae.war#NewPersistenceUnit\" is missing [jboss.naming.context.java.jboss.datasources.projetodae]"]
+}
+2020-11-04 19:00:10,944 ERROR [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0021: Deploy of deployment "projetodae.war" was rolled back with the following failure message: 
+{
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.naming.context.java.jboss.datasources.projetodae"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["jboss.persistenceunit.\"projetodae.war#NewPersistenceUnit\" is missing [jboss.naming.context.java.jboss.datasources.projetodae]"]
+}
+2020-11-04 19:00:10,966 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment projetodae.war (runtime-name: projetodae.war) in 22ms
+2020-11-04 19:00:10,967 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-11-04 19:02:03,479 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0001: Bound data source [java:jboss/datasources/projetodae]
+2020-11-04 19:02:03,505 INFO  [org.jboss.as.controller] (External Management Request Threads -- 2) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-11-04 19:02:03,551 INFO  [org.jboss.as.controller] (External Management Request Threads -- 2) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-11-04 19:02:15,421 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0272: Suspending server
+2020-11-04 19:02:15,422 INFO  [org.jboss.as.ejb3] (management-handler-thread - 1) WFLYEJB0493: EJB subsystem suspension complete
+2020-11-04 19:02:15,423 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+2020-11-04 19:02:15,426 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/projetodae]
+2020-11-04 19:02:15,426 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/dae]
+2020-11-04 19:02:15,426 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2020-11-04 19:02:15,430 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0019: Host default-host stopping
+2020-11-04 19:02:15,430 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0008: Undertow HTTPS listener https suspending
+2020-11-04 19:02:15,430 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0008: Undertow HTTP listener default suspending
+2020-11-04 19:02:15,431 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2020-11-04 19:02:15,431 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2020-11-04 19:02:15,435 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment academics.war (runtime-name: academics.war) in 2ms
+2020-11-04 19:02:15,435 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-6) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2020-11-04 19:02:15,436 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0002: Unbound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-11-04 19:02:15,438 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0004: Undertow 2.1.3.Final stopping
+2020-11-04 19:02:24,014 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2020-11-04 19:02:24,373 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
+2020-11-04 19:02:24,379 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2020-11-04 19:02:24,464 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) starting
+2020-11-04 19:02:24,464 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	file.encoding = Cp1252
+	file.separator = \
+	java.class.path = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar
+	java.class.version = 59.0
+	java.home = C:\Users\ivang\.jdks\openjdk-15
+	java.io.tmpdir = C:\Users\ivang\AppData\Local\Temp\
+	java.library.path = C:\Users\ivang\.jdks\openjdk-15\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\ivang\AppData\Local\Microsoft\WindowsApps;;C:\Users\ivang\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ivang\AppData\Roaming\npm;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 15+36-1562
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 15
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = https://java.oracle.com/
+	java.vendor.url.bug = https://bugreport.java.com/bugreport/
+	java.version = 15
+	java.version.date = 2020-09-15
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 15
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 15+36-1562
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final
+	jboss.host.name = desktop-qkm7n73
+	jboss.modules.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = desktop-qkm7n73
+	jboss.qualified.host.name = desktop-qkm7n73
+	jboss.server.base.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone
+	jboss.server.config.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration
+	jboss.server.data.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\data
+	jboss.server.deploy.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\data\content
+	jboss.server.log.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\log
+	jboss.server.name = desktop-qkm7n73
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties
+	module.path = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\modules
+	org.jboss.boot.log.file = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Windows 10
+	os.version = 10.0
+	path.separator = ;
+	program.name = standalone.bat
+	sun.arch.data.model = 64
+	sun.boot.library.path = C:\Users\ivang\.jdks\openjdk-15\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar -mp C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\modules org.jboss.as.standalone -Djboss.home.dir=C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	user.country = PT
+	user.dir = C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\bin
+	user.home = C:\Users\ivang
+	user.language = pt
+	user.name = ivang
+	user.script = 
+	user.timezone = Europe/Lisbon
+	user.variant = 
+2020-11-04 19:02:24,464 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -Dprogram.name=standalone.bat -Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED -Dorg.jboss.boot.log.file=C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log -Dlogging.configuration=file:C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties 
+2020-11-04 19:02:25,062 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 1.12.1.Final
+2020-11-04 19:02:25,530 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-11-04 19:02:25,562 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 8) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-11-04 19:02:25,632 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2020-11-04 19:02:25,642 INFO  [org.xnio] (MSC service thread 1-4) XNIO version 3.8.1.Final
+2020-11-04 19:02:25,642 INFO  [org.xnio.nio] (MSC service thread 1-4) XNIO NIO Implementation Version 3.8.1.Final
+2020-11-04 19:02:25,697 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0001: Activating Infinispan subsystem.
+2020-11-04 19:02:25,708 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2020-11-04 19:02:25,739 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 63) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+2020-11-04 19:02:25,740 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2020-11-04 19:02:25,746 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 61) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2020-11-04 19:02:25,759 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 59) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2020-11-04 19:02:25,746 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 72) WFLYSEC0002: Activating Security Subsystem
+2020-11-04 19:02:25,766 INFO  [org.jboss.as.security] (MSC service thread 1-7) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00005
+2020-11-04 19:02:25,769 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 65) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2020-11-04 19:02:25,772 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 54) WFLYRS0016: RESTEasy version 3.12.1.Final
+2020-11-04 19:02:25,750 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 66) WFLYNAM0001: Activating Naming Subsystem
+2020-11-04 19:02:25,779 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0003: Undertow 2.1.3.Final starting
+2020-11-04 19:02:25,789 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 62) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2020-11-04 19:02:25,758 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2020-11-04 19:02:25,809 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+2020-11-04 19:02:25,841 INFO  [org.jboss.as.connector] (MSC service thread 1-5) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.22.Final)
+2020-11-04 19:02:25,842 INFO  [org.jboss.as.naming] (MSC service thread 1-8) WFLYNAM0003: Starting Naming Service
+2020-11-04 19:02:25,842 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = h2
+2020-11-04 19:02:25,843 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-5) WFLYMAIL0001: Bound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-11-04 19:02:25,843 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2020-11-04 19:02:25,910 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path 'C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2020-11-04 19:02:26,171 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 53) WFLYIO001: Worker 'default' has auto-configured to 16 IO threads with 128 max task threads based on your 8 available processors
+2020-11-04 19:02:26,175 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 128 (per class), which is derived from thread worker pool sizing.
+2020-11-04 19:02:26,176 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 32 (per class), which is derived from the number of CPUs on this host.
+2020-11-04 19:02:26,231 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 5.0.18.Final
+2020-11-04 19:02:26,243 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+2020-11-04 19:02:26,245 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0018: Host default-host starting
+2020-11-04 19:02:26,280 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2020-11-04 19:02:26,327 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0493: EJB subsystem suspension complete
+2020-11-04 19:02:26,372 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0001: Bound data source [java:jboss/datasources/projetodae]
+2020-11-04 19:02:26,373 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/dae]
+2020-11-04 19:02:26,373 INFO  [org.jboss.as.patching] (MSC service thread 1-8) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2020-11-04 19:02:26,373 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2020-11-04 19:02:26,382 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-4) WFLYDM0111: Keystore C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration\application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2020-11-04 19:02:26,387 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-5) WFLYDS0013: Started FileSystemDeploymentService for directory C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\wildfly-20.0.1.Final\standalone\deployments
+2020-11-04 19:02:26,396 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "academics.war" (runtime-name: "academics.war")
+2020-11-04 19:02:26,405 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-4) MSC000001: Failed to start service jboss.deployment.unit."academics.war".STRUCTURE: org.jboss.msc.service.StartException in service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:189)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1739)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1701)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1559)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:95)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:182)
+	... 8 more
+Caused by: java.io.FileNotFoundException: C:\Users\joaok\IdeaProjects\AcademicManagement\target\academics.war (O sistema não conseguiu localizar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.spi.RootFileSystem.openInputStream(RootFileSystem.java:51)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VirtualFile.openStream(VirtualFile.java:318)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VFS.mountZipExpanded(VFS.java:533)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.mountDeploymentContent(DeploymentMountProvider.java:110)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:91)
+	... 9 more
+
+2020-11-04 19:02:26,459 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2020-11-04 19:02:26,525 INFO  [org.jboss.ws.common.management] (MSC service thread 1-4) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2020-11-04 19:02:26,639 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([("deployment" => "academics.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"academics.war\".STRUCTURE" => "WFLYSRV0153: Failed to process phase STRUCTURE of deployment \"academics.war\"
+    Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+    Caused by: java.io.FileNotFoundException: C:\\Users\\joaok\\IdeaProjects\\AcademicManagement\\target\\academics.war (O sistema não conseguiu localizar o caminho especificado)"}}
+2020-11-04 19:02:26,666 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "academics.war" (runtime-name : "academics.war")
+2020-11-04 19:02:26,671 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-11-04 19:02:26,726 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2020-11-04 19:02:26,728 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) started (with errors) in 2999ms - Started 332 of 599 services (1 services failed or missing dependencies, 372 services are lazy, passive or on-demand)
+2020-11-04 19:02:26,732 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2020-11-04 19:02:26,733 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2020-11-04 19:02:27,345 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "projetodae.war" (runtime-name: "projetodae.war")
+2020-11-04 19:02:28,661 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) WFLYJPA0002: Read persistence.xml for NewPersistenceUnit
+2020-11-04 19:02:28,760 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 17) WFLYJPA0003: Starting Persistence Unit Service 'projetodae.war#NewPersistenceUnit'
+2020-11-04 19:02:28,945 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The access type for the persistent class [class entities.Pessoa] is set to [FIELD].
+2020-11-04 19:02:28,953 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The access type for the persistent class [class entities.Projetista] is set to [FIELD].
+2020-11-04 19:02:28,956 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The target entity (reference) class for the one to many mapping element [field projetos] is being defaulted to: class entities.Projeto.
+2020-11-04 19:02:28,957 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The access type for the persistent class [class entities.Cliente] is set to [FIELD].
+2020-11-04 19:02:28,957 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The target entity (reference) class for the one to one mapping element [field pc] is being defaulted to: class entities.PessoaDeContacto.
+2020-11-04 19:02:28,957 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The target entity (reference) class for the one to many mapping element [field projetos] is being defaulted to: class entities.Projeto.
+2020-11-04 19:02:28,958 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The access type for the persistent class [class entities.Projeto] is set to [FIELD].
+2020-11-04 19:02:28,958 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The target entity (reference) class for the many to one mapping element [field cliente] is being defaulted to: class entities.Cliente.
+2020-11-04 19:02:28,958 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The access type for the persistent class [class entities.PessoaDeContacto] is set to [FIELD].
+2020-11-04 19:02:28,958 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The alias name for the entity class [class entities.Projetista] is being defaulted to: Projetista.
+2020-11-04 19:02:28,958 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The alias name for the entity class [class entities.Pessoa] is being defaulted to: Pessoa.
+2020-11-04 19:02:28,965 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The column name for element [nome] is being defaulted to: NOME.
+2020-11-04 19:02:28,965 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The column name for element [contactoTelefonico] is being defaulted to: CONTACTOTELEFONICO.
+2020-11-04 19:02:28,965 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The column name for element [email] is being defaulted to: EMAIL.
+2020-11-04 19:02:28,966 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The column name for element [username] is being defaulted to: USERNAME.
+2020-11-04 19:02:28,967 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The discriminator column name for the root inheritance class [entities.Pessoa] is being defaulted to: DTYPE.
+2020-11-04 19:02:28,968 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The alias name for the entity class [class entities.Cliente] is being defaulted to: Cliente.
+2020-11-04 19:02:28,968 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The table name for entity [class entities.Cliente] is being defaulted to: CLIENTE.
+2020-11-04 19:02:28,968 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The column name for element [nome] is being defaulted to: NOME.
+2020-11-04 19:02:28,968 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The column name for element [email] is being defaulted to: EMAIL.
+2020-11-04 19:02:28,968 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The column name for element [morada] is being defaulted to: MORADA.
+2020-11-04 19:02:28,968 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The alias name for the entity class [class entities.Projeto] is being defaulted to: Projeto.
+2020-11-04 19:02:28,969 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The table name for entity [class entities.Projeto] is being defaulted to: PROJETO.
+2020-11-04 19:02:28,969 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The column name for element [nome] is being defaulted to: NOME.
+2020-11-04 19:02:28,969 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The column name for element [id] is being defaulted to: ID.
+2020-11-04 19:02:28,969 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The alias name for the entity class [class entities.PessoaDeContacto] is being defaulted to: PessoaDeContacto.
+2020-11-04 19:02:28,977 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The join table name for the many to many mapping [field projetos] is being defaulted to: PESSOAS_PROJETO.
+2020-11-04 19:02:28,978 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The source primary key column name for the many to many mapping [field projetos] is being defaulted to: USERNAME.
+2020-11-04 19:02:28,978 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The source foreign key column name for the many to many mapping [projetos] is being defaulted to: Projetista_USERNAME.
+2020-11-04 19:02:28,978 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The target primary key column name for the many to many mapping [field projetos] is being defaulted to: ID.
+2020-11-04 19:02:28,978 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The target foreign key column name for the many to many mapping [projetos] is being defaulted to: projetos_ID.
+2020-11-04 19:02:28,981 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The primary key column name for the mapping element [field pc] is being defaulted to: USERNAME.
+2020-11-04 19:02:28,981 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The foreign key column name for the mapping element [pc] is being defaulted to: PC_USERNAME.
+2020-11-04 19:02:28,981 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The primary key column name for the mapping element [field cliente] is being defaulted to: EMAIL.
+2020-11-04 19:02:28,981 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 17) The foreign key column name for the mapping element [cliente] is being defaulted to: CLIENTE_EMAIL.
+2020-11-04 19:02:29,072 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 17) HV000001: Hibernate Validator 6.0.20.Final
+2020-11-04 19:02:29,159 INFO  [org.eclipse.persistence] (ServerService Thread Pool -- 17) EclipseLink, version: Eclipse Persistence Services - 2.7.7.v20200504-69f2c2b80d
+2020-11-04 19:02:29,206 INFO  [org.eclipse.persistence.connection] (ServerService Thread Pool -- 17) Connected: jdbc:h2:tcp://localhost/~/projetodae
+	User: SA
+	Database: H2  Version: 1.4.197 (2018-03-18)
+	Driver: H2 JDBC Driver  Version: 1.4.197 (2018-03-18)
+2020-11-04 19:02:29,207 INFO  [org.eclipse.persistence.connection] (ServerService Thread Pool -- 17) Connected: jdbc:h2:tcp://localhost/~/projetodae
+	User: SA
+	Database: H2  Version: 1.4.197 (2018-03-18)
+	Driver: H2 JDBC Driver  Version: 1.4.197 (2018-03-18)
+2020-11-04 19:02:29,335 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment projetodae.war
+2020-11-04 19:02:29,447 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'PessoaDeContactoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:app/projetodae/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:module/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:global/projetodae/PessoaDeContactoEJB
+	java:app/projetodae/PessoaDeContactoEJB
+	java:module/PessoaDeContactoEJB
+
+2020-11-04 19:02:29,447 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'ConfigEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ConfigEJB!ejbs.ConfigBean
+	java:app/projetodae/ConfigEJB!ejbs.ConfigBean
+	java:module/ConfigEJB!ejbs.ConfigBean
+	java:global/projetodae/ConfigEJB
+	java:app/projetodae/ConfigEJB
+	java:module/ConfigEJB
+
+2020-11-04 19:02:29,447 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'ProjetistaEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProjetistaEJB!ejbs.ProjetistaBean
+	java:app/projetodae/ProjetistaEJB!ejbs.ProjetistaBean
+	java:module/ProjetistaEJB!ejbs.ProjetistaBean
+	java:global/projetodae/ProjetistaEJB
+	java:app/projetodae/ProjetistaEJB
+	java:module/ProjetistaEJB
+
+2020-11-04 19:02:29,447 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'ProjetoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProjetoEJB!ejbs.ProjetoBean
+	java:app/projetodae/ProjetoEJB!ejbs.ProjetoBean
+	java:module/ProjetoEJB!ejbs.ProjetoBean
+	java:global/projetodae/ProjetoEJB
+	java:app/projetodae/ProjetoEJB
+	java:module/ProjetoEJB
+
+2020-11-04 19:02:29,447 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'ClienteEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ClienteEJB!ejbs.ClienteBean
+	java:app/projetodae/ClienteEJB!ejbs.ClienteBean
+	java:module/ClienteEJB!ejbs.ClienteBean
+	java:global/projetodae/ClienteEJB
+	java:app/projetodae/ClienteEJB
+	java:module/ClienteEJB
+
+2020-11-04 19:02:29,607 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-1) No shutdown hook registered: Please call close() manually on application shutdown.
+2020-11-04 19:02:29,754 INFO  [org.jboss.weld.Version] (MSC service thread 1-7) WELD-000900: 3.1.4 (Final)
+2020-11-04 19:02:29,859 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-5) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2020-11-04 19:02:29,875 INFO  [org.infinispan.CONTAINER] (MSC service thread 1-5) ISPN000128: Infinispan version: Infinispan 'Turia' 10.1.8.Final
+2020-11-04 19:02:30,061 INFO  [io.smallrye.metrics] (MSC service thread 1-2) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2020-11-04 19:02:30,090 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-2) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!
+2020-11-04 19:02:30,132 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 17) WFLYCLINF0002: Started client-mappings cache from ejb container
+2020-11-04 19:02:30,608 INFO  [stdout] (ServerService Thread Pool -- 2) Starting project...
+2020-11-04 19:02:30,608 INFO  [stdout] (ServerService Thread Pool -- 2) creating projetistas...
+2020-11-04 19:02:30,692 INFO  [stdout] (ServerService Thread Pool -- 2) creating pcs...
+2020-11-04 19:02:30,702 INFO  [stdout] (ServerService Thread Pool -- 2) creating clientes...
+2020-11-04 19:02:30,710 INFO  [stdout] (ServerService Thread Pool -- 2) creating projetos...
+2020-11-04 19:02:30,721 INFO  [stdout] (ServerService Thread Pool -- 2) enrolling projetos nos projetistas...
+2020-11-04 19:02:30,807 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 2) Initializing Mojarra 2.3.9.SP11 for context '/projetodae'
+2020-11-04 19:02:31,511 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 2) RESTEASY002225: Deploying javax.ws.rs.core.Application: class ws.ProjetoDAE$Proxy$_$$_WeldClientProxy
+2020-11-04 19:02:31,513 WARN  [org.jboss.as.weld] (ServerService Thread Pool -- 2) WFLYWELD0052: Using deployment classloader to load proxy classes for module org.eclipse.persistence. Package-private access will not work. To fix this the module should declare dependencies on [org.jboss.weld.core, org.jboss.weld.spi, org.jboss.weld.api]
+2020-11-04 19:02:31,653 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 2) WFLYUT0021: Registered web context: '/projetodae' for server 'default-server'
+2020-11-04 19:02:31,689 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "projetodae.war" (runtime-name : "projetodae.war")
+2020-11-04 19:02:31,689 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
