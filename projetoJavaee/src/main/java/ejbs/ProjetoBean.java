@@ -17,7 +17,7 @@ public class ProjetoBean {
     public ProjetoBean() {
     }
 
-    public Projeto create(int id, String nome, String emailCliente){
+    public Projeto create(String nome, String emailCliente){
         Projeto projetoExists = em.find(Projeto.class, id);
 
         if(projetoExists != null){
@@ -30,7 +30,7 @@ public class ProjetoBean {
             return null; //TODO alterar para throws ....
         }
 
-        Projeto projeto = new Projeto(id, nome, cliente);
+        Projeto projeto = new Projeto(nome, cliente);
 
         cliente.addProjeto(projeto);
 
@@ -41,6 +41,10 @@ public class ProjetoBean {
 
     public List<Projeto> getAllProjetos() {
         return em.createNamedQuery("getAllProjetos", Projeto.class).getResultList();
+    }
+
+    public Projeto find(int idProjeto){
+        return em.find(Projeto.class, idProjeto);
     }
 
 

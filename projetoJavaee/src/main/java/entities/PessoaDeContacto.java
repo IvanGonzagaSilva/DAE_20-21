@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class PessoaDeContacto extends Pessoa {
 
     public PessoaDeContacto() {
+        super();
     }
 
     public PessoaDeContacto(String username, @Email String email, String nome, String contactoTelefonico) {
