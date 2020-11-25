@@ -6,8 +6,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.util.LinkedList;
-import java.util.List;
 
 //Estrutura de um determinado projeto
 @Entity
@@ -32,9 +30,11 @@ public class Estrutura implements Serializable {
 
     private int espacamentoVigas;
 
+    //TODO provavelmente será necessário alterar os parametros de cálculo
     private String parametrosCalculo;
 
-    //Lista de materiais
+    //TODO descomentar após implementar os materiais ou produtos
+    //Lista de materiais / produtos
     //@OneToMany
     //private List<Material> materiais;
 

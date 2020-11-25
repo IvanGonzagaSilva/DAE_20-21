@@ -1,5 +1,7 @@
 package ejbs;
 
+import entities.Estrutura;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
@@ -17,6 +19,8 @@ public class ConfigBean {
     ProjetistaBean projetistaBean;
     @EJB
     ProjetoBean projetoBean;
+    @EJB
+    EstruturaBean estruturaBean;
 
     @PostConstruct
     public void populateDB(){
@@ -44,5 +48,8 @@ public class ConfigBean {
         projetistaBean.enrollInProject("joaofrf",1);
         projetistaBean.enrollInProject("joaofrf",2);
 
+        System.out.println("creating estruturas...");
+        //Estruturas
+        estruturaBean.create(1, "cobertura", "chapa", 2, 3, 4, "z");
     }
 }
