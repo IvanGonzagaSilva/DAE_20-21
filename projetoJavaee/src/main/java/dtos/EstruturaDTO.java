@@ -1,48 +1,22 @@
-package entities;
+package dtos;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.util.LinkedList;
-import java.util.List;
 
-//Estrutura de um determinado projeto
-@Entity
-@NamedQueries({
-        @NamedQuery(
-                name = "getAllEstruturas",
-                query = "SELECT e FROM Estrutura e ORDER BY e.nome" // JPQL
-        )
-})
+public class EstruturaDTO implements Serializable {
+    public int id;
+    public String nome;
+    public String tipoMaterial;
+    public int numVaos;
+    public int comprimentoVao;
+    public int espacamentoVigas;
+    public String parametrosCalculo;
+    //public List<Material> materiais;
 
-public class Estrutura implements Serializable {
-    @Id
-    private int id;
-
-    private String nome;
-
-    private String tipoMaterial;
-
-    private int numVaos;
-
-    private int comprimentoVao;
-
-    private int espacamentoVigas;
-
-    private String parametrosCalculo;
-
-    //Lista de materiais
-    //@OneToMany
-    //private List<Material> materiais;
-
-    public Estrutura() {
+    public EstruturaDTO() {
         //this.materiais = new LinkedList<Material>();
     }
 
-    public Estrutura(int id, @NotNull String nome, @NotNull String tipoMaterial, @NotNull int numVaos, @NotNull int comprimentoVao, @NotNull int espacamentoVigas, @NotNull String parametrosCalculo) {
+    public EstruturaDTO(int id, String nome, String tipoMaterial, int numVaos, int comprimentoVao, int espacamentoVigas, String parametrosCalculo) {
         this.id = id;
         this.nome = nome;
         this.tipoMaterial = tipoMaterial;
