@@ -1,6 +1,7 @@
 package ejbs;
 
-import entities.Estrutura;
+import exceptions.MyConstraintViolationException;
+import exceptions.MyEntityExistsException;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -20,10 +21,12 @@ public class ConfigBean {
     @EJB
     ProjetoBean projetoBean;
     @EJB
+    MaterialBean tipoMaterialBean;
+    @EJB
     EstruturaBean estruturaBean;
 
     @PostConstruct
-    public void populateDB(){
+    public void populateDB() throws MyEntityExistsException, MyConstraintViolationException {
         System.out.println("Starting project...");
 
         System.out.println("creating projetistas...");
@@ -47,6 +50,15 @@ public class ConfigBean {
         //Enroll projeto no projetista
         projetistaBean.enrollInProject("joaofrf",1);
         projetistaBean.enrollInProject("joaofrf",2);
+
+        /*---------------------------------------------------------------------*/
+        
+        System.out.println("creating materiais...");
+        //Materiais
+        tipoMaterialBean.create(1, "Perfil");
+        tipoMaterialBean.create(2, "Chapa");
+        tipoMaterialBean.create(3, "Laje");
+        tipoMaterialBean.create(4, "Painel");
 
         System.out.println("creating estruturas...");
         //Estruturas
