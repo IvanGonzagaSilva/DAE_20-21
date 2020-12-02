@@ -1,6 +1,7 @@
 package entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
@@ -13,6 +14,7 @@ import javax.persistence.NamedQuery;
 })
 
 public class Material {
+    @Id
     private int id;
     private String nome;
 

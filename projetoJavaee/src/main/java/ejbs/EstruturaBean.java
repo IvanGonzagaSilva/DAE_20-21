@@ -1,6 +1,7 @@
 package ejbs;
 
 import entities.Estrutura;
+import entities.Material;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
 import exceptions.MyEntityNotFoundException;
@@ -19,9 +20,14 @@ public class EstruturaBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(Integer id, String nome, String tipoMaterial, Integer numVaos, Integer comprimentoVao,
-                       Integer espacamentoVigas, String parametrosCalculo)
+    public void create(Integer id, String nome, Integer numVaos, Integer comprimentoVao,
+                       Integer espacamentoVigas, String parametrosCalculo, Integer idMaterial)
             throws MyEntityExistsException, MyConstraintViolationException {
+
+        Material material = em.find(Material.class, idMaterial);
+
+        if (material == null)
+            throw new EntityNotFoundException("Material not found.");
 
         Estrutura estrutura = em.find(Estrutura.class, id);
 
@@ -29,7 +35,7 @@ public class EstruturaBean {
             throw new MyEntityExistsException("Estrutura with id: " + id + " already exists");
 
         try {
-            estrutura = new Estrutura(id, nome, tipoMaterial, numVaos, comprimentoVao, espacamentoVigas, parametrosCalculo);
+            estrutura = new Estrutura(id, nome, numVaos, comprimentoVao, espacamentoVigas, parametrosCalculo, material);
             em.persist(estrutura);
         }
         catch (ConstraintViolationException e) {
@@ -37,8 +43,8 @@ public class EstruturaBean {
         }
     }
 
-    public Estrutura update(Integer id, String nome, String tipoMaterial, Integer numVaos, Integer comprimentoVao,
-                            Integer espacamentoVigas, String parametrosCalculo) {
+    public Estrutura update(Integer id, String nome, Integer numVaos, Integer comprimentoVao,
+                            Integer espacamentoVigas, String parametrosCalculo, Material material) {
 
         Estrutura estrutura = em.find(Estrutura.class, id);
 
@@ -47,18 +53,14 @@ public class EstruturaBean {
 
         em.lock(estrutura, LockModeType.OPTIMISTIC);
         estrutura.setNome(nome);
-        estrutura.setTipoMaterial(tipoMaterial);
         estrutura.setNumVaos(numVaos);
         estrutura.setComprimentoVao(comprimentoVao);
         estrutura.setEspacamentoVigas(espacamentoVigas);
         estrutura.setParametrosCalculo(parametrosCalculo);
+        estrutura.setMaterial(material);
         em.merge(estrutura);
 
         return estrutura;
-    }
-
-    public List<Estrutura> getAllEstruturas() {
-        return (List<Estrutura>) em.createNamedQuery("getAllEstruturas").getResultList();
     }
 
     public Estrutura findEstrutura(Integer id) throws MyEntityNotFoundException {
@@ -68,5 +70,9 @@ public class EstruturaBean {
             throw new MyEntityNotFoundException("Estrutura not found.");
 
         return estrutura;
+    }
+
+    public List<Estrutura> getAllEstruturas() {
+        return (List<Estrutura>) em.createNamedQuery("getAllEstruturas").getResultList();
     }
 }

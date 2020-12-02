@@ -1,19 +1,16 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 //Estrutura de um determinado projeto
 @Entity
 @NamedQueries({
-        @NamedQuery(
-                name = "getAllEstruturas",
-                query = "SELECT e FROM Estrutura e ORDER BY e.nome" // JPQL
-        )
+    @NamedQuery(
+        name = "getAllEstruturas",
+        query = "SELECT e FROM Estrutura e ORDER BY e.nome" // JPQL
+    )
 })
 
 public class Estrutura implements Serializable {
@@ -21,8 +18,6 @@ public class Estrutura implements Serializable {
     private int id;
 
     private String nome;
-
-    private String tipoMaterial;
 
     private int numVaos;
 
@@ -33,24 +28,20 @@ public class Estrutura implements Serializable {
     //TODO provavelmente será necessário alterar os parametros de cálculo
     private String parametrosCalculo;
 
-    //TODO descomentar após implementar os materiais ou produtos
-    //Lista de materiais / produtos
-    //@OneToMany
-    //private List<Material> materiais;
+    @ManyToOne
+    private Material material;
 
     public Estrutura() {
-        //this.materiais = new LinkedList<Material>();
     }
 
-    public Estrutura(int id, @NotNull String nome, @NotNull String tipoMaterial, @NotNull int numVaos, @NotNull int comprimentoVao, @NotNull int espacamentoVigas, @NotNull String parametrosCalculo) {
+    public Estrutura(int id, String nome, int numVaos, int comprimentoVao, int espacamentoVigas, String parametrosCalculo, Material material) {
         this.id = id;
         this.nome = nome;
-        this.tipoMaterial = tipoMaterial;
         this.numVaos = numVaos;
         this.comprimentoVao = comprimentoVao;
         this.espacamentoVigas = espacamentoVigas;
         this.parametrosCalculo = parametrosCalculo;
-        //this.materiais = new LinkedList<Material>();
+        this.material = material;
     }
 
     public int getId() {
@@ -67,14 +58,6 @@ public class Estrutura implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getTipoMaterial() {
-        return tipoMaterial;
-    }
-
-    public void setTipoMaterial(String tipoMaterial) {
-        this.tipoMaterial = tipoMaterial;
     }
 
     public int getNumVaos() {
@@ -107,5 +90,13 @@ public class Estrutura implements Serializable {
 
     public void setParametrosCalculo(String parametrosCalculo) {
         this.parametrosCalculo = parametrosCalculo;
+    }
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(Material material) {
+        this.material = material;
     }
 }

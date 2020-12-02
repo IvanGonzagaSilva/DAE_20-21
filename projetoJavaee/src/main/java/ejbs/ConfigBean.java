@@ -21,7 +21,7 @@ public class ConfigBean {
     @EJB
     ProjetoBean projetoBean;
     @EJB
-    MaterialBean tipoMaterialBean;
+    MaterialBean materialBean;
     @EJB
     EstruturaBean estruturaBean;
 
@@ -52,16 +52,16 @@ public class ConfigBean {
         projetistaBean.enrollInProject("joaofrf",2);
 
         /*---------------------------------------------------------------------*/
-        
+
         System.out.println("creating materiais...");
         //Materiais
-        tipoMaterialBean.create(1, "Perfil");
-        tipoMaterialBean.create(2, "Chapa");
-        tipoMaterialBean.create(3, "Laje");
-        tipoMaterialBean.create(4, "Painel");
+        materialBean.create(1, "Perfil");
+        materialBean.create(2, "Chapa");
+        materialBean.create(3, "Laje");
+        materialBean.create(4, "Painel");
 
         System.out.println("creating estruturas...");
         //Estruturas
-        estruturaBean.create(1, "cobertura", "chapa", 2, 3, 4, "z");
+        estruturaBean.create(1, "cobertura", 2, 3, 4, "z", 1);
     }
 }
