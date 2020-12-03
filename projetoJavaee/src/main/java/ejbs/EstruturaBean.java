@@ -1,8 +1,6 @@
 package ejbs;
 
-import entities.Estrutura;
-import entities.Geometria;
-import entities.Material;
+import entities.*;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
 import exceptions.MyEntityNotFoundException;
@@ -21,18 +19,16 @@ public class EstruturaBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(Integer id, String nome, Integer idGeometria, Integer idMaterial)
+    public void create(int id, String nome, int idGeometria, int idAplicacao, int idParametrosCalculo, int idMaterial)
             throws MyEntityExistsException, MyConstraintViolationException {
 
         Geometria geometria = em.find(Geometria.class, idGeometria);
-
-        if (geometria == null)
-            throw new EntityNotFoundException("Geometria not found.");
-
+        Aplicacao aplicacao = em.find(Aplicacao.class, idAplicacao);
+        ParametrosCalculo parametrosCalculo = em.find(ParametrosCalculo.class, idParametrosCalculo);
         Material material = em.find(Material.class, idMaterial);
 
-        if (material == null)
-            throw new EntityNotFoundException("Material not found.");
+        if (geometria == null || aplicacao == null || parametrosCalculo == null || material == null)
+            throw new EntityNotFoundException("Geometria, Aplicação, Parametros de Calculo ou Material not found.");
 
         Estrutura estrutura = em.find(Estrutura.class, id);
 
@@ -40,7 +36,7 @@ public class EstruturaBean {
             throw new MyEntityExistsException("Estrutura with id: " + id + " already exists");
 
         try {
-            estrutura = new Estrutura(id, nome, geometria, material);
+            estrutura = new Estrutura(id, nome, geometria, aplicacao, parametrosCalculo, material);
             em.persist(estrutura);
         }
         catch (ConstraintViolationException e) {
@@ -48,17 +44,15 @@ public class EstruturaBean {
         }
     }
 
-    public Estrutura update(Integer id, String nome, Integer idGeometria, Integer idMaterial) {
+    public Estrutura update(int id, String nome, int idGeometria, int idAplicacao, int idParametrosCalculo, int idMaterial) {
 
         Geometria geometria = em.find(Geometria.class, idGeometria);
-
-        if (geometria == null)
-            throw new EntityNotFoundException("Geometria not found.");
-
+        Aplicacao aplicacao = em.find(Aplicacao.class, idAplicacao);
+        ParametrosCalculo parametrosCalculo = em.find(ParametrosCalculo.class, idParametrosCalculo);
         Material material = em.find(Material.class, idMaterial);
 
-        if (material == null)
-            throw new EntityNotFoundException("Material not found.");
+        if (geometria == null || aplicacao == null || parametrosCalculo == null || material == null)
+            throw new EntityNotFoundException("Geometria, Aplicação, Parametros de Calculo ou Material not found.");
 
         Estrutura estrutura = em.find(Estrutura.class, id);
 
@@ -68,6 +62,8 @@ public class EstruturaBean {
         em.lock(estrutura, LockModeType.OPTIMISTIC);
         estrutura.setNome(nome);
         estrutura.setGeometria(geometria);
+        estrutura.setAplicacao(aplicacao);
+        estrutura.setParametrosCalculo(parametrosCalculo);
         estrutura.setMaterial(material);
         em.merge(estrutura);
 

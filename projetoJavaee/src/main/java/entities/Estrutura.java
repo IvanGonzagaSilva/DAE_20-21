@@ -23,19 +23,30 @@ public class Estrutura implements Serializable {
     private Geometria geometria; //Dimensões geométricas
 
     @ManyToOne
+    private Aplicacao aplicacao; //Aplicação pretendida
+
+    @ManyToOne
+    private ParametrosCalculo parametrosCalculo; //Parametros de cálculo extra
+
+    @ManyToOne
     private Material material; //Material utilizado
 
-    @ManyToMany(mappedBy = "estruturas")
+    @ManyToMany
+    @JoinTable(name = "ESTRUTURAS_PRODUTOS",
+            joinColumns = @JoinColumn(name = "ESTRUTURA_ID", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "PRODUTO_ID", referencedColumnName = "ID"))
     private List<Produto> produtos; //Produtos resultantes da simulação
 
     public Estrutura() {
         this.produtos = new LinkedList<Produto>();
     }
 
-    public Estrutura(int id, String nome, Geometria geometria, Material material) {
+    public Estrutura(int id, String nome, Geometria geometria, Aplicacao aplicacao, ParametrosCalculo parametrosCalculo, Material material) {
         this.id = id;
         this.nome = nome;
         this.geometria = geometria;
+        this.aplicacao = aplicacao;
+        this.parametrosCalculo = parametrosCalculo;
         this.material = material;
         this.produtos = new LinkedList<Produto>();
     }
@@ -66,6 +77,22 @@ public class Estrutura implements Serializable {
 
     public Material getMaterial() {
         return material;
+    }
+
+    public Aplicacao getAplicacao() {
+        return aplicacao;
+    }
+
+    public void setAplicacao(Aplicacao aplicacao) {
+        this.aplicacao = aplicacao;
+    }
+
+    public ParametrosCalculo getParametrosCalculo() {
+        return parametrosCalculo;
+    }
+
+    public void setParametrosCalculo(ParametrosCalculo parametrosCalculo) {
+        this.parametrosCalculo = parametrosCalculo;
     }
 
     public void setMaterial(Material material) {

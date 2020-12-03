@@ -30,7 +30,7 @@ public class GeometriaBean {
 
         try {
             geometria = new Geometria(id, numeroVaos, comprimentoVao, espacamentoVigas);
-            em.persist(numeroVaos);
+            em.persist(geometria);
         }
         catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);

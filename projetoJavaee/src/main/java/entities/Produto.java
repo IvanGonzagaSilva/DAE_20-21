@@ -2,7 +2,10 @@ package entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 public class Produto {
@@ -15,13 +18,18 @@ public class Produto {
     @ManyToOne
     private Material material;
 
+    @ManyToMany(mappedBy = "produtos")
+    private List<Estrutura> estruturas;
+
     public Produto() {
+        this.estruturas =  new LinkedList<Estrutura>();
     }
 
     public Produto(int id, String nome, Material material) {
         this.id = id;
         this.nome = nome;
         this.material = material;
+        this.estruturas =  new LinkedList<Estrutura>();
     }
 
     public int getId() {
@@ -46,5 +54,13 @@ public class Produto {
 
     public void setMaterial(Material material) {
         this.material = material;
+    }
+
+    public List<Estrutura> getEstruturas() {
+        return estruturas;
+    }
+
+    public void setEstruturas(List<Estrutura> estruturas) {
+        this.estruturas = estruturas;
     }
 }

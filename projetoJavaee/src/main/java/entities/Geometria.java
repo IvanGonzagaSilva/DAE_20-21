@@ -22,11 +22,14 @@ public class Geometria implements Serializable {
     private int comprimentoVao;
     private int espacamentoVigas;
 
-    @ManyToMany(mappedBy = "geometrias")
-    private List<Familia> familia;
+    @ManyToMany
+    @JoinTable(name = "GEOMETRIAS_FAMILIAS",
+            joinColumns = @JoinColumn(name = "GEOMETRIA_ID", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "FAMILIA_ID", referencedColumnName = "ID"))
+    private List<Familia> familias;
 
     public Geometria() {
-        this.familia = new LinkedList<Familia>();
+        this.familias = new LinkedList<Familia>();
     }
 
     public Geometria(int id, int numeroVaos, int comprimentoVao, int espacamentoVigas) {
@@ -34,7 +37,7 @@ public class Geometria implements Serializable {
         this.numeroVaos = numeroVaos;
         this.comprimentoVao = comprimentoVao;
         this.espacamentoVigas = espacamentoVigas;
-        this.familia = new LinkedList<Familia>();
+        this.familias = new LinkedList<Familia>();
     }
 
     public int getId() {
@@ -70,20 +73,20 @@ public class Geometria implements Serializable {
     }
 
     public List<Familia> getFamilia() {
-        return familia;
+        return familias;
     }
 
-    public void setFamilia(List<Familia> familia) {
-        this.familia = familia;
+    public void setFamilia(List<Familia> familias) {
+        this.familias = familias;
     }
 
     public void addFamilia(Familia fam) {
-        if (! this.familia.contains(fam)) {
-            familia.add(fam);
+        if (! this.familias.contains(fam)) {
+            familias.add(fam);
         }
     }
 
     public void removeFamilia(Familia fam) {
-        familia.remove(fam);
+        familias.remove(fam);
     }
 }

@@ -1,10 +1,9 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
 
 @NamedQueries({
     @NamedQuery(
@@ -18,13 +17,17 @@ public class Familia implements Serializable {
     @Id
     private int id;
     private String nome;
+    @ManyToMany(mappedBy = "familias")
+    private List<Geometria> geometrias;
 
     public Familia() {
+        this.geometrias =  new LinkedList<Geometria>();
     }
 
     public Familia(int id, String nome) {
         this.id = id;
         this.nome = nome;
+        this.geometrias =  new LinkedList<Geometria>();
     }
 
     public int getId() {
@@ -41,5 +44,13 @@ public class Familia implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<Geometria> getGeometrias() {
+        return geometrias;
+    }
+
+    public void setGeometrias(List<Geometria> geometrias) {
+        this.geometrias = geometrias;
     }
 }

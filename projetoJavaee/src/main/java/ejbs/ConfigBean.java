@@ -1,6 +1,7 @@
 package ejbs;
 
 import entities.Geometria;
+import entities.ParametrosCalculo;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
 import exceptions.MyEntityNotFoundException;
@@ -27,6 +28,10 @@ public class ConfigBean {
     FamiliaBean familiaBean;
     @EJB
     GeometriaBean geometriaBean;
+    @EJB
+    AplicacaoBean aplicacaoBean;
+    @EJB
+    ParametrosCalculoBean parametrosCalculoBean;
     @EJB
     MaterialBean materialBean;
     @EJB
@@ -76,12 +81,22 @@ public class ConfigBean {
         geometriaBean.create(3, 9, 6, 3);
         geometriaBean.create(4, 4, 4, 4);
 
-        System.out.println("add familias to geometrias...");
-        //Add Familias to Geometrias
-        geometriaBean.addFamiliaToGeometria(1, 2);
-        geometriaBean.addFamiliaToGeometria(2, 3);
-        geometriaBean.addFamiliaToGeometria(3, 1);
+        geometriaBean.addFamiliaToGeometria(1, 1);
+        geometriaBean.addFamiliaToGeometria(2, 2);
+        geometriaBean.addFamiliaToGeometria(3, 3);
         geometriaBean.addFamiliaToGeometria(4, 4);
+
+        System.out.println("creating aplicações...");
+        //Aplicações
+        aplicacaoBean.createFachada(1, 2, 2, 2);
+        aplicacaoBean.createCobertura(2, 2, 2, 2, 2, 2, 2);
+        aplicacaoBean.createGeral(3, 2, 2, 2, 2, 2, 2, 2);
+
+        System.out.println("creating parametros de calculo...");
+        //Parametros de calculo
+        parametrosCalculoBean.create(1, true, "Frequente", 400);
+        parametrosCalculoBean.create(2, false, 23, false, "Quase permanente", 400);
+        parametrosCalculoBean.create(3, false, 12, true, 3, 4, "Caracteristica", 400);
 
         System.out.println("creating materiais...");
         //Materiais
@@ -92,8 +107,8 @@ public class ConfigBean {
 
         System.out.println("creating estruturas...");
         //Estruturas
-        estruturaBean.create(1, "cobertura", 1, 1);
-        estruturaBean.create(1, "fachada", 2, 2);
-        estruturaBean.create(1, "geral", 3, 3);
+        estruturaBean.create(1, "cobertura", 1, 1, 1, 1);
+        estruturaBean.create(2, "fachada", 2, 2, 2, 2);
+        estruturaBean.create(3, "geral", 3, 3, 3, 3);
     }
 }
