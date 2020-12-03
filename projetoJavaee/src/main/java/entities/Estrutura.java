@@ -1,11 +1,10 @@
 package entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
 
-//Estrutura de um determinado projeto
-@Entity
 @NamedQueries({
     @NamedQuery(
         name = "getAllEstruturas",
@@ -13,35 +12,32 @@ import java.io.Serializable;
     )
 })
 
+@Entity
 public class Estrutura implements Serializable {
     @Id
     private int id;
 
     private String nome;
 
-    private int numVaos;
-
-    private int comprimentoVao;
-
-    private int espacamentoVigas;
-
-    //TODO provavelmente será necessário alterar os parametros de cálculo
-    private String parametrosCalculo;
+    @ManyToOne
+    private Geometria geometria; //Dimensões geométricas
 
     @ManyToOne
-    private Material material;
+    private Material material; //Material utilizado
+
+    @ManyToMany(mappedBy = "estruturas")
+    private List<Produto> produtos; //Produtos resultantes da simulação
 
     public Estrutura() {
+        this.produtos = new LinkedList<Produto>();
     }
 
-    public Estrutura(int id, String nome, int numVaos, int comprimentoVao, int espacamentoVigas, String parametrosCalculo, Material material) {
+    public Estrutura(int id, String nome, Geometria geometria, Material material) {
         this.id = id;
         this.nome = nome;
-        this.numVaos = numVaos;
-        this.comprimentoVao = comprimentoVao;
-        this.espacamentoVigas = espacamentoVigas;
-        this.parametrosCalculo = parametrosCalculo;
+        this.geometria = geometria;
         this.material = material;
+        this.produtos = new LinkedList<Produto>();
     }
 
     public int getId() {
@@ -60,36 +56,12 @@ public class Estrutura implements Serializable {
         this.nome = nome;
     }
 
-    public int getNumVaos() {
-        return numVaos;
+    public Geometria getGeometria() {
+        return geometria;
     }
 
-    public void setNumVaos(int numVaos) {
-        this.numVaos = numVaos;
-    }
-
-    public int getComprimentoVao() {
-        return comprimentoVao;
-    }
-
-    public void setComprimentoVao(int comprimentoVao) {
-        this.comprimentoVao = comprimentoVao;
-    }
-
-    public int getEspacamentoVigas() {
-        return espacamentoVigas;
-    }
-
-    public void setEspacamentoVigas(int espacamentoVigas) {
-        this.espacamentoVigas = espacamentoVigas;
-    }
-
-    public String getParametrosCalculo() {
-        return parametrosCalculo;
-    }
-
-    public void setParametrosCalculo(String parametrosCalculo) {
-        this.parametrosCalculo = parametrosCalculo;
+    public void setGeometria(Geometria geometria) {
+        this.geometria = geometria;
     }
 
     public Material getMaterial() {
@@ -98,5 +70,23 @@ public class Estrutura implements Serializable {
 
     public void setMaterial(Material material) {
         this.material = material;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    public void addProduto(Produto produto) {
+        if (! this.produtos.contains(produto)) {
+            produtos.add(produto);
+        }
+    }
+
+    public void removeProduto(Produto produto) {
+        produtos.remove(produto);
     }
 }

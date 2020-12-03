@@ -1,7 +1,9 @@
 package ejbs;
 
+import entities.Geometria;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
+import exceptions.MyEntityNotFoundException;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -20,13 +22,20 @@ public class ConfigBean {
     ProjetistaBean projetistaBean;
     @EJB
     ProjetoBean projetoBean;
+    /*------------------------------------*/
+    @EJB
+    FamiliaBean familiaBean;
+    @EJB
+    GeometriaBean geometriaBean;
     @EJB
     MaterialBean materialBean;
     @EJB
     EstruturaBean estruturaBean;
 
     @PostConstruct
-    public void populateDB() throws MyEntityExistsException, MyConstraintViolationException {
+    public void populateDB()
+            throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
+        
         System.out.println("Starting project...");
 
         System.out.println("creating projetistas...");
@@ -53,6 +62,27 @@ public class ConfigBean {
 
         /*---------------------------------------------------------------------*/
 
+        System.out.println("creating familias...");
+        //Familias
+        familiaBean.create(1, "Todas");
+        familiaBean.create(2, "O");
+        familiaBean.create(3, "C");
+        familiaBean.create(4, "Z");
+
+        System.out.println("creating geometrias...");
+        //Geometrias
+        geometriaBean.create(1, 2, 3, 4);
+        geometriaBean.create(2, 3, 4, 6);
+        geometriaBean.create(3, 9, 6, 3);
+        geometriaBean.create(4, 4, 4, 4);
+
+        System.out.println("add familias to geometrias...");
+        //Add Familias to Geometrias
+        geometriaBean.addFamiliaToGeometria(1, 2);
+        geometriaBean.addFamiliaToGeometria(2, 3);
+        geometriaBean.addFamiliaToGeometria(3, 1);
+        geometriaBean.addFamiliaToGeometria(4, 4);
+
         System.out.println("creating materiais...");
         //Materiais
         materialBean.create(1, "Perfil");
@@ -62,6 +92,8 @@ public class ConfigBean {
 
         System.out.println("creating estruturas...");
         //Estruturas
-        estruturaBean.create(1, "cobertura", 2, 3, 4, "z", 1);
+        estruturaBean.create(1, "cobertura", 1, 1);
+        estruturaBean.create(1, "fachada", 2, 2);
+        estruturaBean.create(1, "geral", 3, 3);
     }
 }
