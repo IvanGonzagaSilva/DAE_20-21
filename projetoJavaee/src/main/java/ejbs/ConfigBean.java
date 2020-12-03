@@ -35,7 +35,7 @@ public class ConfigBean {
     @PostConstruct
     public void populateDB()
             throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
-        
+
         System.out.println("Starting project...");
 
         System.out.println("creating projetistas...");
