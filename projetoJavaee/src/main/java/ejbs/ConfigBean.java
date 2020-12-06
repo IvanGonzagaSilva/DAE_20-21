@@ -1,5 +1,6 @@
 package ejbs;
 
+import entities.AplicacaoFachada;
 import entities.Geometria;
 import entities.ParametrosCalculo;
 import exceptions.MyConstraintViolationException;
@@ -29,7 +30,11 @@ public class ConfigBean {
     @EJB
     GeometriaBean geometriaBean;
     @EJB
-    AplicacaoBean aplicacaoBean;
+    AplicacaoFachadaBean aplicacaoFachadaBean;
+    @EJB
+    AplicacaoCoberturaBean aplicacaoCoberturaBean;
+    @EJB
+    AplicacaoGeralBean aplicacaoGeralBean;
     @EJB
     ParametrosCalculoBean parametrosCalculoBean;
     @EJB
@@ -88,9 +93,9 @@ public class ConfigBean {
 
         System.out.println("creating aplicações...");
         //Aplicações
-        aplicacaoBean.createFachada(1, 2, 2, 2);
-        aplicacaoBean.createCobertura(2, 2, 2, 2, 2, 2, 2);
-        aplicacaoBean.createGeral(3, 2, 2, 2, 2, 2, 2, 2);
+        aplicacaoFachadaBean.create(1, 1, 1, 1);
+        aplicacaoCoberturaBean.create(2, 2, 2, 2, 2, 2, 2);
+        aplicacaoGeralBean.create(3, 3, 3, 3, 3, 3, 3, 3);
 
         System.out.println("creating parametros de calculo...");
         //Parametros de calculo
