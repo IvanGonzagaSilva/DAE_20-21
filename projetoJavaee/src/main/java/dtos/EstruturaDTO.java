@@ -1,6 +1,7 @@
 package dtos;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class EstruturaDTO implements Serializable {
@@ -15,6 +16,7 @@ public class EstruturaDTO implements Serializable {
     }
 
     public EstruturaDTO() {
+        materiais = new LinkedHashSet<>();
     }
 
     public String getId() {

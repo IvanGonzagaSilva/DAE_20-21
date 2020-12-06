@@ -18,11 +18,6 @@ public class ProjetoBean {
     }
 
     public Projeto create(String nome, String emailCliente){
-        Projeto projetoExists = em.find(Projeto.class, id);
-
-        if(projetoExists != null){
-            return projetoExists; //TODO alterar para throws...
-        }
 
         Cliente cliente = em.find(Cliente.class, emailCliente);
 

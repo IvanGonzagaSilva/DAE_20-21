@@ -1,6 +1,7 @@
 package entities;
 
 import javax.persistence.*;
+import javax.validation.Constraint;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.LinkedHashSet;
@@ -105,5 +106,13 @@ public class Projeto implements Serializable {
         }
 
         this.ficheiros.remove(ficheiro);
+    }
+
+    public Set<Ficheiro> getFicheiros() {
+        return ficheiros;
+    }
+
+    public void setFicheiros(Set<Ficheiro> ficheiros) {
+        this.ficheiros = ficheiros;
     }
 }

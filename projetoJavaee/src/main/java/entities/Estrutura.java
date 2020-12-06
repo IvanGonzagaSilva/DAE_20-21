@@ -1,9 +1,6 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -13,6 +10,7 @@ import java.util.Set;
 public class Estrutura implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
 
     @OneToMany
@@ -20,12 +18,6 @@ public class Estrutura implements Serializable {
 
     public Estrutura() {
         materiais = new LinkedHashSet<>();
-    }
-
-    public Estrutura(String id, Set<Material> materiais) {
-        this();
-        this.id = id;
-        this.materiais = materiais;
     }
 
     public void setId(String id) {
@@ -42,5 +34,13 @@ public class Estrutura implements Serializable {
 
     public void setMateriais(Set<Material> materiais) {
         this.materiais = materiais;
+    }
+
+    public void addMaterial(Material material){
+        this.materiais.add(material);
+    }
+
+    public void removeMaterial(Material material){
+        this.materiais.remove(material);
     }
 }

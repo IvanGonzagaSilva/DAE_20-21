@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Stateless
+@Stateless(name = "ProdutoEJB")
 public class ProdutoBean {
 
     @PersistenceContext

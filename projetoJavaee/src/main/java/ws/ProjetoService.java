@@ -1,12 +1,8 @@
 package ws;
 
-import dtos.ClienteDTO;
-import dtos.PessoaDeContactoDTO;
-import dtos.ProjetoDTO;
+import dtos.*;
 import ejbs.ProjetoBean;
-import entities.Cliente;
-import entities.PessoaDeContacto;
-import entities.Projeto;
+import entities.*;
 
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -32,8 +28,31 @@ public class ProjetoService {
         return new ProjetoDTO(
                 projeto.getId(),
                 projeto.getNome(),
-                clienteToDTO(projeto.getCliente())
+                clienteToDTO(projeto.getCliente()),
+                estruturasToDTOs(projeto.getEstruturas())
         );
+    }
+
+
+    private MaterialDTO materialToDTO(Material material){
+        return new MaterialDTO(
+                material.getTipoDeMaterial()
+        );
+    }
+
+    private Set<MaterialDTO> materiaisToDTOs(Set<Material> materiais){
+        return materiais.stream().map(this::materialToDTO).collect(Collectors.toSet());
+    }
+
+    private EstruturaDTO estruturaToDTO(Estrutura estrutura){
+        return new EstruturaDTO(
+                estrutura.getId(),
+                materiaisToDTOs(estrutura.getMateriais())
+        );
+    }
+
+    private Set<EstruturaDTO> estruturasToDTOs(Set<Estrutura> estruturas){
+        return estruturas.stream().map(this::estruturaToDTO).collect(Collectors.toSet());
     }
 
     private ClienteDTO clienteToDTO(Cliente cliente){

@@ -4,7 +4,7 @@ import entities.Variante;
 
 import javax.ejb.Stateless;
 
-@Stateless
+@Stateless(name = "SimulacaoEJB")
 public class SimulacaoBean {
 
     private static double EE = 210000000.0;

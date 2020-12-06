@@ -1,6 +1,6 @@
 package ejbs;
 
-import entities.Variante;
+import entities.*;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -26,13 +26,31 @@ public class ConfigBean {
     VarianteBean varianteBean;
     @EJB
     SimulacaoBean simulacaoBean;
+    @EJB
+    MaterialBean materialBean;
+    @EJB
+    EstruturaBean estruturaBean;
 
     @PostConstruct
     public void populateDB(){
         System.out.println("Starting project...");
 
+        //fazer os materiais
+        Material material_chapa = materialBean.create(TipoDeMaterial.chapas);
+        Material material_laje = materialBean.create(TipoDeMaterial.lajes);
+        Material material_painel = materialBean.create(TipoDeMaterial.paineis);
+        Material material_perfi = materialBean.create(TipoDeMaterial.perfis);
+
         projetistaBean.create("projetista1", "projetista@email.com", "projetista", "9143131615");
-        projetoBean.create()
+        pessoaDeContactoBean.create("pc1", "pc1@mail.com", "pessoadecontacto1", "914313616");
+        clienteBean.create("cliente", "pc1", "rua xpto", "clientex@mail.com");
+        Projeto projeto1 = projetoBean.create("projeto1", "clientex@mail.com");
+        Estrutura estrutura1 = estruturaBean.create();
+        estrutura1.addMaterial(material_chapa);
+        estrutura1.addMaterial(material_laje);
+
+        projeto1.addEstruturas(estrutura1);
+        //fazer bean para estruturas e adicionar estrutura ao projeto.
 
         //CODIGO DO PROFESSOR
         System.out.println("####### A criar produtos...");
@@ -94,6 +112,7 @@ public class ConfigBean {
         }
 
         //CODIGO DO PROFESSOR.
+
 
     }
 }
