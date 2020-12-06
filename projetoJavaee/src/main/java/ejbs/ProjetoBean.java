@@ -1,8 +1,10 @@
 package ejbs;
 
+import dtos.ProjetoDTO;
 import entities.Cliente;
 import entities.Projeto;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,6 +15,10 @@ public class ProjetoBean {
 
     @PersistenceContext
     EntityManager em;
+    @EJB
+    ClienteBean clienteBean;
+    @EJB
+    EstruturaBean estruturaBean;
 
     public ProjetoBean() {
     }
@@ -42,5 +48,22 @@ public class ProjetoBean {
         return em.find(Projeto.class, idProjeto);
     }
 
+    public void delete(int idprojeto){
+        Projeto projeto = find(idprojeto);
 
+        if(projeto != null){
+            em.remove(projeto);
+        }
+    }
+
+
+//    public void update(ProjetoDTO projetoDTO) {
+//        Projeto projeto = find(projetoDTO.getId());
+//
+//        if (projeto!=null){
+//            projeto.setCliente(clienteBean.find(projetoDTO.getCliente().getEmail()));
+//            projeto.setNome(projetoDTO.getNome());
+//        }
+//
+//    }
 }

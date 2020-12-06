@@ -23,8 +23,8 @@ public class Projetista extends Pessoa {
         projetos = new LinkedHashSet<>();
     }
 
-    public Projetista(String username, @Email String email, String nome, String contactoTelefonico) {
-        super(username, email, nome, contactoTelefonico);
+    public Projetista(String username, @Email String email, String nome, String contactoTelefonico, String password) {
+        super(username, email, nome, contactoTelefonico, password);
         projetos = new LinkedHashSet<>();
     }
 

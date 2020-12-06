@@ -41,8 +41,8 @@ public class ConfigBean {
         Material material_painel = materialBean.create(TipoDeMaterial.paineis);
         Material material_perfi = materialBean.create(TipoDeMaterial.perfis);
 
-        projetistaBean.create("projetista1", "projetista@email.com", "projetista", "9143131615");
-        pessoaDeContactoBean.create("pc1", "pc1@mail.com", "pessoadecontacto1", "914313616");
+        projetistaBean.create("projetista1", "projetista@email.com", "projetista", "9143131615", "123abc");
+        pessoaDeContactoBean.create("pc1", "pc1@mail.com", "pessoadecontacto1", "914313616", "123abc");
         clienteBean.create("cliente", "pc1", "rua xpto", "clientex@mail.com");
         Projeto projeto1 = projetoBean.create("projeto1", "clientex@mail.com");
         Estrutura estrutura1 = estruturaBean.create();

@@ -1,11 +1,12 @@
 package ejbs;
 
+import dtos.EstruturaDTO;
 import entities.Estrutura;
-import entities.Produto;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Stateless(name = "EstruturaEJB")
 public class EstruturaBean {

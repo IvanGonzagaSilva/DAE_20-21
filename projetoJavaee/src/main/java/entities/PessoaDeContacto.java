@@ -11,7 +11,7 @@ public class PessoaDeContacto extends Pessoa {
         super();
     }
 
-    public PessoaDeContacto(String username, @Email String email, String nome, String contactoTelefonico) {
-        super(username, email, nome, contactoTelefonico);
+    public PessoaDeContacto(String username, @Email String email, String nome, String contactoTelefonico, String password) {
+        super(username, email, nome, contactoTelefonico, password);
     }
 }

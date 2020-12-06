@@ -17,14 +17,14 @@ public class ProjetistaBean {
     public ProjetistaBean() {
     }
 
-    public Projetista create(String username, String email, String nome, String contactoTelefonico){
+    public Projetista create(String username, String email, String nome, String contactoTelefonico, String password){
         Projetista projetistaExists = em.find(Projetista.class, username);
 
         if(projetistaExists != null){
             return projetistaExists;
         }
 
-        Projetista projetista = new Projetista(username, email, nome, contactoTelefonico);
+        Projetista projetista = new Projetista(username, email, nome, contactoTelefonico, password);
 
         em.persist(projetista);
 
