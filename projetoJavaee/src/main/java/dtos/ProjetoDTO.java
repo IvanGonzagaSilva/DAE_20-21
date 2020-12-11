@@ -3,20 +3,25 @@ package dtos;
 
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class ProjetoDTO implements Serializable {
 
     private int id;
     private String nome;
     private ClienteDTO cliente;
+    private Set<EstruturaDTO> estruturas;
 
     public ProjetoDTO() {
+        estruturas = new LinkedHashSet<>();
     }
 
-    public ProjetoDTO(int id, String nome, ClienteDTO cliente) {
+    public ProjetoDTO(int id, String nome, ClienteDTO cliente, Set<EstruturaDTO> estruturas) {
         this.id = id;
         this.nome = nome;
         this.cliente = cliente;
+        this.estruturas = estruturas;
     }
 
     public int getId() {
@@ -41,5 +46,13 @@ public class ProjetoDTO implements Serializable {
 
     public void setCliente(ClienteDTO cliente) {
         this.cliente = cliente;
+    }
+
+    public Set<EstruturaDTO> getEstruturas() {
+        return estruturas;
+    }
+
+    public void setEstruturas(Set<EstruturaDTO> estruturas) {
+        this.estruturas = estruturas;
     }
 }

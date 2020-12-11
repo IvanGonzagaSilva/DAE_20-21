@@ -17,7 +17,7 @@ public class ClienteBean {
     }
 
     public Cliente create(String nome, String usernamePc, String morada, String email){
-        Cliente cliente = em.find(Cliente.class, email);
+        Cliente cliente = this.find(email);
 
         if(cliente != null){
             return cliente;
@@ -31,5 +31,9 @@ public class ClienteBean {
 
         return cli;
 
+    }
+
+    public Cliente find(String email) {
+        return em.find(Cliente.class, email);
     }
 }

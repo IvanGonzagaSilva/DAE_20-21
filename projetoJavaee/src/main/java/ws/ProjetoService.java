@@ -1,21 +1,18 @@
 package ws;
 
-import dtos.ClienteDTO;
-import dtos.PessoaDeContactoDTO;
-import dtos.ProjetoDTO;
+import dtos.*;
+import ejbs.ClienteBean;
 import ejbs.ProjetoBean;
-import entities.Cliente;
-import entities.PessoaDeContacto;
-import entities.Projeto;
+import entities.*;
+import jwt.Jwt;
 
 import javax.ejb.EJB;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @Path("/projeto") // relative url web path for this service
@@ -25,15 +22,46 @@ import java.util.stream.Collectors;
 
 public class ProjetoService {
 
+    private static final Logger log =
+            Logger.getLogger(LoginService.class.getName());
+
     @EJB
     private ProjetoBean projetoBean;
+
+    @EJB
+    private ClienteBean clienteBean;
+
+
 
     private ProjetoDTO toDTO(Projeto projeto){
         return new ProjetoDTO(
                 projeto.getId(),
                 projeto.getNome(),
-                clienteToDTO(projeto.getCliente())
+                clienteToDTO(projeto.getCliente()),
+                estruturasToDTOs(projeto.getEstruturas())
         );
+    }
+
+
+    private MaterialDTO materialToDTO(Material material){
+        return new MaterialDTO(
+                material.getTipoDeMaterial()
+        );
+    }
+
+    private Set<MaterialDTO> materiaisToDTOs(Set<Material> materiais){
+        return materiais.stream().map(this::materialToDTO).collect(Collectors.toSet());
+    }
+
+    private EstruturaDTO estruturaToDTO(Estrutura estrutura){
+        return new EstruturaDTO(
+                estrutura.getId(),
+                materiaisToDTOs(estrutura.getMateriais())
+        );
+    }
+
+    private Set<EstruturaDTO> estruturasToDTOs(Set<Estrutura> estruturas){
+        return estruturas.stream().map(this::estruturaToDTO).collect(Collectors.toSet());
     }
 
     private ClienteDTO clienteToDTO(Cliente cliente){
@@ -63,6 +91,65 @@ public class ProjetoService {
     public List<ProjetoDTO> getAllProjetosWS() {
         return projetoToDTOs(projetoBean.getAllProjetos());
     }
+
+    @POST
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createProjetoWS(ProjetoDTO projetoDTO){
+        try {
+
+            String emailCliente = projetoDTO.getCliente().getEmail();
+
+            Cliente cliente = clienteBean.find(emailCliente);
+
+            if(cliente == null){
+                return Response.status(Response.Status.BAD_REQUEST).build();
+            }
+
+            Projeto projeto = projetoBean.create(projetoDTO.getNome(), emailCliente);
+
+            return Response.status(Response.Status.CREATED).build();
+
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @DELETE
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response removeProjetoWS(ProjetoDTO projetoDTO){
+        try {
+
+            projetoBean.delete(projetoDTO.getId());
+
+            return Response.status(Response.Status.OK).build();
+
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+
+    //REPENSAR ISTO.... não faz sentido para alterar o nome do projeto ter que passar o resto...
+//    @PUT
+//    @Path("/")
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public Response atualizarProjetoWS(ProjetoDTO projetoDTO){
+//        try {
+//
+//            projetoBean.update(projetoDTO);
+//
+//            return Response.status(Response.Status.OK).build();
+//
+//
+//        } catch (Exception e) {
+//            log.info(e.getMessage());
+//        }
+//        return Response.status(Response.Status.UNAUTHORIZED).build();
+//    }
 
 
 }

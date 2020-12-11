@@ -16,14 +16,14 @@ public class PessoaDeContactoBean {
     public PessoaDeContactoBean() {
     }
 
-    public PessoaDeContacto create(String username, String email, String name, String contactoTelefonico){
+    public PessoaDeContacto create(String username, String email, String name, String contactoTelefonico, String password){
         PessoaDeContacto pcexists = em.find(PessoaDeContacto.class, username);
 
         if(pcexists != null){
             return pcexists;
         }
 
-        PessoaDeContacto pc = new PessoaDeContacto(username, email, name, contactoTelefonico);
+        PessoaDeContacto pc = new PessoaDeContacto(username, email, name, contactoTelefonico, password);
 
         em.persist(pc);
 
