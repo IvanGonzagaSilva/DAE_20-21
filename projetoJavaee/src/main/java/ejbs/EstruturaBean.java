@@ -2,6 +2,8 @@ package ejbs;
 
 import dtos.EstruturaDTO;
 import entities.Estrutura;
+import exceptions.MyEntityNotFoundException;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -20,8 +22,14 @@ public class EstruturaBean {
         return estrutura;
     }
 
-    public Estrutura find(String id){
-        return em.find(Estrutura.class, id);
+    public Estrutura find(String id) throws MyEntityNotFoundException {
+        Estrutura estrutura = em.find(Estrutura.class, id);
+
+        if(estrutura == null){
+            throw new MyEntityNotFoundException();
+        }
+
+        return estrutura;
     }
 
 

@@ -2,11 +2,14 @@ package ejbs;
 
 import entities.Projetista;
 import entities.Projeto;
+import exceptions.MyConstraintViolationException;
+import exceptions.MyEntityExistsException;
 import org.eclipse.persistence.sessions.Project;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.validation.ConstraintViolationException;
 
 @Stateless(name = "ProjetistaEJB")
 public class ProjetistaBean {
@@ -17,18 +20,22 @@ public class ProjetistaBean {
     public ProjetistaBean() {
     }
 
-    public Projetista create(String username, String email, String nome, String contactoTelefonico, String password){
+    public Projetista create(String username, String email, String nome, String contactoTelefonico, String password) throws MyEntityExistsException, MyConstraintViolationException {
         Projetista projetistaExists = em.find(Projetista.class, username);
 
         if(projetistaExists != null){
-            return projetistaExists;
+            throw new MyEntityExistsException();
         }
 
-        Projetista projetista = new Projetista(username, email, nome, contactoTelefonico, password);
+        try {
+            Projetista projetista = new Projetista(username, email, nome, contactoTelefonico, password);
 
-        em.persist(projetista);
+            em.persist(projetista);
 
-        return projetista;
+            return projetista;
+        }catch (ConstraintViolationException e){
+            throw new MyConstraintViolationException(e);
+        }
     }
 
     public void enrollInProject(String username, int projetoid){

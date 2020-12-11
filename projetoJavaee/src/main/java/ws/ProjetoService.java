@@ -4,6 +4,8 @@ import dtos.*;
 import ejbs.ClienteBean;
 import ejbs.ProjetoBean;
 import entities.*;
+import exceptions.MyEntityExistsException;
+import exceptions.MyEntityNotFoundException;
 import jwt.Jwt;
 
 import javax.ejb.EJB;
@@ -95,7 +97,7 @@ public class ProjetoService {
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response createProjetoWS(ProjetoDTO projetoDTO){
+    public Response createProjetoWS(ProjetoDTO projetoDTO) {
         try {
 
             String emailCliente = projetoDTO.getCliente().getEmail();
@@ -133,23 +135,56 @@ public class ProjetoService {
     }
 
 
-    //REPENSAR ISTO.... não faz sentido para alterar o nome do projeto ter que passar o resto...
-//    @PUT
-//    @Path("/")
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public Response atualizarProjetoWS(ProjetoDTO projetoDTO){
-//        try {
-//
-//            projetoBean.update(projetoDTO);
-//
-//            return Response.status(Response.Status.OK).build();
-//
-//
-//        } catch (Exception e) {
-//            log.info(e.getMessage());
-//        }
-//        return Response.status(Response.Status.UNAUTHORIZED).build();
-//    }
+    @PUT
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response atualizarProjetoWS(ProjetoDTO projetoDTO){
+        try {
+
+            projetoBean.update(projetoDTO);
+
+            return Response.status(Response.Status.OK).build();
+
+
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @PUT
+    @Path("{id}/add/estrutura")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response adicionarEstruturaAoProjetoWS(@PathParam("id") int idProjeto, EstruturaDTO estruturaDTO){
+        try {
+
+            projetoBean.addEstrutura(idProjeto, estruturaDTO);
+
+            return Response.status(Response.Status.OK).build();
+
+
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @PUT
+    @Path("{id}/remove/estrutura")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response removerEstruturaAoProjetoWS(@PathParam("id") int idProjeto, EstruturaDTO estruturaDTO){
+        try {
+
+            projetoBean.removeEstrutura(idProjeto, estruturaDTO);
+
+            return Response.status(Response.Status.OK).build();
+
+
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
 
 
 }
