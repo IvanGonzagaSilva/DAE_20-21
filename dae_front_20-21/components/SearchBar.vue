@@ -1,16 +1,17 @@
 <template>
     <v-row>
-        <v-col cols="1">
+        <v-col cols="1" class="mr-4">
             <v-btn
             class="m-2 py-6 mr-6"
             color="primary"
+            @click="createProject()"
             >
             <v-icon dark>
-                mdi-plus
+                mdi-{{hideClass ? "chevron-left" : "plus"}}
             </v-icon>
             </v-btn>
         </v-col>
-        <v-col>
+        <v-col >
             <v-text-field
             label="Solo"
             placeholder="Nome"
@@ -36,7 +37,7 @@
         </v-col>
         
         <v-col>
-            <p v-show="!resetFilterHidden" class="text-uppercase text-body-1 reset-button" color="blue" @click="resetFilters()">
+            <p v-show="!resetFilterHidden" class="text-uppercase text-body-1 reset-button font-weight-bold" color="blue" @click="resetFilters()">
                 Reset Filters
             </p>
         </v-col>
@@ -51,6 +52,7 @@ export default {
       productName: "",
       productMaterials: "",
       productDimensions: "",
+      hideClass: false
     }),
     methods: {
         resetFilters: function () {
@@ -60,6 +62,10 @@ export default {
                 this.productMaterials = "";
             if (typeof this.productDimensions != undefined)
                 this.productDimensions = "";
+        },
+        createProject: function () {
+            this.hideClass = !this.hideClass;
+            this.$emit('create-project');
         }
     },
     computed: {
@@ -82,3 +88,9 @@ export default {
         color: rgb(15, 195, 255);
     }
 </style>
+/* Como Projetista, eu quero criar, consultar/listar/procurar/filtrar, atualizar e remover
+projetos de estruturas metálicas, para que possa manter atualizada a lista dos meus
+projetos. Um projeto contém, entre outros, um nome, um cliente (nome, pessoa de
+contacto, morada, email), uma lista de ficheiros (protótipos 3D da estrutura, dimensões,
+etc.) e uma lista de estruturas (por exemplo, um projeto de um pavilhão industrial pode
+incluir a estrutura da cobertura e a estrutura da fachada); */
