@@ -30,8 +30,7 @@ public class MaterialBean {
         try {
             material = new Material(id, nome);
             em.persist(material);
-        }
-        catch (ConstraintViolationException e) {
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }

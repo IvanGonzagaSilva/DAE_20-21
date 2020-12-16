@@ -38,8 +38,7 @@ public class EstruturaBean {
         try {
             estrutura = new Estrutura(id, nome, geometria, aplicacao, parametrosCalculo, material);
             em.persist(estrutura);
-        }
-        catch (ConstraintViolationException e) {
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }
