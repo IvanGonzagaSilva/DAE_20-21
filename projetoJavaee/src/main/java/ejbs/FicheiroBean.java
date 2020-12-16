@@ -23,19 +23,20 @@ public class FicheiroBean {
     ProjetoBean projetoBean;
 
     public Ficheiro create(String filepath, String filename, int idProjeto) throws MyEntityNotFoundException, MyConstraintViolationException, MyIllegalArgumentException {
-        Ficheiro ficheiro = new Ficheiro(filepath, filename);
-        Projeto projeto = projetoBean.find(idProjeto);
 
-        if(projeto == null){
-            throw new MyEntityNotFoundException();
-        }
-
-        if(filepath.isEmpty() ||filename.isEmpty()){
-            throw new MyIllegalArgumentException();
-        }
 
         try {
+            Ficheiro ficheiro = new Ficheiro(filepath, filename);
+            Projeto projeto = projetoBean.find(idProjeto);
+
+            if(projeto == null){
+                throw new MyEntityNotFoundException();
+            }
+
+            em.persist(ficheiro);
+
             projeto.addFicheiro(ficheiro);
+
             return ficheiro;
 
         }catch (ConstraintViolationException e){
