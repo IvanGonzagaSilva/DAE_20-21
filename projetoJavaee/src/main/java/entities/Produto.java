@@ -1,11 +1,15 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
+
+@NamedQueries({
+    @NamedQuery(
+        name = "getAllProdutos",
+        query = "SELECT p FROM Produto p ORDER BY p.id" // JPQL
+    )
+})
 
 @Entity
 public class Produto {

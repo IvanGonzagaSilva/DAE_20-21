@@ -1,9 +1,14 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
+
+@NamedQueries({
+    @NamedQuery(
+        name = "getAllAplicacoes",
+        query = "SELECT a FROM Aplicacao a ORDER BY a.id" // JPQL
+    )
+})
 
 @Entity
 @Table(name = "APLICACOES")
