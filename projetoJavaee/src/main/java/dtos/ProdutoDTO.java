@@ -8,15 +8,14 @@ public class ProdutoDTO implements Serializable {
 
     private int id;
     private String nome;
-    private Material material;
+    private MaterialDTO material;
 
     public ProdutoDTO() {
     }
 
-    public ProdutoDTO(int id, String nome, Material material) {
+    public ProdutoDTO(int id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.material = material;
     }
 
     public int getId() {
@@ -33,13 +32,5 @@ public class ProdutoDTO implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Material getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(Material material) {
-        this.material = material;
     }
 }

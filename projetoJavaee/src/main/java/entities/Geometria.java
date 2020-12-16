@@ -72,7 +72,7 @@ public class Geometria implements Serializable {
         this.espacamentoVigas = espacamentoVigas;
     }
 
-    public List<Familia> getFamilia() {
+    public List<Familia> getFamilias() {
         return familias;
     }
 

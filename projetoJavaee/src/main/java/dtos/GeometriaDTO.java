@@ -12,13 +12,13 @@ public class GeometriaDTO implements Serializable {
     private int numeroVaos;
     private int comprimentoVao;
     private int espacamentoVigas;
-    private List<Familia> familias;
+    private List<FamiliaDTO> familias;
 
     public GeometriaDTO() {
-        this.familias = new LinkedList<Familia>();
+        this.familias = new LinkedList<FamiliaDTO>();
     }
 
-    public GeometriaDTO(int id, int numeroVaos, int comprimentoVao, int espacamentoVigas, List<Familia> familias) {
+    public GeometriaDTO(int id, int numeroVaos, int comprimentoVao, int espacamentoVigas, List<FamiliaDTO> familias) {
         this.id = id;
         this.numeroVaos = numeroVaos;
         this.comprimentoVao = comprimentoVao;
@@ -58,11 +58,11 @@ public class GeometriaDTO implements Serializable {
         this.espacamentoVigas = espacamentoVigas;
     }
 
-    public List<Familia> getFamilias() {
+    public List<FamiliaDTO> getFamilias() {
         return familias;
     }
 
-    public void setFamilias(List<Familia> familias) {
+    public void setFamilias(List<FamiliaDTO> familias) {
         this.familias = familias;
     }
 }

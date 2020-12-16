@@ -1,6 +1,7 @@
 package entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,15 +13,12 @@ import java.util.List;
 })
 
 @Entity
-public class Produto {
+public class Produto implements Serializable {
 
     @Id
     private int id;
 
     private String nome;
-
-    @ManyToOne
-    private Material material;
 
     @ManyToMany(mappedBy = "produtos")
     private List<Estrutura> estruturas;
@@ -29,10 +27,9 @@ public class Produto {
         this.estruturas = new LinkedList<Estrutura>();
     }
 
-    public Produto(int id, String nome, Material material) {
+    public Produto(int id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.material = material;
         this.estruturas = new LinkedList<Estrutura>();
     }
 
@@ -50,14 +47,6 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Material getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(Material material) {
-        this.material = material;
     }
 
     public List<Estrutura> getEstruturas() {

@@ -21,8 +21,8 @@ public class ProdutoBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(int id, String nome, Material material)
-            throws MyEntityExistsException, MyConstraintViolationException {
+    public void create(int id, String nome)
+            throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
 
         Produto produto = em.find(Produto.class, id);
 
@@ -30,7 +30,7 @@ public class ProdutoBean {
             throw new MyEntityExistsException("Produto with id: " + id + " already exists");
 
         try {
-            produto = new Produto(id, nome, material);
+            produto = new Produto(id, nome);
             em.persist(produto);
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
@@ -46,7 +46,6 @@ public class ProdutoBean {
 
         em.lock(produto, LockModeType.OPTIMISTIC);
         produto.setNome(nome);
-        produto.setMaterial(material);
         em.merge(produto);
 
         return produto;

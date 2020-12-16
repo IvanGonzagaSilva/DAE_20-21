@@ -38,6 +38,8 @@ public class ConfigBean {
     MaterialBean materialBean;
     @EJB
     EstruturaBean estruturaBean;
+    @EJB
+    ProdutoBean produtoBean;
 
     @PostConstruct
     public void populateDB()
@@ -107,10 +109,22 @@ public class ConfigBean {
         materialBean.create(3, "Laje");
         materialBean.create(4, "Painel");
 
+        System.out.println("creating produtos...");
+        //Produtos
+        produtoBean.create(1, "a");
+        produtoBean.create(2, "O");
+        produtoBean.create(3, "C");
+        produtoBean.create(4, "Z");
+
         System.out.println("creating estruturas...");
         //Estruturas
         estruturaBean.create(1, "cobertura", 1, 1, 1, 1);
         estruturaBean.create(2, "fachada", 2, 2, 2, 2);
         estruturaBean.create(3, "geral", 3, 3, 3, 3);
+
+        System.out.println("associating estruturas and produtos...");
+        estruturaBean.addProduto(1, 1);
+        estruturaBean.addProduto(2, 2);
+        estruturaBean.addProduto(3, 3);
     }
 }

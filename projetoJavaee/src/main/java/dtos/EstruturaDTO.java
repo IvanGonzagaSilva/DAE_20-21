@@ -9,17 +9,17 @@ import java.util.List;
 public class EstruturaDTO implements Serializable {
     private int id;
     private String nome;
-    private Geometria geometria;
-    private Aplicacao aplicacao;
-    private ParametrosCalculo parametrosCalculo;
-    private Material material;
-    private List<Produto> produtos;
+    private GeometriaDTO geometria;
+    private AplicacaoDTO aplicacao;
+    private ParametrosCalculoDTO parametrosCalculo;
+    private MaterialDTO material;
+    private List<ProdutoDTO> produtos;
 
     public EstruturaDTO() {
-        this.produtos = new LinkedList<Produto>();
+        this.produtos = new LinkedList<ProdutoDTO>();
     }
 
-    public EstruturaDTO(int id, String nome, Geometria geometria, Aplicacao aplicacao, ParametrosCalculo parametrosCalculo, Material material, List<Produto> produtos) {
+    public EstruturaDTO(int id, String nome, GeometriaDTO geometria, AplicacaoDTO aplicacao, ParametrosCalculoDTO parametrosCalculo, MaterialDTO material, List<ProdutoDTO> produtos) {
         this.id = id;
         this.nome = nome;
         this.geometria = geometria;
@@ -45,43 +45,43 @@ public class EstruturaDTO implements Serializable {
         this.nome = nome;
     }
 
-    public Geometria getGeometria() {
+    public GeometriaDTO getGeometria() {
         return geometria;
     }
 
-    public void setGeometria(Geometria geometria) {
+    public void setGeometria(GeometriaDTO geometria) {
         this.geometria = geometria;
     }
 
-    public Aplicacao getAplicacao() {
+    public AplicacaoDTO getAplicacao() {
         return aplicacao;
     }
 
-    public void setAplicacao(Aplicacao aplicacao) {
+    public void setAplicacao(AplicacaoDTO aplicacao) {
         this.aplicacao = aplicacao;
     }
 
-    public ParametrosCalculo getParametrosCalculo() {
+    public ParametrosCalculoDTO getParametrosCalculo() {
         return parametrosCalculo;
     }
 
-    public void setParametrosCalculo(ParametrosCalculo parametrosCalculo) {
+    public void setParametrosCalculo(ParametrosCalculoDTO parametrosCalculo) {
         this.parametrosCalculo = parametrosCalculo;
     }
 
-    public Material getMaterial() {
+    public MaterialDTO getMaterial() {
         return material;
     }
 
-    public void setMaterial(Material material) {
+    public void setMaterial(MaterialDTO material) {
         this.material = material;
     }
 
-    public List<Produto> getProdutos() {
+    public List<ProdutoDTO> getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(List<Produto> produtos) {
+    public void setProdutos(List<ProdutoDTO> produtos) {
         this.produtos = produtos;
     }
 }

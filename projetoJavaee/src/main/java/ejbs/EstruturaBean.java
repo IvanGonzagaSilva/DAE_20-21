@@ -5,6 +5,7 @@ import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
 import exceptions.MyEntityNotFoundException;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
@@ -18,6 +19,9 @@ public class EstruturaBean {
 
     @PersistenceContext
     private EntityManager em;
+
+    @EJB
+    ProdutoBean produtoBean;
 
     public void create(int id, String nome, int idGeometria, int idAplicacao, int idParametrosCalculo, int idMaterial)
             throws MyEntityExistsException, MyConstraintViolationException {
@@ -82,5 +86,19 @@ public class EstruturaBean {
 
     public List<Estrutura> getAllEstruturas() {
         return (List<Estrutura>) em.createNamedQuery("getAllEstruturas").getResultList();
+    }
+
+    public void addProduto(int idEstrutura, int idProduto) throws MyEntityNotFoundException {
+        Estrutura estrutura = findEstrutura(idEstrutura);
+        Produto produto = produtoBean.findProduto(idProduto);
+
+        estrutura.addProduto(produto);
+    }
+
+    public void removeProduto(int idEstrutura, int idProduto) throws MyEntityNotFoundException {
+        Estrutura estrutura = findEstrutura(idEstrutura);
+        Produto produto = produtoBean.findProduto(idProduto);
+
+        estrutura.removeProduto(produto);
     }
 }
