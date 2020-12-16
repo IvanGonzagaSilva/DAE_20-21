@@ -1,6 +1,6 @@
 package exceptions;
 
-public class MyEntityNotFoundException extends Exception{
+public class MyEntityNotFoundException extends Exception {
     public MyEntityNotFoundException() {
     }
 

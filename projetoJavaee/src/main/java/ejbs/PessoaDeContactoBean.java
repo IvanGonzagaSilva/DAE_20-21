@@ -1,6 +1,5 @@
 package ejbs;
 
-import entities.Cliente;
 import entities.PessoaDeContacto;
 
 import javax.ejb.Stateless;
@@ -16,10 +15,10 @@ public class PessoaDeContactoBean {
     public PessoaDeContactoBean() {
     }
 
-    public PessoaDeContacto create(String username, String email, String name, String contactoTelefonico){
+    public PessoaDeContacto create(String username, String email, String name, String contactoTelefonico) {
         PessoaDeContacto pcexists = em.find(PessoaDeContacto.class, username);
 
-        if(pcexists != null){
+        if (pcexists != null) {
             return pcexists;
         }
 

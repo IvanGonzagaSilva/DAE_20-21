@@ -5,10 +5,10 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 @NamedQueries({
-    @NamedQuery(
-        name = "getAllAplicacoesGerais",
-        query = "SELECT ag FROM AplicacaoGeral ag ORDER BY ag.id" // JPQL
-    )
+        @NamedQuery(
+                name = "getAllAplicacoesGerais",
+                query = "SELECT ag FROM AplicacaoGeral ag ORDER BY ag.id" // JPQL
+        )
 })
 
 @Entity

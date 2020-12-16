@@ -4,16 +4,17 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import java.io.Serializable;
 
 @Entity
 @NamedQueries({
-    @NamedQuery(
-        name = "getAllMateriais",
-        query = "SELECT e FROM Material e ORDER BY e.nome" // JPQL
-    )
+        @NamedQuery(
+                name = "getAllMateriais",
+                query = "SELECT e FROM Material e ORDER BY e.nome" // JPQL
+        )
 })
 
-public class Material {
+public class Material implements Serializable {
     @Id
     private int id;
     private String nome;

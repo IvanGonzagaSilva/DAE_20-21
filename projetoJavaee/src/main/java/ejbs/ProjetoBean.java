@@ -17,16 +17,16 @@ public class ProjetoBean {
     public ProjetoBean() {
     }
 
-    public Projeto create(int id, String nome, String emailCliente){
+    public Projeto create(int id, String nome, String emailCliente) {
         Projeto projetoExists = em.find(Projeto.class, id);
 
-        if(projetoExists != null){
+        if (projetoExists != null) {
             return projetoExists; //TODO alterar para throws...
         }
 
         Cliente cliente = em.find(Cliente.class, emailCliente);
 
-        if(cliente == null){
+        if (cliente == null) {
             return null; //TODO alterar para throws ....
         }
 

@@ -1,21 +1,18 @@
 package dtos;
 
-
 import java.io.Serializable;
 
-public class ProjetoDTO implements Serializable {
+public class MaterialDTO implements Serializable {
 
     private int id;
     private String nome;
-    private ClienteDTO cliente;
 
-    public ProjetoDTO() {
+    public MaterialDTO() {
     }
 
-    public ProjetoDTO(int id, String nome, ClienteDTO cliente) {
+    public MaterialDTO(int id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.cliente = cliente;
     }
 
     public int getId() {
@@ -32,13 +29,5 @@ public class ProjetoDTO implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public ClienteDTO getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(ClienteDTO cliente) {
-        this.cliente = cliente;
     }
 }

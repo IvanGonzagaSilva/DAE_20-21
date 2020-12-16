@@ -6,10 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 @NamedQueries({
-    @NamedQuery(
-        name = "getAllEstruturas",
-        query = "SELECT e FROM Estrutura e ORDER BY e.nome" // JPQL
-    )
+        @NamedQuery(
+                name = "getAllEstruturas",
+                query = "SELECT e FROM Estrutura e ORDER BY e.nome" // JPQL
+        )
 })
 
 @Entity
@@ -79,6 +79,10 @@ public class Estrutura implements Serializable {
         return material;
     }
 
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
+
     public Aplicacao getAplicacao() {
         return aplicacao;
     }
@@ -95,10 +99,6 @@ public class Estrutura implements Serializable {
         this.parametrosCalculo = parametrosCalculo;
     }
 
-    public void setMaterial(Material material) {
-        this.material = material;
-    }
-
     public List<Produto> getProdutos() {
         return produtos;
     }
@@ -108,7 +108,7 @@ public class Estrutura implements Serializable {
     }
 
     public void addProduto(Produto produto) {
-        if (! this.produtos.contains(produto)) {
+        if (!this.produtos.contains(produto)) {
             produtos.add(produto);
         }
     }

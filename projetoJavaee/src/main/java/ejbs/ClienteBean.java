@@ -16,10 +16,10 @@ public class ClienteBean {
     public ClienteBean() {
     }
 
-    public Cliente create(String nome, String usernamePc, String morada, String email){
+    public Cliente create(String nome, String usernamePc, String morada, String email) {
         Cliente cliente = em.find(Cliente.class, email);
 
-        if(cliente != null){
+        if (cliente != null) {
             return cliente;
         }
 

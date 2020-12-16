@@ -1,8 +1,5 @@
 package ejbs;
 
-import entities.AplicacaoFachada;
-import entities.Geometria;
-import entities.ParametrosCalculo;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
 import exceptions.MyEntityNotFoundException;
@@ -67,8 +64,8 @@ public class ConfigBean {
 
         System.out.println("enrolling projetos nos projetistas...");
         //Enroll projeto no projetista
-        projetistaBean.enrollInProject("joaofrf",1);
-        projetistaBean.enrollInProject("joaofrf",2);
+        projetistaBean.enrollInProject("joaofrf", 1);
+        projetistaBean.enrollInProject("joaofrf", 2);
 
         /*---------------------------------------------------------------------*/
 

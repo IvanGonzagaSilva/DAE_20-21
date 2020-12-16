@@ -1,30 +1,14 @@
-package entities;
+package dtos;
 
-import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-
-@NamedQueries({
-        @NamedQuery(
-                name = "getAllAplicacoesCoberturas",
-                query = "SELECT ac FROM AplicacaoCobertura ac ORDER BY ac.id" // JPQL
-        )
-})
-
-@Entity
-public class AplicacaoCobertura extends Aplicacao {
-
+public class AplicacaoCoberturaDTO extends AplicacaoDTO {
     private int angulo;
-
     private int sobrecarga;
-
     private int neve;
 
-    public AplicacaoCobertura() {
-
+    public AplicacaoCoberturaDTO() {
     }
 
-    public AplicacaoCobertura(int id, int angulo, int cargaPermanente, int sobrecarga, int neve, int ventoPressao, int ventoSucao) {
+    public AplicacaoCoberturaDTO(int id, int cargaPermanente, int ventoPressao, int ventoSucao, int angulo, int sobrecarga, int neve) {
         super(id, cargaPermanente, ventoPressao, ventoSucao);
         this.angulo = angulo;
         this.sobrecarga = sobrecarga;

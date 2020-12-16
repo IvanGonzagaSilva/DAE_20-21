@@ -1,6 +1,5 @@
 package dtos;
 
-import javax.validation.constraints.Email;
 import java.io.Serializable;
 
 public class PessoaDTO implements Serializable {

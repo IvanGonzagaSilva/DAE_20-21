@@ -7,7 +7,7 @@ import javax.validation.constraints.Email;
 import java.io.Serializable;
 
 @Entity
-@Table(name="PESSOAS")
+@Table(name = "PESSOAS")
 public class Pessoa implements Serializable {
 
     @Id

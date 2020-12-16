@@ -1,30 +1,32 @@
 package dtos;
 
+import entities.*;
+
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
 
 public class EstruturaDTO implements Serializable {
-    public int id;
-    public String nome;
-    public String tipoMaterial;
-    public int numVaos;
-    public int comprimentoVao;
-    public int espacamentoVigas;
-    public String parametrosCalculo;
-    //public List<Material> materiais;
+    private int id;
+    private String nome;
+    private Geometria geometria;
+    private Aplicacao aplicacao;
+    private ParametrosCalculo parametrosCalculo;
+    private Material material;
+    private List<Produto> produtos;
 
     public EstruturaDTO() {
-        //this.materiais = new LinkedList<Material>();
+        this.produtos = new LinkedList<Produto>();
     }
 
-    public EstruturaDTO(int id, String nome, String tipoMaterial, int numVaos, int comprimentoVao, int espacamentoVigas, String parametrosCalculo) {
+    public EstruturaDTO(int id, String nome, Geometria geometria, Aplicacao aplicacao, ParametrosCalculo parametrosCalculo, Material material, List<Produto> produtos) {
         this.id = id;
         this.nome = nome;
-        this.tipoMaterial = tipoMaterial;
-        this.numVaos = numVaos;
-        this.comprimentoVao = comprimentoVao;
-        this.espacamentoVigas = espacamentoVigas;
+        this.geometria = geometria;
+        this.aplicacao = aplicacao;
         this.parametrosCalculo = parametrosCalculo;
-        //this.materiais = new LinkedList<Material>();
+        this.material = material;
+        this.produtos = produtos;
     }
 
     public int getId() {
@@ -43,43 +45,43 @@ public class EstruturaDTO implements Serializable {
         this.nome = nome;
     }
 
-    public String getTipoMaterial() {
-        return tipoMaterial;
+    public Geometria getGeometria() {
+        return geometria;
     }
 
-    public void setTipoMaterial(String tipoMaterial) {
-        this.tipoMaterial = tipoMaterial;
+    public void setGeometria(Geometria geometria) {
+        this.geometria = geometria;
     }
 
-    public int getNumVaos() {
-        return numVaos;
+    public Aplicacao getAplicacao() {
+        return aplicacao;
     }
 
-    public void setNumVaos(int numVaos) {
-        this.numVaos = numVaos;
+    public void setAplicacao(Aplicacao aplicacao) {
+        this.aplicacao = aplicacao;
     }
 
-    public int getComprimentoVao() {
-        return comprimentoVao;
-    }
-
-    public void setComprimentoVao(int comprimentoVao) {
-        this.comprimentoVao = comprimentoVao;
-    }
-
-    public int getEspacamentoVigas() {
-        return espacamentoVigas;
-    }
-
-    public void setEspacamentoVigas(int espacamentoVigas) {
-        this.espacamentoVigas = espacamentoVigas;
-    }
-
-    public String getParametrosCalculo() {
+    public ParametrosCalculo getParametrosCalculo() {
         return parametrosCalculo;
     }
 
-    public void setParametrosCalculo(String parametrosCalculo) {
+    public void setParametrosCalculo(ParametrosCalculo parametrosCalculo) {
         this.parametrosCalculo = parametrosCalculo;
+    }
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 }

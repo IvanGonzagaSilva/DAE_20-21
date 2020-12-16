@@ -31,8 +31,7 @@ public class AplicacaoCoberturaBean {
         try {
             aplicacaoCobertura = new AplicacaoCobertura(id, angulo, cargaPermanente, sobrecarga, neve, ventoPressao, ventoSucao);
             em.persist(aplicacaoCobertura);
-        }
-        catch (ConstraintViolationException e) {
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }

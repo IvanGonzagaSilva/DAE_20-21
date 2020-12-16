@@ -22,14 +22,14 @@ public class Produto {
     private List<Estrutura> estruturas;
 
     public Produto() {
-        this.estruturas =  new LinkedList<Estrutura>();
+        this.estruturas = new LinkedList<Estrutura>();
     }
 
     public Produto(int id, String nome, Material material) {
         this.id = id;
         this.nome = nome;
         this.material = material;
-        this.estruturas =  new LinkedList<Estrutura>();
+        this.estruturas = new LinkedList<Estrutura>();
     }
 
     public int getId() {

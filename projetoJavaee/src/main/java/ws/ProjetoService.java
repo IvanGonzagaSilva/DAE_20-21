@@ -15,7 +15,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Path("/projeto") // relative url web path for this service
@@ -28,7 +27,7 @@ public class ProjetoService {
     @EJB
     private ProjetoBean projetoBean;
 
-    private ProjetoDTO toDTO(Projeto projeto){
+    private ProjetoDTO toDTO(Projeto projeto) {
         return new ProjetoDTO(
                 projeto.getId(),
                 projeto.getNome(),
@@ -36,7 +35,7 @@ public class ProjetoService {
         );
     }
 
-    private ClienteDTO clienteToDTO(Cliente cliente){
+    private ClienteDTO clienteToDTO(Cliente cliente) {
         return new ClienteDTO(
                 cliente.getNome(),
                 pessoaDeContactoToDTO(cliente.getPc()),
@@ -45,7 +44,7 @@ public class ProjetoService {
         );
     }
 
-    private PessoaDeContactoDTO pessoaDeContactoToDTO(PessoaDeContacto pessoaDeContacto){
+    private PessoaDeContactoDTO pessoaDeContactoToDTO(PessoaDeContacto pessoaDeContacto) {
         return new PessoaDeContactoDTO(
                 pessoaDeContacto.getUsername(),
                 pessoaDeContacto.getEmail(),
@@ -54,7 +53,7 @@ public class ProjetoService {
         );
     }
 
-    private List<ProjetoDTO> projetoToDTOs(List<Projeto> projetos){
+    private List<ProjetoDTO> projetoToDTOs(List<Projeto> projetos) {
         return projetos.stream().map(this::toDTO).collect(Collectors.toList());
     }
 

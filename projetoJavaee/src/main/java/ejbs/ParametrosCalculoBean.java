@@ -1,6 +1,6 @@
 package ejbs;
 
-import entities.*;
+import entities.ParametrosCalculo;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
 import exceptions.MyEntityNotFoundException;
@@ -30,8 +30,7 @@ public class ParametrosCalculoBean {
         try {
             parametrosCalculo = new ParametrosCalculo(id, contraventamentoTotal, verificacaoDeformacao, limiteDeformacao);
             em.persist(parametrosCalculo);
-        }
-        catch (ConstraintViolationException e) {
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }
@@ -47,8 +46,7 @@ public class ParametrosCalculoBean {
         try {
             parametrosCalculo = new ParametrosCalculo(id, contraventamentoTotal, numeroContraventamentosLaterais, contribuicaoChapaRevestimento, verificacaoDeformacao, limiteDeformacao);
             em.persist(parametrosCalculo);
-        }
-        catch (ConstraintViolationException e) {
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }
@@ -64,8 +62,7 @@ public class ParametrosCalculoBean {
         try {
             parametrosCalculo = new ParametrosCalculo(id, contraventamentoTotal, numeroContraventamentosLaterais, contribuicaoChapaRevestimento, numeroFixacoes, inerciaChapaRevestimento, verificacaoDeformacao, limiteDeformacao);
             em.persist(parametrosCalculo);
-        }
-        catch (ConstraintViolationException e) {
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }

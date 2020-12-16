@@ -29,8 +29,7 @@ public class FamiliaBean {
         try {
             familia = new Familia(id, nome);
             em.persist(familia);
-        }
-        catch (ConstraintViolationException e) {
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }

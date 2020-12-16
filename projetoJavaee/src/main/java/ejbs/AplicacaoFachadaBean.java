@@ -30,8 +30,7 @@ public class AplicacaoFachadaBean {
         try {
             aplicacaoFachada = new AplicacaoFachada(id, cargaPermanente, ventoPressao, ventoSucao);
             em.persist(aplicacaoFachada);
-        }
-        catch (ConstraintViolationException e) {
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }

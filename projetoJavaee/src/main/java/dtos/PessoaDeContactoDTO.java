@@ -1,6 +1,6 @@
 package dtos;
 
-public class PessoaDeContactoDTO extends PessoaDTO{
+public class PessoaDeContactoDTO extends PessoaDTO {
 
     public PessoaDeContactoDTO() {
     }

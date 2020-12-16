@@ -6,10 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 @NamedQueries({
-    @NamedQuery(
-        name = "getAllFamilias",
-        query = "SELECT f FROM Familia f ORDER BY f.id" // JPQL
-    )
+        @NamedQuery(
+                name = "getAllFamilias",
+                query = "SELECT f FROM Familia f ORDER BY f.id" // JPQL
+        )
 })
 
 @Entity
@@ -21,13 +21,13 @@ public class Familia implements Serializable {
     private List<Geometria> geometrias;
 
     public Familia() {
-        this.geometrias =  new LinkedList<Geometria>();
+        this.geometrias = new LinkedList<Geometria>();
     }
 
     public Familia(int id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.geometrias =  new LinkedList<Geometria>();
+        this.geometrias = new LinkedList<Geometria>();
     }
 
     public int getId() {
