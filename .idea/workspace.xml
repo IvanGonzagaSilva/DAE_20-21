@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8dc1caea-adc1-427a-9cfe-72aff7cb7713" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/projetoJavaee/target/ProjetoDAE2021-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/projetoJavaee/target/ProjetoDAE2021-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoJavaee/target/ProjetoDAE2021-1.0-SNAPSHOT/WEB-INF/classes/ejbs/clienteBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/projetoJavaee/target/ProjetoDAE2021-1.0-SNAPSHOT/WEB-INF/classes/ejbs/clienteBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoJavaee/target/ProjetoDAE2021-1.0-SNAPSHOT/WEB-INF/classes/ejbs/configBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/projetoJavaee/target/ProjetoDAE2021-1.0-SNAPSHOT/WEB-INF/classes/ejbs/configBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoJavaee/target/ProjetoDAE2021-1.0-SNAPSHOT/WEB-INF/classes/entities/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/projetoJavaee/target/ProjetoDAE2021-1.0-SNAPSHOT/WEB-INF/classes/entities/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoJavaee/target/classes/ejbs/clienteBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/projetoJavaee/target/classes/ejbs/clienteBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoJavaee/target/classes/ejbs/configBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/projetoJavaee/target/classes/ejbs/configBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoJavaee/target/classes/entities/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/projetoJavaee/target/classes/entities/Cliente.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lkUgQUjT5SqoHRCWlbN9R9KQOs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8dc1caea-adc1-427a-9cfe-72aff7cb7713" name="Default Changelist" comment="" />
+      <created>1608140694350</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608140694350</updated>
+      <workItem from="1608140695796" duration="2000" />
+    </task>
+    <servers />
+  </component>
+</project>
