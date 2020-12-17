@@ -235,12 +235,11 @@ export default {
             if (this.clickedProject !== 'empty')
                 this.projectData = this.clickedProject;
             
-            this.addProjectToArray()//await this.$axios.post("projetodae/api/projeto", this.projectData).then(this.addProjectToArray()).catch(error => console.log(error.message));
+            await this.$axios.post("projetodae/api/projeto", this.projectData).then(this.addProjectToArray()).catch(error => console.log(error.message));
         },
         deleteProject: async function ()
         {
-            this.removeProjectFromArray();//if (confirm('Are you sure you want to delete this project?') )
-                 //await this.$axios.delete('projetodae/api/projeto', this.project.id).then( this.removeProjectFromArray(this.project.id) ).catch(error => console.log(error.message));
+            await this.$axios.delete('projetodae/api/projeto', this.project.id).then( this.removeProjectFromArray(this.project.id) ).catch(error => console.log(error.message));
         },
         addProjectToArray: function ()
         {

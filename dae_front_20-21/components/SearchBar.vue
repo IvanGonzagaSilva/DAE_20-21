@@ -16,7 +16,7 @@
             label="Solo"
             placeholder="Nome"
             solo
-            :disabled="componentId === 0"
+            :disabled="componentId !== 1"
             v-model="productName"
           ></v-text-field>
         </v-col>
@@ -25,7 +25,7 @@
             :items="materialsArray"
             label="Materiais"
             solo
-            :disabled="componentId === 0"
+            :disabled="componentId !== 1"
             v-model="productMaterials"
             ></v-select>
         </v-col>
@@ -34,7 +34,7 @@
             :items="dimensions"
             label="Dimensões"
             solo
-            :disabled="componentId === 0"
+            :disabled="componentId !== 1"
             v-model="productDimensions"
             ></v-select>
         </v-col>

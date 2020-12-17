@@ -63,7 +63,10 @@ export default {
     components: {
         SearchBar,
         ProjectCard,
-        CreateProject
+        CreateProject,
+        productName: "123",
+        productMaterials: "123",
+        productDimensions: "123"
     },
     data: () =>( {
         materialsArray: [],
