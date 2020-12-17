@@ -4,8 +4,9 @@ import { normalizeURL } from '@nuxt/ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const login = () => interopDefault(import('..\\components\\LoginForm.vue' /* webpackChunkName: "pages/inspire" */))
-const layout = () => interopDefault(import('..\\components\\Layout.vue' /* webpackChunkName: "pages/index" */))
+const _b1c1dc1e = () => interopDefault(import('..\\pages\\Layout.vue' /* webpackChunkName: "pages/Layout" */))
+const _01574c56 = () => interopDefault(import('..\\pages\\LoginForm.vue' /* webpackChunkName: "pages/LoginForm" */))
+const _2d0ad10a = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -23,12 +24,19 @@ export const routerOptions = {
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior,
 
-  routes: [
-    { path: '/', redirect: '/home', name: 'app' },
-    { path: "/login", component: login, name: "login" },
-    { path: "/projetos", component: layout, name: "layout" },
-    { path: '*', component: layout }
-  ],
+  routes: [{
+    path: "/Layout",
+    component: _b1c1dc1e,
+    name: "Layout"
+  }, {
+    path: "/LoginForm",
+    component: _01574c56,
+    name: "LoginForm"
+  }, {
+    path: "/",
+    component: _2d0ad10a,
+    name: "index"
+  }],
 
   fallback: false
 }
@@ -53,10 +61,6 @@ export function createRouter () {
     if (r && r.resolved && r.resolved.query) {
       decodeObj(r.resolved.query)
     }
-
-    if (to === '/')
-      router.push("/login");  
-
     return r
   }
 

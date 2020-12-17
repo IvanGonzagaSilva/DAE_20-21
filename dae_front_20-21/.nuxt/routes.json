@@ -1,10 +1,17 @@
 [
   {
-    "name": "inspire",
-    "path": "/inspire",
-    "component": "C:\\\\Users\\\\ruben\\\\Documents\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\inspire.vue",
-    "chunkName": "pages/inspire",
-    "_name": "_1542c57a"
+    "name": "Layout",
+    "path": "/Layout",
+    "component": "C:\\\\Users\\\\ruben\\\\Documents\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\Layout.vue",
+    "chunkName": "pages/Layout",
+    "_name": "_b1c1dc1e"
+  },
+  {
+    "name": "LoginForm",
+    "path": "/LoginForm",
+    "component": "C:\\\\Users\\\\ruben\\\\Documents\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\LoginForm.vue",
+    "chunkName": "pages/LoginForm",
+    "_name": "_01574c56"
   },
   {
     "name": "index",

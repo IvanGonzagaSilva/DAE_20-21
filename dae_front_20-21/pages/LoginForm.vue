@@ -40,7 +40,6 @@
 
 <script>
 export default {
-    name: "LoginPanel",
     data: () => ({
         showPassword: false,
         timeout: 3000,
@@ -60,7 +59,12 @@ export default {
     }),
     methods: {
         async login(){
-            await this.$axios.post('http://localhost:8080/projetodae/api/login/token', {'username': this.username, 'password': this.password}).then(this.$router.push('/project')).catch(error => console.log(error.message));
+            this.$axios.defaults.headers.common = {
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRFToken": "example-of-custom-header",
+            };
+
+            await this.$axios.post('projetodae/api/login/token', {'username': this.username, 'password': this.password}).then(/* this.$router.push('/project') */ response =>  console.log(response)).catch(error => console.log(error.message));
             /*
             Store token locally
             localStorage.setItem('token', token);

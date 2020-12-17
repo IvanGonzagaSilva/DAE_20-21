@@ -4,7 +4,7 @@
             <v-btn
             class="m-2 py-6 mr-6"
             color="primary"
-            @click="createProject()"
+            @click="swapComponent()"
             >
             <v-icon dark>
                 mdi-{{componentId == 0 ? "chevron-left" : (componentId == 2 ? "home" :  "plus")}}
@@ -65,7 +65,7 @@ export default {
             if (typeof this.productDimensions != undefined)
                 this.productDimensions = "";
         },
-        createProject: function () {
+        swapComponent: function () {
             let newComponentId = (this.componentId != 1 ? 1 : 0);
             this.$emit('create-project', newComponentId);
         }

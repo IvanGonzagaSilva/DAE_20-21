@@ -1,25 +1,16 @@
 <template>
-  <v-row justify="center" align="center">
-
-    <v-col cols="6">
-
-      <div class="text-center">
-        
-        <Layout />
-      
-      </div>
-
-    </v-col>
-
-  </v-row>
+  <login-form></login-form>
 </template>
 
 <script>
-import Layout from '~/components/Layout.vue'
-
+import LoginForm from './LoginForm.vue'
 export default {
-  components: {
-    Layout,
-  }
+    components: {
+        LoginForm
+    },
 }
 </script>
+
+<style scoped>
+
+</style>

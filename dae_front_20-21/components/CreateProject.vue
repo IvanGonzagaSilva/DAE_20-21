@@ -148,24 +148,44 @@
 
         </v-row>
 
-        <v-btn
-        block
-        :loading="loading"
-        :disabled="loading"
-        color="success"
-        @click="uploadData()"
-        >
-        Submit
-        <template v-slot:loader>
-            <span>Submitting...</span>
-        </template>
-        </v-btn>
+        <v-row>
+
+                <v-col :cols="clickedProject !== 'empty' ? 9 : 12">
+
+                    <v-btn
+                    block
+                    :loading="loading"
+                    :disabled="loading"
+                    color="success"
+                    @click="uploadData()"
+                    >
+                    Submit
+                    <template v-slot:loader>
+                        <span>Submitting...</span>
+                    </template>
+                    </v-btn>
+
+                </v-col>
+
+                <v-col cols="3" v-if="clickedProject !== 'empty'">
+
+                    <v-btn
+                    color="error"
+                    @click="deleteProject()"
+                    ><v-icon>mdi-delete</v-icon>
+                    Delete
+                    </v-btn>
+
+                </v-col>
+
+        </v-row>
+
     </v-form>
 </template>
 
 <script>
 export default {
-    props: ['clickedProject'],
+    props: ['clickedProject', 'projectsArray'],
     data: () => ({
         projectData: {
             nome: "",
@@ -211,14 +231,32 @@ export default {
         },
         uploadData: async function() {
             this.loader = 'loading';
+
             if (this.clickedProject !== 'empty')
                 this.projectData = this.clickedProject;
-            await this.$axios.post("http://localhost:8080/projetodae/api/projeto", this.projectData).then(response => alert(response.message)).catch(error => console.log(error.message));
+            
+            this.addProjectToArray()//await this.$axios.post("projetodae/api/projeto", this.projectData).then(this.addProjectToArray()).catch(error => console.log(error.message));
         },
         deleteProject: async function ()
         {
-            if (confirm('Are you sure you want to delete this project?') )
-                await this.$axios.delete('http://localhost:8080/projetodae/api/projeto', this.project.id).then(response => console.log(response)).catch(error => console.log(error.message));
+            this.removeProjectFromArray();//if (confirm('Are you sure you want to delete this project?') )
+                 //await this.$axios.delete('projetodae/api/projeto', this.project.id).then( this.removeProjectFromArray(this.project.id) ).catch(error => console.log(error.message));
+        },
+        addProjectToArray: function ()
+        {
+            if (this.clickedProject === "empty")
+                this.projectsArray.push( this.projectData );
+            else
+            {
+                var index = this.projectsArray.findIndex(project => project.id == this.projectData.id);
+                this.projectsArray[index] = this.projectData;
+            }
+        },
+        removeProjectFromArray: function (id)
+        {
+            var index = this.projectsArray.findIndex(project => project.id == this.projectData.id);
+            this.projectsArray.splice(index, 1);
+            this.$emit('deleted-project');
         }
     },
     watch: {
@@ -227,7 +265,7 @@ export default {
         this[l] = !this[l]
 
         //TODO success toast/button text change
-        setTimeout(() => ( this[l] = false, this.projectData = this.emptyObject ), 3000)
+        setTimeout(() => ( this[l] = false ), 3000)
 
         this.loader = null
       },
