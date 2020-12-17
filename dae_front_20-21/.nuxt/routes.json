@@ -1,0 +1,16 @@
+[
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "C:\\\\Users\\\\ruben\\\\Documents\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\inspire.vue",
+    "chunkName": "pages/inspire",
+    "_name": "_1542c57a"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\ruben\\\\Documents\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_2d0ad10a"
+  }
+]

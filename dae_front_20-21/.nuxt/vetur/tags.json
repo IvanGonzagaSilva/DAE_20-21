@@ -1,0 +1,44 @@
+{
+  "CreateProject": {
+    "description": "Auto imported from components/CreateProject.vue"
+  },
+  "LazyCreateProject": {
+    "description": "Auto imported from components/CreateProject.vue"
+  },
+  "Layout": {
+    "description": "Auto imported from components/Layout.vue"
+  },
+  "LazyLayout": {
+    "description": "Auto imported from components/Layout.vue"
+  },
+  "LoginForm": {
+    "description": "Auto imported from components/LoginForm.vue"
+  },
+  "LazyLoginForm": {
+    "description": "Auto imported from components/LoginForm.vue"
+  },
+  "Logo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "LazyLogo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "ProductCard": {
+    "description": "Auto imported from components/ProductCard.vue"
+  },
+  "LazyProductCard": {
+    "description": "Auto imported from components/ProductCard.vue"
+  },
+  "ProjectCard": {
+    "description": "Auto imported from components/ProjectCard.vue"
+  },
+  "LazyProjectCard": {
+    "description": "Auto imported from components/ProjectCard.vue"
+  },
+  "SearchBar": {
+    "description": "Auto imported from components/SearchBar.vue"
+  },
+  "LazySearchBar": {
+    "description": "Auto imported from components/SearchBar.vue"
+  }
+}

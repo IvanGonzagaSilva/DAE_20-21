@@ -1,28 +1,31 @@
 <template>
     <v-row>
-        <v-col cols="1">
+        <v-col cols="1" class="mr-4">
             <v-btn
             class="m-2 py-6 mr-6"
             color="primary"
+            @click="createProject()"
             >
             <v-icon dark>
-                mdi-plus
+                mdi-{{componentId == 0 ? "chevron-left" : (componentId == 2 ? "home" :  "plus")}}
             </v-icon>
             </v-btn>
         </v-col>
-        <v-col>
+        <v-col >
             <v-text-field
             label="Solo"
             placeholder="Nome"
             solo
+            :disabled="componentId === 0"
             v-model="productName"
           ></v-text-field>
         </v-col>
         <v-col>
             <v-select
-            :items="materials"
+            :items="materialsArray"
             label="Materiais"
             solo
+            :disabled="componentId === 0"
             v-model="productMaterials"
             ></v-select>
         </v-col>
@@ -31,12 +34,13 @@
             :items="dimensions"
             label="Dimensões"
             solo
+            :disabled="componentId === 0"
             v-model="productDimensions"
             ></v-select>
         </v-col>
         
         <v-col>
-            <p v-show="!resetFilterHidden" class="text-uppercase text-body-1 reset-button" color="blue" @click="resetFilters()">
+            <p v-show="!resetFilterHidden" class="text-uppercase text-body-1 reset-button font-weight-bold" color="blue" @click="resetFilters()">
                 Reset Filters
             </p>
         </v-col>
@@ -45,12 +49,12 @@
 
 <script>
 export default {
+    props: ['materialsArray', 'componentId'],
     data: () => ({
-      materials: ['Perfil', 'Chapa', 'Ferro', 'Plasticina'],
       dimensions: ['200.00x1.80', '90.00x0.20', '50.00x1.00', '30.30x20.70'],
       productName: "",
       productMaterials: "",
-      productDimensions: "",
+      productDimensions: ""
     }),
     methods: {
         resetFilters: function () {
@@ -60,6 +64,10 @@ export default {
                 this.productMaterials = "";
             if (typeof this.productDimensions != undefined)
                 this.productDimensions = "";
+        },
+        createProject: function () {
+            let newComponentId = (this.componentId != 1 ? 1 : 0);
+            this.$emit('create-project', newComponentId);
         }
     },
     computed: {
