@@ -19,7 +19,7 @@ public class AplicacaoFachadaBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(int cargaPermanente, int ventoPressao, int ventoSucao)
+    public AplicacaoFachada create(int cargaPermanente, int ventoPressao, int ventoSucao)
             throws MyEntityExistsException, MyConstraintViolationException {
 
 
@@ -27,6 +27,7 @@ public class AplicacaoFachadaBean {
             AplicacaoFachada aplicacaoFachada = new AplicacaoFachada(cargaPermanente, ventoPressao, ventoSucao);
 
             em.persist(aplicacaoFachada);
+            return aplicacaoFachada;
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }

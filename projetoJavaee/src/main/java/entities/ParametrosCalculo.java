@@ -1,9 +1,6 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @NamedQueries({
@@ -16,6 +13,7 @@ import java.io.Serializable;
 @Entity
 public class ParametrosCalculo implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private boolean contraventamentoTotal;
@@ -36,15 +34,14 @@ public class ParametrosCalculo implements Serializable {
 
     }
 
-    public ParametrosCalculo(int id, boolean contraventamentoTotal, String verificacaoDeformacao, int limiteDeformacao) {
-        this.id = id;
+    public ParametrosCalculo(boolean contraventamentoTotal, String verificacaoDeformacao, int limiteDeformacao) {
+
         this.contraventamentoTotal = contraventamentoTotal;
         this.verificacaoDeformacao = verificacaoDeformacao;
         this.limiteDeformacao = limiteDeformacao;
     }
 
-    public ParametrosCalculo(int id, boolean contraventamentoTotal, int numeroContraventamentosLaterais, boolean contribuicaoChapaRevestimento, String verificacaoDeformacao, int limiteDeformacao) {
-        this.id = id;
+    public ParametrosCalculo(boolean contraventamentoTotal, int numeroContraventamentosLaterais, boolean contribuicaoChapaRevestimento, String verificacaoDeformacao, int limiteDeformacao) {
         this.contraventamentoTotal = contraventamentoTotal;
         this.numeroContraventamentosLaterais = numeroContraventamentosLaterais;
         this.contribuicaoChapaRevestimento = contribuicaoChapaRevestimento;
@@ -52,8 +49,7 @@ public class ParametrosCalculo implements Serializable {
         this.limiteDeformacao = limiteDeformacao;
     }
 
-    public ParametrosCalculo(int id, boolean contraventamentoTotal, int numeroContraventamentosLaterais, boolean contribuicaoChapaRevestimento, int numeroFixacoes, int inerciaChapaRevestimento, String verificacaoDeformacao, int limiteDeformacao) {
-        this.id = id;
+    public ParametrosCalculo(boolean contraventamentoTotal, int numeroContraventamentosLaterais, boolean contribuicaoChapaRevestimento, int numeroFixacoes, int inerciaChapaRevestimento, String verificacaoDeformacao, int limiteDeformacao) {
         this.contraventamentoTotal = contraventamentoTotal;
         this.numeroContraventamentosLaterais = numeroContraventamentosLaterais;
         this.contribuicaoChapaRevestimento = contribuicaoChapaRevestimento;

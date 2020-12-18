@@ -161,49 +161,42 @@ public class ConfigBean {
 
         System.out.println("creating aplicações...");
         //Aplicações
-        aplicacaoFachadaBean.create( 1, 1, 1);
-        aplicacaoCoberturaBean.create(2, 2, 2, 2, 2, 2);
-        aplicacaoGeralBean.create(3, 3, 3, 3, 3, 3, 3);
+        AplicacaoFachada aplicacaoFachada = aplicacaoFachadaBean.create(1, 1, 1);
+        AplicacaoCobertura aplicacaoCobertura = aplicacaoCoberturaBean.create(2, 2, 2, 2, 2, 2);
+        AplicacaoGeral aplicacaoGeral = aplicacaoGeralBean.create(3, 3, 3, 3, 3, 3, 3);
 
         System.out.println("creating parametros de calculo...");
         //Parametros de calculo
-        parametrosCalculoBean.create(1, true, "Frequente", 400);
-        parametrosCalculoBean.create(2, false, 23, false, "Quase permanente", 400);
-        parametrosCalculoBean.create(3, false, 12, true, 3, 4, "Caracteristica", 400);
+        ParametrosCalculo param1 = parametrosCalculoBean.create( true, "Frequente", 400);
+        ParametrosCalculo param2 = parametrosCalculoBean.create(false, 23, false, "Quase permanente", 400);
+        ParametrosCalculo param3 = parametrosCalculoBean.create(false, 12, true, 3, 4, "Caracteristica", 400);
 
-//        System.out.println("creating materiais...");
-////        //Materiais
-////        materialBean.create(1, "Perfil");
-////        materialBean.create(2, "Chapa");
-////        materialBean.create(3, "Laje");
-////        materialBean.create(4, "Painel");
-//
-//        System.out.println("creating produtos...");
-//        //Produtos
-//        produtoBean.create("a");
-//        produtoBean.create("O");
-//        produtoBean.create("C");
-//        produtoBean.create("Z");
-//
-//        System.out.println("creating estruturas...");
-//        //Estruturas
-//        estruturaBean.create( "cobertura", 1, 1, 1);
-//        estruturaBean.create( "fachada", 2, 2, 2);
-//        estruturaBean.create( "geral", 3, 3, 3);
-//
-//            //CODIGO DO PROFESSOR.
-//
-//
-//        System.out.println("associating estruturas and produtos...");
-//        estruturaBean.addVariante(1, 1);
-//        estruturaBean.addVariante(2, 2);
-//        estruturaBean.addVariante(3, 1);
-//
-//
-//
-//        estruturaBean.addMaterial(1,material_laje);
-//
-//        projeto1.addEstruturas(estruturaBean.findEstrutura(1));
+        System.out.println("creating produtos...");
+        //Produtos
+        produtoBean.create("a");
+        produtoBean.create("O");
+        produtoBean.create("C");
+        produtoBean.create("Z");
+
+        System.out.println("creating estruturas...");
+        //Estruturas
+        Estrutura estrutura = estruturaBean.create("cobertura", geometria.getId(), aplicacaoCobertura.getId(), param1.getId());
+        Estrutura estrutura1 = estruturaBean.create("fachada", geometria1.getId(), aplicacaoFachada.getId(), param2.getId());
+        Estrutura estrutura2 = estruturaBean.create("geral", geometria.getId(), aplicacaoGeral.getId(), param3.getId());
+
+        //CODIGO DO PROFESSOR.
+
+
+        System.out.println("associating estruturas and produtos...");
+        estruturaBean.addVariante(estrutura.getId(), 1);
+        estruturaBean.addVariante(estrutura1.getId(), 2);
+        estruturaBean.addVariante(estrutura2.getId(), 1);
+
+
+
+        estruturaBean.addMaterial(estrutura.getId(),material_laje);
+
+        projeto1.addEstruturas(estrutura);
 
         }
         catch (Exception e){

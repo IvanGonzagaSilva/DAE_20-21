@@ -19,49 +19,38 @@ public class ParametrosCalculoBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(int id, boolean contraventamentoTotal, String verificacaoDeformacao, int limiteDeformacao)
+    public ParametrosCalculo create(boolean contraventamentoTotal, String verificacaoDeformacao, int limiteDeformacao)
             throws MyEntityExistsException, MyConstraintViolationException {
 
-        ParametrosCalculo parametrosCalculo = em.find(ParametrosCalculo.class, id);
-
-        if (parametrosCalculo != null)
-            throw new MyEntityExistsException("Parametros de Calculo with id: " + id + " already exists");
-
         try {
-            parametrosCalculo = new ParametrosCalculo(id, contraventamentoTotal, verificacaoDeformacao, limiteDeformacao);
+            ParametrosCalculo parametrosCalculo = new ParametrosCalculo(contraventamentoTotal, verificacaoDeformacao, limiteDeformacao);
             em.persist(parametrosCalculo);
+            return parametrosCalculo;
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }
 
-    public void create(int id, boolean contraventamentoTotal, int numeroContraventamentosLaterais, boolean contribuicaoChapaRevestimento, String verificacaoDeformacao, int limiteDeformacao)
+    public ParametrosCalculo create(boolean contraventamentoTotal, int numeroContraventamentosLaterais, boolean contribuicaoChapaRevestimento, String verificacaoDeformacao, int limiteDeformacao)
             throws MyEntityExistsException, MyConstraintViolationException {
 
-        ParametrosCalculo parametrosCalculo = em.find(ParametrosCalculo.class, id);
-
-        if (parametrosCalculo != null)
-            throw new MyEntityExistsException("Parametros de Calculo with id: " + id + " already exists");
 
         try {
-            parametrosCalculo = new ParametrosCalculo(id, contraventamentoTotal, numeroContraventamentosLaterais, contribuicaoChapaRevestimento, verificacaoDeformacao, limiteDeformacao);
+            ParametrosCalculo parametrosCalculo = new ParametrosCalculo(contraventamentoTotal, numeroContraventamentosLaterais, contribuicaoChapaRevestimento, verificacaoDeformacao, limiteDeformacao);
             em.persist(parametrosCalculo);
+            return parametrosCalculo;
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }
 
-    public void create(int id, boolean contraventamentoTotal, int numeroContraventamentosLaterais, boolean contribuicaoChapaRevestimento, int numeroFixacoes, int inerciaChapaRevestimento, String verificacaoDeformacao, int limiteDeformacao)
+    public ParametrosCalculo create(boolean contraventamentoTotal, int numeroContraventamentosLaterais, boolean contribuicaoChapaRevestimento, int numeroFixacoes, int inerciaChapaRevestimento, String verificacaoDeformacao, int limiteDeformacao)
             throws MyEntityExistsException, MyConstraintViolationException {
 
-        ParametrosCalculo parametrosCalculo = em.find(ParametrosCalculo.class, id);
-
-        if (parametrosCalculo != null)
-            throw new MyEntityExistsException("Parametros de Calculo with id: " + id + " already exists");
-
         try {
-            parametrosCalculo = new ParametrosCalculo(id, contraventamentoTotal, numeroContraventamentosLaterais, contribuicaoChapaRevestimento, numeroFixacoes, inerciaChapaRevestimento, verificacaoDeformacao, limiteDeformacao);
+            ParametrosCalculo parametrosCalculo = new ParametrosCalculo(contraventamentoTotal, numeroContraventamentosLaterais, contribuicaoChapaRevestimento, numeroFixacoes, inerciaChapaRevestimento, verificacaoDeformacao, limiteDeformacao);
             em.persist(parametrosCalculo);
+            return parametrosCalculo;
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }

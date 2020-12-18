@@ -22,7 +22,7 @@ public class EstruturaBean {
     @EJB
     ProdutoBean produtoBean;
 
-    public void create(String nome, int idGeometria, int idAplicacao, int idParametrosCalculo)
+    public Estrutura create(String nome, int idGeometria, int idAplicacao, int idParametrosCalculo)
             throws MyEntityExistsException, MyConstraintViolationException {
 
         Geometria geometria = em.find(Geometria.class, idGeometria);
@@ -36,6 +36,7 @@ public class EstruturaBean {
         try {
             Estrutura estrutura = new Estrutura(nome, geometria, aplicacao, parametrosCalculo);
             em.persist(estrutura);
+            return estrutura;
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
