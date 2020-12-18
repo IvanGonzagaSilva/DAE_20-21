@@ -84,4 +84,5 @@ public class EstruturaDTO implements Serializable {
     public void setProdutos(List<ProdutoDTO> produtos) {
         this.produtos = produtos;
     }
+
 }

@@ -19,7 +19,7 @@ public class Cliente implements Serializable {
     private String nome;
 
     @OneToOne
-    private PessoaDeContacto pc; // pode vir a mudar, o professor vai falar com o ricardo martinho para decidir de é one to one ou one to many.
+    private PessoaDeContacto pc; // feito com apenas uma pessoa, podemos mudar para várias pessoasdecontacto
 
     private String morada;
 
@@ -27,7 +27,7 @@ public class Cliente implements Serializable {
     @Email
     private String email;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
+    @OneToMany
     private Set<Projeto> projetos;
 
     public Cliente() {

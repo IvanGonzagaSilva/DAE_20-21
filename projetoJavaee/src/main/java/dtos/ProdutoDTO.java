@@ -1,29 +1,21 @@
 package dtos;
 
-import entities.Material;
+import entities.Variante;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class ProdutoDTO implements Serializable {
 
-    private int id;
     private String nome;
-    private MaterialDTO material;
+    private List<VarianteDTO> variantes;
 
     public ProdutoDTO() {
     }
 
-    public ProdutoDTO(int id, String nome) {
-        this.id = id;
+    public ProdutoDTO(String nome, List<VarianteDTO> variantes) {
         this.nome = nome;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.variantes = variantes;
     }
 
     public String getNome() {
@@ -32,5 +24,13 @@ public class ProdutoDTO implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<VarianteDTO> getVariantes() {
+        return variantes;
+    }
+
+    public void setVariantes(List<VarianteDTO> variantes) {
+        this.variantes = variantes;
     }
 }

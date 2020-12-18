@@ -23,14 +23,8 @@ public class ProdutoBean {
 
     public void create(int id, String nome)
             throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
-
-        Produto produto = em.find(Produto.class, id);
-
-        if (produto != null)
-            throw new MyEntityExistsException("Produto with id: " + id + " already exists");
-
         try {
-            produto = new Produto(id, nome);
+            produto = new Produto(nome);
             em.persist(produto);
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);

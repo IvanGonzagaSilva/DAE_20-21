@@ -11,7 +11,7 @@
       <element id="artifact" artifact-name="ProjetoDAE2021:war exploded" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="lib">
-          <element id="library" level="project" name="com.nimbusds:nimbus-jose-jwt:4.231" />
+          <element id="library" level="project" name="com.nimbusds:nimbus-jose-jwt:4.23" />
         </element>
       </element>
     </root>

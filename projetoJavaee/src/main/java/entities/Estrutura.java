@@ -15,6 +15,7 @@ import java.util.List;
 @Entity
 public class Estrutura implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String nome;
@@ -28,8 +29,8 @@ public class Estrutura implements Serializable {
     @ManyToOne
     private ParametrosCalculo parametrosCalculo; //Parametros de cálculo extra
 
-    @ManyToOne
-    private Material material; //Material utilizado
+    @OneToMany
+    private Set<Material> materiais;
 
     @ManyToMany
     @JoinTable(name = "ESTRUTURAS_PRODUTOS",
@@ -41,8 +42,7 @@ public class Estrutura implements Serializable {
         this.produtos = new LinkedList<Produto>();
     }
 
-    public Estrutura(int id, String nome, Geometria geometria, Aplicacao aplicacao, ParametrosCalculo parametrosCalculo, Material material) {
-        this.id = id;
+    public Estrutura(String nome, Geometria geometria, Aplicacao aplicacao, ParametrosCalculo parametrosCalculo, Material material) {
         this.nome = nome;
         this.geometria = geometria;
         this.aplicacao = aplicacao;

@@ -10,36 +10,39 @@ import java.io.Serializable;
 @NamedQueries({
         @NamedQuery(
                 name = "getAllMateriais",
-                query = "SELECT e FROM Material e ORDER BY e.nome" // JPQL
+                query = "SELECT m FROM Material m ORDER BY m.tipoDeMaterial" // JPQL
         )
 })
-
 public class Material implements Serializable {
+
     @Id
-    private int id;
-    private String nome;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String id;
+
+    @Enumerated(EnumType.STRING)
+    private TipoDeMaterial tipoDeMaterial;
 
     public Material() {
     }
 
-    public Material(int id, String nome) {
-        this.id = id;
-        this.nome = nome;
+
+    public Material(TipoDeMaterial tipoDeMaterial) {
+        this.tipoDeMaterial = tipoDeMaterial;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public TipoDeMaterial getTipoDeMaterial() {
+        return tipoDeMaterial;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setTipoDeMaterial(TipoDeMaterial tipoDeMaterial) {
+        this.tipoDeMaterial = tipoDeMaterial;
     }
 }

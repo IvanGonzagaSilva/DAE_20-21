@@ -1,10 +1,12 @@
 package exceptions;
-
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import java.util.Set;
 
 public class MyConstraintViolationException extends Exception {
+
+
+
     public MyConstraintViolationException(ConstraintViolationException e) {
         super(getConstraintViolationMessages(e));
     }
@@ -18,4 +20,5 @@ public class MyConstraintViolationException extends Exception {
         }
         return errorMessages.toString();
     }
+
 }

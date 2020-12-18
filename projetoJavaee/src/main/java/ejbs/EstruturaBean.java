@@ -1,5 +1,4 @@
 package ejbs;
-
 import entities.*;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
@@ -84,6 +83,7 @@ public class EstruturaBean {
         return estrutura;
     }
 
+
     public List<Estrutura> getAllEstruturas() {
         return (List<Estrutura>) em.createNamedQuery("getAllEstruturas").getResultList();
     }
@@ -101,4 +101,5 @@ public class EstruturaBean {
 
         estrutura.removeProduto(produto);
     }
+
 }

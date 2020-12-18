@@ -1,5 +1,6 @@
 package exceptions;
 
+
 public class MyEntityExistsException extends Exception {
     public MyEntityExistsException() {
     }
@@ -19,4 +20,5 @@ public class MyEntityExistsException extends Exception {
     public MyEntityExistsException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
+
 }

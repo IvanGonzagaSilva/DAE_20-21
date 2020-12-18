@@ -1,8 +1,11 @@
 package entities;
 
 import javax.persistence.*;
+import javax.validation.Constraint;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 //projeto de estrutura metálica
 @Entity
@@ -15,23 +18,31 @@ import java.io.Serializable;
 public class Projeto implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private String nome;
 
+
+    @OneToMany
+    private Set<Ficheiro> ficheiros;
+
+    @OneToMany
+    private Set<Estrutura> estruturas;
+
     @ManyToOne
-    @NotNull
-    private Cliente cliente;
-    //private Set<ficheiro> ficheiros;
-    //private Set<Estrutura> estruturas;
+    private Projetista projetista;
 
 
     public Projeto() {
+        estruturas = new LinkedHashSet<>();
+        ficheiros = new LinkedHashSet<>();
     }
 
-    public Projeto(int id, String nome, Cliente cliente) {
-        this.id = id;
+    public Projeto(String nome, Projetista projetista) {
+        this();
         this.nome = nome;
-        this.cliente = cliente;
+        this.projetista = projetista;
     }
 
     public int getId() {
@@ -50,11 +61,58 @@ public class Projeto implements Serializable {
         this.nome = nome;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Set<Estrutura> getEstruturas() {
+        return estruturas;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setEstruturas(Set<Estrutura> estruturas) {
+        this.estruturas = estruturas;
+    }
+
+    public void addEstruturas(Estrutura estrutura){
+        if(this.estruturas.contains(estrutura)){
+            return;
+        }
+        this.estruturas.add(estrutura);
+    }
+
+    public void removeEstruturas(Estrutura estrutura){
+        if(!this.estruturas.contains(estrutura)){
+            return;
+        }
+        this.estruturas.remove(estrutura);
+    }
+
+    public void addFicheiro(Ficheiro ficheiro){
+        if(this.ficheiros.contains(ficheiro)){
+            return;
+        }
+
+        this.ficheiros.add(ficheiro);
+    }
+
+    public void removeFicheiro(Ficheiro ficheiro){
+
+        if(!this.ficheiros.contains(ficheiro)){
+            return;
+        }
+
+        this.ficheiros.remove(ficheiro);
+    }
+
+    public Set<Ficheiro> getFicheiros() {
+        return ficheiros;
+    }
+
+    public void setFicheiros(Set<Ficheiro> ficheiros) {
+        this.ficheiros = ficheiros;
+    }
+
+    public Projetista getProjetista() {
+        return projetista;
+    }
+
+    public void setProjetista(Projetista projetista) {
+        this.projetista = projetista;
     }
 }

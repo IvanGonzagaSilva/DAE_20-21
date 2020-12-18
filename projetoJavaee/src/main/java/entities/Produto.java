@@ -15,45 +15,46 @@ import java.util.List;
 @Entity
 public class Produto implements Serializable {
 
-    @Id
-    private int id;
-
-    private String nome;
-
     @ManyToMany(mappedBy = "produtos")
     private List<Estrutura> estruturas;
 
+    @Id
+    private String nome;
+
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.REMOVE)
+    private List<Variante> variantes;
+
     public Produto() {
-        this.estruturas = new LinkedList<Estrutura>();
+        variantes = new LinkedList<>();
     }
 
-    public Produto(int id, String nome) {
-        this.id = id;
+    public Produto(String nome) {
         this.nome = nome;
-        this.estruturas = new LinkedList<Estrutura>();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        variantes = new LinkedList<>();
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String name) {
+        this.nome = name;
     }
 
-    public List<Estrutura> getEstruturas() {
-        return estruturas;
+    public List<Variante> getVariantes() {
+        return variantes;
     }
 
-    public void setEstruturas(List<Estrutura> estruturas) {
-        this.estruturas = estruturas;
+    public void setVariantes(List<Variante> especimen) {
+        this.variantes = especimen;
     }
+
+    public void addVariante(Variante s) {
+        variantes.add(s);
+    }
+
+    public void removeVariante(Variante s) {
+        variantes.remove(s);
+    }
+
 }
