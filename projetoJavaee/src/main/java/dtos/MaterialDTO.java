@@ -1,6 +1,5 @@
 package dtos;
 
-
 import entities.TipoDeMaterial;
 
 import java.io.Serializable;

@@ -1,13 +1,11 @@
 package ejbs;
 
+import entities.Cliente;
 import entities.PessoaDeContacto;
-import exceptions.MyConstraintViolationException;
-import exceptions.MyEntityExistsException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.validation.ConstraintViolationException;
 
 @Stateless(name = "PessoaDeContactoEJB")
 public class PessoaDeContactoBean {
@@ -18,28 +16,20 @@ public class PessoaDeContactoBean {
     public PessoaDeContactoBean() {
     }
 
-    public PessoaDeContacto create(String username, String email, String name, String contactoTelefonico, String password) throws MyEntityExistsException, MyConstraintViolationException {
-        PessoaDeContacto pc = this.find(username);
+    public PessoaDeContacto create(String username, String email, String name, String contactoTelefonico, String password){
+        PessoaDeContacto pcexists = em.find(PessoaDeContacto.class, username);
 
-        if(pc != null){
-            throw new MyEntityExistsException();
+        if(pcexists != null){
+            return pcexists;
         }
 
-        try {
-            pc = new PessoaDeContacto(username, email, name, contactoTelefonico, password);
+        PessoaDeContacto pc = new PessoaDeContacto(username, email, name, contactoTelefonico, password);
 
-            em.persist(pc);
+        em.persist(pc);
 
-            return pc;
-        }catch (ConstraintViolationException e){
-            throw new MyConstraintViolationException(e);
-        }
-
+        return pc;
 
     }
 
 
-    public PessoaDeContacto find(String username) {
-        return em.find(PessoaDeContacto.class, username);
-    }
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 2020-12-18 22:53:58,641 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
 2020-12-18 22:54:00,440 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
 2020-12-18 22:54:00,446 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
@@ -858,5 +857,3 @@ Error Code: 0
 2020-12-18 23:13:15,055 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
 WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
 
-=======
->>>>>>> Juncao

@@ -1,5 +1,6 @@
 package dtos;
 
+import javax.validation.constraints.Email;
 import java.io.Serializable;
 
 public class PessoaDTO implements Serializable {
@@ -9,27 +10,16 @@ public class PessoaDTO implements Serializable {
 
     private String nome;
 
-    private String password;
-
     private String contactoTelefonico;
 
     public PessoaDTO() {
     }
 
-    public PessoaDTO(String username, String email, String nome, String contactoTelefonico, String password) {
+    public PessoaDTO(String username, String email, String nome, String contactoTelefonico) {
         this.username = username;
         this.email = email;
         this.nome = nome;
         this.contactoTelefonico = contactoTelefonico;
-        this.password = password;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getUsername() {

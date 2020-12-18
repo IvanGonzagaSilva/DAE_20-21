@@ -23,6 +23,9 @@ public class Projeto implements Serializable {
 
     private String nome;
 
+    @ManyToOne
+    @NotNull
+    private Cliente cliente;
 
     @OneToMany
     private Set<Ficheiro> ficheiros;
@@ -30,19 +33,16 @@ public class Projeto implements Serializable {
     @OneToMany
     private Set<Estrutura> estruturas;
 
-    @ManyToOne
-    private Projetista projetista;
-
 
     public Projeto() {
         estruturas = new LinkedHashSet<>();
         ficheiros = new LinkedHashSet<>();
     }
 
-    public Projeto(String nome, Projetista projetista) {
+    public Projeto(String nome, @NotNull Cliente cliente) {
         this();
         this.nome = nome;
-        this.projetista = projetista;
+        this.cliente = cliente;
     }
 
     public int getId() {
@@ -59,6 +59,14 @@ public class Projeto implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Set<Estrutura> getEstruturas() {
@@ -106,13 +114,5 @@ public class Projeto implements Serializable {
 
     public void setFicheiros(Set<Ficheiro> ficheiros) {
         this.ficheiros = ficheiros;
-    }
-
-    public Projetista getProjetista() {
-        return projetista;
-    }
-
-    public void setProjetista(Projetista projetista) {
-        this.projetista = projetista;
     }
 }

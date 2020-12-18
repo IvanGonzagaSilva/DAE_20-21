@@ -1,11 +1,10 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.io.Serializable;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -37,8 +36,8 @@ public class Projetista extends Pessoa {
         this.projetos = projetos;
     }
 
-    public void addProjeto(Projeto projeto) {
-        if (this.projetos.contains(projeto)) {
+    public void addProjeto(Projeto projeto){
+        if(this.projetos.contains(projeto)){
             return;
         }
 
@@ -46,8 +45,10 @@ public class Projetista extends Pessoa {
 
     }
 
-    public void removeProjeto(Projeto projeto) {
-        this.projetos.remove(projeto);
+    public void removeProjeto(Projeto projeto){
+        if(this.projetos.contains(projeto)){
+            this.projetos.remove(projeto);
+        }
 
     }
 }

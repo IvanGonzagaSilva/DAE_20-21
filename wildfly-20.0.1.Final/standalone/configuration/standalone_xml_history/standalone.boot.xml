@@ -172,11 +172,7 @@
                     </validation>
                 </datasource>
                 <datasource jndi-name="java:jboss/datasources/projetodae" pool-name="projetodae">
-<<<<<<< HEAD
                     <connection-url>jdbc:h2:tcp://localhost/~/projetodae;DB_CLOSE_DELAY=-1</connection-url>
-=======
-                    <connection-url>jdbc:h2:tcp://localhost/~/projetodae</connection-url>
->>>>>>> Juncao
                     <driver-class>org.h2.Driver</driver-class>
                     <driver>h2</driver>
                     <security>
@@ -558,9 +554,6 @@
     <deployments>
         <deployment name="academics.war" runtime-name="academics.war">
             <fs-archive path="C:\Users\joaok\IdeaProjects\AcademicManagement\target\academics.war"/>
-        </deployment>
-        <deployment name="ProjetoDAE2021-1.0-SNAPSHOT.war" runtime-name="ProjetoDAE2021-1.0-SNAPSHOT.war">
-            <fs-archive path="C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\projetoJavaee\target\ProjetoDAE2021-1.0-SNAPSHOT.war"/>
         </deployment>
     </deployments>
 </server>

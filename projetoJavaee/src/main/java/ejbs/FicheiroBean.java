@@ -2,15 +2,11 @@ package ejbs;
 
 import entities.Ficheiro;
 import entities.Projeto;
-import exceptions.MyConstraintViolationException;
-import exceptions.MyEntityNotFoundException;
-import exceptions.MyIllegalArgumentException;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.validation.ConstraintViolationException;
 import java.util.ArrayList;
 
 @Stateless(name = "DocumentEJB")
@@ -22,27 +18,17 @@ public class FicheiroBean {
     @EJB
     ProjetoBean projetoBean;
 
-    public Ficheiro create(String filepath, String filename, int idProjeto) throws MyEntityNotFoundException, MyConstraintViolationException, MyIllegalArgumentException {
+    public Ficheiro create(String filepath, String filename, int idProjeto) {
+        Ficheiro ficheiro = new Ficheiro(filepath, filename);
+        Projeto projeto = projetoBean.find(idProjeto);
 
-
-        try {
-            Ficheiro ficheiro = new Ficheiro(filepath, filename);
-            Projeto projeto = projetoBean.find(idProjeto);
-
-            if(projeto == null){
-                throw new MyEntityNotFoundException();
-            }
-
-            em.persist(ficheiro);
-
-            projeto.addFicheiro(ficheiro);
-
-            return ficheiro;
-
-        }catch (ConstraintViolationException e){
-            throw new MyConstraintViolationException(e);
+        if(filepath.isEmpty() ||filename.isEmpty() || projeto == null){
+            return null;
         }
 
+        projeto.addFicheiro(ficheiro);
+
+        return ficheiro;
     }
 
     public Ficheiro findficheiro(int id){

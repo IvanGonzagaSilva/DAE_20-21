@@ -27,7 +27,7 @@ public class Cliente implements Serializable {
     @Email
     private String email;
 
-    @OneToMany
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
     private Set<Projeto> projetos;
 
     public Cliente() {
@@ -41,6 +41,7 @@ public class Cliente implements Serializable {
         this.morada = morada;
         this.email = email;
     }
+
 
     public String getNome() {
         return nome;
@@ -82,16 +83,16 @@ public class Cliente implements Serializable {
         this.projetos = projetos;
     }
 
-    public void addProjeto(Projeto projeto) {
-        if (this.projetos.contains(projeto)) {
+    public void addProjeto(Projeto projeto){
+        if(this.projetos.contains(projeto)){
             return;
         }
 
         this.projetos.add(projeto);
     }
 
-    public void removeProjeto(Projeto projeto) {
-        if (!this.projetos.contains(projeto)) {
+    public void removeProjeto(Projeto projeto){
+        if(!this.projetos.contains(projeto)){
             return;
         }
 
