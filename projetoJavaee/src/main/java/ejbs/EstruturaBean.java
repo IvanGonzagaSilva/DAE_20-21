@@ -22,24 +22,19 @@ public class EstruturaBean {
     @EJB
     ProdutoBean produtoBean;
 
-    public void create(int id, String nome, int idGeometria, int idAplicacao, int idParametrosCalculo, int idMaterial)
+    public void create(String nome, int idGeometria, int idAplicacao, int idParametrosCalculo)
             throws MyEntityExistsException, MyConstraintViolationException {
 
         Geometria geometria = em.find(Geometria.class, idGeometria);
         Aplicacao aplicacao = em.find(Aplicacao.class, idAplicacao);
         ParametrosCalculo parametrosCalculo = em.find(ParametrosCalculo.class, idParametrosCalculo);
-        Material material = em.find(Material.class, idMaterial);
 
-        if (geometria == null || aplicacao == null || parametrosCalculo == null || material == null)
-            throw new EntityNotFoundException("Geometria, Aplicação, Parametros de Calculo ou Material not found.");
+        if (geometria == null || aplicacao == null || parametrosCalculo == null )
+            throw new EntityNotFoundException("Geometria, Aplicação ou Parametros de Calculo  not found.");
 
-        Estrutura estrutura = em.find(Estrutura.class, id);
-
-        if (estrutura != null)
-            throw new MyEntityExistsException("Estrutura with id: " + id + " already exists");
 
         try {
-            estrutura = new Estrutura(id, nome, geometria, aplicacao, parametrosCalculo, material);
+            Estrutura estrutura = new Estrutura(nome, geometria, aplicacao, parametrosCalculo);
             em.persist(estrutura);
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
@@ -66,13 +61,13 @@ public class EstruturaBean {
         estrutura.setGeometria(geometria);
         estrutura.setAplicacao(aplicacao);
         estrutura.setParametrosCalculo(parametrosCalculo);
-        estrutura.setMaterial(material);
+        estrutura.addMaterial(material);
         em.merge(estrutura);
 
         return estrutura;
     }
 
-    public Estrutura findEstrutura(Integer id)
+    public Estrutura findEstrutura(int id)
             throws MyEntityNotFoundException {
 
         Estrutura estrutura = em.find(Estrutura.class, id);
@@ -88,18 +83,41 @@ public class EstruturaBean {
         return (List<Estrutura>) em.createNamedQuery("getAllEstruturas").getResultList();
     }
 
-    public void addProduto(int idEstrutura, int idProduto) throws MyEntityNotFoundException {
+    public void addVariante(int idEstrutura, int idVariante) throws MyEntityNotFoundException {
         Estrutura estrutura = findEstrutura(idEstrutura);
-        Produto produto = produtoBean.findProduto(idProduto);
+        Variante variante = em.find(Variante.class, idVariante);
 
-        estrutura.addProduto(produto);
+        if(variante == null){
+            throw new MyEntityNotFoundException();
+        }
+
+        estrutura.addVariante(variante);
     }
 
-    public void removeProduto(int idEstrutura, int idProduto) throws MyEntityNotFoundException {
+    public void removeVariante(int idEstrutura, int idVariante) throws MyEntityNotFoundException {
         Estrutura estrutura = findEstrutura(idEstrutura);
-        Produto produto = produtoBean.findProduto(idProduto);
+        Variante variante = em.find(Variante.class, idVariante);
 
-        estrutura.removeProduto(produto);
+        if(variante == null){
+            throw new MyEntityNotFoundException();
+        }
+
+        estrutura.removeVariante(variante);
     }
+
+    public void addMaterial(int idEstrutura, Material material) throws MyEntityNotFoundException {
+        Estrutura estrutura = findEstrutura(idEstrutura);
+
+
+        estrutura.addMaterial(material);
+    }
+
+    public void removeMaterial(int idEstrutura, Material material) throws MyEntityNotFoundException {
+        Estrutura estrutura = findEstrutura(idEstrutura);
+
+
+        estrutura.removeMaterial(material);
+    }
+
 
 }

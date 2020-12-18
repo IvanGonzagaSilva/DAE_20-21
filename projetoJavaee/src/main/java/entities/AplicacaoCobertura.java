@@ -24,8 +24,8 @@ public class AplicacaoCobertura extends Aplicacao {
 
     }
 
-    public AplicacaoCobertura(int id, int angulo, int cargaPermanente, int sobrecarga, int neve, int ventoPressao, int ventoSucao) {
-        super(id, cargaPermanente, ventoPressao, ventoSucao, "Cobertura");
+    public AplicacaoCobertura(int angulo, int cargaPermanente, int sobrecarga, int neve, int ventoPressao, int ventoSucao) {
+        super(cargaPermanente, ventoPressao, ventoSucao, "Cobertura");
         this.angulo = angulo;
         this.sobrecarga = sobrecarga;
         this.neve = neve;

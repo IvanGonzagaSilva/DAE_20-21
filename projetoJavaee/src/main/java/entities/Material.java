@@ -1,9 +1,6 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -24,7 +21,6 @@ public class Material implements Serializable {
 
     public Material() {
     }
-
 
     public Material(TipoDeMaterial tipoDeMaterial) {
         this.tipoDeMaterial = tipoDeMaterial;

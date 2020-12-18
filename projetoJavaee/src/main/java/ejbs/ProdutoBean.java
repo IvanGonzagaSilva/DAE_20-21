@@ -21,10 +21,10 @@ public class ProdutoBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(int id, String nome)
-            throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
+    public void create(String nome) throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
         try {
-            produto = new Produto(nome);
+
+            Produto produto = new Produto(nome);
             em.persist(produto);
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);

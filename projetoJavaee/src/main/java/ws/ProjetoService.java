@@ -56,10 +56,124 @@ public class ProjetoService {
         return materiais.stream().map(this::materialToDTO).collect(Collectors.toSet());
     }
 
+    private AplicacaoDTO aplicacaoCoberturaToDTO(AplicacaoCobertura aplicacao) {
+        return new AplicacaoDTO(
+                aplicacao.getId(),
+                aplicacao.getCargaPermanente(),
+                aplicacao.getVentoPressao(),
+                aplicacao.getVentoSucao(),
+                aplicacao.getAngulo(),
+                aplicacao.getSobrecarga(),
+                -1,
+                aplicacao.getNeve(),
+                aplicacao.getTipo()
+        );
+    }
+
+    private AplicacaoDTO aplicacaoToDTO(Aplicacao aplicacao) {
+        return new AplicacaoDTO(
+                aplicacao.getId(),
+                aplicacao.getCargaPermanente(),
+                aplicacao.getVentoPressao(),
+                aplicacao.getVentoSucao(),
+                -1,
+                -1,
+                -1,
+                -1,
+                aplicacao.getTipo()
+
+        );
+    }
+
+    private AplicacaoDTO aplicacaoGeralToDTO(AplicacaoGeral aplicacao) {
+        return new AplicacaoDTO(
+                aplicacao.getId(),
+                aplicacao.getCargaPermanente(),
+                aplicacao.getVentoPressao(),
+                aplicacao.getVentoSucao(),
+                aplicacao.getAngulo(),
+                aplicacao.getSobrecarga(),
+                aplicacao.getCategoriaSobrecarga(),
+                aplicacao.getNeve(),
+                aplicacao.getTipo()
+        );
+    }
+
+    private ParametrosCalculoDTO parametrosCalculoToDTO(ParametrosCalculo parametrosCalculo) {
+        return new ParametrosCalculoDTO(
+                parametrosCalculo.getId(),
+                parametrosCalculo.isContraventamentoTotal(),
+                parametrosCalculo.getNumeroContraventamentosLaterais(),
+                parametrosCalculo.isContribuicaoChapaRevestimento(),
+                parametrosCalculo.getNumeroFixacoes(),
+                parametrosCalculo.getInerciaChapaRevestimento(),
+                parametrosCalculo.getVerificacaoDeformacao(),
+                parametrosCalculo.getLimiteDeformacao()
+        );
+    }
+
+    private VarianteDTO varianteToDTO(Variante variante) {
+        return new VarianteDTO(
+                variante.getCodigo(),
+                variante.getNome(),
+                variante.getWeff_p(),
+                variante.getWeff_n(),
+                variante.getAr(),
+                variante.getSigmaC(),
+                variante.getPp(),
+                variante.getProduto().getNome()
+        );
+    }
+
+
+
+    private List<VarianteDTO> variantesToDTOs(List<Variante> variantes){
+        return variantes.stream().map(this::varianteToDTO).collect(Collectors.toList());
+    }
+
     private EstruturaDTO estruturaToDTO(Estrutura estrutura){
+        AplicacaoDTO aplicacao = null;
+
+        switch (estrutura.getAplicacao().getTipo()) {
+            case "Geral": aplicacao = aplicacaoGeralToDTO((AplicacaoGeral) estrutura.getAplicacao());
+                break;
+            case "Cobertura": aplicacao = aplicacaoCoberturaToDTO((AplicacaoCobertura)estrutura.getAplicacao());
+                break;
+            case "Fachada":aplicacao = aplicacaoToDTO((AplicacaoFachada)estrutura.getAplicacao());
+                break;
+            default: //TODO throw new....
+        }
+
+
         return new EstruturaDTO(
                 estrutura.getId(),
-                materiaisToDTOs(estrutura.getMateriais())
+                estrutura.getNome(),
+                geometriaToDTO(estrutura.getGeometria()),
+                aplicacao,
+                parametrosCalculoToDTO(estrutura.getParametrosCalculo()),
+                materiaisToDTOs(estrutura.getMateriais()),
+                variantesToDTOs(estrutura.getVariantes())
+
+        );
+    }
+
+    private GeometriaDTO geometriaToDTO(Geometria geometria) {
+        return new GeometriaDTO(
+                geometria.getId(),
+                geometria.getNumeroVaos(),
+                geometria.getComprimentoVao(),
+                geometria.getEspacamentoVigas(),
+                familiaToDTOs(geometria.getFamilias())
+        );
+    }
+
+    private List<FamiliaDTO> familiaToDTOs(List<Familia> familias) {
+        return familias.stream().map(this::familiaToDTO).collect(Collectors.toList());
+    }
+
+    private FamiliaDTO familiaToDTO(Familia familia) {
+        return new FamiliaDTO(
+                familia.getNome()
         );
     }
 

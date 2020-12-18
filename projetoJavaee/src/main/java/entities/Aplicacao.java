@@ -15,6 +15,7 @@ import java.io.Serializable;
 public class Aplicacao implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String tipo;
@@ -29,8 +30,7 @@ public class Aplicacao implements Serializable {
 
     }
 
-    public Aplicacao(int id, int cargaPermanente, int ventoPressao, int ventoSucao, String tipo) {
-        this.id = id;
+    public Aplicacao(int cargaPermanente, int ventoPressao, int ventoSucao, String tipo) {
         this.cargaPermanente = cargaPermanente;
         this.ventoPressao = ventoPressao;
         this.ventoSucao = ventoSucao;

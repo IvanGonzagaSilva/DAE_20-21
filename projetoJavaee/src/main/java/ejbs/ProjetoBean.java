@@ -103,7 +103,7 @@ public class ProjetoBean {
             throw new MyEntityNotFoundException();
         }
 
-        Estrutura estrutura = estruturaBean.find(estruturaDTO.getId());
+        Estrutura estrutura = estruturaBean.findEstrutura(estruturaDTO.getId());
 
         if(estrutura == null){
             throw new MyEntityNotFoundException();
@@ -126,7 +126,7 @@ public class ProjetoBean {
             throw new MyEntityNotFoundException();
         }
 
-        Estrutura estrutura = estruturaBean.find(estruturaDTO.getId());
+        Estrutura estrutura = estruturaBean.findEstrutura(estruturaDTO.getId());
 
         if(estrutura == null){
             throw new MyEntityNotFoundException();

@@ -20,17 +20,14 @@ public class GeometriaBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(int id, int numeroVaos, int comprimentoVao, int espacamentoVigas)
+    public Geometria create(int numeroVaos, int comprimentoVao, int espacamentoVigas)
             throws MyEntityExistsException, MyConstraintViolationException {
 
-        Geometria geometria = em.find(Geometria.class, id);
-
-        if (geometria != null)
-            throw new MyEntityExistsException("Geometria with id: " + id + " already exists");
 
         try {
-            geometria = new Geometria(id, numeroVaos, comprimentoVao, espacamentoVigas);
+            Geometria geometria = new Geometria(numeroVaos, comprimentoVao, espacamentoVigas);
             em.persist(geometria);
+            return geometria;
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
@@ -63,11 +60,11 @@ public class GeometriaBean {
         return geometria;
     }
 
-    public void addFamiliaToGeometria(int idGeometria, int idFamilia)
+    public void addFamiliaToGeometria(int idGeometria, String nomeFamilia)
             throws MyEntityNotFoundException {
 
         Geometria geometria = em.find(Geometria.class, idGeometria);
-        Familia familia = em.find(Familia.class, idFamilia);
+        Familia familia = em.find(Familia.class, nomeFamilia);
 
         if (geometria == null || familia == null)
             throw new MyEntityNotFoundException("Geometria or Familia not found.");

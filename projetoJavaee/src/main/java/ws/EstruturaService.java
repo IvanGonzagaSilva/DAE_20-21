@@ -12,6 +12,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Path("/estrutura") // relative url web path for this service
@@ -44,9 +45,14 @@ public class EstruturaService {
                 geometriaToDTO(estrutura.getGeometria()),
                 aplicacao,
                 parametrosCalculoToDTO(estrutura.getParametrosCalculo()),
-                materialToDTO(estrutura.getMaterial()),
-                produtosToDTOs(estrutura.getProdutos())
+                materiaisToDTOs(estrutura.getMateriais()),
+                variantesToDTOs(estrutura.getVariantes())
+
         );
+    }
+
+    private Set<MaterialDTO> materiaisToDTOs(Set<Material> materiais) {
+        return materiais.stream().map(this::materialToDTO).collect(Collectors.toSet());
     }
 
     private AplicacaoDTO aplicacaoCoberturaToDTO(AplicacaoCobertura aplicacao) {
@@ -80,7 +86,6 @@ public class EstruturaService {
 
     private FamiliaDTO familiaToDTO(Familia familia) {
         return new FamiliaDTO(
-                familia.getId(),
                 familia.getNome()
         );
     }
@@ -130,8 +135,7 @@ public class EstruturaService {
 
     private MaterialDTO materialToDTO(Material material) {
         return new MaterialDTO(
-                material.getId(),
-                material.getNome()
+                material.getTipoDeMaterial()
         );
     }
 
@@ -141,9 +145,28 @@ public class EstruturaService {
 
     private ProdutoDTO produtoToDTO(Produto produto) {
         return new ProdutoDTO(
-                produto.getId(),
-                produto.getNome()
+                produto.getNome(),
+                variantesToDTOs(produto.getVariantes())
         );
+    }
+
+    private VarianteDTO varianteToDTO(Variante variante) {
+        return new VarianteDTO(
+                variante.getCodigo(),
+                variante.getNome(),
+                variante.getWeff_p(),
+                variante.getWeff_n(),
+                variante.getAr(),
+                variante.getSigmaC(),
+                variante.getPp(),
+                variante.getProduto().getNome()
+        );
+    }
+
+
+
+    private List<VarianteDTO> variantesToDTOs(List<Variante> variantes){
+        return variantes.stream().map(this::varianteToDTO).collect(Collectors.toList());
     }
 
     private List<EstruturaDTO> estruturaToDTOs(List<Estrutura> estruturas) {

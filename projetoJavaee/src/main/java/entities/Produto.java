@@ -8,15 +8,12 @@ import java.util.List;
 @NamedQueries({
     @NamedQuery(
         name = "getAllProdutos",
-        query = "SELECT p FROM Produto p ORDER BY p.id" // JPQL
+        query = "SELECT p FROM Produto p ORDER BY p.nome" // JPQL
     )
 })
 
 @Entity
 public class Produto implements Serializable {
-
-    @ManyToMany(mappedBy = "produtos")
-    private List<Estrutura> estruturas;
 
     @Id
     private String nome;
@@ -29,8 +26,8 @@ public class Produto implements Serializable {
     }
 
     public Produto(String nome) {
+        this();
         this.nome = nome;
-        variantes = new LinkedList<>();
     }
 
     public String getNome() {

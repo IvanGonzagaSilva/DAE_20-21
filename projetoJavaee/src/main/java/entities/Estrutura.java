@@ -2,8 +2,10 @@ package entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 @NamedQueries({
         @NamedQuery(
@@ -33,22 +35,22 @@ public class Estrutura implements Serializable {
     private Set<Material> materiais;
 
     @ManyToMany
-    @JoinTable(name = "ESTRUTURAS_PRODUTOS",
+    @JoinTable(name = "ESTRUTURAS_VARIANTES",
             joinColumns = @JoinColumn(name = "ESTRUTURA_ID", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "PRODUTO_ID", referencedColumnName = "ID"))
-    private List<Produto> produtos; //Produtos resultantes da simulação
+            inverseJoinColumns = @JoinColumn(name = "VARIANTE_ID", referencedColumnName = "CODIGO"))
+    private List<Variante> variantes; //Produtos resultantes da simulação
 
     public Estrutura() {
-        this.produtos = new LinkedList<Produto>();
+        this.variantes = new LinkedList<Variante>();
+        this.materiais = new LinkedHashSet<>();
     }
 
-    public Estrutura(String nome, Geometria geometria, Aplicacao aplicacao, ParametrosCalculo parametrosCalculo, Material material) {
+    public Estrutura(String nome, Geometria geometria, Aplicacao aplicacao, ParametrosCalculo parametrosCalculo) {
+        this();
         this.nome = nome;
         this.geometria = geometria;
         this.aplicacao = aplicacao;
         this.parametrosCalculo = parametrosCalculo;
-        this.material = material;
-        this.produtos = new LinkedList<Produto>();
     }
 
     public int getId() {
@@ -75,14 +77,6 @@ public class Estrutura implements Serializable {
         this.geometria = geometria;
     }
 
-    public Material getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(Material material) {
-        this.material = material;
-    }
-
     public Aplicacao getAplicacao() {
         return aplicacao;
     }
@@ -99,21 +93,43 @@ public class Estrutura implements Serializable {
         this.parametrosCalculo = parametrosCalculo;
     }
 
-    public List<Produto> getProdutos() {
-        return produtos;
+    public Set<Material> getMateriais() {
+        return materiais;
     }
 
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
+    public void setMateriais(Set<Material> materiais) {
+        this.materiais = materiais;
     }
 
-    public void addProduto(Produto produto) {
-        if (!this.produtos.contains(produto)) {
-            produtos.add(produto);
+    public List<Variante> getVariantes() {
+        return variantes;
+    }
+
+    public void setVariantes(List<Variante> variantes) {
+        this.variantes = variantes;
+    }
+
+    public void addMaterial(Material material){
+        this.materiais.add(material);
+    }
+
+    public void removeMaterial(Material material){
+        this.materiais.remove(material);
+    }
+
+    public void addVariante(Variante variante){
+        if(!this.variantes.contains(variante)){
+            this.variantes.add(variante);
         }
     }
 
-    public void removeProduto(Produto produto) {
-        produtos.remove(produto);
+    public void removeVariante(Variante variante){
+        if(this.variantes.contains(variante)){
+            this.variantes.remove(variante);
+        }
     }
+
+
+
+
 }

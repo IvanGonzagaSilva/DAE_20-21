@@ -48,17 +48,19 @@ public class ConfigBean {
     @EJB
     EstruturaBean estruturaBean;
 
+
+    private static final Logger logger = Logger.getLogger("ejbs.ConfigBean");
+
+
     @PostConstruct
     public void populateDB()
             throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
 
         System.out.println("Starting project...");
 
-    private static final Logger logger = Logger.getLogger("ejbs.ConfigBean");
 
-    @PostConstruct
-    public void populateDB(){
-        try {
+
+    try {
             System.out.println("Starting project...");
 
             //fazer os materiais
@@ -72,14 +74,9 @@ public class ConfigBean {
             clienteBean.create("cliente", "pc1", "rua xpto", "clientex@mail.com");
             Projeto projeto1 = projetoBean.create("projeto1", "projetista1");
             projetoBean.enrollCliente(projeto1.getId(), "clientex@mail.com");
-            Estrutura estrutura1 = estruturaBean.create();
-            estrutura1.addMaterial(material_chapa);
-            estrutura1.addMaterial(material_laje);
-
-            projeto1.addEstruturas(estrutura1);
             //fazer bean para estruturas e adicionar estrutura ao projeto.
 
-            //CODIGO DO PROFESSOR
+//            CODIGO DO PROFESSOR
             System.out.println("####### A criar produtos...");
             produtoBean.create("Section C 220 BF");
             produtoBean.create("Section Z 220 BF");
@@ -140,35 +137,33 @@ public class ConfigBean {
 
         System.out.println("enrolling projetos nos projetistas...");
         //Enroll projeto no projetista
-        projetistaBean.enrollInProject("joaofrf", 1);
-        projetistaBean.enrollInProject("joaofrf", 2);
+        projetistaBean.create("joaofrf", "joaofrf@mail.com", "joaofrf","914123123", "123321abc");
+
 
         /*---------------------------------------------------------------------*/
 
         System.out.println("creating familias...");
         //Familias
-        familiaBean.create(1, "Todas");
-        familiaBean.create(2, "O");
-        familiaBean.create(3, "C");
-        familiaBean.create(4, "Z");
+        Familia fam1 = familiaBean.create("Todas");
+        Familia fam2 = familiaBean.create("O");
+        familiaBean.create("C");
+        familiaBean.create("Z");
 
         System.out.println("creating geometrias...");
         //Geometrias
-        geometriaBean.create(1, 2, 3, 4);
-        geometriaBean.create(2, 3, 4, 6);
-        geometriaBean.create(3, 9, 6, 3);
-        geometriaBean.create(4, 4, 4, 4);
+        Geometria geometria = geometriaBean.create(2, 3, 4);
+        Geometria geometria1 = geometriaBean.create(3, 4, 6);
+        geometriaBean.create( 9, 6, 3);
+        geometriaBean.create( 4, 4, 4);
 
-        geometriaBean.addFamiliaToGeometria(1, 1);
-        geometriaBean.addFamiliaToGeometria(2, 2);
-        geometriaBean.addFamiliaToGeometria(3, 3);
-        geometriaBean.addFamiliaToGeometria(4, 4);
+        geometriaBean.addFamiliaToGeometria(geometria.getId(), fam1.getNome());
+        geometriaBean.addFamiliaToGeometria(geometria1.getId(), fam2.getNome());
 
         System.out.println("creating aplicações...");
         //Aplicações
-        aplicacaoFachadaBean.create(1, 1, 1, 1);
-        aplicacaoCoberturaBean.create(2, 2, 2, 2, 2, 2, 2);
-        aplicacaoGeralBean.create(3, 3, 3, 3, 3, 3, 3, 3);
+        aplicacaoFachadaBean.create( 1, 1, 1);
+        aplicacaoCoberturaBean.create(2, 2, 2, 2, 2, 2);
+        aplicacaoGeralBean.create(3, 3, 3, 3, 3, 3, 3);
 
         System.out.println("creating parametros de calculo...");
         //Parametros de calculo
@@ -176,33 +171,39 @@ public class ConfigBean {
         parametrosCalculoBean.create(2, false, 23, false, "Quase permanente", 400);
         parametrosCalculoBean.create(3, false, 12, true, 3, 4, "Caracteristica", 400);
 
-        System.out.println("creating materiais...");
-        //Materiais
-        materialBean.create(1, "Perfil");
-        materialBean.create(2, "Chapa");
-        materialBean.create(3, "Laje");
-        materialBean.create(4, "Painel");
-
-        System.out.println("creating produtos...");
-        //Produtos
-        produtoBean.create(1, "a");
-        produtoBean.create(2, "O");
-        produtoBean.create(3, "C");
-        produtoBean.create(4, "Z");
-
-        System.out.println("creating estruturas...");
-        //Estruturas
-        estruturaBean.create(1, "cobertura", 1, 1, 1, 1);
-        estruturaBean.create(2, "fachada", 2, 2, 2, 2);
-        estruturaBean.create(3, "geral", 3, 3, 3, 3);
-
-            //CODIGO DO PROFESSOR.
-        
-
-        System.out.println("associating estruturas and produtos...");
-        estruturaBean.addProduto(1, 1);
-        estruturaBean.addProduto(2, 2);
-        estruturaBean.addProduto(3, 3);
+//        System.out.println("creating materiais...");
+////        //Materiais
+////        materialBean.create(1, "Perfil");
+////        materialBean.create(2, "Chapa");
+////        materialBean.create(3, "Laje");
+////        materialBean.create(4, "Painel");
+//
+//        System.out.println("creating produtos...");
+//        //Produtos
+//        produtoBean.create("a");
+//        produtoBean.create("O");
+//        produtoBean.create("C");
+//        produtoBean.create("Z");
+//
+//        System.out.println("creating estruturas...");
+//        //Estruturas
+//        estruturaBean.create( "cobertura", 1, 1, 1);
+//        estruturaBean.create( "fachada", 2, 2, 2);
+//        estruturaBean.create( "geral", 3, 3, 3);
+//
+//            //CODIGO DO PROFESSOR.
+//
+//
+//        System.out.println("associating estruturas and produtos...");
+//        estruturaBean.addVariante(1, 1);
+//        estruturaBean.addVariante(2, 2);
+//        estruturaBean.addVariante(3, 1);
+//
+//
+//
+//        estruturaBean.addMaterial(1,material_laje);
+//
+//        projeto1.addEstruturas(estruturaBean.findEstrutura(1));
 
         }
         catch (Exception e){

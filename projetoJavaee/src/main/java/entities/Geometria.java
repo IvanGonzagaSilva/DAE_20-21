@@ -16,6 +16,7 @@ import java.util.List;
 public class Geometria implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private int numeroVaos;
@@ -25,15 +26,14 @@ public class Geometria implements Serializable {
     @ManyToMany
     @JoinTable(name = "GEOMETRIAS_FAMILIAS",
             joinColumns = @JoinColumn(name = "GEOMETRIA_ID", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "FAMILIA_ID", referencedColumnName = "ID"))
+            inverseJoinColumns = @JoinColumn(name = "FAMILIA_NAME", referencedColumnName = "NOME"))
     private List<Familia> familias;
 
     public Geometria() {
         this.familias = new LinkedList<Familia>();
     }
 
-    public Geometria(int id, int numeroVaos, int comprimentoVao, int espacamentoVigas) {
-        this.id = id;
+    public Geometria(int numeroVaos, int comprimentoVao, int espacamentoVigas) {
         this.numeroVaos = numeroVaos;
         this.comprimentoVao = comprimentoVao;
         this.espacamentoVigas = espacamentoVigas;

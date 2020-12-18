@@ -3,8 +3,10 @@ package dtos;
 import entities.*;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class EstruturaDTO implements Serializable {
     private int id;
@@ -12,21 +14,22 @@ public class EstruturaDTO implements Serializable {
     private GeometriaDTO geometria;
     private AplicacaoDTO aplicacao;
     private ParametrosCalculoDTO parametrosCalculo;
-    private MaterialDTO material;
-    private List<ProdutoDTO> produtos;
+    private Set<MaterialDTO> materiais;
+    private List<VarianteDTO> variantes;
 
     public EstruturaDTO() {
-        this.produtos = new LinkedList<ProdutoDTO>();
+        this.variantes = new LinkedList<VarianteDTO>();
+        this.materiais = new LinkedHashSet<>();
     }
 
-    public EstruturaDTO(int id, String nome, GeometriaDTO geometria, AplicacaoDTO aplicacao, ParametrosCalculoDTO parametrosCalculo, MaterialDTO material, List<ProdutoDTO> produtos) {
+    public EstruturaDTO(int id, String nome, GeometriaDTO geometria, AplicacaoDTO aplicacao, ParametrosCalculoDTO parametrosCalculo, Set<MaterialDTO> materiais, List<VarianteDTO> variantes) {
         this.id = id;
         this.nome = nome;
         this.geometria = geometria;
         this.aplicacao = aplicacao;
         this.parametrosCalculo = parametrosCalculo;
-        this.material = material;
-        this.produtos = produtos;
+        this.materiais = materiais;
+        this.variantes = variantes;
     }
 
     public int getId() {
@@ -69,20 +72,19 @@ public class EstruturaDTO implements Serializable {
         this.parametrosCalculo = parametrosCalculo;
     }
 
-    public MaterialDTO getMaterial() {
-        return material;
+    public Set<MaterialDTO> getMateriais() {
+        return materiais;
     }
 
-    public void setMaterial(MaterialDTO material) {
-        this.material = material;
+    public void setMateriais(Set<MaterialDTO> materiais) {
+        this.materiais = materiais;
     }
 
-    public List<ProdutoDTO> getProdutos() {
-        return produtos;
+    public List<VarianteDTO> getVariantes() {
+        return variantes;
     }
 
-    public void setProdutos(List<ProdutoDTO> produtos) {
-        this.produtos = produtos;
+    public void setVariantes(List<VarianteDTO> variantes) {
+        this.variantes = variantes;
     }
-
 }

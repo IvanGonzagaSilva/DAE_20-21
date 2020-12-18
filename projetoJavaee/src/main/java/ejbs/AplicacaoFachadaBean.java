@@ -19,16 +19,13 @@ public class AplicacaoFachadaBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(int id, int cargaPermanente, int ventoPressao, int ventoSucao)
+    public void create(int cargaPermanente, int ventoPressao, int ventoSucao)
             throws MyEntityExistsException, MyConstraintViolationException {
 
-        AplicacaoFachada aplicacaoFachada = em.find(AplicacaoFachada.class, id);
-
-        if (aplicacaoFachada != null)
-            throw new MyEntityExistsException("Aplicação fachada with id: " + id + " already exists");
 
         try {
-            aplicacaoFachada = new AplicacaoFachada(id, cargaPermanente, ventoPressao, ventoSucao);
+            AplicacaoFachada aplicacaoFachada = new AplicacaoFachada(cargaPermanente, ventoPressao, ventoSucao);
+
             em.persist(aplicacaoFachada);
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);

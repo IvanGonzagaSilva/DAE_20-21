@@ -2,9 +2,11 @@ package ws;
 
 import dtos.MaterialDTO;
 import dtos.ProdutoDTO;
+import dtos.VarianteDTO;
 import ejbs.ProdutoBean;
 import entities.Material;
 import entities.Produto;
+import entities.Variante;
 
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -26,9 +28,28 @@ public class ProdutoService {
 
     private ProdutoDTO toDTO(Produto produto) {
         return new ProdutoDTO(
-                produto.getId(),
-                produto.getNome()
+                produto.getNome(),
+                variantesToDTOs(produto.getVariantes())
         );
+    }
+
+    private VarianteDTO varianteToDTO(Variante variante) {
+        return new VarianteDTO(
+                variante.getCodigo(),
+                variante.getNome(),
+                variante.getWeff_p(),
+                variante.getWeff_n(),
+                variante.getAr(),
+                variante.getSigmaC(),
+                variante.getPp(),
+                variante.getProduto().getNome()
+        );
+    }
+
+
+
+    private List<VarianteDTO> variantesToDTOs(List<Variante> variantes){
+        return variantes.stream().map(this::varianteToDTO).collect(Collectors.toList());
     }
 
     private List<ProdutoDTO> produtoToDTOs(List<Produto> produtos) {

@@ -42,7 +42,6 @@ public class Cliente implements Serializable {
         this.email = email;
     }
 
-
     public String getNome() {
         return nome;
     }

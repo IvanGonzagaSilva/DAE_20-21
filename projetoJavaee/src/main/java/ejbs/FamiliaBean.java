@@ -18,17 +18,18 @@ public class FamiliaBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(int id, String nome)
+    public Familia create(String nome)
             throws MyEntityExistsException, MyConstraintViolationException {
 
-        Familia familia = em.find(Familia.class, id);
+        Familia familia = em.find(Familia.class, nome);
 
         if (familia != null)
-            throw new MyEntityExistsException("Familia with id: " + id + " already exists");
+            throw new MyEntityExistsException("Familia with nome: " + nome + " already exists");
 
         try {
-            familia = new Familia(id, nome);
+            familia = new Familia(nome);
             em.persist(familia);
+            return familia;
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }

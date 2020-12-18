@@ -17,7 +17,7 @@ public class AplicacaoFachada extends Aplicacao {
     public AplicacaoFachada() {
     }
 
-    public AplicacaoFachada(int id, int cargaPermanente, int ventoPressao, int ventoSucao) {
-        super(id, cargaPermanente, ventoPressao, ventoSucao, "Fachada");
+    public AplicacaoFachada(int cargaPermanente, int ventoPressao, int ventoSucao) {
+        super(cargaPermanente, ventoPressao, ventoSucao, "Fachada");
     }
 }
