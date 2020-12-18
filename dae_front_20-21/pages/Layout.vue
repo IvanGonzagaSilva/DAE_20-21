@@ -3,7 +3,7 @@
         <v-col cols="6" class="mx-auto">
 
             <v-card flat>
-                
+
             <v-card-title class="headline">
 
                 <search-bar class="mx-0" v-bind:componentId="componentId" v-bind:materialsArray="materialsArray" v-on:create-project="swapComponents"/>
@@ -21,7 +21,7 @@
                 </v-row>
 
                 <v-row v-show="componentId === 1">
-                    
+
                     <span v-for="(project, index) in projectsArray" :key="index" class="mx-3 my-2">
 
                         <project-card v-on:view-more-details="viewMoreDetails" v-bind:project="project"/>
@@ -49,7 +49,7 @@
             </v-card>
 
         </v-col>
-        
+
     </v-row>
 </template>
 
@@ -82,15 +82,15 @@ export default {
     methods: {
         getMaterials: async function ()
         {
-            await this.$axios.get('projetodae/api/materiais/').then(response => {
+            await this.$axios.get('materiais/').then(response => {
                     if (response.data)
                         response.data.forEach(resp => this.materialsArray.push(resp.tipoDeMaterial));
-                } 
+                }
             ).catch(error => console.log(error.message));
         },
         getProjects: async function ()
         {
-            await this.$axios.get('projetodae/api/projeto').then(response => this.projectsArray = response.data).catch(error => console.log(error.message));
+            await this.$axios.get('projeto').then(response => this.projectsArray = response.data).catch(error => console.log(error.message));
         },
         swapComponents: function (value)
         {

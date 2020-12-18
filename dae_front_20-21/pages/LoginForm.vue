@@ -64,7 +64,7 @@ export default {
             "X-CSRFToken": "example-of-custom-header",
             };
 
-            await this.$axios.post('projetodae/api/login/token', {'username': this.username, 'password': this.password}).then(/* this.$router.push('/project') */ response =>  console.log(response)).catch(error => console.log(error.message));
+            await this.$axios.post('login/token', {'username': this.username, 'password': this.password}).then(/* this.$router.push('/project') */ response =>  console.log(response)).catch(error => console.log(error.message));
             /*
             Store token locally
             localStorage.setItem('token', token);

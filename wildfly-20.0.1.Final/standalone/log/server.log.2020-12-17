@@ -1,0 +1,1358 @@
+2020-12-17 18:19:54,615 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2020-12-17 18:19:56,230 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
+2020-12-17 18:19:56,235 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2020-12-17 18:19:56,337 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) starting
+2020-12-17 18:19:56,338 DEBUG [org.jboss.as.config] (MSC service thread 1-1) Configured system properties:
+	file.encoding = Cp1252
+	file.separator = \
+	java.class.path = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar
+	java.class.version = 59.0
+	java.home = C:\Users\ruben\.jdks\openjdk-15.0.1
+	java.io.tmpdir = C:\Users\ruben\AppData\Local\Temp\
+	java.library.path = C:\Users\ruben\.jdks\openjdk-15.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\AdoptOpenJDK\jdk-11.0.8.10-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\ruben\AppData\Local\Microsoft\WindowsApps;C:\Users\ruben\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ruben\AppData\Roaming\npm;C:\Program Files\Java\jdk1.7.0_72\bin;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 15.0.1+9-18
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 15
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = https://java.oracle.com/
+	java.vendor.url.bug = https://bugreport.java.com/bugreport/
+	java.version = 15.0.1
+	java.version.date = 2020-10-20
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 15
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 15.0.1+9-18
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final
+	jboss.host.name = lenovoy540
+	jboss.modules.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = lenovoy540
+	jboss.qualified.host.name = lenovoy540
+	jboss.server.base.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone
+	jboss.server.config.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration
+	jboss.server.data.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\data
+	jboss.server.deploy.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\data\content
+	jboss.server.log.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\log
+	jboss.server.name = lenovoy540
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties
+	module.path = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\modules
+	org.jboss.boot.log.file = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Windows 10
+	os.version = 10.0
+	path.separator = ;
+	program.name = standalone.bat
+	sun.arch.data.model = 64
+	sun.boot.library.path = C:\Users\ruben\.jdks\openjdk-15.0.1\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar -mp C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\modules org.jboss.as.standalone -Djboss.home.dir=C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	user.country = PT
+	user.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\bin
+	user.home = C:\Users\ruben
+	user.language = pt
+	user.name = ruben
+	user.script = 
+	user.timezone = Europe/Lisbon
+	user.variant = 
+2020-12-17 18:19:56,339 DEBUG [org.jboss.as.config] (MSC service thread 1-1) VM Arguments: -Dprogram.name=standalone.bat -Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED -Dorg.jboss.boot.log.file=C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log -Dlogging.configuration=file:C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties 
+2020-12-17 18:19:57,223 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 1.12.1.Final
+2020-12-17 18:19:59,156 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-12-17 18:19:59,178 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 12) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-12-17 18:19:59,260 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2020-12-17 18:19:59,273 INFO  [org.xnio] (MSC service thread 1-3) XNIO version 3.8.1.Final
+2020-12-17 18:19:59,279 INFO  [org.xnio.nio] (MSC service thread 1-3) XNIO NIO Implementation Version 3.8.1.Final
+2020-12-17 18:19:59,334 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0001: Activating Infinispan subsystem.
+2020-12-17 18:19:59,347 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 59) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2020-12-17 18:19:59,348 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2020-12-17 18:19:59,349 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2020-12-17 18:19:59,351 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 65) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2020-12-17 18:19:59,354 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2020-12-17 18:19:59,354 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 63) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+2020-12-17 18:19:59,358 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 61) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2020-12-17 18:19:59,359 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 66) WFLYNAM0001: Activating Naming Subsystem
+2020-12-17 18:19:59,365 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+2020-12-17 18:19:59,367 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 62) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2020-12-17 18:19:59,402 INFO  [org.jboss.as.connector] (MSC service thread 1-5) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.22.Final)
+2020-12-17 18:19:59,438 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 72) WFLYSEC0002: Activating Security Subsystem
+2020-12-17 18:19:59,442 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: Started Driver service with driver-name = h2
+2020-12-17 18:19:59,575 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0003: Undertow 2.1.3.Final starting
+2020-12-17 18:19:59,576 INFO  [org.jboss.as.security] (MSC service thread 1-2) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00005
+2020-12-17 18:19:59,589 INFO  [org.jboss.as.naming] (MSC service thread 1-5) WFLYNAM0003: Starting Naming Service
+2020-12-17 18:19:59,594 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-12-17 18:19:59,594 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2020-12-17 18:19:59,609 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path 'C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2020-12-17 18:19:59,646 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 54) WFLYRS0016: RESTEasy version 3.12.1.Final
+2020-12-17 18:20:00,069 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 53) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2020-12-17 18:20:00,073 INFO  [org.jboss.as.ejb3] (MSC service thread 1-6) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2020-12-17 18:20:00,073 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2020-12-17 18:20:00,103 INFO  [org.jboss.remoting] (MSC service thread 1-4) JBoss Remoting version 5.0.18.Final
+2020-12-17 18:20:00,114 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0012: Started server default-server.
+2020-12-17 18:20:00,116 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0018: Host default-host starting
+2020-12-17 18:20:00,148 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2020-12-17 18:20:00,201 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0493: EJB subsystem suspension complete
+2020-12-17 18:20:00,272 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0001: Bound data source [java:jboss/datasources/dae]
+2020-12-17 18:20:00,272 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0001: Bound data source [java:jboss/datasources/projetodae]
+2020-12-17 18:20:00,272 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2020-12-17 18:20:02,176 INFO  [org.jboss.as.patching] (MSC service thread 1-7) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2020-12-17 18:20:02,186 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-7) WFLYDM0111: Keystore C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration\application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2020-12-17 18:20:02,190 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) WFLYDS0013: Started FileSystemDeploymentService for directory C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\deployments
+2020-12-17 18:20:02,198 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "academics.war" (runtime-name: "academics.war")
+2020-12-17 18:20:02,203 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-8) MSC000001: Failed to start service jboss.deployment.unit."academics.war".STRUCTURE: org.jboss.msc.service.StartException in service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:189)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1739)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1701)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1559)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:95)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:182)
+	... 8 more
+Caused by: java.io.FileNotFoundException: C:\Users\joaok\IdeaProjects\AcademicManagement\target\academics.war (O sistema não conseguiu localizar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.spi.RootFileSystem.openInputStream(RootFileSystem.java:51)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VirtualFile.openStream(VirtualFile.java:318)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VFS.mountZipExpanded(VFS.java:533)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.mountDeploymentContent(DeploymentMountProvider.java:110)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:91)
+	... 9 more
+
+2020-12-17 18:20:02,270 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2020-12-17 18:20:02,903 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2020-12-17 18:20:03,000 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([("deployment" => "academics.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"academics.war\".STRUCTURE" => "WFLYSRV0153: Failed to process phase STRUCTURE of deployment \"academics.war\"
+    Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+    Caused by: java.io.FileNotFoundException: C:\\Users\\joaok\\IdeaProjects\\AcademicManagement\\target\\academics.war (O sistema não conseguiu localizar o caminho especificado)"}}
+2020-12-17 18:20:03,004 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "academics.war" (runtime-name : "academics.war")
+2020-12-17 18:20:03,005 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-12-17 18:20:03,035 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2020-12-17 18:20:03,037 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) started (with errors) in 11512ms - Started 332 of 599 services (1 services failed or missing dependencies, 372 services are lazy, passive or on-demand)
+2020-12-17 18:20:03,038 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2020-12-17 18:20:03,039 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2020-12-17 18:20:03,238 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "projetodae.war" (runtime-name: "projetodae.war")
+2020-12-17 18:20:04,832 INFO  [org.jboss.as.jpa] (MSC service thread 1-7) WFLYJPA0002: Read persistence.xml for NewPersistenceUnit
+2020-12-17 18:20:06,009 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 3) WFLYJPA0003: Starting Persistence Unit Service 'projetodae.war#NewPersistenceUnit'
+2020-12-17 18:20:06,216 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The access type for the persistent class [class entities.Pessoa] is set to [FIELD].
+2020-12-17 18:20:06,225 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The access type for the persistent class [class entities.Projetista] is set to [FIELD].
+2020-12-17 18:20:06,229 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target entity (reference) class for the one to many mapping element [field projetos] is being defaulted to: class entities.Projeto.
+2020-12-17 18:20:06,230 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The access type for the persistent class [class entities.Cliente] is set to [FIELD].
+2020-12-17 18:20:06,230 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target entity (reference) class for the one to one mapping element [field pc] is being defaulted to: class entities.PessoaDeContacto.
+2020-12-17 18:20:06,230 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target entity (reference) class for the one to many mapping element [field projetos] is being defaulted to: class entities.Projeto.
+2020-12-17 18:20:06,230 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The access type for the persistent class [class entities.Projeto] is set to [FIELD].
+2020-12-17 18:20:06,231 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target entity (reference) class for the many to one mapping element [field cliente] is being defaulted to: class entities.Cliente.
+2020-12-17 18:20:06,232 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target entity (reference) class for the one to many mapping element [field ficheiros] is being defaulted to: class entities.Ficheiro.
+2020-12-17 18:20:06,232 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target entity (reference) class for the one to many mapping element [field estruturas] is being defaulted to: class entities.Estrutura.
+2020-12-17 18:20:06,232 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The access type for the persistent class [class entities.Material] is set to [FIELD].
+2020-12-17 18:20:06,233 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The access type for the persistent class [class entities.Variante] is set to [FIELD].
+2020-12-17 18:20:06,234 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target entity (reference) class for the many to one mapping element [field produto] is being defaulted to: class entities.Produto.
+2020-12-17 18:20:06,234 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The access type for the persistent class [class entities.Ficheiro] is set to [FIELD].
+2020-12-17 18:20:06,234 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The access type for the persistent class [class entities.PessoaDeContacto] is set to [FIELD].
+2020-12-17 18:20:06,235 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The access type for the persistent class [class entities.Estrutura] is set to [FIELD].
+2020-12-17 18:20:06,235 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target entity (reference) class for the one to many mapping element [field materiais] is being defaulted to: class entities.Material.
+2020-12-17 18:20:06,235 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The access type for the persistent class [class entities.Produto] is set to [FIELD].
+2020-12-17 18:20:06,235 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target entity (reference) class for the one to many mapping element [field variantes] is being defaulted to: class entities.Variante.
+2020-12-17 18:20:06,236 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The alias name for the entity class [class entities.Projetista] is being defaulted to: Projetista.
+2020-12-17 18:20:06,236 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The alias name for the entity class [class entities.Pessoa] is being defaulted to: Pessoa.
+2020-12-17 18:20:06,242 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [password] is being defaulted to: PASSWORD.
+2020-12-17 18:20:06,242 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 18:20:06,242 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [contactoTelefonico] is being defaulted to: CONTACTOTELEFONICO.
+2020-12-17 18:20:06,242 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [email] is being defaulted to: EMAIL.
+2020-12-17 18:20:06,242 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [username] is being defaulted to: USERNAME.
+2020-12-17 18:20:06,243 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The discriminator column name for the root inheritance class [entities.Pessoa] is being defaulted to: DTYPE.
+2020-12-17 18:20:06,244 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The alias name for the entity class [class entities.Cliente] is being defaulted to: Cliente.
+2020-12-17 18:20:06,244 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The table name for entity [class entities.Cliente] is being defaulted to: CLIENTE.
+2020-12-17 18:20:06,244 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 18:20:06,244 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [email] is being defaulted to: EMAIL.
+2020-12-17 18:20:06,245 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [morada] is being defaulted to: MORADA.
+2020-12-17 18:20:06,245 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The alias name for the entity class [class entities.Projeto] is being defaulted to: Projeto.
+2020-12-17 18:20:06,245 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The table name for entity [class entities.Projeto] is being defaulted to: PROJETO.
+2020-12-17 18:20:06,245 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 18:20:06,245 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [id] is being defaulted to: ID.
+2020-12-17 18:20:06,245 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The alias name for the entity class [class entities.Material] is being defaulted to: Material.
+2020-12-17 18:20:06,245 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The table name for entity [class entities.Material] is being defaulted to: MATERIAL.
+2020-12-17 18:20:06,245 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [tipoDeMaterial] is being defaulted to: TIPODEMATERIAL.
+2020-12-17 18:20:06,247 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [id] is being defaulted to: ID.
+2020-12-17 18:20:06,247 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The alias name for the entity class [class entities.Variante] is being defaulted to: Variante.
+2020-12-17 18:20:06,248 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The table name for entity [class entities.Variante] is being defaulted to: VARIANTE.
+2020-12-17 18:20:06,248 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [weff_p] is being defaulted to: WEFF_P.
+2020-12-17 18:20:06,248 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [pp] is being defaulted to: PP.
+2020-12-17 18:20:06,248 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [ar] is being defaulted to: AR.
+2020-12-17 18:20:06,248 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [codigo] is being defaulted to: CODIGO.
+2020-12-17 18:20:06,248 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [weff_n] is being defaulted to: WEFF_N.
+2020-12-17 18:20:06,248 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [mcr_p] is being defaulted to: MCR_P.
+2020-12-17 18:20:06,251 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [mcr_n] is being defaulted to: MCR_N.
+2020-12-17 18:20:06,251 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 18:20:06,251 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [sigmaC] is being defaulted to: SIGMAC.
+2020-12-17 18:20:06,252 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The alias name for the entity class [class entities.Ficheiro] is being defaulted to: Ficheiro.
+2020-12-17 18:20:06,252 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The table name for entity [class entities.Ficheiro] is being defaulted to: FICHEIRO.
+2020-12-17 18:20:06,252 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [filename] is being defaulted to: FILENAME.
+2020-12-17 18:20:06,252 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [filepath] is being defaulted to: FILEPATH.
+2020-12-17 18:20:06,252 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [id] is being defaulted to: ID.
+2020-12-17 18:20:06,252 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The alias name for the entity class [class entities.PessoaDeContacto] is being defaulted to: PessoaDeContacto.
+2020-12-17 18:20:06,252 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The alias name for the entity class [class entities.Estrutura] is being defaulted to: Estrutura.
+2020-12-17 18:20:06,252 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The table name for entity [class entities.Estrutura] is being defaulted to: ESTRUTURA.
+2020-12-17 18:20:06,253 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [id] is being defaulted to: ID.
+2020-12-17 18:20:06,253 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The alias name for the entity class [class entities.Produto] is being defaulted to: Produto.
+2020-12-17 18:20:06,253 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The table name for entity [class entities.Produto] is being defaulted to: PRODUTO.
+2020-12-17 18:20:06,253 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 18:20:06,261 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The join table name for the many to many mapping [field projetos] is being defaulted to: PESSOAS_PROJETO.
+2020-12-17 18:20:06,261 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The source primary key column name for the many to many mapping [field projetos] is being defaulted to: USERNAME.
+2020-12-17 18:20:06,262 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The source foreign key column name for the many to many mapping [projetos] is being defaulted to: Projetista_USERNAME.
+2020-12-17 18:20:06,262 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target primary key column name for the many to many mapping [field projetos] is being defaulted to: ID.
+2020-12-17 18:20:06,262 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target foreign key column name for the many to many mapping [projetos] is being defaulted to: projetos_ID.
+2020-12-17 18:20:06,264 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The primary key column name for the mapping element [field pc] is being defaulted to: USERNAME.
+2020-12-17 18:20:06,264 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The foreign key column name for the mapping element [pc] is being defaulted to: PC_USERNAME.
+2020-12-17 18:20:06,265 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The primary key column name for the mapping element [field cliente] is being defaulted to: EMAIL.
+2020-12-17 18:20:06,265 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The foreign key column name for the mapping element [cliente] is being defaulted to: CLIENTE_EMAIL.
+2020-12-17 18:20:06,265 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The join table name for the many to many mapping [field ficheiros] is being defaulted to: PROJETO_FICHEIRO.
+2020-12-17 18:20:06,265 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The source primary key column name for the many to many mapping [field ficheiros] is being defaulted to: ID.
+2020-12-17 18:20:06,265 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The source foreign key column name for the many to many mapping [ficheiros] is being defaulted to: Projeto_ID.
+2020-12-17 18:20:06,265 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target primary key column name for the many to many mapping [field ficheiros] is being defaulted to: ID.
+2020-12-17 18:20:06,265 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target foreign key column name for the many to many mapping [ficheiros] is being defaulted to: ficheiros_ID.
+2020-12-17 18:20:06,266 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The join table name for the many to many mapping [field estruturas] is being defaulted to: PROJETO_ESTRUTURA.
+2020-12-17 18:20:06,266 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The source primary key column name for the many to many mapping [field estruturas] is being defaulted to: ID.
+2020-12-17 18:20:06,266 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The source foreign key column name for the many to many mapping [estruturas] is being defaulted to: Projeto_ID.
+2020-12-17 18:20:06,266 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target primary key column name for the many to many mapping [field estruturas] is being defaulted to: ID.
+2020-12-17 18:20:06,266 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target foreign key column name for the many to many mapping [estruturas] is being defaulted to: estruturas_ID.
+2020-12-17 18:20:06,266 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The primary key column name for the mapping element [field produto] is being defaulted to: NOME.
+2020-12-17 18:20:06,266 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The join table name for the many to many mapping [field materiais] is being defaulted to: ESTRUTURA_MATERIAL.
+2020-12-17 18:20:06,267 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The source primary key column name for the many to many mapping [field materiais] is being defaulted to: ID.
+2020-12-17 18:20:06,267 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The source foreign key column name for the many to many mapping [materiais] is being defaulted to: Estrutura_ID.
+2020-12-17 18:20:06,267 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target primary key column name for the many to many mapping [field materiais] is being defaulted to: ID.
+2020-12-17 18:20:06,267 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 3) The target foreign key column name for the many to many mapping [materiais] is being defaulted to: materiais_ID.
+2020-12-17 18:20:06,384 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 3) HV000001: Hibernate Validator 6.0.20.Final
+2020-12-17 18:20:06,481 INFO  [org.eclipse.persistence] (ServerService Thread Pool -- 3) EclipseLink, version: Eclipse Persistence Services - 2.7.7.v20200504-69f2c2b80d
+2020-12-17 18:20:06,545 INFO  [org.eclipse.persistence.connection] (ServerService Thread Pool -- 3) Connected: jdbc:h2:tcp://localhost/~/projetodae
+	User: SA
+	Database: H2  Version: 1.4.197 (2018-03-18)
+	Driver: H2 JDBC Driver  Version: 1.4.197 (2018-03-18)
+2020-12-17 18:20:06,545 INFO  [org.eclipse.persistence.connection] (ServerService Thread Pool -- 3) Connected: jdbc:h2:tcp://localhost/~/projetodae
+	User: SA
+	Database: H2  Version: 1.4.197 (2018-03-18)
+	Driver: H2 JDBC Driver  Version: 1.4.197 (2018-03-18)
+2020-12-17 18:20:06,724 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment projetodae.war
+2020-12-17 18:20:06,967 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'VarianteEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/VarianteEJB!ejbs.VarianteBean
+	java:app/projetodae/VarianteEJB!ejbs.VarianteBean
+	java:module/VarianteEJB!ejbs.VarianteBean
+	java:global/projetodae/VarianteEJB
+	java:app/projetodae/VarianteEJB
+	java:module/VarianteEJB
+
+2020-12-17 18:20:06,967 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'MaterialEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/MaterialEJB!ejbs.MaterialBean
+	java:app/projetodae/MaterialEJB!ejbs.MaterialBean
+	java:module/MaterialEJB!ejbs.MaterialBean
+	java:global/projetodae/MaterialEJB
+	java:app/projetodae/MaterialEJB
+	java:module/MaterialEJB
+
+2020-12-17 18:20:06,968 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'ConfigEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ConfigEJB!ejbs.ConfigBean
+	java:app/projetodae/ConfigEJB!ejbs.ConfigBean
+	java:module/ConfigEJB!ejbs.ConfigBean
+	java:global/projetodae/ConfigEJB
+	java:app/projetodae/ConfigEJB
+	java:module/ConfigEJB
+
+2020-12-17 18:20:06,968 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'AuthBean' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/AuthBean!ejbs.AuthBean
+	java:app/projetodae/AuthBean!ejbs.AuthBean
+	java:module/AuthBean!ejbs.AuthBean
+	java:global/projetodae/AuthBean
+	java:app/projetodae/AuthBean
+	java:module/AuthBean
+
+2020-12-17 18:20:06,968 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'ProjetoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProjetoEJB!ejbs.ProjetoBean
+	java:app/projetodae/ProjetoEJB!ejbs.ProjetoBean
+	java:module/ProjetoEJB!ejbs.ProjetoBean
+	java:global/projetodae/ProjetoEJB
+	java:app/projetodae/ProjetoEJB
+	java:module/ProjetoEJB
+
+2020-12-17 18:20:06,968 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'ClienteEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ClienteEJB!ejbs.ClienteBean
+	java:app/projetodae/ClienteEJB!ejbs.ClienteBean
+	java:module/ClienteEJB!ejbs.ClienteBean
+	java:global/projetodae/ClienteEJB
+	java:app/projetodae/ClienteEJB
+	java:module/ClienteEJB
+
+2020-12-17 18:20:06,968 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'EstruturaEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/EstruturaEJB!ejbs.EstruturaBean
+	java:app/projetodae/EstruturaEJB!ejbs.EstruturaBean
+	java:module/EstruturaEJB!ejbs.EstruturaBean
+	java:global/projetodae/EstruturaEJB
+	java:app/projetodae/EstruturaEJB
+	java:module/EstruturaEJB
+
+2020-12-17 18:20:06,968 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'PessoaDeContactoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:app/projetodae/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:module/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:global/projetodae/PessoaDeContactoEJB
+	java:app/projetodae/PessoaDeContactoEJB
+	java:module/PessoaDeContactoEJB
+
+2020-12-17 18:20:06,968 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'SimulacaoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/SimulacaoEJB!ejbs.SimulacaoBean
+	java:app/projetodae/SimulacaoEJB!ejbs.SimulacaoBean
+	java:module/SimulacaoEJB!ejbs.SimulacaoBean
+	java:global/projetodae/SimulacaoEJB
+	java:app/projetodae/SimulacaoEJB
+	java:module/SimulacaoEJB
+
+2020-12-17 18:20:06,969 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'ProjetistaEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProjetistaEJB!ejbs.ProjetistaBean
+	java:app/projetodae/ProjetistaEJB!ejbs.ProjetistaBean
+	java:module/ProjetistaEJB!ejbs.ProjetistaBean
+	java:global/projetodae/ProjetistaEJB
+	java:app/projetodae/ProjetistaEJB
+	java:module/ProjetistaEJB
+
+2020-12-17 18:20:06,969 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'DocumentEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/DocumentEJB!ejbs.FicheiroBean
+	java:app/projetodae/DocumentEJB!ejbs.FicheiroBean
+	java:module/DocumentEJB!ejbs.FicheiroBean
+	java:global/projetodae/DocumentEJB
+	java:app/projetodae/DocumentEJB
+	java:module/DocumentEJB
+
+2020-12-17 18:20:06,969 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'JwtEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/JwtEJB!ejbs.JwtBean
+	java:app/projetodae/JwtEJB!ejbs.JwtBean
+	java:module/JwtEJB!ejbs.JwtBean
+	java:global/projetodae/JwtEJB
+	java:app/projetodae/JwtEJB
+	java:module/JwtEJB
+
+2020-12-17 18:20:06,969 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'ProdutoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProdutoEJB!ejbs.ProdutoBean
+	java:app/projetodae/ProdutoEJB!ejbs.ProdutoBean
+	java:module/ProdutoEJB!ejbs.ProdutoBean
+	java:global/projetodae/ProdutoEJB
+	java:app/projetodae/ProdutoEJB
+	java:module/ProdutoEJB
+
+2020-12-17 18:20:07,078 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-3) No shutdown hook registered: Please call close() manually on application shutdown.
+2020-12-17 18:20:07,174 ERROR [stderr] (MSC service thread 1-3) java.io.FileNotFoundException: C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration\jwt.keystore (O sistema não conseguiu localizar o ficheiro especificado)
+2020-12-17 18:20:07,174 ERROR [stderr] (MSC service thread 1-3) 	at java.base/java.io.FileInputStream.open0(Native Method)
+2020-12-17 18:20:07,175 ERROR [stderr] (MSC service thread 1-3) 	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+2020-12-17 18:20:07,175 ERROR [stderr] (MSC service thread 1-3) 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+2020-12-17 18:20:07,175 ERROR [stderr] (MSC service thread 1-3) 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:108)
+2020-12-17 18:20:07,175 ERROR [stderr] (MSC service thread 1-3) 	at deployment.projetodae.war//ejbs.JwtBean.<clinit>(JwtBean.java:28)
+2020-12-17 18:20:07,175 ERROR [stderr] (MSC service thread 1-3) 	at java.base/java.lang.Class.forName0(Native Method)
+2020-12-17 18:20:07,175 ERROR [stderr] (MSC service thread 1-3) 	at java.base/java.lang.Class.forName(Class.java:468)
+2020-12-17 18:20:07,175 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.invocation@1.5.2.Final//org.jboss.invocation.proxy.AbstractProxyFactory.afterClassLoad(AbstractProxyFactory.java:107)
+2020-12-17 18:20:07,175 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.invocation@1.5.2.Final//org.jboss.invocation.proxy.AbstractClassFactory.defineClass(AbstractClassFactory.java:204)
+2020-12-17 18:20:07,175 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.invocation@1.5.2.Final//org.jboss.invocation.proxy.AbstractProxyFactory.getCachedMethods(AbstractProxyFactory.java:162)
+2020-12-17 18:20:07,176 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.as.ejb3@20.0.1.Final//org.jboss.as.ejb3.component.stateless.StatelessComponentDescription$3.configure(StatelessComponentDescription.java:147)
+2020-12-17 18:20:07,176 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.as.ee@20.0.1.Final//org.jboss.as.ee.component.DefaultComponentViewConfigurator.configure(DefaultComponentViewConfigurator.java:101)
+2020-12-17 18:20:07,176 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.as.ee@20.0.1.Final//org.jboss.as.ee.component.deployers.EEModuleConfigurationProcessor.deploy(EEModuleConfigurationProcessor.java:92)
+2020-12-17 18:20:07,176 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:182)
+2020-12-17 18:20:07,176 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1739)
+2020-12-17 18:20:07,176 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1701)
+2020-12-17 18:20:07,176 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1559)
+2020-12-17 18:20:07,176 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+2020-12-17 18:20:07,177 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+2020-12-17 18:20:07,177 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+2020-12-17 18:20:07,177 ERROR [stderr] (MSC service thread 1-3) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1363)
+2020-12-17 18:20:07,177 ERROR [stderr] (MSC service thread 1-3) 	at java.base/java.lang.Thread.run(Thread.java:832)
+2020-12-17 18:20:07,240 INFO  [org.jboss.weld.Version] (MSC service thread 1-3) WELD-000900: 3.1.4 (Final)
+2020-12-17 18:20:07,291 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-5) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2020-12-17 18:20:07,308 INFO  [org.infinispan.CONTAINER] (MSC service thread 1-5) ISPN000128: Infinispan version: Infinispan 'Turia' 10.1.8.Final
+2020-12-17 18:20:07,533 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 3) WFLYCLINF0002: Started client-mappings cache from ejb container
+2020-12-17 18:20:07,546 INFO  [io.smallrye.metrics] (MSC service thread 1-1) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2020-12-17 18:20:07,562 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-1) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!
+2020-12-17 18:20:07,993 INFO  [stdout] (ServerService Thread Pool -- 30) Starting project...
+2020-12-17 18:20:08,097 INFO  [stdout] (ServerService Thread Pool -- 30) ####### A criar produtos...
+2020-12-17 18:20:08,100 INFO  [stdout] (ServerService Thread Pool -- 30) ####### A criar variantes...
+2020-12-17 18:20:08,107 INFO  [stdout] (ServerService Thread Pool -- 30) ####### FINISHED!!
+2020-12-17 18:20:08,108 INFO  [stdout] (ServerService Thread Pool -- 30) Não verifica segurança na secção 0 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 18:20:08,108 INFO  [stdout] (ServerService Thread Pool -- 30) Não verifica segurança na secção 1 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 18:20:08,108 INFO  [stdout] (ServerService Thread Pool -- 30) Não verifica segurança na secção 3 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 18:20:08,108 INFO  [stdout] (ServerService Thread Pool -- 30) Não verifica segurança na secção 4 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 18:20:08,108 INFO  [stdout] (ServerService Thread Pool -- 30) C 120/50/21 x 1.5 não pode ser usada.
+2020-12-17 18:20:08,108 INFO  [stdout] (ServerService Thread Pool -- 30) Não verifica segurança na secção 1 da variante C 120/60/13 x 2.0 do produto Section C 220 BF
+2020-12-17 18:20:08,109 INFO  [stdout] (ServerService Thread Pool -- 30) Não verifica segurança na secção 3 da variante C 120/60/13 x 2.0 do produto Section C 220 BF
+2020-12-17 18:20:08,109 INFO  [stdout] (ServerService Thread Pool -- 30) A variante C 120/60/13 x 2.0 não pode ser usada.
+2020-12-17 18:20:08,230 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 30) Initializing Mojarra 2.3.9.SP11 for context '/projetodae'
+2020-12-17 18:20:08,990 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 30) RESTEASY002225: Deploying javax.ws.rs.core.Application: class ws.ProjetoDAE$Proxy$_$$_WeldClientProxy
+2020-12-17 18:20:08,992 WARN  [org.jboss.as.weld] (ServerService Thread Pool -- 30) WFLYWELD0052: Using deployment classloader to load proxy classes for module org.eclipse.persistence. Package-private access will not work. To fix this the module should declare dependencies on [org.jboss.weld.core, org.jboss.weld.spi, org.jboss.weld.api]
+2020-12-17 18:20:09,281 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 30) WFLYUT0021: Registered web context: '/projetodae' for server 'default-server'
+2020-12-17 18:20:09,316 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "projetodae.war" (runtime-name : "projetodae.war")
+2020-12-17 18:20:09,317 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-12-17 18:21:33,855 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 30) WFLYUT0022: Unregistered web context: '/projetodae' from server 'default-server'
+2020-12-17 18:21:33,883 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 89) WFLYJPA0004: Stopping Persistence Unit Service 'projetodae.war#NewPersistenceUnit'
+2020-12-17 18:21:33,926 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment projetodae.war (runtime-name: projetodae.war) in 78ms
+2020-12-17 18:21:33,950 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0009: Undeployed "projetodae.war" (runtime-name: "projetodae.war")
+2020-12-17 18:21:33,950 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-12-17 18:21:33,991 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0272: Suspending server
+2020-12-17 18:21:33,993 INFO  [org.jboss.as.ejb3] (management-handler-thread - 1) WFLYEJB0493: EJB subsystem suspension complete
+2020-12-17 18:21:33,994 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+2020-12-17 18:21:34,001 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment academics.war (runtime-name: academics.war) in 2ms
+2020-12-17 18:21:34,002 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0019: Host default-host stopping
+2020-12-17 18:21:34,002 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0008: Undertow HTTPS listener https suspending
+2020-12-17 18:21:34,003 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2020-12-17 18:21:34,005 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2020-12-17 18:21:34,005 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0010: Unbound data source [java:jboss/datasources/projetodae]
+2020-12-17 18:21:34,005 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-7) WFLYMAIL0002: Unbound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-12-17 18:21:34,005 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2020-12-17 18:21:34,005 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/dae]
+2020-12-17 18:21:34,007 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0008: Undertow HTTP listener default suspending
+2020-12-17 18:21:34,008 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2020-12-17 18:21:34,009 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0004: Undertow 2.1.3.Final stopping
+2020-12-17 18:21:34,010 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 86) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2020-12-17 18:21:34,013 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2020-12-17 18:21:34,013 INFO  [org.infinispan.manager.DefaultCacheManager] (MSC service thread 1-7) Stopping cache manager null on null
+2020-12-17 18:21:34,017 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0050: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) stopped in 19ms
+2020-12-17 18:32:00,045 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2020-12-17 18:32:00,422 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
+2020-12-17 18:32:00,428 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2020-12-17 18:32:00,512 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) starting
+2020-12-17 18:32:00,513 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	file.encoding = Cp1252
+	file.separator = \
+	java.class.path = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar
+	java.class.version = 59.0
+	java.home = C:\Users\ruben\.jdks\openjdk-15.0.1
+	java.io.tmpdir = C:\Users\ruben\AppData\Local\Temp\
+	java.library.path = C:\Users\ruben\.jdks\openjdk-15.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\AdoptOpenJDK\jdk-11.0.8.10-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\ruben\AppData\Local\Microsoft\WindowsApps;C:\Users\ruben\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ruben\AppData\Roaming\npm;C:\Program Files\Java\jdk1.7.0_72\bin;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 15.0.1+9-18
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 15
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = https://java.oracle.com/
+	java.vendor.url.bug = https://bugreport.java.com/bugreport/
+	java.version = 15.0.1
+	java.version.date = 2020-10-20
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 15
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 15.0.1+9-18
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final
+	jboss.host.name = lenovoy540
+	jboss.modules.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = lenovoy540
+	jboss.qualified.host.name = lenovoy540
+	jboss.server.base.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone
+	jboss.server.config.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration
+	jboss.server.data.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\data
+	jboss.server.deploy.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\data\content
+	jboss.server.log.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\log
+	jboss.server.name = lenovoy540
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties
+	module.path = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\modules
+	org.jboss.boot.log.file = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Windows 10
+	os.version = 10.0
+	path.separator = ;
+	program.name = standalone.bat
+	sun.arch.data.model = 64
+	sun.boot.library.path = C:\Users\ruben\.jdks\openjdk-15.0.1\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar -mp C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\modules org.jboss.as.standalone -Djboss.home.dir=C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	user.country = PT
+	user.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\bin
+	user.home = C:\Users\ruben
+	user.language = pt
+	user.name = ruben
+	user.script = 
+	user.timezone = Europe/Lisbon
+	user.variant = 
+2020-12-17 18:32:00,515 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -Dprogram.name=standalone.bat -Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED -Dorg.jboss.boot.log.file=C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log -Dlogging.configuration=file:C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties 
+2020-12-17 18:32:00,987 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 1.12.1.Final
+2020-12-17 18:32:01,337 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-12-17 18:32:01,358 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 15) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-12-17 18:32:01,417 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2020-12-17 18:32:01,426 INFO  [org.xnio] (MSC service thread 1-3) XNIO version 3.8.1.Final
+2020-12-17 18:32:01,431 INFO  [org.xnio.nio] (MSC service thread 1-3) XNIO NIO Implementation Version 3.8.1.Final
+2020-12-17 18:32:01,466 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 61) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2020-12-17 18:32:01,468 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0001: Activating Infinispan subsystem.
+2020-12-17 18:32:01,469 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 63) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+2020-12-17 18:32:01,477 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 72) WFLYSEC0002: Activating Security Subsystem
+2020-12-17 18:32:01,477 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2020-12-17 18:32:01,478 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 54) WFLYRS0016: RESTEasy version 3.12.1.Final
+2020-12-17 18:32:01,484 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+2020-12-17 18:32:01,484 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.22.Final)
+2020-12-17 18:32:01,487 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 66) WFLYNAM0001: Activating Naming Subsystem
+2020-12-17 18:32:01,489 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2020-12-17 18:32:01,490 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 65) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2020-12-17 18:32:01,493 INFO  [org.jboss.as.security] (MSC service thread 1-2) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00005
+2020-12-17 18:32:01,503 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 62) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2020-12-17 18:32:01,509 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0003: Undertow 2.1.3.Final starting
+2020-12-17 18:32:01,516 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2020-12-17 18:32:01,518 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+2020-12-17 18:32:01,520 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 59) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2020-12-17 18:32:01,528 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2020-12-17 18:32:01,529 INFO  [org.jboss.as.naming] (MSC service thread 1-8) WFLYNAM0003: Starting Naming Service
+2020-12-17 18:32:01,528 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0001: Bound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-12-17 18:32:01,578 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path 'C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2020-12-17 18:32:01,998 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 53) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2020-12-17 18:32:02,000 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2020-12-17 18:32:02,000 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2020-12-17 18:32:02,022 INFO  [org.jboss.as.patching] (MSC service thread 1-2) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2020-12-17 18:32:02,025 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 5.0.18.Final
+2020-12-17 18:32:02,032 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+2020-12-17 18:32:02,034 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0018: Host default-host starting
+2020-12-17 18:32:02,034 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-2) WFLYDM0111: Keystore C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration\application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2020-12-17 18:32:02,039 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) WFLYDS0013: Started FileSystemDeploymentService for directory C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\deployments
+2020-12-17 18:32:02,045 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "academics.war" (runtime-name: "academics.war")
+2020-12-17 18:32:02,049 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-2) MSC000001: Failed to start service jboss.deployment.unit."academics.war".STRUCTURE: org.jboss.msc.service.StartException in service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:189)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1739)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1701)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1559)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:95)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:182)
+	... 8 more
+Caused by: java.io.FileNotFoundException: C:\Users\joaok\IdeaProjects\AcademicManagement\target\academics.war (O sistema não conseguiu localizar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.spi.RootFileSystem.openInputStream(RootFileSystem.java:51)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VirtualFile.openStream(VirtualFile.java:318)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VFS.mountZipExpanded(VFS.java:533)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.mountDeploymentContent(DeploymentMountProvider.java:110)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:91)
+	... 9 more
+
+2020-12-17 18:32:02,062 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2020-12-17 18:32:02,089 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0493: EJB subsystem suspension complete
+2020-12-17 18:32:02,117 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2020-12-17 18:32:02,135 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) WFLYJCA0001: Bound data source [java:jboss/datasources/projetodae]
+2020-12-17 18:32:02,135 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2020-12-17 18:32:02,135 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0001: Bound data source [java:jboss/datasources/dae]
+2020-12-17 18:32:02,164 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2020-12-17 18:32:02,294 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([("deployment" => "academics.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"academics.war\".STRUCTURE" => "WFLYSRV0153: Failed to process phase STRUCTURE of deployment \"academics.war\"
+    Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+    Caused by: java.io.FileNotFoundException: C:\\Users\\joaok\\IdeaProjects\\AcademicManagement\\target\\academics.war (O sistema não conseguiu localizar o caminho especificado)"}}
+2020-12-17 18:32:02,300 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "academics.war" (runtime-name : "academics.war")
+2020-12-17 18:32:02,304 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-12-17 18:32:02,366 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2020-12-17 18:32:02,368 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) started (with errors) in 2655ms - Started 332 of 599 services (1 services failed or missing dependencies, 372 services are lazy, passive or on-demand)
+2020-12-17 18:32:02,369 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2020-12-17 18:32:02,370 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2020-12-17 18:32:03,240 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "projetodae.war" (runtime-name: "projetodae.war")
+2020-12-17 18:32:05,282 INFO  [org.jboss.as.jpa] (MSC service thread 1-8) WFLYJPA0002: Read persistence.xml for NewPersistenceUnit
+2020-12-17 18:32:05,396 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 12) WFLYJPA0003: Starting Persistence Unit Service 'projetodae.war#NewPersistenceUnit'
+2020-12-17 18:32:05,613 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The access type for the persistent class [class entities.Pessoa] is set to [FIELD].
+2020-12-17 18:32:05,624 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The access type for the persistent class [class entities.Projetista] is set to [FIELD].
+2020-12-17 18:32:05,627 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target entity (reference) class for the one to many mapping element [field projetos] is being defaulted to: class entities.Projeto.
+2020-12-17 18:32:05,628 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The access type for the persistent class [class entities.Cliente] is set to [FIELD].
+2020-12-17 18:32:05,628 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target entity (reference) class for the one to one mapping element [field pc] is being defaulted to: class entities.PessoaDeContacto.
+2020-12-17 18:32:05,629 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target entity (reference) class for the one to many mapping element [field projetos] is being defaulted to: class entities.Projeto.
+2020-12-17 18:32:05,629 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The access type for the persistent class [class entities.Projeto] is set to [FIELD].
+2020-12-17 18:32:05,629 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target entity (reference) class for the many to one mapping element [field cliente] is being defaulted to: class entities.Cliente.
+2020-12-17 18:32:05,629 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target entity (reference) class for the one to many mapping element [field ficheiros] is being defaulted to: class entities.Ficheiro.
+2020-12-17 18:32:05,629 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target entity (reference) class for the one to many mapping element [field estruturas] is being defaulted to: class entities.Estrutura.
+2020-12-17 18:32:05,629 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The access type for the persistent class [class entities.Material] is set to [FIELD].
+2020-12-17 18:32:05,630 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The access type for the persistent class [class entities.Variante] is set to [FIELD].
+2020-12-17 18:32:05,631 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target entity (reference) class for the many to one mapping element [field produto] is being defaulted to: class entities.Produto.
+2020-12-17 18:32:05,631 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The access type for the persistent class [class entities.Ficheiro] is set to [FIELD].
+2020-12-17 18:32:05,632 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The access type for the persistent class [class entities.PessoaDeContacto] is set to [FIELD].
+2020-12-17 18:32:05,632 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The access type for the persistent class [class entities.Estrutura] is set to [FIELD].
+2020-12-17 18:32:05,632 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target entity (reference) class for the one to many mapping element [field materiais] is being defaulted to: class entities.Material.
+2020-12-17 18:32:05,632 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The access type for the persistent class [class entities.Produto] is set to [FIELD].
+2020-12-17 18:32:05,633 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target entity (reference) class for the one to many mapping element [field variantes] is being defaulted to: class entities.Variante.
+2020-12-17 18:32:05,633 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The alias name for the entity class [class entities.Projetista] is being defaulted to: Projetista.
+2020-12-17 18:32:05,633 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The alias name for the entity class [class entities.Pessoa] is being defaulted to: Pessoa.
+2020-12-17 18:32:05,638 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [password] is being defaulted to: PASSWORD.
+2020-12-17 18:32:05,639 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 18:32:05,639 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [contactoTelefonico] is being defaulted to: CONTACTOTELEFONICO.
+2020-12-17 18:32:05,639 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [email] is being defaulted to: EMAIL.
+2020-12-17 18:32:05,639 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [username] is being defaulted to: USERNAME.
+2020-12-17 18:32:05,641 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The discriminator column name for the root inheritance class [entities.Pessoa] is being defaulted to: DTYPE.
+2020-12-17 18:32:05,642 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The alias name for the entity class [class entities.Cliente] is being defaulted to: Cliente.
+2020-12-17 18:32:05,642 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The table name for entity [class entities.Cliente] is being defaulted to: CLIENTE.
+2020-12-17 18:32:05,642 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 18:32:05,642 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [email] is being defaulted to: EMAIL.
+2020-12-17 18:32:05,642 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [morada] is being defaulted to: MORADA.
+2020-12-17 18:32:05,642 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The alias name for the entity class [class entities.Projeto] is being defaulted to: Projeto.
+2020-12-17 18:32:05,643 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The table name for entity [class entities.Projeto] is being defaulted to: PROJETO.
+2020-12-17 18:32:05,643 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 18:32:05,643 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [id] is being defaulted to: ID.
+2020-12-17 18:32:05,643 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The alias name for the entity class [class entities.Material] is being defaulted to: Material.
+2020-12-17 18:32:05,643 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The table name for entity [class entities.Material] is being defaulted to: MATERIAL.
+2020-12-17 18:32:05,643 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [tipoDeMaterial] is being defaulted to: TIPODEMATERIAL.
+2020-12-17 18:32:05,645 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [id] is being defaulted to: ID.
+2020-12-17 18:32:05,646 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The alias name for the entity class [class entities.Variante] is being defaulted to: Variante.
+2020-12-17 18:32:05,646 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The table name for entity [class entities.Variante] is being defaulted to: VARIANTE.
+2020-12-17 18:32:05,646 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [weff_p] is being defaulted to: WEFF_P.
+2020-12-17 18:32:05,646 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [pp] is being defaulted to: PP.
+2020-12-17 18:32:05,646 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [ar] is being defaulted to: AR.
+2020-12-17 18:32:05,646 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [codigo] is being defaulted to: CODIGO.
+2020-12-17 18:32:05,647 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [weff_n] is being defaulted to: WEFF_N.
+2020-12-17 18:32:05,647 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [mcr_p] is being defaulted to: MCR_P.
+2020-12-17 18:32:05,650 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [mcr_n] is being defaulted to: MCR_N.
+2020-12-17 18:32:05,651 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 18:32:05,651 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [sigmaC] is being defaulted to: SIGMAC.
+2020-12-17 18:32:05,651 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The alias name for the entity class [class entities.Ficheiro] is being defaulted to: Ficheiro.
+2020-12-17 18:32:05,651 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The table name for entity [class entities.Ficheiro] is being defaulted to: FICHEIRO.
+2020-12-17 18:32:05,651 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [filename] is being defaulted to: FILENAME.
+2020-12-17 18:32:05,652 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [filepath] is being defaulted to: FILEPATH.
+2020-12-17 18:32:05,652 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [id] is being defaulted to: ID.
+2020-12-17 18:32:05,652 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The alias name for the entity class [class entities.PessoaDeContacto] is being defaulted to: PessoaDeContacto.
+2020-12-17 18:32:05,652 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The alias name for the entity class [class entities.Estrutura] is being defaulted to: Estrutura.
+2020-12-17 18:32:05,652 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The table name for entity [class entities.Estrutura] is being defaulted to: ESTRUTURA.
+2020-12-17 18:32:05,652 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [id] is being defaulted to: ID.
+2020-12-17 18:32:05,652 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The alias name for the entity class [class entities.Produto] is being defaulted to: Produto.
+2020-12-17 18:32:05,653 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The table name for entity [class entities.Produto] is being defaulted to: PRODUTO.
+2020-12-17 18:32:05,653 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 18:32:05,662 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The join table name for the many to many mapping [field projetos] is being defaulted to: PESSOAS_PROJETO.
+2020-12-17 18:32:05,663 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The source primary key column name for the many to many mapping [field projetos] is being defaulted to: USERNAME.
+2020-12-17 18:32:05,663 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The source foreign key column name for the many to many mapping [projetos] is being defaulted to: Projetista_USERNAME.
+2020-12-17 18:32:05,663 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target primary key column name for the many to many mapping [field projetos] is being defaulted to: ID.
+2020-12-17 18:32:05,663 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target foreign key column name for the many to many mapping [projetos] is being defaulted to: projetos_ID.
+2020-12-17 18:32:05,666 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The primary key column name for the mapping element [field pc] is being defaulted to: USERNAME.
+2020-12-17 18:32:05,666 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The foreign key column name for the mapping element [pc] is being defaulted to: PC_USERNAME.
+2020-12-17 18:32:05,666 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The primary key column name for the mapping element [field cliente] is being defaulted to: EMAIL.
+2020-12-17 18:32:05,666 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The foreign key column name for the mapping element [cliente] is being defaulted to: CLIENTE_EMAIL.
+2020-12-17 18:32:05,666 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The join table name for the many to many mapping [field ficheiros] is being defaulted to: PROJETO_FICHEIRO.
+2020-12-17 18:32:05,667 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The source primary key column name for the many to many mapping [field ficheiros] is being defaulted to: ID.
+2020-12-17 18:32:05,667 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The source foreign key column name for the many to many mapping [ficheiros] is being defaulted to: Projeto_ID.
+2020-12-17 18:32:05,667 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target primary key column name for the many to many mapping [field ficheiros] is being defaulted to: ID.
+2020-12-17 18:32:05,667 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target foreign key column name for the many to many mapping [ficheiros] is being defaulted to: ficheiros_ID.
+2020-12-17 18:32:05,667 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The join table name for the many to many mapping [field estruturas] is being defaulted to: PROJETO_ESTRUTURA.
+2020-12-17 18:32:05,667 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The source primary key column name for the many to many mapping [field estruturas] is being defaulted to: ID.
+2020-12-17 18:32:05,667 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The source foreign key column name for the many to many mapping [estruturas] is being defaulted to: Projeto_ID.
+2020-12-17 18:32:05,668 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target primary key column name for the many to many mapping [field estruturas] is being defaulted to: ID.
+2020-12-17 18:32:05,668 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target foreign key column name for the many to many mapping [estruturas] is being defaulted to: estruturas_ID.
+2020-12-17 18:32:05,668 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The primary key column name for the mapping element [field produto] is being defaulted to: NOME.
+2020-12-17 18:32:05,668 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The join table name for the many to many mapping [field materiais] is being defaulted to: ESTRUTURA_MATERIAL.
+2020-12-17 18:32:05,668 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The source primary key column name for the many to many mapping [field materiais] is being defaulted to: ID.
+2020-12-17 18:32:05,668 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The source foreign key column name for the many to many mapping [materiais] is being defaulted to: Estrutura_ID.
+2020-12-17 18:32:05,669 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target primary key column name for the many to many mapping [field materiais] is being defaulted to: ID.
+2020-12-17 18:32:05,669 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 12) The target foreign key column name for the many to many mapping [materiais] is being defaulted to: materiais_ID.
+2020-12-17 18:32:05,774 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 12) HV000001: Hibernate Validator 6.0.20.Final
+2020-12-17 18:32:05,869 INFO  [org.eclipse.persistence] (ServerService Thread Pool -- 12) EclipseLink, version: Eclipse Persistence Services - 2.7.7.v20200504-69f2c2b80d
+2020-12-17 18:32:05,931 INFO  [org.eclipse.persistence.connection] (ServerService Thread Pool -- 12) Connected: jdbc:h2:tcp://localhost/~/projetodae
+	User: SA
+	Database: H2  Version: 1.4.197 (2018-03-18)
+	Driver: H2 JDBC Driver  Version: 1.4.197 (2018-03-18)
+2020-12-17 18:32:05,932 INFO  [org.eclipse.persistence.connection] (ServerService Thread Pool -- 12) Connected: jdbc:h2:tcp://localhost/~/projetodae
+	User: SA
+	Database: H2  Version: 1.4.197 (2018-03-18)
+	Driver: H2 JDBC Driver  Version: 1.4.197 (2018-03-18)
+2020-12-17 18:32:06,128 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment projetodae.war
+2020-12-17 18:32:06,234 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'VarianteEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/VarianteEJB!ejbs.VarianteBean
+	java:app/projetodae/VarianteEJB!ejbs.VarianteBean
+	java:module/VarianteEJB!ejbs.VarianteBean
+	java:global/projetodae/VarianteEJB
+	java:app/projetodae/VarianteEJB
+	java:module/VarianteEJB
+
+2020-12-17 18:32:06,234 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'MaterialEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/MaterialEJB!ejbs.MaterialBean
+	java:app/projetodae/MaterialEJB!ejbs.MaterialBean
+	java:module/MaterialEJB!ejbs.MaterialBean
+	java:global/projetodae/MaterialEJB
+	java:app/projetodae/MaterialEJB
+	java:module/MaterialEJB
+
+2020-12-17 18:32:06,234 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'ConfigEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ConfigEJB!ejbs.ConfigBean
+	java:app/projetodae/ConfigEJB!ejbs.ConfigBean
+	java:module/ConfigEJB!ejbs.ConfigBean
+	java:global/projetodae/ConfigEJB
+	java:app/projetodae/ConfigEJB
+	java:module/ConfigEJB
+
+2020-12-17 18:32:06,234 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'AuthBean' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/AuthBean!ejbs.AuthBean
+	java:app/projetodae/AuthBean!ejbs.AuthBean
+	java:module/AuthBean!ejbs.AuthBean
+	java:global/projetodae/AuthBean
+	java:app/projetodae/AuthBean
+	java:module/AuthBean
+
+2020-12-17 18:32:06,234 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'ProjetoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProjetoEJB!ejbs.ProjetoBean
+	java:app/projetodae/ProjetoEJB!ejbs.ProjetoBean
+	java:module/ProjetoEJB!ejbs.ProjetoBean
+	java:global/projetodae/ProjetoEJB
+	java:app/projetodae/ProjetoEJB
+	java:module/ProjetoEJB
+
+2020-12-17 18:32:06,234 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'ClienteEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ClienteEJB!ejbs.ClienteBean
+	java:app/projetodae/ClienteEJB!ejbs.ClienteBean
+	java:module/ClienteEJB!ejbs.ClienteBean
+	java:global/projetodae/ClienteEJB
+	java:app/projetodae/ClienteEJB
+	java:module/ClienteEJB
+
+2020-12-17 18:32:06,235 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'EstruturaEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/EstruturaEJB!ejbs.EstruturaBean
+	java:app/projetodae/EstruturaEJB!ejbs.EstruturaBean
+	java:module/EstruturaEJB!ejbs.EstruturaBean
+	java:global/projetodae/EstruturaEJB
+	java:app/projetodae/EstruturaEJB
+	java:module/EstruturaEJB
+
+2020-12-17 18:32:06,235 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'PessoaDeContactoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:app/projetodae/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:module/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:global/projetodae/PessoaDeContactoEJB
+	java:app/projetodae/PessoaDeContactoEJB
+	java:module/PessoaDeContactoEJB
+
+2020-12-17 18:32:06,235 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'SimulacaoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/SimulacaoEJB!ejbs.SimulacaoBean
+	java:app/projetodae/SimulacaoEJB!ejbs.SimulacaoBean
+	java:module/SimulacaoEJB!ejbs.SimulacaoBean
+	java:global/projetodae/SimulacaoEJB
+	java:app/projetodae/SimulacaoEJB
+	java:module/SimulacaoEJB
+
+2020-12-17 18:32:06,235 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'ProjetistaEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProjetistaEJB!ejbs.ProjetistaBean
+	java:app/projetodae/ProjetistaEJB!ejbs.ProjetistaBean
+	java:module/ProjetistaEJB!ejbs.ProjetistaBean
+	java:global/projetodae/ProjetistaEJB
+	java:app/projetodae/ProjetistaEJB
+	java:module/ProjetistaEJB
+
+2020-12-17 18:32:06,235 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'DocumentEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/DocumentEJB!ejbs.FicheiroBean
+	java:app/projetodae/DocumentEJB!ejbs.FicheiroBean
+	java:module/DocumentEJB!ejbs.FicheiroBean
+	java:global/projetodae/DocumentEJB
+	java:app/projetodae/DocumentEJB
+	java:module/DocumentEJB
+
+2020-12-17 18:32:06,236 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'JwtEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/JwtEJB!ejbs.JwtBean
+	java:app/projetodae/JwtEJB!ejbs.JwtBean
+	java:module/JwtEJB!ejbs.JwtBean
+	java:global/projetodae/JwtEJB
+	java:app/projetodae/JwtEJB
+	java:module/JwtEJB
+
+2020-12-17 18:32:06,236 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'ProdutoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProdutoEJB!ejbs.ProdutoBean
+	java:app/projetodae/ProdutoEJB!ejbs.ProdutoBean
+	java:module/ProdutoEJB!ejbs.ProdutoBean
+	java:global/projetodae/ProdutoEJB
+	java:app/projetodae/ProdutoEJB
+	java:module/ProdutoEJB
+
+2020-12-17 18:32:06,356 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-8) No shutdown hook registered: Please call close() manually on application shutdown.
+2020-12-17 18:32:06,470 ERROR [stderr] (MSC service thread 1-5) java.io.FileNotFoundException: C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration\jwt.keystore (O sistema não conseguiu localizar o ficheiro especificado)
+2020-12-17 18:32:06,470 ERROR [stderr] (MSC service thread 1-5) 	at java.base/java.io.FileInputStream.open0(Native Method)
+2020-12-17 18:32:06,471 ERROR [stderr] (MSC service thread 1-5) 	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+2020-12-17 18:32:06,471 ERROR [stderr] (MSC service thread 1-5) 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+2020-12-17 18:32:06,471 ERROR [stderr] (MSC service thread 1-5) 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:108)
+2020-12-17 18:32:06,471 ERROR [stderr] (MSC service thread 1-5) 	at deployment.projetodae.war//ejbs.JwtBean.<clinit>(JwtBean.java:28)
+2020-12-17 18:32:06,471 ERROR [stderr] (MSC service thread 1-5) 	at java.base/java.lang.Class.forName0(Native Method)
+2020-12-17 18:32:06,471 ERROR [stderr] (MSC service thread 1-5) 	at java.base/java.lang.Class.forName(Class.java:468)
+2020-12-17 18:32:06,471 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.invocation@1.5.2.Final//org.jboss.invocation.proxy.AbstractProxyFactory.afterClassLoad(AbstractProxyFactory.java:107)
+2020-12-17 18:32:06,471 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.invocation@1.5.2.Final//org.jboss.invocation.proxy.AbstractClassFactory.defineClass(AbstractClassFactory.java:204)
+2020-12-17 18:32:06,472 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.invocation@1.5.2.Final//org.jboss.invocation.proxy.AbstractProxyFactory.getCachedMethods(AbstractProxyFactory.java:162)
+2020-12-17 18:32:06,472 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.as.ejb3@20.0.1.Final//org.jboss.as.ejb3.component.stateless.StatelessComponentDescription$3.configure(StatelessComponentDescription.java:147)
+2020-12-17 18:32:06,472 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.as.ee@20.0.1.Final//org.jboss.as.ee.component.DefaultComponentViewConfigurator.configure(DefaultComponentViewConfigurator.java:101)
+2020-12-17 18:32:06,472 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.as.ee@20.0.1.Final//org.jboss.as.ee.component.deployers.EEModuleConfigurationProcessor.deploy(EEModuleConfigurationProcessor.java:92)
+2020-12-17 18:32:06,472 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:182)
+2020-12-17 18:32:06,472 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1739)
+2020-12-17 18:32:06,472 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1701)
+2020-12-17 18:32:06,473 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1559)
+2020-12-17 18:32:06,473 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+2020-12-17 18:32:06,473 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+2020-12-17 18:32:06,473 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+2020-12-17 18:32:06,473 ERROR [stderr] (MSC service thread 1-5) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1363)
+2020-12-17 18:32:06,473 ERROR [stderr] (MSC service thread 1-5) 	at java.base/java.lang.Thread.run(Thread.java:832)
+2020-12-17 18:32:06,555 INFO  [org.jboss.weld.Version] (MSC service thread 1-5) WELD-000900: 3.1.4 (Final)
+2020-12-17 18:32:06,604 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-6) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2020-12-17 18:32:06,623 INFO  [org.infinispan.CONTAINER] (MSC service thread 1-6) ISPN000128: Infinispan version: Infinispan 'Turia' 10.1.8.Final
+2020-12-17 18:32:06,868 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 12) WFLYCLINF0002: Started client-mappings cache from ejb container
+2020-12-17 18:32:06,900 INFO  [io.smallrye.metrics] (MSC service thread 1-2) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2020-12-17 18:32:06,920 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-2) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!
+2020-12-17 18:32:07,381 INFO  [stdout] (ServerService Thread Pool -- 21) Starting project...
+2020-12-17 18:32:07,468 INFO  [stdout] (ServerService Thread Pool -- 21) ####### A criar produtos...
+2020-12-17 18:32:07,471 INFO  [stdout] (ServerService Thread Pool -- 21) ####### A criar variantes...
+2020-12-17 18:32:07,477 INFO  [stdout] (ServerService Thread Pool -- 21) ####### FINISHED!!
+2020-12-17 18:32:07,478 INFO  [stdout] (ServerService Thread Pool -- 21) Não verifica segurança na secção 0 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 18:32:07,478 INFO  [stdout] (ServerService Thread Pool -- 21) Não verifica segurança na secção 1 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 18:32:07,478 INFO  [stdout] (ServerService Thread Pool -- 21) Não verifica segurança na secção 3 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 18:32:07,478 INFO  [stdout] (ServerService Thread Pool -- 21) Não verifica segurança na secção 4 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 18:32:07,479 INFO  [stdout] (ServerService Thread Pool -- 21) C 120/50/21 x 1.5 não pode ser usada.
+2020-12-17 18:32:07,479 INFO  [stdout] (ServerService Thread Pool -- 21) Não verifica segurança na secção 1 da variante C 120/60/13 x 2.0 do produto Section C 220 BF
+2020-12-17 18:32:07,479 INFO  [stdout] (ServerService Thread Pool -- 21) Não verifica segurança na secção 3 da variante C 120/60/13 x 2.0 do produto Section C 220 BF
+2020-12-17 18:32:07,479 INFO  [stdout] (ServerService Thread Pool -- 21) A variante C 120/60/13 x 2.0 não pode ser usada.
+2020-12-17 18:32:07,563 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 21) Initializing Mojarra 2.3.9.SP11 for context '/projetodae'
+2020-12-17 18:32:08,213 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 21) RESTEASY002225: Deploying javax.ws.rs.core.Application: class ws.ProjetoDAE$Proxy$_$$_WeldClientProxy
+2020-12-17 18:32:08,214 WARN  [org.jboss.as.weld] (ServerService Thread Pool -- 21) WFLYWELD0052: Using deployment classloader to load proxy classes for module org.eclipse.persistence. Package-private access will not work. To fix this the module should declare dependencies on [org.jboss.weld.core, org.jboss.weld.spi, org.jboss.weld.api]
+2020-12-17 18:32:08,309 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 21) WFLYUT0021: Registered web context: '/projetodae' for server 'default-server'
+2020-12-17 18:32:08,343 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "projetodae.war" (runtime-name : "projetodae.war")
+2020-12-17 18:32:08,344 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-12-17 21:33:17,324 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 81) WFLYUT0022: Unregistered web context: '/projetodae' from server 'default-server'
+2020-12-17 21:33:17,374 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 90) WFLYJPA0004: Stopping Persistence Unit Service 'projetodae.war#NewPersistenceUnit'
+2020-12-17 21:33:17,414 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment projetodae.war (runtime-name: projetodae.war) in 102ms
+2020-12-17 21:33:17,454 INFO  [org.jboss.as.server] (management-handler-thread - 2) WFLYSRV0009: Undeployed "projetodae.war" (runtime-name: "projetodae.war")
+2020-12-17 21:33:17,454 INFO  [org.jboss.as.controller] (management-handler-thread - 2) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-12-17 21:33:17,499 INFO  [org.jboss.as.server] (management-handler-thread - 2) WFLYSRV0272: Suspending server
+2020-12-17 21:33:17,499 INFO  [org.jboss.as.ejb3] (management-handler-thread - 2) WFLYEJB0493: EJB subsystem suspension complete
+2020-12-17 21:33:17,499 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+2020-12-17 21:33:17,510 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment academics.war (runtime-name: academics.war) in 3ms
+2020-12-17 21:33:17,512 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0019: Host default-host stopping
+2020-12-17 21:33:17,512 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2020-12-17 21:33:17,514 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0002: Unbound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-12-17 21:33:17,514 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0008: Undertow HTTPS listener https suspending
+2020-12-17 21:33:17,514 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2020-12-17 21:33:17,514 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/dae]
+2020-12-17 21:33:17,514 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/projetodae]
+2020-12-17 21:33:17,514 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2020-12-17 21:33:17,517 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2020-12-17 21:33:17,521 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0008: Undertow HTTP listener default suspending
+2020-12-17 21:33:17,521 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2020-12-17 21:33:17,525 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0004: Undertow 2.1.3.Final stopping
+2020-12-17 21:33:17,525 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 92) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2020-12-17 21:33:17,531 INFO  [org.infinispan.manager.DefaultCacheManager] (MSC service thread 1-2) Stopping cache manager null on null
+2020-12-17 21:33:17,533 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0050: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) stopped in 30ms
+2020-12-17 21:33:25,530 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2020-12-17 21:33:25,855 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
+2020-12-17 21:33:25,855 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2020-12-17 21:33:25,934 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) starting
+2020-12-17 21:33:25,949 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	file.encoding = Cp1252
+	file.separator = \
+	java.class.path = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar
+	java.class.version = 59.0
+	java.home = C:\Users\ruben\.jdks\openjdk-15.0.1
+	java.io.tmpdir = C:\Users\ruben\AppData\Local\Temp\
+	java.library.path = C:\Users\ruben\.jdks\openjdk-15.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\AdoptOpenJDK\jdk-11.0.8.10-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\ruben\AppData\Local\Microsoft\WindowsApps;C:\Users\ruben\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ruben\AppData\Roaming\npm;C:\Program Files\Java\jdk1.7.0_72\bin;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 15.0.1+9-18
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 15
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = https://java.oracle.com/
+	java.vendor.url.bug = https://bugreport.java.com/bugreport/
+	java.version = 15.0.1
+	java.version.date = 2020-10-20
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 15
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 15.0.1+9-18
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final
+	jboss.host.name = lenovoy540
+	jboss.modules.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = lenovoy540
+	jboss.qualified.host.name = lenovoy540
+	jboss.server.base.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone
+	jboss.server.config.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration
+	jboss.server.data.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\data
+	jboss.server.deploy.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\data\content
+	jboss.server.log.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\log
+	jboss.server.name = lenovoy540
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties
+	module.path = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\modules
+	org.jboss.boot.log.file = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Windows 10
+	os.version = 10.0
+	path.separator = ;
+	program.name = standalone.bat
+	sun.arch.data.model = 64
+	sun.boot.library.path = C:\Users\ruben\.jdks\openjdk-15.0.1\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\jboss-modules.jar -mp C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\modules org.jboss.as.standalone -Djboss.home.dir=C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	user.country = PT
+	user.dir = C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\bin
+	user.home = C:\Users\ruben
+	user.language = pt
+	user.name = ruben
+	user.script = 
+	user.timezone = Europe/Lisbon
+	user.variant = 
+2020-12-17 21:33:25,949 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -Dprogram.name=standalone.bat -Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED -Dorg.jboss.boot.log.file=C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\log\server.log -Dlogging.configuration=file:C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration/logging.properties 
+2020-12-17 21:33:26,371 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 1.12.1.Final
+2020-12-17 21:33:26,682 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-12-17 21:33:26,698 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 15) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2020-12-17 21:33:26,760 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2020-12-17 21:33:26,772 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.8.1.Final
+2020-12-17 21:33:26,772 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.8.1.Final
+2020-12-17 21:33:26,800 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0001: Activating Infinispan subsystem.
+2020-12-17 21:33:26,831 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2020-12-17 21:33:26,831 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 63) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+2020-12-17 21:33:26,838 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 65) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2020-12-17 21:33:26,845 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 61) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2020-12-17 21:33:26,845 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 62) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2020-12-17 21:33:26,849 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2020-12-17 21:33:26,854 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 59) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2020-12-17 21:33:26,860 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0003: Undertow 2.1.3.Final starting
+2020-12-17 21:33:26,866 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2020-12-17 21:33:26,867 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 66) WFLYNAM0001: Activating Naming Subsystem
+2020-12-17 21:33:26,870 INFO  [org.jboss.as.connector] (MSC service thread 1-3) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.22.Final)
+2020-12-17 21:33:26,879 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+2020-12-17 21:33:26,879 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 72) WFLYSEC0002: Activating Security Subsystem
+2020-12-17 21:33:26,902 INFO  [org.jboss.as.security] (MSC service thread 1-8) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00005
+2020-12-17 21:33:26,906 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path 'C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2020-12-17 21:33:26,910 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = h2
+2020-12-17 21:33:26,947 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 54) WFLYRS0016: RESTEasy version 3.12.1.Final
+2020-12-17 21:33:26,969 INFO  [org.jboss.as.naming] (MSC service thread 1-4) WFLYNAM0003: Starting Naming Service
+2020-12-17 21:33:26,970 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0001: Bound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-12-17 21:33:26,970 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2020-12-17 21:33:27,450 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 53) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2020-12-17 21:33:27,452 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2020-12-17 21:33:27,452 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2020-12-17 21:33:27,475 INFO  [org.jboss.remoting] (MSC service thread 1-6) JBoss Remoting version 5.0.18.Final
+2020-12-17 21:33:27,475 INFO  [org.jboss.as.patching] (MSC service thread 1-7) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2020-12-17 21:33:27,484 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0012: Started server default-server.
+2020-12-17 21:33:27,485 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+2020-12-17 21:33:27,487 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-3) WFLYDM0111: Keystore C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration\application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2020-12-17 21:33:27,492 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\deployments
+2020-12-17 21:33:27,497 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "academics.war" (runtime-name: "academics.war")
+2020-12-17 21:33:27,501 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-2) MSC000001: Failed to start service jboss.deployment.unit."academics.war".STRUCTURE: org.jboss.msc.service.StartException in service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:189)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1739)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1701)
+	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1559)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:95)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:182)
+	... 8 more
+Caused by: java.io.FileNotFoundException: C:\Users\joaok\IdeaProjects\AcademicManagement\target\academics.war (O sistema não conseguiu localizar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.spi.RootFileSystem.openInputStream(RootFileSystem.java:51)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VirtualFile.openStream(VirtualFile.java:318)
+	at org.jboss.vfs@3.2.15.Final//org.jboss.vfs.VFS.mountZipExpanded(VFS.java:533)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.mountDeploymentContent(DeploymentMountProvider.java:110)
+	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.module.DeploymentRootMountProcessor.deploy(DeploymentRootMountProcessor.java:91)
+	... 9 more
+
+2020-12-17 21:33:27,516 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2020-12-17 21:33:27,534 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0493: EJB subsystem suspension complete
+2020-12-17 21:33:27,565 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/dae]
+2020-12-17 21:33:27,565 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0001: Bound data source [java:jboss/datasources/projetodae]
+2020-12-17 21:33:27,565 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2020-12-17 21:33:27,570 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2020-12-17 21:33:27,612 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2020-12-17 21:33:27,767 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([("deployment" => "academics.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"academics.war\".STRUCTURE" => "WFLYSRV0153: Failed to process phase STRUCTURE of deployment \"academics.war\"
+    Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYSRV0160: Failed to mount deployment content
+    Caused by: java.io.FileNotFoundException: C:\\Users\\joaok\\IdeaProjects\\AcademicManagement\\target\\academics.war (O sistema não conseguiu localizar o caminho especificado)"}}
+2020-12-17 21:33:27,778 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "academics.war" (runtime-name : "academics.war")
+2020-12-17 21:33:27,790 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-12-17 21:33:27,835 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2020-12-17 21:33:27,838 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) started (with errors) in 2590ms - Started 332 of 599 services (1 services failed or missing dependencies, 372 services are lazy, passive or on-demand)
+2020-12-17 21:33:27,840 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2020-12-17 21:33:27,841 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2020-12-17 21:33:28,480 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "projetodae.war" (runtime-name: "projetodae.war")
+2020-12-17 21:33:29,954 INFO  [org.jboss.as.jpa] (MSC service thread 1-8) WFLYJPA0002: Read persistence.xml for NewPersistenceUnit
+2020-12-17 21:33:30,050 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 27) WFLYJPA0003: Starting Persistence Unit Service 'projetodae.war#NewPersistenceUnit'
+2020-12-17 21:33:30,241 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The access type for the persistent class [class entities.Pessoa] is set to [FIELD].
+2020-12-17 21:33:30,250 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The access type for the persistent class [class entities.Projetista] is set to [FIELD].
+2020-12-17 21:33:30,255 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target entity (reference) class for the one to many mapping element [field projetos] is being defaulted to: class entities.Projeto.
+2020-12-17 21:33:30,255 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The access type for the persistent class [class entities.Cliente] is set to [FIELD].
+2020-12-17 21:33:30,256 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target entity (reference) class for the one to one mapping element [field pc] is being defaulted to: class entities.PessoaDeContacto.
+2020-12-17 21:33:30,256 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target entity (reference) class for the one to many mapping element [field projetos] is being defaulted to: class entities.Projeto.
+2020-12-17 21:33:30,256 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The access type for the persistent class [class entities.Projeto] is set to [FIELD].
+2020-12-17 21:33:30,256 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target entity (reference) class for the many to one mapping element [field cliente] is being defaulted to: class entities.Cliente.
+2020-12-17 21:33:30,257 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target entity (reference) class for the one to many mapping element [field ficheiros] is being defaulted to: class entities.Ficheiro.
+2020-12-17 21:33:30,257 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target entity (reference) class for the one to many mapping element [field estruturas] is being defaulted to: class entities.Estrutura.
+2020-12-17 21:33:30,257 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The access type for the persistent class [class entities.Material] is set to [FIELD].
+2020-12-17 21:33:30,257 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The access type for the persistent class [class entities.Variante] is set to [FIELD].
+2020-12-17 21:33:30,259 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target entity (reference) class for the many to one mapping element [field produto] is being defaulted to: class entities.Produto.
+2020-12-17 21:33:30,260 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The access type for the persistent class [class entities.Ficheiro] is set to [FIELD].
+2020-12-17 21:33:30,261 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The access type for the persistent class [class entities.PessoaDeContacto] is set to [FIELD].
+2020-12-17 21:33:30,261 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The access type for the persistent class [class entities.Estrutura] is set to [FIELD].
+2020-12-17 21:33:30,261 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target entity (reference) class for the one to many mapping element [field materiais] is being defaulted to: class entities.Material.
+2020-12-17 21:33:30,262 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The access type for the persistent class [class entities.Produto] is set to [FIELD].
+2020-12-17 21:33:30,262 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target entity (reference) class for the one to many mapping element [field variantes] is being defaulted to: class entities.Variante.
+2020-12-17 21:33:30,262 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The alias name for the entity class [class entities.Projetista] is being defaulted to: Projetista.
+2020-12-17 21:33:30,263 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The alias name for the entity class [class entities.Pessoa] is being defaulted to: Pessoa.
+2020-12-17 21:33:30,270 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [password] is being defaulted to: PASSWORD.
+2020-12-17 21:33:30,271 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 21:33:30,271 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [contactoTelefonico] is being defaulted to: CONTACTOTELEFONICO.
+2020-12-17 21:33:30,271 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [email] is being defaulted to: EMAIL.
+2020-12-17 21:33:30,272 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [username] is being defaulted to: USERNAME.
+2020-12-17 21:33:30,273 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The discriminator column name for the root inheritance class [entities.Pessoa] is being defaulted to: DTYPE.
+2020-12-17 21:33:30,275 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The alias name for the entity class [class entities.Cliente] is being defaulted to: Cliente.
+2020-12-17 21:33:30,275 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The table name for entity [class entities.Cliente] is being defaulted to: CLIENTE.
+2020-12-17 21:33:30,275 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 21:33:30,276 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [email] is being defaulted to: EMAIL.
+2020-12-17 21:33:30,276 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [morada] is being defaulted to: MORADA.
+2020-12-17 21:33:30,276 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The alias name for the entity class [class entities.Projeto] is being defaulted to: Projeto.
+2020-12-17 21:33:30,276 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The table name for entity [class entities.Projeto] is being defaulted to: PROJETO.
+2020-12-17 21:33:30,277 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 21:33:30,277 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [id] is being defaulted to: ID.
+2020-12-17 21:33:30,277 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The alias name for the entity class [class entities.Material] is being defaulted to: Material.
+2020-12-17 21:33:30,278 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The table name for entity [class entities.Material] is being defaulted to: MATERIAL.
+2020-12-17 21:33:30,278 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [tipoDeMaterial] is being defaulted to: TIPODEMATERIAL.
+2020-12-17 21:33:30,282 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [id] is being defaulted to: ID.
+2020-12-17 21:33:30,282 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The alias name for the entity class [class entities.Variante] is being defaulted to: Variante.
+2020-12-17 21:33:30,283 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The table name for entity [class entities.Variante] is being defaulted to: VARIANTE.
+2020-12-17 21:33:30,283 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [weff_p] is being defaulted to: WEFF_P.
+2020-12-17 21:33:30,283 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [pp] is being defaulted to: PP.
+2020-12-17 21:33:30,283 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [ar] is being defaulted to: AR.
+2020-12-17 21:33:30,283 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [codigo] is being defaulted to: CODIGO.
+2020-12-17 21:33:30,284 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [weff_n] is being defaulted to: WEFF_N.
+2020-12-17 21:33:30,284 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [mcr_p] is being defaulted to: MCR_P.
+2020-12-17 21:33:30,300 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [mcr_n] is being defaulted to: MCR_N.
+2020-12-17 21:33:30,300 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 21:33:30,301 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [sigmaC] is being defaulted to: SIGMAC.
+2020-12-17 21:33:30,301 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The alias name for the entity class [class entities.Ficheiro] is being defaulted to: Ficheiro.
+2020-12-17 21:33:30,301 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The table name for entity [class entities.Ficheiro] is being defaulted to: FICHEIRO.
+2020-12-17 21:33:30,301 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [filename] is being defaulted to: FILENAME.
+2020-12-17 21:33:30,302 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [filepath] is being defaulted to: FILEPATH.
+2020-12-17 21:33:30,302 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [id] is being defaulted to: ID.
+2020-12-17 21:33:30,302 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The alias name for the entity class [class entities.PessoaDeContacto] is being defaulted to: PessoaDeContacto.
+2020-12-17 21:33:30,302 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The alias name for the entity class [class entities.Estrutura] is being defaulted to: Estrutura.
+2020-12-17 21:33:30,302 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The table name for entity [class entities.Estrutura] is being defaulted to: ESTRUTURA.
+2020-12-17 21:33:30,303 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [id] is being defaulted to: ID.
+2020-12-17 21:33:30,303 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The alias name for the entity class [class entities.Produto] is being defaulted to: Produto.
+2020-12-17 21:33:30,303 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The table name for entity [class entities.Produto] is being defaulted to: PRODUTO.
+2020-12-17 21:33:30,304 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The column name for element [nome] is being defaulted to: NOME.
+2020-12-17 21:33:30,318 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The join table name for the many to many mapping [field projetos] is being defaulted to: PESSOAS_PROJETO.
+2020-12-17 21:33:30,319 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The source primary key column name for the many to many mapping [field projetos] is being defaulted to: USERNAME.
+2020-12-17 21:33:30,319 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The source foreign key column name for the many to many mapping [projetos] is being defaulted to: Projetista_USERNAME.
+2020-12-17 21:33:30,319 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target primary key column name for the many to many mapping [field projetos] is being defaulted to: ID.
+2020-12-17 21:33:30,319 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target foreign key column name for the many to many mapping [projetos] is being defaulted to: projetos_ID.
+2020-12-17 21:33:30,323 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The primary key column name for the mapping element [field pc] is being defaulted to: USERNAME.
+2020-12-17 21:33:30,324 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The foreign key column name for the mapping element [pc] is being defaulted to: PC_USERNAME.
+2020-12-17 21:33:30,324 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The primary key column name for the mapping element [field cliente] is being defaulted to: EMAIL.
+2020-12-17 21:33:30,324 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The foreign key column name for the mapping element [cliente] is being defaulted to: CLIENTE_EMAIL.
+2020-12-17 21:33:30,325 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The join table name for the many to many mapping [field ficheiros] is being defaulted to: PROJETO_FICHEIRO.
+2020-12-17 21:33:30,325 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The source primary key column name for the many to many mapping [field ficheiros] is being defaulted to: ID.
+2020-12-17 21:33:30,325 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The source foreign key column name for the many to many mapping [ficheiros] is being defaulted to: Projeto_ID.
+2020-12-17 21:33:30,325 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target primary key column name for the many to many mapping [field ficheiros] is being defaulted to: ID.
+2020-12-17 21:33:30,325 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target foreign key column name for the many to many mapping [ficheiros] is being defaulted to: ficheiros_ID.
+2020-12-17 21:33:30,325 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The join table name for the many to many mapping [field estruturas] is being defaulted to: PROJETO_ESTRUTURA.
+2020-12-17 21:33:30,326 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The source primary key column name for the many to many mapping [field estruturas] is being defaulted to: ID.
+2020-12-17 21:33:30,326 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The source foreign key column name for the many to many mapping [estruturas] is being defaulted to: Projeto_ID.
+2020-12-17 21:33:30,326 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target primary key column name for the many to many mapping [field estruturas] is being defaulted to: ID.
+2020-12-17 21:33:30,326 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target foreign key column name for the many to many mapping [estruturas] is being defaulted to: estruturas_ID.
+2020-12-17 21:33:30,326 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The primary key column name for the mapping element [field produto] is being defaulted to: NOME.
+2020-12-17 21:33:30,327 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The join table name for the many to many mapping [field materiais] is being defaulted to: ESTRUTURA_MATERIAL.
+2020-12-17 21:33:30,327 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The source primary key column name for the many to many mapping [field materiais] is being defaulted to: ID.
+2020-12-17 21:33:30,327 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The source foreign key column name for the many to many mapping [materiais] is being defaulted to: Estrutura_ID.
+2020-12-17 21:33:30,327 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target primary key column name for the many to many mapping [field materiais] is being defaulted to: ID.
+2020-12-17 21:33:30,327 INFO  [org.eclipse.persistence.metadata] (ServerService Thread Pool -- 27) The target foreign key column name for the many to many mapping [materiais] is being defaulted to: materiais_ID.
+2020-12-17 21:33:30,488 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 27) HV000001: Hibernate Validator 6.0.20.Final
+2020-12-17 21:33:30,623 INFO  [org.eclipse.persistence] (ServerService Thread Pool -- 27) EclipseLink, version: Eclipse Persistence Services - 2.7.7.v20200504-69f2c2b80d
+2020-12-17 21:33:30,701 INFO  [org.eclipse.persistence.connection] (ServerService Thread Pool -- 27) Connected: jdbc:h2:tcp://localhost/~/projetodae
+	User: SA
+	Database: H2  Version: 1.4.197 (2018-03-18)
+	Driver: H2 JDBC Driver  Version: 1.4.197 (2018-03-18)
+2020-12-17 21:33:30,702 INFO  [org.eclipse.persistence.connection] (ServerService Thread Pool -- 27) Connected: jdbc:h2:tcp://localhost/~/projetodae
+	User: SA
+	Database: H2  Version: 1.4.197 (2018-03-18)
+	Driver: H2 JDBC Driver  Version: 1.4.197 (2018-03-18)
+2020-12-17 21:33:30,997 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment projetodae.war
+2020-12-17 21:33:31,157 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'VarianteEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/VarianteEJB!ejbs.VarianteBean
+	java:app/projetodae/VarianteEJB!ejbs.VarianteBean
+	java:module/VarianteEJB!ejbs.VarianteBean
+	java:global/projetodae/VarianteEJB
+	java:app/projetodae/VarianteEJB
+	java:module/VarianteEJB
+
+2020-12-17 21:33:31,158 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'MaterialEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/MaterialEJB!ejbs.MaterialBean
+	java:app/projetodae/MaterialEJB!ejbs.MaterialBean
+	java:module/MaterialEJB!ejbs.MaterialBean
+	java:global/projetodae/MaterialEJB
+	java:app/projetodae/MaterialEJB
+	java:module/MaterialEJB
+
+2020-12-17 21:33:31,158 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'ConfigEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ConfigEJB!ejbs.ConfigBean
+	java:app/projetodae/ConfigEJB!ejbs.ConfigBean
+	java:module/ConfigEJB!ejbs.ConfigBean
+	java:global/projetodae/ConfigEJB
+	java:app/projetodae/ConfigEJB
+	java:module/ConfigEJB
+
+2020-12-17 21:33:31,158 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'AuthBean' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/AuthBean!ejbs.AuthBean
+	java:app/projetodae/AuthBean!ejbs.AuthBean
+	java:module/AuthBean!ejbs.AuthBean
+	java:global/projetodae/AuthBean
+	java:app/projetodae/AuthBean
+	java:module/AuthBean
+
+2020-12-17 21:33:31,158 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'ProjetoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProjetoEJB!ejbs.ProjetoBean
+	java:app/projetodae/ProjetoEJB!ejbs.ProjetoBean
+	java:module/ProjetoEJB!ejbs.ProjetoBean
+	java:global/projetodae/ProjetoEJB
+	java:app/projetodae/ProjetoEJB
+	java:module/ProjetoEJB
+
+2020-12-17 21:33:31,158 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'ClienteEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ClienteEJB!ejbs.ClienteBean
+	java:app/projetodae/ClienteEJB!ejbs.ClienteBean
+	java:module/ClienteEJB!ejbs.ClienteBean
+	java:global/projetodae/ClienteEJB
+	java:app/projetodae/ClienteEJB
+	java:module/ClienteEJB
+
+2020-12-17 21:33:31,158 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'EstruturaEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/EstruturaEJB!ejbs.EstruturaBean
+	java:app/projetodae/EstruturaEJB!ejbs.EstruturaBean
+	java:module/EstruturaEJB!ejbs.EstruturaBean
+	java:global/projetodae/EstruturaEJB
+	java:app/projetodae/EstruturaEJB
+	java:module/EstruturaEJB
+
+2020-12-17 21:33:31,158 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'PessoaDeContactoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:app/projetodae/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:module/PessoaDeContactoEJB!ejbs.PessoaDeContactoBean
+	java:global/projetodae/PessoaDeContactoEJB
+	java:app/projetodae/PessoaDeContactoEJB
+	java:module/PessoaDeContactoEJB
+
+2020-12-17 21:33:31,159 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'SimulacaoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/SimulacaoEJB!ejbs.SimulacaoBean
+	java:app/projetodae/SimulacaoEJB!ejbs.SimulacaoBean
+	java:module/SimulacaoEJB!ejbs.SimulacaoBean
+	java:global/projetodae/SimulacaoEJB
+	java:app/projetodae/SimulacaoEJB
+	java:module/SimulacaoEJB
+
+2020-12-17 21:33:31,159 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'ProjetistaEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProjetistaEJB!ejbs.ProjetistaBean
+	java:app/projetodae/ProjetistaEJB!ejbs.ProjetistaBean
+	java:module/ProjetistaEJB!ejbs.ProjetistaBean
+	java:global/projetodae/ProjetistaEJB
+	java:app/projetodae/ProjetistaEJB
+	java:module/ProjetistaEJB
+
+2020-12-17 21:33:31,159 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'DocumentEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/DocumentEJB!ejbs.FicheiroBean
+	java:app/projetodae/DocumentEJB!ejbs.FicheiroBean
+	java:module/DocumentEJB!ejbs.FicheiroBean
+	java:global/projetodae/DocumentEJB
+	java:app/projetodae/DocumentEJB
+	java:module/DocumentEJB
+
+2020-12-17 21:33:31,159 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'JwtEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/JwtEJB!ejbs.JwtBean
+	java:app/projetodae/JwtEJB!ejbs.JwtBean
+	java:module/JwtEJB!ejbs.JwtBean
+	java:global/projetodae/JwtEJB
+	java:app/projetodae/JwtEJB
+	java:module/JwtEJB
+
+2020-12-17 21:33:31,159 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'ProdutoEJB' in deployment unit 'deployment "projetodae.war"' are as follows:
+
+	java:global/projetodae/ProdutoEJB!ejbs.ProdutoBean
+	java:app/projetodae/ProdutoEJB!ejbs.ProdutoBean
+	java:module/ProdutoEJB!ejbs.ProdutoBean
+	java:global/projetodae/ProdutoEJB
+	java:app/projetodae/ProdutoEJB
+	java:module/ProdutoEJB
+
+2020-12-17 21:33:31,263 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-4) No shutdown hook registered: Please call close() manually on application shutdown.
+2020-12-17 21:33:31,345 ERROR [stderr] (MSC service thread 1-4) java.io.FileNotFoundException: C:\Users\ruben\Documents\DAE_20-21\wildfly-20.0.1.Final\standalone\configuration\jwt.keystore (O sistema não conseguiu localizar o ficheiro especificado)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at java.base/java.io.FileInputStream.open0(Native Method)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:108)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at deployment.projetodae.war//ejbs.JwtBean.<clinit>(JwtBean.java:28)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at java.base/java.lang.Class.forName0(Native Method)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at java.base/java.lang.Class.forName(Class.java:468)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.invocation@1.5.2.Final//org.jboss.invocation.proxy.AbstractProxyFactory.afterClassLoad(AbstractProxyFactory.java:107)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.invocation@1.5.2.Final//org.jboss.invocation.proxy.AbstractClassFactory.defineClass(AbstractClassFactory.java:204)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.invocation@1.5.2.Final//org.jboss.invocation.proxy.AbstractProxyFactory.getCachedMethods(AbstractProxyFactory.java:162)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.as.ejb3@20.0.1.Final//org.jboss.as.ejb3.component.stateless.StatelessComponentDescription$3.configure(StatelessComponentDescription.java:147)
+2020-12-17 21:33:31,346 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.as.ee@20.0.1.Final//org.jboss.as.ee.component.DefaultComponentViewConfigurator.configure(DefaultComponentViewConfigurator.java:101)
+2020-12-17 21:33:31,347 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.as.ee@20.0.1.Final//org.jboss.as.ee.component.deployers.EEModuleConfigurationProcessor.deploy(EEModuleConfigurationProcessor.java:92)
+2020-12-17 21:33:31,347 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.as.server@12.0.3.Final//org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:182)
+2020-12-17 21:33:31,347 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1739)
+2020-12-17 21:33:31,347 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1701)
+2020-12-17 21:33:31,347 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.msc@1.4.11.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1559)
+2020-12-17 21:33:31,347 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+2020-12-17 21:33:31,347 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+2020-12-17 21:33:31,347 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+2020-12-17 21:33:31,347 ERROR [stderr] (MSC service thread 1-4) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+2020-12-17 21:33:31,347 ERROR [stderr] (MSC service thread 1-4) 	at java.base/java.lang.Thread.run(Thread.java:832)
+2020-12-17 21:33:31,388 INFO  [org.jboss.weld.Version] (MSC service thread 1-4) WELD-000900: 3.1.4 (Final)
+2020-12-17 21:33:31,439 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-1) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2020-12-17 21:33:31,449 INFO  [org.infinispan.CONTAINER] (MSC service thread 1-1) ISPN000128: Infinispan version: Infinispan 'Turia' 10.1.8.Final
+2020-12-17 21:33:31,635 INFO  [io.smallrye.metrics] (MSC service thread 1-5) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2020-12-17 21:33:31,643 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 27) WFLYCLINF0002: Started client-mappings cache from ejb container
+2020-12-17 21:33:31,658 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-5) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!
+2020-12-17 21:33:32,037 INFO  [stdout] (ServerService Thread Pool -- 23) Starting project...
+2020-12-17 21:33:32,116 INFO  [stdout] (ServerService Thread Pool -- 23) ####### A criar produtos...
+2020-12-17 21:33:32,134 INFO  [stdout] (ServerService Thread Pool -- 23) ####### A criar variantes...
+2020-12-17 21:33:32,142 INFO  [stdout] (ServerService Thread Pool -- 23) ####### FINISHED!!
+2020-12-17 21:33:32,143 INFO  [stdout] (ServerService Thread Pool -- 23) Não verifica segurança na secção 0 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 21:33:32,144 INFO  [stdout] (ServerService Thread Pool -- 23) Não verifica segurança na secção 1 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 21:33:32,144 INFO  [stdout] (ServerService Thread Pool -- 23) Não verifica segurança na secção 3 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 21:33:32,144 INFO  [stdout] (ServerService Thread Pool -- 23) Não verifica segurança na secção 4 da variante C 120/50/21 x 1.5 do produto Section C 220 BF
+2020-12-17 21:33:32,144 INFO  [stdout] (ServerService Thread Pool -- 23) C 120/50/21 x 1.5 não pode ser usada.
+2020-12-17 21:33:32,144 INFO  [stdout] (ServerService Thread Pool -- 23) Não verifica segurança na secção 1 da variante C 120/60/13 x 2.0 do produto Section C 220 BF
+2020-12-17 21:33:32,144 INFO  [stdout] (ServerService Thread Pool -- 23) Não verifica segurança na secção 3 da variante C 120/60/13 x 2.0 do produto Section C 220 BF
+2020-12-17 21:33:32,144 INFO  [stdout] (ServerService Thread Pool -- 23) A variante C 120/60/13 x 2.0 não pode ser usada.
+2020-12-17 21:33:32,258 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 23) Initializing Mojarra 2.3.9.SP11 for context '/projetodae'
+2020-12-17 21:33:32,859 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 23) RESTEASY002225: Deploying javax.ws.rs.core.Application: class ws.ProjetoDAE$Proxy$_$$_WeldClientProxy
+2020-12-17 21:33:32,861 WARN  [org.jboss.as.weld] (ServerService Thread Pool -- 23) WFLYWELD0052: Using deployment classloader to load proxy classes for module org.eclipse.persistence. Package-private access will not work. To fix this the module should declare dependencies on [org.jboss.weld.core, org.jboss.weld.spi, org.jboss.weld.api]
+2020-12-17 21:33:32,966 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 23) WFLYUT0021: Registered web context: '/projetodae' for server 'default-server'
+2020-12-17 21:33:32,998 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "projetodae.war" (runtime-name : "projetodae.war")
+2020-12-17 21:33:32,998 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-12-17 22:14:24,379 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 23) WFLYUT0022: Unregistered web context: '/projetodae' from server 'default-server'
+2020-12-17 22:14:24,415 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 93) WFLYJPA0004: Stopping Persistence Unit Service 'projetodae.war#NewPersistenceUnit'
+2020-12-17 22:14:24,485 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment projetodae.war (runtime-name: projetodae.war) in 110ms
+2020-12-17 22:14:24,522 INFO  [org.jboss.as.server] (management-handler-thread - 2) WFLYSRV0009: Undeployed "projetodae.war" (runtime-name: "projetodae.war")
+2020-12-17 22:14:24,522 INFO  [org.jboss.as.controller] (management-handler-thread - 2) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."academics.war".STRUCTURE: WFLYSRV0153: Failed to process phase STRUCTURE of deployment "academics.war"
+
+2020-12-17 22:14:24,579 INFO  [org.jboss.as.server] (management-handler-thread - 2) WFLYSRV0272: Suspending server
+2020-12-17 22:14:24,581 INFO  [org.jboss.as.ejb3] (management-handler-thread - 2) WFLYEJB0493: EJB subsystem suspension complete
+2020-12-17 22:14:24,581 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+2020-12-17 22:14:24,592 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment academics.war (runtime-name: academics.war) in 5ms
+2020-12-17 22:14:24,595 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0019: Host default-host stopping
+2020-12-17 22:14:24,595 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2020-12-17 22:14:24,595 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2020-12-17 22:14:24,595 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0010: Unbound data source [java:jboss/datasources/projetodae]
+2020-12-17 22:14:24,597 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0010: Unbound data source [java:jboss/datasources/dae]
+2020-12-17 22:14:24,597 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) WFLYMAIL0002: Unbound mail session [java:jboss/mail/ java:/jboss/mail/fakeSMTP]
+2020-12-17 22:14:24,598 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0008: Undertow HTTPS listener https suspending
+2020-12-17 22:14:24,598 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2020-12-17 22:14:24,601 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0008: Undertow HTTP listener default suspending
+2020-12-17 22:14:24,601 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2020-12-17 22:14:24,601 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 93) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2020-12-17 22:14:24,601 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0004: Undertow 2.1.3.Final stopping
+2020-12-17 22:14:24,601 INFO  [org.infinispan.manager.DefaultCacheManager] (MSC service thread 1-4) Stopping cache manager null on null
+2020-12-17 22:14:24,608 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = h2
