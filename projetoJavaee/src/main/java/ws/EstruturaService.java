@@ -24,16 +24,45 @@ public class EstruturaService {
     private EstruturaBean estruturaBean;
 
     private EstruturaDTO toDTO(Estrutura estrutura) {
+
+        AplicacaoDTO aplicacao = null;
+
+        switch (estrutura.getAplicacao().getTipo()) {
+            case "Geral": aplicacao = aplicacaoGeralToDTO((AplicacaoGeral) estrutura.getAplicacao());
+                break;
+            case "Cobertura": aplicacao = aplicacaoCoberturaToDTO((AplicacaoCobertura)estrutura.getAplicacao());
+                break;
+            case "Fachada":aplicacao = aplicacaoToDTO((AplicacaoFachada)estrutura.getAplicacao());
+                break;
+            default: //TODO throw new....
+        }
+
+
         return new EstruturaDTO(
                 estrutura.getId(),
                 estrutura.getNome(),
                 geometriaToDTO(estrutura.getGeometria()),
-                aplicacaoToDTO(estrutura.getAplicacao()),
+                aplicacao,
                 parametrosCalculoToDTO(estrutura.getParametrosCalculo()),
                 materialToDTO(estrutura.getMaterial()),
                 produtosToDTOs(estrutura.getProdutos())
         );
     }
+
+    private AplicacaoDTO aplicacaoCoberturaToDTO(AplicacaoCobertura aplicacao) {
+        return new AplicacaoDTO(
+                aplicacao.getId(),
+                aplicacao.getCargaPermanente(),
+                aplicacao.getVentoPressao(),
+                aplicacao.getVentoSucao(),
+                aplicacao.getAngulo(),
+                aplicacao.getSobrecarga(),
+                -1,
+                aplicacao.getNeve(),
+                aplicacao.getTipo()
+        );
+    }
+
 
     private GeometriaDTO geometriaToDTO(Geometria geometria) {
         return new GeometriaDTO(
@@ -62,7 +91,27 @@ public class EstruturaService {
                 aplicacao.getId(),
                 aplicacao.getCargaPermanente(),
                 aplicacao.getVentoPressao(),
-                aplicacao.getVentoSucao()
+                aplicacao.getVentoSucao(),
+                -1,
+                -1,
+                -1,
+                -1,
+                aplicacao.getTipo()
+
+        );
+    }
+
+    private AplicacaoDTO aplicacaoGeralToDTO(AplicacaoGeral aplicacao) {
+        return new AplicacaoDTO(
+                aplicacao.getId(),
+                aplicacao.getCargaPermanente(),
+                aplicacao.getVentoPressao(),
+                aplicacao.getVentoSucao(),
+                aplicacao.getAngulo(),
+                aplicacao.getSobrecarga(),
+                aplicacao.getCategoriaSobrecarga(),
+                aplicacao.getNeve(),
+                aplicacao.getTipo()
         );
     }
 

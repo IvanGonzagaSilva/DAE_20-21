@@ -20,7 +20,7 @@ public class AplicacaoBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(int id, int angulo, int cargaPermanente, int sobrecarga, int neve, int ventoPressao, int ventoSucao)
+    public void create(int id, int angulo, int cargaPermanente, int sobrecarga, int neve, int ventoPressao, int ventoSucao, String tipo)
             throws MyEntityExistsException, MyConstraintViolationException {
 
         Aplicacao aplicacao = em.find(Aplicacao.class, id);
@@ -29,7 +29,7 @@ public class AplicacaoBean {
             throw new MyEntityExistsException("Aplicação with id: " + id + " already exists");
 
         try {
-            aplicacao = new Aplicacao(id, cargaPermanente, ventoPressao, ventoSucao);
+            aplicacao = new Aplicacao(id, cargaPermanente, ventoPressao, ventoSucao, tipo);
             em.persist(aplicacao);
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);

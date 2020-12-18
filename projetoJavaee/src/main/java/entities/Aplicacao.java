@@ -17,6 +17,8 @@ public class Aplicacao implements Serializable {
     @Id
     private int id;
 
+    private String tipo;
+
     private int cargaPermanente;
 
     private int ventoPressao;
@@ -27,11 +29,24 @@ public class Aplicacao implements Serializable {
 
     }
 
-    public Aplicacao(int id, int cargaPermanente, int ventoPressao, int ventoSucao) {
+    public Aplicacao(int id, int cargaPermanente, int ventoPressao, int ventoSucao, String tipo) {
         this.id = id;
         this.cargaPermanente = cargaPermanente;
         this.ventoPressao = ventoPressao;
         this.ventoSucao = ventoSucao;
+        this.tipo = tipo;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public int getId() {
