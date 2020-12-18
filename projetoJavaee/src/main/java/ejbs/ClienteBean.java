@@ -2,10 +2,14 @@ package ejbs;
 
 import entities.Cliente;
 import entities.PessoaDeContacto;
+import exceptions.MyConstraintViolationException;
+import exceptions.MyEntityExistsException;
+import exceptions.MyEntityNotFoundException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.validation.ConstraintViolationException;
 
 @Stateless(name = "ClienteEJB")
 public class ClienteBean {
@@ -16,24 +20,40 @@ public class ClienteBean {
     public ClienteBean() {
     }
 
-    public Cliente create(String nome, String usernamePc, String morada, String email){
-        Cliente cliente = this.find(email);
+    public Cliente create(String nome, String usernamePc, String morada, String email)
+            throws MyEntityExistsException, MyEntityNotFoundException, MyConstraintViolationException
+    {
+        Cliente cliente = em.find(Cliente.class, email);
 
         if(cliente != null){
-            return cliente;
+            throw new MyEntityExistsException();
         }
 
         PessoaDeContacto pc = em.find(PessoaDeContacto.class, usernamePc);
 
-        Cliente cli = new Cliente(nome, pc, morada, email);
+        if(pc == null){
+            throw new MyEntityNotFoundException();
+        }
 
-        em.persist(cli);
+        try {
+            cliente = new Cliente(nome, pc, morada, email);
 
-        return cli;
+            em.persist(cliente);
+
+            return cliente;
+        }catch (ConstraintViolationException e){
+            throw new MyConstraintViolationException(e);
+        }
 
     }
 
-    public Cliente find(String email) {
-        return em.find(Cliente.class, email);
+    public Cliente find(String email) throws MyEntityNotFoundException {
+        Cliente cliente = em.find(Cliente.class, email);
+
+        if(cliente ==null){
+            throw new MyEntityNotFoundException();
+        }
+
+        return cliente;
     }
 }

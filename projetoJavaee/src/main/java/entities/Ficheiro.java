@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Ficheiro implements Serializable {
+public class Ficheiro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -14,12 +14,12 @@ public class VarianteDTO implements Serializable {
 
     private static double G = 78.5;
     private int codigo;
-    private Produto produto;
     private String nome;
     private double weff_p;
     private double weff_n;
     private double ar;
     private double sigmaC;
+    private String nomeProduto;
     private double pp;
     private LinkedHashMap<Double,Double> mcr_p;
     private LinkedHashMap<Double,Double> mcr_n;
@@ -29,20 +29,21 @@ public class VarianteDTO implements Serializable {
         this.mcr_n = new LinkedHashMap<Double,Double>();
     }
 
-    public VarianteDTO(int codigo, Produto produto, String nome, double weff_p, double weff_n, double ar, double sigmaC ) {
+    public VarianteDTO(int codigo, String nome, double weff_p, double weff_n, double ar, double sigmaC, String nomeProduto ) {
         this.codigo = codigo;
-        this.produto = produto;
         this.nome = nome;
         this.weff_p = weff_p;
         this.weff_n = weff_n;
         this.ar = ar;
         this.sigmaC = sigmaC;
         this.pp = G * ar * Math.pow(10, -6);
+        this.nomeProduto = nomeProduto;
+
     }
 
-    public VarianteDTO(int codigo, Produto produto, String nome, double weff_p, double weff_n, double ar, double sigmaC, double pp) {
+    public VarianteDTO(int codigo, String nome, double weff_p, double weff_n, double ar, double sigmaC, double pp, String nomeProduto) {
+        this.nomeProduto = nomeProduto;
         this.codigo = codigo;
-        this.produto = produto;
         this.nome = nome;
         this.weff_p = weff_p;
         this.weff_n = weff_n;
@@ -65,14 +66,6 @@ public class VarianteDTO implements Serializable {
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
-    }
-
-    public Produto getProduto() {
-        return produto;
-    }
-
-    public void setProduto(Produto produto) {
-        this.produto = produto;
     }
 
     public String getNome() {
@@ -137,5 +130,13 @@ public class VarianteDTO implements Serializable {
 
     public void setMcr_n(LinkedHashMap<Double, Double> mcr_n) {
         this.mcr_n = mcr_n;
+    }
+
+    public String getNomeProduto() {
+        return nomeProduto;
+    }
+
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
     }
 }
