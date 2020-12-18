@@ -4,6 +4,7 @@ import dtos.EstruturaDTO;
 import dtos.ProjetoDTO;
 import entities.Cliente;
 import entities.Estrutura;
+import entities.Projetista;
 import entities.Projeto;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityNotFoundException;
@@ -24,15 +25,23 @@ public class ProjetoBean {
     ClienteBean clienteBean;
     @EJB
     EstruturaBean estruturaBean;
+    @EJB
+    ProjetistaBean projetistaBean;
 
     public ProjetoBean() {
     }
 
-    public Projeto create(String nome, String emailCliente) throws MyEntityNotFoundException, MyConstraintViolationException {
+    public Projeto create(String nome, String emailCliente, String usernameProjetista) throws MyEntityNotFoundException, MyConstraintViolationException {
 
         Cliente cliente = em.find(Cliente.class, emailCliente);
 
         if(cliente == null){
+            throw new MyEntityNotFoundException();
+        }
+
+        Projetista projetista = projetistaBean.find(usernameProjetista);
+
+        if(projetista == null){
             throw new MyEntityNotFoundException();
         }
 
@@ -42,6 +51,8 @@ public class ProjetoBean {
             cliente.addProjeto(projeto);
 
             em.persist(projeto);
+
+            projetista.addProjeto(projeto);
 
             return projeto;
 

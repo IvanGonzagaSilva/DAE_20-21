@@ -49,7 +49,7 @@ public class ConfigBean {
             projetistaBean.create("projetista1", "projetista@email.com", "projetista", "9143131615", "123abc");
             pessoaDeContactoBean.create("pc1", "pc1@mail.com", "pessoadecontacto1", "914313616", "123abc");
             clienteBean.create("cliente", "pc1", "rua xpto", "clientex@mail.com");
-            Projeto projeto1 = projetoBean.create("projeto1", "clientex@mail.com");
+            Projeto projeto1 = projetoBean.create("projeto1", "clientex@mail.com", "projetista1");
             Estrutura estrutura1 = estruturaBean.create();
             estrutura1.addMaterial(material_chapa);
             estrutura1.addMaterial(material_laje);

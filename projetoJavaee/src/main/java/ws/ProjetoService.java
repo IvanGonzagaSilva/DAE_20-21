@@ -4,9 +4,6 @@ import dtos.*;
 import ejbs.ClienteBean;
 import ejbs.ProjetoBean;
 import entities.*;
-import exceptions.MyEntityExistsException;
-import exceptions.MyEntityNotFoundException;
-import jwt.Jwt;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
@@ -108,7 +105,7 @@ public class ProjetoService {
                 return Response.status(Response.Status.BAD_REQUEST).build();
             }
 
-            Projeto projeto = projetoBean.create(projetoDTO.getNome(), emailCliente);
+            Projeto projeto = projetoBean.create(projetoDTO.getNome(), emailCliente, projetoDTO.getUsernameProjetista());
 
             return Response.status(Response.Status.CREATED).build();
 

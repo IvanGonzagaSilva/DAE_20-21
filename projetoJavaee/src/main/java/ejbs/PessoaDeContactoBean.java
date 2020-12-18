@@ -20,7 +20,7 @@ public class PessoaDeContactoBean {
     }
 
     public PessoaDeContacto create(String username, String email, String name, String contactoTelefonico, String password) throws MyEntityExistsException, MyConstraintViolationException {
-        PessoaDeContacto pc = em.find(PessoaDeContacto.class, username);
+        PessoaDeContacto pc = this.find(username);
 
         if(pc != null){
             throw new MyEntityExistsException();
@@ -40,4 +40,7 @@ public class PessoaDeContactoBean {
     }
 
 
+    public PessoaDeContacto find(String username) {
+        return em.find(PessoaDeContacto.class, username);
+    }
 }

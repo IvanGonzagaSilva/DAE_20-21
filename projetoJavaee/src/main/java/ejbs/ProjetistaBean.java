@@ -74,4 +74,8 @@ public class ProjetistaBean {
             projetista.removeProjeto(projeto);
         }
     }
+
+    public Projetista find(String usernameProjetista) {
+        return em.find(Projetista.class, usernameProjetista);
+    }
 }

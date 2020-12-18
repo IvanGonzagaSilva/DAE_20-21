@@ -6,11 +6,11 @@ import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class projetistaDTO extends PessoaDTO {
+public class ProjetistaDTO extends PessoaDTO {
 
     private Set<ProjetoDTO> projetos;
 
-    public projetistaDTO() {
+    public ProjetistaDTO() {
         projetos = new LinkedHashSet<>();
     }
 
