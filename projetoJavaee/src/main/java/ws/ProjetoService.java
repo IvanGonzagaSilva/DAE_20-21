@@ -2,6 +2,7 @@ package ws;
 
 import dtos.*;
 import ejbs.ClienteBean;
+import ejbs.ProjetistaBean;
 import ejbs.ProjetoBean;
 import entities.*;
 
@@ -30,14 +31,17 @@ public class ProjetoService {
     @EJB
     private ClienteBean clienteBean;
 
+    @EJB
+    private ProjetistaBean projetistaBean;
+
 
 
     private ProjetoDTO toDTO(Projeto projeto){
         return new ProjetoDTO(
                 projeto.getId(),
                 projeto.getNome(),
-                clienteToDTO(projeto.getCliente()),
-                estruturasToDTOs(projeto.getEstruturas())
+                estruturasToDTOs(projeto.getEstruturas()),
+                projeto.getProjetista().getUsername()
         );
     }
 
@@ -77,7 +81,8 @@ public class ProjetoService {
                 pessoaDeContacto.getUsername(),
                 pessoaDeContacto.getEmail(),
                 pessoaDeContacto.getNome(),
-                pessoaDeContacto.getContactoTelefonico()
+                pessoaDeContacto.getContactoTelefonico(),
+                pessoaDeContacto.getPassword()
         );
     }
 
@@ -97,15 +102,13 @@ public class ProjetoService {
     public Response createProjetoWS(ProjetoDTO projetoDTO) {
         try {
 
-            String emailCliente = projetoDTO.getCliente().getEmail();
+            Projetista projetista = projetistaBean.find(projetoDTO.getUsernameProjetista());
 
-            Cliente cliente = clienteBean.find(emailCliente);
-
-            if(cliente == null){
+            if(projetista == null){
                 return Response.status(Response.Status.BAD_REQUEST).build();
             }
 
-            Projeto projeto = projetoBean.create(projetoDTO.getNome(), emailCliente, projetoDTO.getUsernameProjetista());
+            Projeto projeto = projetoBean.create(projetoDTO.getNome(), projetoDTO.getUsernameProjetista());
 
             return Response.status(Response.Status.CREATED).build();
 
@@ -173,6 +176,41 @@ public class ProjetoService {
         try {
 
             projetoBean.removeEstrutura(idProjeto, estruturaDTO);
+
+            return Response.status(Response.Status.OK).build();
+
+
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @PUT
+    @Path("{id}/enrollclient")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response enrollClientProjetoWS(@PathParam("id") int idProjeto, ClienteDTO clienteDTO){
+        try {
+
+            projetoBean.enrollCliente(idProjeto, clienteDTO.getEmail());
+
+            return Response.status(Response.Status.OK).build();
+
+
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+
+    @PUT
+    @Path("{id}/unrollclient")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response unrollClientProjetoWS(@PathParam("id") int idProjeto, ClienteDTO clienteDTO){
+        try {
+
+            projetoBean.unrollCliente(idProjeto, clienteDTO.getEmail());
 
             return Response.status(Response.Status.OK).build();
 

@@ -10,29 +10,20 @@ public class ProjetoDTO implements Serializable {
     private int id;
     private String nome;
     private String usernameProjetista;
-    private ClienteDTO cliente;
     private Set<EstruturaDTO> estruturas;
 
     public ProjetoDTO() {
         estruturas = new LinkedHashSet<>();
     }
 
-    public ProjetoDTO(int id, String nome, ClienteDTO cliente, Set<EstruturaDTO> estruturas, String usernameProjetista) {
+    public ProjetoDTO(int id, String nome, Set<EstruturaDTO> estruturas, String usernameProjetista) {
         this();
         this.id = id;
         this.nome = nome;
         this.usernameProjetista = usernameProjetista;
-        this.cliente = cliente;
         this.estruturas = estruturas;
     }
 
-    public ProjetoDTO(int id, String nome, ClienteDTO cliente, Set<EstruturaDTO> estruturas) {
-        this();
-        this.id = id;
-        this.nome = nome;
-        this.cliente = cliente;
-        this.estruturas = estruturas;
-    }
 
     public int getId() {
         return id;
@@ -50,13 +41,6 @@ public class ProjetoDTO implements Serializable {
         this.nome = nome;
     }
 
-    public ClienteDTO getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(ClienteDTO cliente) {
-        this.cliente = cliente;
-    }
 
     public Set<EstruturaDTO> getEstruturas() {
         return estruturas;

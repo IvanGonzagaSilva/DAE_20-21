@@ -31,13 +31,7 @@ public class ProjetoBean {
     public ProjetoBean() {
     }
 
-    public Projeto create(String nome, String emailCliente, String usernameProjetista) throws MyEntityNotFoundException, MyConstraintViolationException {
-
-        Cliente cliente = em.find(Cliente.class, emailCliente);
-
-        if(cliente == null){
-            throw new MyEntityNotFoundException();
-        }
+    public Projeto create(String nome, String usernameProjetista) throws MyEntityNotFoundException, MyConstraintViolationException {
 
         Projetista projetista = projetistaBean.find(usernameProjetista);
 
@@ -46,9 +40,7 @@ public class ProjetoBean {
         }
 
         try {
-            Projeto projeto = new Projeto(nome, cliente);
-
-            cliente.addProjeto(projeto);
+            Projeto projeto = new Projeto(nome, projetista);
 
             em.persist(projeto);
 
@@ -88,10 +80,20 @@ public class ProjetoBean {
     public void update(ProjetoDTO projetoDTO) throws MyEntityNotFoundException {
         Projeto projeto = find(projetoDTO.getId());
 
-        if (projeto!=null && projeto.getCliente()!=null && projeto.getNome()!=null){
-            projeto.setCliente(clienteBean.find(projetoDTO.getCliente().getEmail()));
-            projeto.setNome(projetoDTO.getNome());
+        if(projeto == null){
+            throw new MyEntityNotFoundException();
         }
+
+        Projetista projetista = projetistaBean.find(projetoDTO.getUsernameProjetista());
+
+        if(projetista == null){
+            throw new MyEntityNotFoundException();
+        }
+
+        projeto.setProjetista(projetista);
+        projeto.setNome(projetoDTO.getNome());
+
+
     }
 
     public void addEstrutura(int idProjeto, EstruturaDTO estruturaDTO) throws MyEntityNotFoundException, MyConstraintViolationException {
@@ -136,7 +138,41 @@ public class ProjetoBean {
         }catch (ConstraintViolationException e){
             throw new MyConstraintViolationException(e);
         }
+    }
 
+    public void enrollCliente(int idProjeto, String emailCliente) throws MyEntityNotFoundException {
+        Projeto projeto = this.find(idProjeto);
+
+        if(projeto == null){
+            throw new MyEntityNotFoundException();
+        }
+
+        Cliente cliente = clienteBean.find(emailCliente);
+
+        if(cliente == null){
+            throw new MyEntityNotFoundException();
+        }
+
+        cliente.addProjeto(projeto);
+
+    }
+
+
+
+    public void unrollCliente(int idProjeto, String emailCliente) throws MyEntityNotFoundException {
+        Projeto projeto = this.find(idProjeto);
+
+        if(projeto == null){
+            throw new MyEntityNotFoundException();
+        }
+
+        Cliente cliente = clienteBean.find(emailCliente);
+
+        if(cliente == null){
+            throw new MyEntityNotFoundException();
+        }
+
+        cliente.removeProjeto(projeto);
 
     }
 

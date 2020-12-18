@@ -27,7 +27,7 @@ public class Cliente implements Serializable {
     @Email
     private String email;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
+    @OneToMany
     private Set<Projeto> projetos;
 
     public Cliente() {

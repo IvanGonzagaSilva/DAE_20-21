@@ -14,6 +14,11 @@ public class ProjetistaDTO extends PessoaDTO {
         projetos = new LinkedHashSet<>();
     }
 
+    public ProjetistaDTO(String username, String email, String nome, String contactoTelefonico, String password, Set<ProjetoDTO> projetos) {
+        super(username, email, nome, contactoTelefonico, password);
+        this.projetos = projetos;
+    }
+
     public Set<ProjetoDTO> getProjetos() {
         return projetos;
     }
