@@ -1,20 +1,62 @@
 package ejbs;
 
+import entities.Aplicacao;
+import entities.Material;
 import entities.Produto;
+import exceptions.MyConstraintViolationException;
+import exceptions.MyEntityExistsException;
+import exceptions.MyEntityNotFoundException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityNotFoundException;
+import javax.persistence.LockModeType;
 import javax.persistence.PersistenceContext;
+import javax.validation.ConstraintViolationException;
+import java.util.List;
 
-@Stateless(name = "ProdutoEJB")
+@Stateless
 public class ProdutoBean {
 
     @PersistenceContext
-    EntityManager em;
+    private EntityManager em;
 
-    public void create(String name){
-        Produto p = new Produto(name);
-        em.persist(p);
+    public void create(String nome) throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
+        try {
+
+            Produto produto = new Produto(nome);
+            em.persist(produto);
+        } catch (ConstraintViolationException e) {
+            throw new MyConstraintViolationException(e);
+        }
     }
 
+    public Produto update(int id, String nome, Material material) {
+
+        Produto produto = em.find(Produto.class, id);
+
+        if (produto == null)
+            throw new EntityNotFoundException("Produto not found.");
+
+        em.lock(produto, LockModeType.OPTIMISTIC);
+        produto.setNome(nome);
+        em.merge(produto);
+
+        return produto;
+    }
+
+    public Produto findProduto(Integer id)
+            throws MyEntityNotFoundException {
+
+        Produto produto = em.find(Produto.class, id);
+
+        if (produto == null)
+            throw new MyEntityNotFoundException("Produto not found.");
+
+        return produto;
+    }
+
+    public List<Produto> getAllProdutos() {
+        return (List<Produto>) em.createNamedQuery("getAllProdutos").getResultList();
+    }
 }

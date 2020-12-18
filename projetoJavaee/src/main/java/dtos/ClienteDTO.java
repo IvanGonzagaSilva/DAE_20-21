@@ -1,10 +1,5 @@
 package dtos;
 
-import entities.PessoaDeContacto;
-
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.validation.constraints.Email;
 import java.io.Serializable;
 
 public class ClienteDTO implements Serializable {

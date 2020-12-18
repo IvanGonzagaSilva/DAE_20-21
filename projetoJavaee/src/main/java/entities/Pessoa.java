@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Entity
-@Table(name="PESSOAS")
+@Table(name = "PESSOAS")
 public class Pessoa implements Serializable {
 
     @Id

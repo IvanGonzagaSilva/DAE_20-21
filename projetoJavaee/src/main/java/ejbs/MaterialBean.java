@@ -28,7 +28,7 @@ public class MaterialBean {
     }
 
     public List<Material> getAllMateriais() {
-        return em.createNamedQuery("getAllMateriais", Material.class).getResultList();
+        return (List<Material>) em.createNamedQuery("getAllMateriais").getResultList();
     }
-
+    
 }

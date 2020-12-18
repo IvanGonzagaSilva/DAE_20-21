@@ -1,14 +1,19 @@
 package entities;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
+@NamedQueries({
+    @NamedQuery(
+        name = "getAllProdutos",
+        query = "SELECT p FROM Produto p ORDER BY p.nome" // JPQL
+    )
+})
+
 @Entity
-public class Produto {
+public class Produto implements Serializable {
 
     @Id
     private String nome;
@@ -21,8 +26,8 @@ public class Produto {
     }
 
     public Produto(String nome) {
+        this();
         this.nome = nome;
-        variantes = new LinkedList<>();
     }
 
     public String getNome() {
