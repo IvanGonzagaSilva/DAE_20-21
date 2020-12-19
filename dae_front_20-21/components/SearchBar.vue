@@ -1,52 +1,80 @@
 <template>
-    <v-row>
-        <v-col class="pl-0">
-            <v-btn
-            class="m-2 py-6"
-            color="primary"
-            @click="swapComponent()"
-            >
-            <v-icon dark class="pr-2">
-                mdi-{{componentId != 1 ? "chevron-left": "folder-plus"}}
-            </v-icon>
-                {{componentId == 0 ? "Voltar Página Inicial" : (componentId == 2 ? "Voltar Página Inicial" :  "Criar Novo Projeto")}}
-            </v-btn>
-        </v-col>
+    <div style="width: 1000px">
 
-         <v-col >
-            <v-text-field
-            label="Solo"
-            placeholder="Nome"
-            solo
-            :disabled="componentId !== 1"
-            v-model="searchName"
-            @input="emitEvent"
-          ></v-text-field>
-        </v-col>
+        <v-row class="px-3 pb-2">
 
-        <v-col>
-            <v-select
-            :items="clientArray"
-            label="Clientes"
-            solo
-            :disabled="componentId !== 1"
-            v-model="searchClient"
-            @input="emitEvent"
-            ></v-select>
-        </v-col>
+            <v-col class="pl-0 pr-3">
 
-        <v-col cols="2" class="px-0">
-            <p v-show="!resetFilterHidden" class="text-uppercase text-body-1 reset-button font-weight-bold" color="blue" @click="resetFilters()">
-                Reset Filters
-            </p>
-        </v-col>
+                <v-btn
+                class="m-2 py-6"
+                color="primary"
+                block
+                @click="swapComponent((componentId == 2? 1 : 0))"
+                >
+                <v-icon dark class="pr-2">
+                    mdi-{{(componentId == 0 || componentId == 2) ? "chevron-left": "folder-plus"}}
+                </v-icon>
+                    {{(componentId == 0 || componentId == 2) ? "Página Inicial": "Novo Projeto"}}
+                </v-btn>
 
-    </v-row>
+            </v-col>
+
+            <v-col class="pr-0 pl-3">
+
+                <v-btn
+                class="m-2 py-6"
+                color="primary"
+                block
+                @click="swapComponent(3)"
+                >
+                <v-icon dark class="pr-2">
+                    mdi-{{componentId != 3 ? "folder-plus": "chevron-left"}}
+                </v-icon>
+                    {{componentId != 3 ? "Nova Estrutura": "Página Inicial"}}
+                </v-btn>
+
+            </v-col>
+
+        </v-row>
+
+        <v-row>
+
+            <v-col class="py-0">
+                <v-text-field
+                label="Solo"
+                placeholder="Nome"
+                solo
+                :disabled="componentId !== 1"
+                v-model="searchName"
+                @input="emitEvent"
+            ></v-text-field>
+            </v-col>
+
+            <v-col class="py-0">
+                <v-select
+                :items="clientNameArray"
+                label="Clientes"
+                solo
+                :disabled="componentId !== 1"
+                v-model="searchClient"
+                @input="emitEvent"
+                ></v-select>
+            </v-col>
+
+            <v-col cols="2" class="px-0 py-0">
+                <p v-show="!resetFilterHidden" class="text-uppercase text-body-1 reset-button font-weight-bold" color="blue" @click="resetFilters()">
+                    Reset Filters
+                </p>
+            </v-col>
+
+        </v-row>
+
+    </div>
 </template>
 
 <script>
 export default {
-    props: ['clientArray', 'componentId'],
+    props: ['clientNameArray', 'componentId'],
     data: () => ({
       searchClient: "",
       searchName: "",
@@ -61,17 +89,16 @@ export default {
             if (typeof this.searchClient != undefined)
             {
                 this.searchClient = "";
-                this.$emit('search-client', ''); 
+                this.$emit('search-client', '');
             }
         },
-        swapComponent: function () {
-            let newComponentId = (this.componentId != 1 ? 1 : 0);
-            this.$emit('create-project', newComponentId);
+        swapComponent: function (id) {
+            this.$emit('create-project', id);
         },
         emitEvent()
         {
             this.$emit('search-name', this.searchName);
-            this.$emit('search-client', this.searchClient); 
+            this.$emit('search-client', this.searchClient);
         }
     },
     computed: {
@@ -87,10 +114,10 @@ export default {
     {
         cursor: pointer;
         padding: 12px;
-        color: rgb(8, 135, 177);
+        color: #2196F3;
     }
     .reset-button:hover
     {
-        color: rgb(13, 150, 196);
+        color: #1976D2;
     }
 </style>

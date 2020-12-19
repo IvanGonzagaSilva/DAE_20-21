@@ -67,8 +67,8 @@ export default {
         setToken(token)
         {
             localStorage.setItem('token', token);
-            axios.defaults.headers.common = {'authorization': `Bearer ${token}`}
-            this.$router.push('/project');
+            this.$axios.defaults.headers.common = { 'authorization': 'Bearer ' + token };
+            this.$router.push('/layout');
         }
     },
 }

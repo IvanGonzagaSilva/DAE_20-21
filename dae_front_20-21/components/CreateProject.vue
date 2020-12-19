@@ -1,40 +1,70 @@
 <template>
     <div style="width: 600px;">
 
-        <h2 class="text-h5 pb-4 font-weight-bold text-uppercase text-center">{{clickedProject !== 'empty' ? 'Gerir Projeto' : 'Criar Novo Projeto'}}</h2>
+        <h2 class="text-h5 pb-4 font-weight-bold text-uppercase text-center">{{title}}</h2>
 
-            <v-text-field
-                v-model="projectData.nome"
-                class="mb-0"
-                full-width
-                solo
-                :disabled="clickedProject !== 'empty'"
-                label="Nome do Projeto"
-                clearable
-            ></v-text-field>
+        <v-text-field
+            v-model="projectData.nome"
+            class="mb-0"
+            full-width
+            solo
+            :disabled="clickedProject !== 'empty'"
+            label="Nome do Projeto"
+            clearable
+        ></v-text-field>
 
 
-            <v-text-field
-                v-model="projectData.usernameProjetista"
-                solo
-                class="mb-0"
-                disabled
-                clearable
-            ></v-text-field>
+        <v-text-field
+            v-model="projectData.usernameProjetista"
+            solo
+            class="mb-0"
+            disabled
+            clearable
+        ></v-text-field>
 
         <span v-if="clickedProject !== 'empty'">
 
-            <v-row v-for="i in index" :key="i">
-                    
+            <v-row v-for="cliente in clickedProject.clientes" :key="cliente.nome">
+
                 <v-col cols="10" class="py-0">
 
                     <v-text-field
-                        class="mb-0"
+                        v-model="cliente.nome"
                         solo
-                        v-model="projectData.cliente"
-                        :label="'Email Cliente '"
+                        disabled
+                        class="mb-0"
                         clearable
                     ></v-text-field>
+
+                </v-col>
+
+                <v-col cols="2"  class="py-0">
+
+                    <v-btn
+                        class="py-6 px-5"
+                        color="error"
+                        block
+                        >
+                        <v-icon dark>
+                            mdi-close
+                        </v-icon>
+                    </v-btn>
+
+                </v-col>
+
+            </v-row>
+
+        <span v-if="clickedProject.clientes.filter(client => console.log(client.username)).length > 0">
+            <v-row v-for="i in index" :key="i">
+
+                <v-col cols="10" class="py-0">
+
+                    <v-select
+                    :items="clientNameArray.filter(client => projectData.clientes.includes(client.username))"
+                    label="Nome de Cliente"
+                    solo
+                    v-model="name"
+                    ></v-select>
 
                 </v-col>
 
@@ -54,6 +84,8 @@
                 </v-col>
 
             </v-row>
+        </span>
+        <h4 v-else class="mx-auto text-uppercase text-center mb-4">No more existing clients that aren't already in the project.</h4>
 
         </span>
 
@@ -85,7 +117,7 @@
                 ><v-icon>mdi-delete</v-icon>
                 Delete
                 </v-btn>
-        
+
             </v-col>
 
         </v-row>
@@ -95,18 +127,19 @@
 
 <script>
 export default {
-    props: ['clickedProject', 'projectsArray', 'username'],
+    props: ['clickedProject', 'projectsArray', 'username', 'componentId', 'title', 'clientNameArray'],
     data: () => ({
         index: 1,
+        name: '',
         projectData: {
             nome: "",
             usernameProjetista: "",
-            cliente: {}
+            clientes: []
         },
         emptyObject: {
             nome: "",
             usernameProjetista: "",
-            cliente: {}
+            clientes: []
         },
         loader: null,
         loading: false,
@@ -116,19 +149,29 @@ export default {
     {
         if (this.clickedProject !== 'empty')
             this.projectData = this.clickedProject;
-        
+
         let username = localStorage.getItem('username')
-        typeof username !== undefined ? this.projectData.usernameProjetista = username : this.getUser();
+        if (this.componentId !== 3)
+            typeof username !== undefined ? this.projectData.usernameProjetista = username : this.getUser();
     },
     methods: {
-        newStructure: async function () 
+        uploadData: async function ()
         {
-            await this.$axios.post("/api/projeto", this.projectData).then(this.addProjectToArray()).catch(error => console.log(error.message));
-            this.$emit('backToHomepage');
+            if (this.name && this.clickedProject)
+            {
+                this.projectData.clientes = this.clickedProject.clientes;
+                this.projectData.clientes.push(this.name);
+                console.log(name);
+                await this.$axios.put('/api/projeto/' + this.clickedProject.id + '/enrollclient', {username: this.projectData.clientes}).then(this.addProjectToArray()).catch(error => console.log(error.message));
+            }
+            else
+                await this.$axios.post("/api/projeto", this.projectData).then(this.addProjectToArray()).catch(error => console.log(error.message));
+
+            this.$emit('back-to-homepage');
         },
         deleteProject: async function ()
         {
-            await this.$axios.delete('/api/projeto', this.project.id).then( this.removeProjectFromArray(this.project.id) ).catch(error => console.log(error.message));
+            await this.$axios.delete('/api/projeto', {id: this.clickedProject.id}).then( this.removeProjectFromArray(this.clickedProject.id) ).catch(error => console.log(error.message));
         },
         addProjectToArray: function ()
         {
