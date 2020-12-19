@@ -4,14 +4,17 @@ package ws;
 import dtos.McrPDTO;
 import dtos.SimulacaoDTO;
 import dtos.VarianteDTO;
-import ejbs.SimulacaoBean;
-import ejbs.VarianteBean;
+import ejbs.*;
+import entities.Aplicacao;
+import entities.AplicacaoGeral;
+import entities.Geometria;
 import entities.Variante;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -28,6 +31,12 @@ public class VarianteService {
     VarianteBean varianteBean;
     @EJB
     SimulacaoBean simulacaoBean;
+    @EJB
+    GeometriaBean geometriaBean;
+    @EJB
+    AplicacaoCoberturaBean aplicacaoCoberturaBean;
+    @EJB
+    AplicacaoGeralBean aplicacaoGeralBean;
 
     @POST
     @Path("/")
@@ -67,7 +76,9 @@ public class VarianteService {
         variante.addMcr_p(mcrPDTO.getL(), mcrPDTO.getMcr_pValue());
       }
 
-      return Response.status(Response.Status.CREATED).entity(varianteToDTO(variante)).build();
+      variante.setMcr_n((LinkedHashMap<Double, Double>) variante.getMcr_p().clone());
+
+      return Response.status(Response.Status.OK).build();
 
     } catch (Exception e) {
       log.info(e.getMessage());
@@ -88,39 +99,30 @@ public class VarianteService {
     );
   }
 
-
-
-
-    @POST
-    @Path("/simulacao")
+    @GET
+    @Path("{id}/simulacao/{idgeo}/{idaplicacao}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response simulacaoVarianteWS(SimulacaoDTO simulacaoDTO) {
+    public Response simulacaoVarianteWS(@PathParam("id") int idVariante, @PathParam("idgeo") int idGeometria, @PathParam("idaplicacao") int idAplicacao ) {
         try {
 
-            Variante variante = varianteBean.getVariante(simulacaoDTO.getCodVariante());
+          Variante variante = varianteBean.getVariante(idVariante);
+          Geometria geometria = geometriaBean.findGeometria(idGeometria);
+          AplicacaoGeral aplicacaoCobertura = aplicacaoGeralBean.findAplicacao(idAplicacao);
 
-            if (variante == null) {
-                return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
-            }
+          if(aplicacaoCobertura.getSobrecarga() < 0){
+            return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+          }
 
-            boolean simResult = simulacaoBean.simulaVariante(simulacaoDTO.getNb(), simulacaoDTO.getLVao(), simulacaoDTO.getQ(), variante);
-
-            Response.Status status;
-            if (simResult) {
-
-                status = Response.Status.ACCEPTED;
-            } else {
-                status = Response.Status.NOT_ACCEPTABLE;
-            }
-
-
-            return Response.status(status).build();
-
+          if (simulacaoBean.simulaVariante(geometria.getNumeroVaos(), geometria.getComprimentoVao(), aplicacaoCobertura.getSobrecarga(), variante)) {
+            return Response.status(Response.Status.ACCEPTED).build();
+          } else {
+            return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+          }
 
         } catch (Exception e) {
             log.info(e.getMessage());
         }
-        return Response.status(Response.Status.UNAUTHORIZED).build();
+        return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
     }
 
 

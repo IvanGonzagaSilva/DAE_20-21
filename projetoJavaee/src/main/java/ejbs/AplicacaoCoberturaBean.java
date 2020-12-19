@@ -52,7 +52,7 @@ public class AplicacaoCoberturaBean {
         return aplicacaoCobertura;
     }
 
-    public Aplicacao findAplicacaoCobertura(Integer id)
+    public Aplicacao findAplicacaoCobertura(int id)
             throws MyEntityNotFoundException {
 
         AplicacaoCobertura aplicacaoCobertura = em.find(AplicacaoCobertura.class, id);

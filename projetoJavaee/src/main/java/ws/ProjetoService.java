@@ -321,7 +321,6 @@ public class ProjetoService {
 
             for (ClienteDTO clienteDTO : clientesDTO) {
                 projetoBean.enrollCliente(idProjeto, clienteDTO.getUsername());
-
             }
 
             return Response.status(Response.Status.OK).build();
