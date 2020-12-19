@@ -34,7 +34,7 @@
 
                         <v-col class="pb-0">
 
-                            <b>Cliente</b>: {{project.cliente.nome}}
+                            <b>Cliente</b>: 
 
                         </v-col>
 
@@ -47,7 +47,7 @@
                             <span v-for="(estrutura, index) in project.estruturas" :key="index">
 
                                 <b>Estrutura</b>: {{estrutura.id}}
-                                {{index > project.estruturas.length ? ',' : ''}}
+                                <!-- {{index > project.estruturas.length ? ',' : ''}} -->
 
                             </span>
 
@@ -59,7 +59,7 @@
 
                         <v-col  class="pb-0">
 
-                            <b>Email</b>: {{project.cliente.email}}
+                            <b>Email</b>: 
 
                         </v-col>
 
@@ -69,7 +69,7 @@
 
                         <v-col  class="pb-0">
 
-                            <b>Morada</b>: {{project.cliente.morada}}
+                            <b>Morada</b>:
 
                         </v-col>
 
