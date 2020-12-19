@@ -59,7 +59,7 @@ public class VarianteService {
         }
         return Response.status(Response.Status.UNAUTHORIZED).build();
     }
-    
+
   private VarianteDTO varianteToDTO(Variante variante) {
     return new VarianteDTO(
       variante.getCodigo(),

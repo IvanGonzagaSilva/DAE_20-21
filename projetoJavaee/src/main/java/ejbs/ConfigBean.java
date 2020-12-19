@@ -180,10 +180,13 @@ public class ConfigBean {
 
       System.out.println("creating produtos...");
       //Produtos
-      produtoBean.create("a");
-      produtoBean.create("O");
+      Produto produto1 = produtoBean.create("a");
+      Produto produto2 = produtoBean.create("O");
       produtoBean.create("C");
       produtoBean.create("Z");
+
+      produto1.addVariante(variante1);
+      produto2.addVariante(variante2);
 
       System.out.println("creating estruturas...");
       //Estruturas

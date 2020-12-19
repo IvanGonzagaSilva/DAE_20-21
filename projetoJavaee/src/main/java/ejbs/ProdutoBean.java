@@ -21,7 +21,7 @@ public class ProdutoBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(String nome) throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
+    public Produto create(String nome) throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
         try {
           Produto produto = em.find(Produto.class, nome);
 
@@ -31,6 +31,7 @@ public class ProdutoBean {
 
             produto = new Produto(nome);
             em.persist(produto);
+            return produto;
 
         } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
