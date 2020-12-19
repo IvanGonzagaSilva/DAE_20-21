@@ -14,7 +14,7 @@ public class Material implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private int id;
 
     @Enumerated(EnumType.STRING)
     private TipoDeMaterial tipoDeMaterial;
@@ -26,11 +26,11 @@ public class Material implements Serializable {
         this.tipoDeMaterial = tipoDeMaterial;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

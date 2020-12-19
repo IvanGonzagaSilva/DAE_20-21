@@ -1,9 +1,8 @@
 package ejbs;
 
 import entities.Material;
-import entities.PessoaDeContacto;
-import entities.Projeto;
 import entities.TipoDeMaterial;
+import exceptions.MyEntityNotFoundException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -19,7 +18,7 @@ public class MaterialBean {
     public MaterialBean() {
     }
 
-    public Material create(TipoDeMaterial tipoDeMaterial){
+    public Material create(TipoDeMaterial tipoDeMaterial) {
         Material material = new Material(tipoDeMaterial);
 
         em.persist(material);
@@ -30,5 +29,15 @@ public class MaterialBean {
     public List<Material> getAllMateriais() {
         return (List<Material>) em.createNamedQuery("getAllMateriais").getResultList();
     }
-    
+
+    public Material find(int id)
+            throws MyEntityNotFoundException {
+
+        Material material = em.find(Material.class, id);
+
+        if (material == null)
+            throw new MyEntityNotFoundException("Material not found.");
+
+        return material;
+    }
 }

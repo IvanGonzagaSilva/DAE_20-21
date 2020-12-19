@@ -194,7 +194,7 @@ public class ConfigBean {
 
 
 
-        estruturaBean.addMaterial(estrutura.getId(),material_laje);
+        estruturaBean.addMaterial(estrutura.getId(), material_laje.getId());
 
         projeto1.addEstruturas(estrutura);
 

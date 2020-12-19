@@ -13,7 +13,6 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
-
 import java.util.stream.Collectors;
 
 @Path("/projeto") // relative url web path for this service
@@ -35,8 +34,7 @@ public class ProjetoService {
     private ProjetistaBean projetistaBean;
 
 
-
-    private ProjetoDTO toDTO(Projeto projeto){
+    private ProjetoDTO toDTO(Projeto projeto) {
         return new ProjetoDTO(
                 projeto.getId(),
                 projeto.getNome(),
@@ -46,13 +44,14 @@ public class ProjetoService {
     }
 
 
-    private MaterialDTO materialToDTO(Material material){
+    private MaterialDTO materialToDTO(Material material) {
         return new MaterialDTO(
+                material.getId(),
                 material.getTipoDeMaterial()
         );
     }
 
-    private Set<MaterialDTO> materiaisToDTOs(Set<Material> materiais){
+    private Set<MaterialDTO> materiaisToDTOs(Set<Material> materiais) {
         return materiais.stream().map(this::materialToDTO).collect(Collectors.toSet());
     }
 
@@ -126,20 +125,22 @@ public class ProjetoService {
     }
 
 
-
-    private List<VarianteDTO> variantesToDTOs(List<Variante> variantes){
+    private List<VarianteDTO> variantesToDTOs(List<Variante> variantes) {
         return variantes.stream().map(this::varianteToDTO).collect(Collectors.toList());
     }
 
-    private EstruturaDTO estruturaToDTO(Estrutura estrutura){
+    private EstruturaDTO estruturaToDTO(Estrutura estrutura) {
         AplicacaoDTO aplicacao = null;
 
         switch (estrutura.getAplicacao().getTipo()) {
-            case "Geral": aplicacao = aplicacaoGeralToDTO((AplicacaoGeral) estrutura.getAplicacao());
+            case "Geral":
+                aplicacao = aplicacaoGeralToDTO((AplicacaoGeral) estrutura.getAplicacao());
                 break;
-            case "Cobertura": aplicacao = aplicacaoCoberturaToDTO((AplicacaoCobertura)estrutura.getAplicacao());
+            case "Cobertura":
+                aplicacao = aplicacaoCoberturaToDTO((AplicacaoCobertura) estrutura.getAplicacao());
                 break;
-            case "Fachada":aplicacao = aplicacaoToDTO((AplicacaoFachada)estrutura.getAplicacao());
+            case "Fachada":
+                aplicacao = aplicacaoToDTO(estrutura.getAplicacao());
                 break;
         }
 
@@ -176,11 +177,11 @@ public class ProjetoService {
         );
     }
 
-    private Set<EstruturaDTO> estruturasToDTOs(Set<Estrutura> estruturas){
+    private Set<EstruturaDTO> estruturasToDTOs(Set<Estrutura> estruturas) {
         return estruturas.stream().map(this::estruturaToDTO).collect(Collectors.toSet());
     }
 
-    private ClienteDTO clienteToDTO(Cliente cliente){
+    private ClienteDTO clienteToDTO(Cliente cliente) {
         return new ClienteDTO(
                 cliente.getUsername(),
                 cliente.getEmail(),
@@ -212,11 +213,11 @@ public class ProjetoService {
         return projetoToDTOs(projetoBean.getAllProjetos());
     }
 
-  @GET // means: to call this endpoint, we need to use the HTTP GET method
-  @Path("/{username}") // means: the relative url path is “/api/students/”
-  public List<ProjetoDTO> getAllProjetosByClientIdWS(@PathParam("username") String username) {
-    return projetoToDTOs(clienteBean.getAllProjetos(username));
-  }
+    @GET // means: to call this endpoint, we need to use the HTTP GET method
+    @Path("/{username}") // means: the relative url path is “/api/students/”
+    public List<ProjetoDTO> getAllProjetosByClientIdWS(@PathParam("username") String username) {
+        return projetoToDTOs(clienteBean.getAllProjetos(username));
+    }
 
     @POST
     @Path("/")
@@ -226,7 +227,7 @@ public class ProjetoService {
 
             Projetista projetista = projetistaBean.find(projetoDTO.getUsernameProjetista());
 
-            if(projetista == null){
+            if (projetista == null) {
                 return Response.status(Response.Status.BAD_REQUEST).build();
             }
 
@@ -243,7 +244,7 @@ public class ProjetoService {
     @DELETE
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response removeProjetoWS(ProjetoDTO projetoDTO){
+    public Response removeProjetoWS(ProjetoDTO projetoDTO) {
         try {
 
             projetoBean.delete(projetoDTO.getId());
@@ -260,7 +261,7 @@ public class ProjetoService {
     @PUT
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response atualizarProjetoWS(ProjetoDTO projetoDTO){
+    public Response atualizarProjetoWS(ProjetoDTO projetoDTO) {
         try {
 
             projetoBean.update(projetoDTO);
@@ -277,7 +278,7 @@ public class ProjetoService {
     @PUT
     @Path("{id}/add/estrutura")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response adicionarEstruturaAoProjetoWS(@PathParam("id") int idProjeto, EstruturaDTO estruturaDTO){
+    public Response adicionarEstruturaAoProjetoWS(@PathParam("id") int idProjeto, EstruturaDTO estruturaDTO) {
         try {
 
             projetoBean.addEstrutura(idProjeto, estruturaDTO);
@@ -294,7 +295,7 @@ public class ProjetoService {
     @PUT
     @Path("{id}/remove/estrutura")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response removerEstruturaAoProjetoWS(@PathParam("id") int idProjeto, EstruturaDTO estruturaDTO){
+    public Response removerEstruturaAoProjetoWS(@PathParam("id") int idProjeto, EstruturaDTO estruturaDTO) {
         try {
 
             projetoBean.removeEstrutura(idProjeto, estruturaDTO);
@@ -311,7 +312,7 @@ public class ProjetoService {
     @PUT
     @Path("{id}/enrollclient")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response enrollClientProjetoWS(@PathParam("id") int idProjeto, ClienteDTO clienteDTO){
+    public Response enrollClientProjetoWS(@PathParam("id") int idProjeto, ClienteDTO clienteDTO) {
         try {
 
             projetoBean.enrollCliente(idProjeto, clienteDTO.getEmail());
@@ -329,7 +330,7 @@ public class ProjetoService {
     @PUT
     @Path("{id}/unrollclient")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response unrollClientProjetoWS(@PathParam("id") int idProjeto, ClienteDTO clienteDTO){
+    public Response unrollClientProjetoWS(@PathParam("id") int idProjeto, ClienteDTO clienteDTO) {
         try {
 
             projetoBean.unrollCliente(idProjeto, clienteDTO.getEmail());
@@ -342,6 +343,4 @@ public class ProjetoService {
         }
         return Response.status(Response.Status.UNAUTHORIZED).build();
     }
-
-
 }

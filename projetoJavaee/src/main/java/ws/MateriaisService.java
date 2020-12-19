@@ -28,6 +28,7 @@ public class MateriaisService {
 
     private MaterialDTO toDTO(Material material){
         return new MaterialDTO(
+                material.getId(),
                 material.getTipoDeMaterial()
         );
     }
