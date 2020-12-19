@@ -40,7 +40,8 @@ public class ParametrosCalculoService {
                             true, parametrosCalculoDTO.getNumeroFixacoes(), parametrosCalculoDTO.getInerciaChapaRevestimento(),
                             parametrosCalculoDTO.getVerificacaoDeformacao(), parametrosCalculoDTO.getLimiteDeformacao());
                 } else {
-                    params = parametrosCalculoBean.create(false, parametrosCalculoDTO.getNumeroContraventamentosLaterais(), false,
+                    params = parametrosCalculoBean.create(false, parametrosCalculoDTO.getNumeroContraventamentosLaterais(),
+                      false,
                             parametrosCalculoDTO.getVerificacaoDeformacao(), parametrosCalculoDTO.getLimiteDeformacao());
                 }
             }

@@ -66,9 +66,6 @@ public class ProdutoService {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createProdutoWS(ProdutoDTO produtoDTO) {
         try {
-
-
-
             produtoBean.create(produtoDTO.getNome());
 
             return Response.status(Response.Status.CREATED).build();
