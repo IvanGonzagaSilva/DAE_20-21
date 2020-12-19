@@ -41,7 +41,8 @@ public class ProjetoService {
                 projeto.getId(),
                 projeto.getNome(),
                 estruturasToDTOs(projeto.getEstruturas()),
-                projeto.getProjetista().getUsername()
+                projeto.getProjetista().getUsername(),
+                clienteToDTOs(projeto.getClientes())
         );
     }
 
@@ -179,6 +180,10 @@ public class ProjetoService {
     private Set<EstruturaDTO> estruturasToDTOs(Set<Estrutura> estruturas){
         return estruturas.stream().map(this::estruturaToDTO).collect(Collectors.toSet());
     }
+
+  private Set<ClienteDTO> clienteToDTOs (Set<Cliente> clientes){
+    return clientes.stream().map(this::clienteToDTO).collect(Collectors.toSet());
+  }
 
     private ClienteDTO clienteToDTO(Cliente cliente){
         return new ClienteDTO(

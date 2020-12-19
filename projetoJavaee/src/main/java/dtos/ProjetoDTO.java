@@ -11,21 +11,31 @@ public class ProjetoDTO implements Serializable {
     private String nome;
     private String usernameProjetista;
     private Set<EstruturaDTO> estruturas;
+    private Set<ClienteDTO> clientes;
 
     public ProjetoDTO() {
         estruturas = new LinkedHashSet<>();
+        clientes = new LinkedHashSet<>();
     }
 
-    public ProjetoDTO(int id, String nome, Set<EstruturaDTO> estruturas, String usernameProjetista) {
+    public ProjetoDTO(int id, String nome, Set<EstruturaDTO> estruturas, String usernameProjetista, Set<ClienteDTO> clientes) {
         this();
         this.id = id;
         this.nome = nome;
         this.usernameProjetista = usernameProjetista;
         this.estruturas = estruturas;
+        this.clientes = clientes;
     }
 
+  public Set<ClienteDTO> getClientes() {
+    return clientes;
+  }
 
-    public int getId() {
+  public void setClientes(Set<ClienteDTO> clientes) {
+    this.clientes = clientes;
+  }
+
+  public int getId() {
         return id;
     }
 

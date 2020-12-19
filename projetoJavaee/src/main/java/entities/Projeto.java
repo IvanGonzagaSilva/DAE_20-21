@@ -34,10 +34,14 @@ public class Projeto implements Serializable {
     @ManyToOne
     private Projetista projetista;
 
+  @ManyToMany(mappedBy = "projetos")
+  private Set<Cliente> clientes;
+
 
     public Projeto() {
         estruturas = new LinkedHashSet<>();
         ficheiros = new LinkedHashSet<>();
+        clientes = new LinkedHashSet<>();
     }
 
     public Projeto(String nome, Projetista projetista) {
@@ -92,7 +96,30 @@ public class Projeto implements Serializable {
         this.ficheiros.add(ficheiro);
     }
 
-    public void removeFicheiro(Ficheiro ficheiro){
+  public void removeCliente(Cliente cliente){
+    if(!this.clientes.contains(cliente)){
+      return;
+    }
+    this.clientes.remove(cliente);
+  }
+
+  public void addCliente(Cliente cliente){
+    if(this.clientes.contains(cliente)){
+      return;
+    }
+
+    this.clientes.add(cliente);
+  }
+
+  public Set<Cliente> getClientes() {
+    return clientes;
+  }
+
+  public void setClientes(Set<Cliente> clientes) {
+    this.clientes = clientes;
+  }
+
+  public void removeFicheiro(Ficheiro ficheiro){
 
         if(!this.ficheiros.contains(ficheiro)){
             return;
