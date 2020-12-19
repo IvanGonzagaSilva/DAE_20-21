@@ -558,8 +558,5 @@
         <deployment name="ProjetoDAE2021-1.0-SNAPSHOT.war" runtime-name="ProjetoDAE2021-1.0-SNAPSHOT.war">
             <fs-archive path="C:\Escola\DAE\Projeto\DAE_Project\DAE_20-21\projetoJavaee\target\ProjetoDAE2021-1.0-SNAPSHOT.war"/>
         </deployment>
-        <deployment name="projetodae.war" runtime-name="projetodae.war">
-            <fs-archive path="C:\Users\ruben\Documents\DAE_20-21\projetoJavaee\target\projetodae.war"/>
-        </deployment>
     </deployments>
 </server>

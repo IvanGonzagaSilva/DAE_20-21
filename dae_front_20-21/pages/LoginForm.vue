@@ -59,13 +59,16 @@ export default {
     }),
     methods: {
         async login(){
-
-            await this.$axios.post('/api/login/token', {'username': this.username, 'password': this.password}).then(/* this.$router.push('/project') */ response =>  console.log(response)).catch(error => console.log(error.message));
-            /*
-            Store token locally
+            localStorage.setItem('username', this.username);
+            await this.$axios.post('/api/login/token', {username: this.username, password: this.password})
+            .then(response => this.setToken(response.data))
+            .catch(error => console.log(error.message));
+        },
+        setToken(token)
+        {
             localStorage.setItem('token', token);
             axios.defaults.headers.common = {'authorization': `Bearer ${token}`}
-            */
+            this.$router.push('/project');
         }
     },
 }

@@ -1,78 +1,82 @@
 <template>
     <v-row>
-        <v-col cols="1" class="mr-4">
+        <v-col class="pl-0">
             <v-btn
-            class="m-2 py-6 mr-6"
+            class="m-2 py-6"
             color="primary"
             @click="swapComponent()"
             >
-            <v-icon dark>
-                mdi-{{componentId == 0 ? "chevron-left" : (componentId == 2 ? "home" :  "plus")}}
+            <v-icon dark class="pr-2">
+                mdi-{{componentId != 1 ? "chevron-left": "folder-plus"}}
             </v-icon>
+                {{componentId == 0 ? "Voltar Página Inicial" : (componentId == 2 ? "Voltar Página Inicial" :  "Criar Novo Projeto")}}
             </v-btn>
         </v-col>
-        <v-col >
+
+         <v-col >
             <v-text-field
             label="Solo"
             placeholder="Nome"
             solo
             :disabled="componentId !== 1"
-            v-model="productName"
+            v-model="searchName"
+            @input="emitEvent"
           ></v-text-field>
         </v-col>
+
         <v-col>
             <v-select
-            :items="materialsArray"
-            label="Materiais"
+            :items="clientArray"
+            label="Clientes"
             solo
             :disabled="componentId !== 1"
-            v-model="productMaterials"
+            v-model="searchClient"
+            @input="emitEvent"
             ></v-select>
         </v-col>
-        <v-col>
-            <v-select
-            :items="dimensions"
-            label="Dimensões"
-            solo
-            :disabled="componentId !== 1"
-            v-model="productDimensions"
-            ></v-select>
-        </v-col>
-        
-        <v-col>
+
+        <v-col cols="2" class="px-0">
             <p v-show="!resetFilterHidden" class="text-uppercase text-body-1 reset-button font-weight-bold" color="blue" @click="resetFilters()">
                 Reset Filters
             </p>
         </v-col>
+
     </v-row>
 </template>
 
 <script>
 export default {
-    props: ['materialsArray', 'componentId'],
+    props: ['clientArray', 'componentId'],
     data: () => ({
-      dimensions: ['200.00x1.80', '90.00x0.20', '50.00x1.00', '30.30x20.70'],
-      productName: "",
-      productMaterials: "",
-      productDimensions: ""
+      searchClient: "",
+      searchName: "",
     }),
     methods: {
         resetFilters: function () {
-            if (typeof this.productName != undefined)
-                this.productName = "";
-            if (typeof this.productMaterials != undefined)
-                this.productMaterials = "";
-            if (typeof this.productDimensions != undefined)
-                this.productDimensions = "";
+            if (typeof this.searchName != undefined)
+            {
+                this.$emit('search-name', '');
+                this.searchName = "";
+            }
+            if (typeof this.searchClient != undefined)
+            {
+                this.searchClient = "";
+                this.$emit('search-client', ''); 
+            }
         },
         swapComponent: function () {
             let newComponentId = (this.componentId != 1 ? 1 : 0);
             this.$emit('create-project', newComponentId);
+        },
+        emitEvent()
+        {
+            this.$emit('search-name', this.searchName);
+            this.$emit('search-client', this.searchClient); 
         }
     },
     computed: {
         resetFilterHidden: function () {
-            return !(this.productName.length > 0 || this.productMaterials.length > 0 ||  this.productDimensions.length > 0);
+            return !(this.searchName.length > 0 || this.searchClient.length > 0);
         }
     }
 }
@@ -87,6 +91,6 @@ export default {
     }
     .reset-button:hover
     {
-        color: rgb(15, 195, 255);
+        color: rgb(13, 150, 196);
     }
 </style>
