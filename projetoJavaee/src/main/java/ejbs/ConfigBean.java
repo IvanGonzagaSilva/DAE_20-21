@@ -73,6 +73,9 @@ public class ConfigBean {
             pessoaDeContactoBean.create("pc1", "pc1@mail.com", "pessoadecontacto1", "914313616", "123abc");
       System.out.println("cliente!");
             clienteBean.create("cliente1", "pc1", "rua xpto", "clientex1@mail.com", "clientex", "123abc", "914313617");
+            clienteBean.create("cliente2", "pc1", "rua xpto", "clientex1@mail.com", "clientex2", "123abc", "914313618");
+            clienteBean.create("cliente3", "pc1", "rua xpto", "clientex1@mail.com", "clientex3", "123abc", "914313619");
+            clienteBean.create("cliente4", "pc1", "rua xpto", "clientex1@mail.com", "clientex4", "123abc", "914313620");
       System.out.println("projeto!");
             Projeto projeto1 = projetoBean.create("projeto1", "projetista1");
       System.out.println("enroll cliente no projeto");
@@ -201,6 +204,7 @@ public class ConfigBean {
 
         projetoBean.addEstrutura(projeto1.getId(), estrutura.getId());
 
+        System.out.println("Config ended with success...");
         }
         catch (Exception e){
             logger.log(Level.SEVERE, e.getMessage());

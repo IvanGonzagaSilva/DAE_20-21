@@ -314,14 +314,17 @@ public class ProjetoService {
     }
 
     @PUT
-    @Path("{id}/enrollclient")
+    @Path("{id}/enrollclients")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response enrollClientProjetoWS(@PathParam("id") int idProjeto, ClienteDTO clienteDTO){
+    public Response enrollClientProjetoWS(@PathParam("id") int idProjeto, List<ClienteDTO> clientesDTO){
         try {
 
+          for (ClienteDTO clienteDTO : clientesDTO) {
             projetoBean.enrollCliente(idProjeto, clienteDTO.getUsername());
 
-            return Response.status(Response.Status.OK).build();
+          }
+
+          return Response.status(Response.Status.OK).build();
 
 
         } catch (Exception e) {
