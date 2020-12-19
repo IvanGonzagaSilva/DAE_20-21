@@ -2,7 +2,7 @@
     <div style="width: 600px;">
 
         <h2 class="text-h4 py-4 font-weight-bold text-uppercase text-center">{{title}}</h2>
-        
+
         <v-text-field
             v-model="projectData.nome"
             class="mb-0"
@@ -21,6 +21,27 @@
             disabled
             clearable
         ></v-text-field>
+
+        <span v-for="structure in projectData.estruturas" :key="structure">
+
+            <v-row>
+
+                <v-col class="pt-0">
+
+                    <v-text-field
+                        v-model="structure.nome"
+                        solo
+                        class="mb-0"
+                        disabled
+                        clearable
+                    ></v-text-field>
+                    
+                </v-col>
+
+            </v-row>
+
+        </span>
+
 
         <span v-if="clickedProject !== 'empty'">
 
@@ -55,13 +76,13 @@
 
             </v-row>
 
-        <span v-if="clickedProject.clientes.length < 0 || (clickedProject.clientes.filter(client => projectData.clientes.includes(client.username)).length > 0)">
+        <span v-if="projectData.clientes.filter(client => !projectData.clientes.includes(client.username)).length > 0">
             <v-row v-for="i in index" :key="i">
 
                 <v-col cols="10" class="py-0">
 
                     <v-select
-                    :items="clientNameArray.filter(client => projectData.clientes.includes(client.username))"
+                    :items="clientNameArray.filter(client => !projectData.clientes.includes(client.username))"
                     label="Nome de Cliente"
                     solo
                     v-model="name"
@@ -86,6 +107,7 @@
 
             </v-row>
         </span>
+
         <h4 v-else class="mx-auto text-uppercase text-center mb-4">No more existing clients that aren't already in the project.</h4>
 
         </span>
@@ -159,10 +181,12 @@ export default {
         {
             if (this.name && this.clickedProject)
             {
-                this.projectData.clientes = this.clickedProject.clientes;
-                this.projectData.clientes.push(this.name);
+                let tempArray = [];
+                this.projectData.clientes = this.clickedProject.clientes.forEach( client => { tempArray.push({username: client.username})});
+                this.projectData.clientes = tempArray;
+                this.projectData.clientes.push({username: this.name});
                 console.log(name);
-                await this.$axios.put('/api/projeto/' + this.clickedProject.id + '/enrollclient', {username: this.projectData.clientes}).then(this.addProjectToArray()).catch(error => console.log(error.message));
+                await this.$axios.put('/api/projeto/' + this.clickedProject.id + '/enrollclients', this.projectData.clientes).then(this.addProjectToArray()).catch(error => console.log(error.message));
             }
             else
                 await this.$axios.post("/api/projeto/", this.projectData).then(response => this.addProjectToArray(response.data.id)).catch(error => console.log(error.message));
@@ -173,9 +197,12 @@ export default {
         {
             await this.$axios.delete('/api/projeto/delete/' + this.clickedProject.id).then( this.removeProjectFromArray(this.clickedProject.id) ).catch(error => console.log(error.message));
         },
-        removeClientProject: async function (username)
+        removeClientProject: async function ( username )
         {
-            await this.$axios.put('/api/projeto/' + this.clickedProject.id + '/unrollclient', {username: username}).then(this.addProjectToArray()).catch(error => console.log(error.message));
+            await this.$axios.put('/api/projeto/' + this.clickedProject.id + '/unrollclient', {'username': username}).then(response => {
+                var index = this.clickedProject.clientes.findIndex(client => client.username == username);
+                this.clickedProject.clientes.splice(index, 1);
+            } ).catch(error => console.log(error.message));
         },
         addProjectToArray: function (id)
         {
