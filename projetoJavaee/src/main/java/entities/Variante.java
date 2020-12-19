@@ -5,6 +5,12 @@ import javax.validation.constraints.NotNull;
 import java.util.LinkedHashMap;
 
 @Entity
+@NamedQueries({
+  @NamedQuery(
+    name = "getAllVariantes",
+    query = "SELECT v FROM Variante v ORDER BY v.nome" // JPQL
+  ),
+})
 public class Variante {
 
     private static final double G = 78.5;

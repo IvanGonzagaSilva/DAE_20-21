@@ -1,11 +1,14 @@
 package ejbs;
 
+import dtos.VarianteDTO;
+import entities.Cliente;
 import entities.Produto;
 import entities.Variante;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Stateless(name = "VarianteEJB")
 public class VarianteBean {
@@ -26,4 +29,7 @@ public class VarianteBean {
     }
 
 
+  public List<Variante> getAllVariantes() {
+    return em.createNamedQuery("getAllVariantes", Variante.class).getResultList();
+  }
 }
