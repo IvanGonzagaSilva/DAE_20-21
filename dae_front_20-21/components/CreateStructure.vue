@@ -396,6 +396,118 @@
 
         </v-card>
 
+        <!-- RESULTADOS -->
+
+        <v-card v-show="tabClicked === 2" flat class="px-16 pt-4 " color="#EEEEEE">
+            <v-card-title>
+                <h4 class="text-h6 font-weight-bold text-uppercase text-center">Resultados</h4>
+            </v-card-title>
+
+            <v-card-text class="pb-0 mb-0">
+
+                <v-row>
+
+                    <v-col class="pt-0" cols="5">
+
+                        <v-checkbox
+                        class="mt-0 pt-3"
+                        v-model="ContraventamentoTotal"
+                        label="Contraventamento total"
+                        value="Jacob"
+                        ></v-checkbox>
+
+                    </v-col>
+
+                    <v-col class="pt-0">
+                        <v-text-field
+                            v-show="!ContraventamentoTotal"
+                            solo
+                            class="mb-0"
+                            label="Nº Contraventamentos Laterais"
+                            clearable
+                        ></v-text-field>
+                    </v-col>
+
+                </v-row>
+
+                <v-row v-show="!ContraventamentoTotal">
+
+                    <v-col class="pt-0">
+
+                        <v-checkbox
+                        class="mt-0 pt-3"
+                        v-model="ContraventamentoChapaRevestimento"
+                        label="Contribuição da chapa de revestimento"
+                        value="Jacob"
+                        ></v-checkbox>
+
+                    </v-col>
+
+                </v-row>
+
+                <v-row>
+
+                    <v-col class="pt-0">
+
+                        <v-text-field
+                            v-show="!ContraventamentoTotal"
+                            solo
+                            class="mb-0"
+                            label="Nº de fixações"
+                            clearable
+                        ></v-text-field>
+
+                    </v-col>
+
+                    <v-col class="pt-0">
+
+                        <v-text-field
+                            v-show="!ContraventamentoTotal"
+                            solo
+                            class="mb-0"
+                            label="Inércia da Chapa de Revestimento (m4/m)"
+                            clearable
+                        ></v-text-field>
+
+                    </v-col>
+
+                </v-row>
+
+            </v-card-text>
+
+            <v-row class="pb-4 pr-5">
+                
+                <v-spacer></v-spacer>
+
+                <v-btn
+                class="mx-2"
+                outlined
+                depressed
+                @click="tabClicked > 0 ? tabClicked-- : ''"
+                color="primary"
+                >
+                    <v-icon>
+                        mdi-chevron-left
+                    </v-icon>
+                    Passo Anterior
+                </v-btn>
+
+                <v-btn
+                class="mr-2"
+                depressed
+                @click="tabClicked < 2 ? tabClicked++ : ''"
+                color="primary"
+                >
+                    Próximo Passo
+                    <v-icon>
+                        mdi-chevron-right
+                    </v-icon>
+                </v-btn>
+                
+            </v-row>
+
+        </v-card>
+
     </div>
 </template>
 

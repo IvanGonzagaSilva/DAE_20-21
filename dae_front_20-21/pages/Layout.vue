@@ -1,11 +1,11 @@
 <template>
-    <v-row class="fill-height">
+    <v-row class="fill-height" style="position: relative">
 
         <v-col cols="6" class="mx-auto">
 
             <v-card flat>
 
-            <v-card-title class="headline">
+            <v-card-title class="headline py-0">
 
                 <search-bar class="mx-0" v-on:search-name="setSearchName" v-on:search-client="setSearchClients" v-bind:componentId="componentId" v-bind:clientNameArray ="clientNameArray" v-on:create-project="swapComponents"/>
 
@@ -91,7 +91,9 @@ export default {
         searchName: '',
         searchClient: '',
         clientNameArray: [],
-        clientArray: []
+        clientArray: [],
+        text: '',
+        color: ''
     }),
     created()
     {
@@ -150,5 +152,4 @@ export default {
 </script>
 
 <style>
-
 </style>

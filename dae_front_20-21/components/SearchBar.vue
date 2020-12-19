@@ -3,7 +3,7 @@
 
         <v-row class="px-3 pb-2">
 
-            <v-col class="pl-0 pr-3">
+            <v-col class="sm:pl-2 sm:pr-2 pl-0 pr-3">
 
                 <v-btn
                 class="m-2 py-6"
@@ -19,7 +19,7 @@
 
             </v-col>
 
-            <v-col class="pr-0 pl-3">
+            <v-col class="sm:pr-2 sm:pl-2 pr-0 pl-3">
 
                 <v-btn
                 class="m-2 py-6"
