@@ -1,8 +1,6 @@
 package ejbs;
 
 import entities.Material;
-import entities.PessoaDeContacto;
-import entities.Projeto;
 import entities.TipoDeMaterial;
 
 import javax.ejb.Stateless;
@@ -19,7 +17,7 @@ public class MaterialBean {
     public MaterialBean() {
     }
 
-    public Material create(TipoDeMaterial tipoDeMaterial){
+    public Material create(TipoDeMaterial tipoDeMaterial) {
         Material material = new Material(tipoDeMaterial);
 
         em.persist(material);
@@ -30,5 +28,5 @@ public class MaterialBean {
     public List<Material> getAllMateriais() {
         return (List<Material>) em.createNamedQuery("getAllMateriais").getResultList();
     }
-    
+
 }

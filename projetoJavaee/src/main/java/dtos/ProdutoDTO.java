@@ -1,7 +1,5 @@
 package dtos;
 
-import entities.Variante;
-
 import java.io.Serializable;
 import java.util.List;
 

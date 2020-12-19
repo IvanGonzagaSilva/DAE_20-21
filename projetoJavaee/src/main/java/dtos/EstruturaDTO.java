@@ -1,7 +1,5 @@
 package dtos;
 
-import entities.*;
-
 import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;

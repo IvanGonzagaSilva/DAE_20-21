@@ -7,8 +7,8 @@ import javax.ejb.Stateless;
 @Stateless(name = "SimulacaoEJB")
 public class SimulacaoBean {
 
-    private static double EE = 210000000.0;
-    private static double alfaLT = 0.21;
+    private static final double EE = 210000000.0;
+    private static final double alfaLT = 0.21;
 
 
     public boolean simulaVariante(int nb, double LVao, int q, Variante variante) {
@@ -24,12 +24,12 @@ public class SimulacaoBean {
 
         for (int i = 0; i < msd.length; i++) {
             double rs;
-            if(msd[i] >= 0 ){
+            if (msd[i] >= 0) {
                 rs = Math.abs(msd[i]) / Math.abs(mrd_p);
-            }else{
+            } else {
                 rs = Math.abs(msd[i]) / Math.abs(mrd_n);
             }
-            if(rs >= 1){
+            if (rs >= 1) {
                 System.out.println("Não verifica segurança na secção " + i + " da variante " + variante.getNome() + " do produto " + variante.getProduto().getNome());
                 seguro = false;
             }
@@ -38,7 +38,7 @@ public class SimulacaoBean {
     }
 
 
-    private double[] momentosFletoresAtuantes(int nb, double L, int q, Variante variante){
+    private double[] momentosFletoresAtuantes(int nb, double L, int q, Variante variante) {
 
         double qt = q + variante.getPp();
 
@@ -48,7 +48,7 @@ public class SimulacaoBean {
 
         double qt_times_L_times_L = qt * L * L;
 
-        switch(nb){
+        switch (nb) {
             case 1:
                 msd[0] = 1.0 / 8.0 * qt_times_L_times_L;
                 break;
@@ -58,14 +58,14 @@ public class SimulacaoBean {
                 break;
             case 3:
                 msd[0] = msd[4] = 2.0 / 25.0 * qt_times_L_times_L;
-                msd[1] = msd[3] = - 1.0 / 10.0 * qt_times_L_times_L;
+                msd[1] = msd[3] = -1.0 / 10.0 * qt_times_L_times_L;
                 msd[2] = 1.0 / 40.0 * qt_times_L_times_L;
                 break;
             case 4:
                 msd[0] = msd[6] = 121.0 / 1568.0 * qt_times_L_times_L;
-                msd[1] = msd[5] = - 3.0 / 28.0 * qt_times_L_times_L;
+                msd[1] = msd[5] = -3.0 / 28.0 * qt_times_L_times_L;
                 msd[2] = msd[4] = 57.0 / 1568.0 * qt_times_L_times_L;
-                msd[3] = - 1.0 / 14.0 * qt_times_L_times_L;
+                msd[3] = -1.0 / 14.0 * qt_times_L_times_L;
         }
 
         return msd;

@@ -44,20 +44,21 @@ public class LoginService {
         }
         return Response.status(Response.Status.UNAUTHORIZED).build();
     }
+
     @GET
     @Path("/claims")
     public Response demonstrateClaims(@HeaderParam("Authorization") String auth) {
         if (auth != null && auth.startsWith("Bearer ")) {
-        try {
-            JWT j = JWTParser.parse(auth.substring(7));
-            return Response.ok(j.getJWTClaimsSet().getClaims()).build();
+            try {
+                JWT j = JWTParser.parse(auth.substring(7));
+                return Response.ok(j.getJWTClaimsSet().getClaims()).build();
 
-            //Note: nimbusds converts token expiration time to milliseconds
-        } catch (ParseException e) {
-            log.warning(e.toString());
-            return Response.status(400).build();
+                //Note: nimbusds converts token expiration time to milliseconds
+            } catch (ParseException e) {
+                log.warning(e.toString());
+                return Response.status(400).build();
+            }
         }
-    }
         return Response.status(204).build(); //no jwt means no claims to extract
     }
 }

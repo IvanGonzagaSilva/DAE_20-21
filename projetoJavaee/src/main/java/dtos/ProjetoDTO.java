@@ -27,15 +27,15 @@ public class ProjetoDTO implements Serializable {
         this.clientes = clientes;
     }
 
-  public Set<ClienteDTO> getClientes() {
-    return clientes;
-  }
+    public Set<ClienteDTO> getClientes() {
+        return clientes;
+    }
 
-  public void setClientes(Set<ClienteDTO> clientes) {
-    this.clientes = clientes;
-  }
+    public void setClientes(Set<ClienteDTO> clientes) {
+        this.clientes = clientes;
+    }
 
-  public int getId() {
+    public int getId() {
         return id;
     }
 

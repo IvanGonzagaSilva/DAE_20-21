@@ -109,27 +109,23 @@ public class Estrutura implements Serializable {
         this.variantes = variantes;
     }
 
-    public void addMaterial(Material material){
+    public void addMaterial(Material material) {
         this.materiais.add(material);
     }
 
-    public void removeMaterial(Material material){
+    public void removeMaterial(Material material) {
         this.materiais.remove(material);
     }
 
-    public void addVariante(Variante variante){
-        if(!this.variantes.contains(variante)){
+    public void addVariante(Variante variante) {
+        if (!this.variantes.contains(variante)) {
             this.variantes.add(variante);
         }
     }
 
-    public void removeVariante(Variante variante){
-        if(this.variantes.contains(variante)){
-            this.variantes.remove(variante);
-        }
+    public void removeVariante(Variante variante) {
+        this.variantes.remove(variante);
     }
-
-
 
 
 }

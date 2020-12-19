@@ -2,7 +2,6 @@ package entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -14,8 +13,8 @@ import java.util.Set;
                 query = "SELECT c FROM Cliente c ORDER BY c.nome" // JPQL
         ),
         @NamedQuery(
-          name = "getAllClientProjetos",
-          query = "SELECT c.projetos FROM Cliente c where c.username = :username" // JPQL
+                name = "getAllClientProjetos",
+                query = "SELECT c.projetos FROM Cliente c where c.username = :username" // JPQL
         ),
 })
 public class Cliente extends Pessoa {
@@ -26,7 +25,7 @@ public class Cliente extends Pessoa {
     private String morada;
 
     @ManyToMany
-    @JoinTable(name="cliente_projeto")
+    @JoinTable(name = "cliente_projeto")
     private Set<Projeto> projetos;
 
     public Cliente() {
@@ -34,10 +33,10 @@ public class Cliente extends Pessoa {
     }
 
     public Cliente(String nome, PessoaDeContacto pc, String morada, @Email String email, String username, String password, String contactoTelefonico) {
-      super(username, email, nome, contactoTelefonico, password);
-      projetos = new LinkedHashSet<>();
-      this.pc = pc;
-      this.morada = morada;
+        super(username, email, nome, contactoTelefonico, password);
+        projetos = new LinkedHashSet<>();
+        this.pc = pc;
+        this.morada = morada;
     }
 
     public PessoaDeContacto getPc() {

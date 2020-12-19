@@ -1,7 +1,6 @@
 package entities;
 
 import javax.persistence.*;
-import javax.validation.Constraint;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.LinkedHashSet;
@@ -34,8 +33,8 @@ public class Projeto implements Serializable {
     @ManyToOne
     private Projetista projetista;
 
-  @ManyToMany(mappedBy = "projetos")
-  private Set<Cliente> clientes;
+    @ManyToMany(mappedBy = "projetos")
+    private Set<Cliente> clientes;
 
 
     public Projeto() {
@@ -74,54 +73,54 @@ public class Projeto implements Serializable {
         this.estruturas = estruturas;
     }
 
-    public void addEstruturas(Estrutura estrutura){
-        if(this.estruturas.contains(estrutura)){
+    public void addEstruturas(Estrutura estrutura) {
+        if (this.estruturas.contains(estrutura)) {
             return;
         }
         this.estruturas.add(estrutura);
     }
 
-    public void removeEstruturas(Estrutura estrutura){
-        if(!this.estruturas.contains(estrutura)){
+    public void removeEstruturas(Estrutura estrutura) {
+        if (!this.estruturas.contains(estrutura)) {
             return;
         }
         this.estruturas.remove(estrutura);
     }
 
-    public void addFicheiro(Ficheiro ficheiro){
-        if(this.ficheiros.contains(ficheiro)){
+    public void addFicheiro(Ficheiro ficheiro) {
+        if (this.ficheiros.contains(ficheiro)) {
             return;
         }
 
         this.ficheiros.add(ficheiro);
     }
 
-  public void removeCliente(Cliente cliente){
-    if(!this.clientes.contains(cliente)){
-      return;
-    }
-    this.clientes.remove(cliente);
-  }
-
-  public void addCliente(Cliente cliente){
-    if(this.clientes.contains(cliente)){
-      return;
+    public void removeCliente(Cliente cliente) {
+        if (!this.clientes.contains(cliente)) {
+            return;
+        }
+        this.clientes.remove(cliente);
     }
 
-    this.clientes.add(cliente);
-  }
+    public void addCliente(Cliente cliente) {
+        if (this.clientes.contains(cliente)) {
+            return;
+        }
 
-  public Set<Cliente> getClientes() {
-    return clientes;
-  }
+        this.clientes.add(cliente);
+    }
 
-  public void setClientes(Set<Cliente> clientes) {
-    this.clientes = clientes;
-  }
+    public Set<Cliente> getClientes() {
+        return clientes;
+    }
 
-  public void removeFicheiro(Ficheiro ficheiro){
+    public void setClientes(Set<Cliente> clientes) {
+        this.clientes = clientes;
+    }
 
-        if(!this.ficheiros.contains(ficheiro)){
+    public void removeFicheiro(Ficheiro ficheiro) {
+
+        if (!this.ficheiros.contains(ficheiro)) {
             return;
         }
 
