@@ -1,7 +1,5 @@
 package dtos;
 
-import java.io.Serializable;
-
 public class ClienteDTO extends PessoaDTO {
 
 
@@ -12,25 +10,25 @@ public class ClienteDTO extends PessoaDTO {
     }
 
 
-  public ClienteDTO(String username, String email, String nome, String contactoTelefonico, String password, PessoaDeContactoDTO pc, String morada) {
-    super(username, email, nome, contactoTelefonico, password);
-    this.pc = pc;
-    this.morada = morada;
-  }
+    public ClienteDTO(String username, String email, String nome, String contactoTelefonico, String password, PessoaDeContactoDTO pc, String morada) {
+        super(username, email, nome, contactoTelefonico, password);
+        this.pc = pc;
+        this.morada = morada;
+    }
 
-  public PessoaDeContactoDTO getPc() {
-    return pc;
-  }
+    public PessoaDeContactoDTO getPc() {
+        return pc;
+    }
 
-  public void setPc(PessoaDeContactoDTO pc) {
-    this.pc = pc;
-  }
+    public void setPc(PessoaDeContactoDTO pc) {
+        this.pc = pc;
+    }
 
-  public String getMorada() {
-    return morada;
-  }
+    public String getMorada() {
+        return morada;
+    }
 
-  public void setMorada(String morada) {
-    this.morada = morada;
-  }
+    public void setMorada(String morada) {
+        this.morada = morada;
+    }
 }

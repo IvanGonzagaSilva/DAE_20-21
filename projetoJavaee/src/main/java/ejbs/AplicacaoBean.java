@@ -1,7 +1,6 @@
 package ejbs;
 
 import entities.Aplicacao;
-import entities.AplicacaoCobertura;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
 import exceptions.MyEntityNotFoundException;
@@ -20,7 +19,7 @@ public class AplicacaoBean {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(int cargaPermanente, int sobrecarga, int neve, int ventoPressao, int ventoSucao, String tipo)
+    public void create(int cargaPermanente, int ventoPressao, int ventoSucao, String tipo)
             throws MyEntityExistsException, MyConstraintViolationException {
 
         try {

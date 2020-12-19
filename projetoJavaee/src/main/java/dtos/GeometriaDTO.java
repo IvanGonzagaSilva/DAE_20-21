@@ -1,7 +1,5 @@
 package dtos;
 
-import entities.Familia;
-
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;

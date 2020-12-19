@@ -7,13 +7,13 @@ import java.util.LinkedHashMap;
 @Entity
 public class Variante {
 
-    private static double G = 78.5;
+    private static final double G = 78.5;
 
     @Id
     private int codigo;
 
     @ManyToOne
-    @JoinColumn(name="NOME_PRODUTO")
+    @JoinColumn(name = "NOME_PRODUTO")
     @NotNull
     private Produto produto;
 
@@ -27,16 +27,16 @@ public class Variante {
     private double pp;
 
     @Lob
-    private LinkedHashMap<Double,Double> mcr_p;
+    private LinkedHashMap<Double, Double> mcr_p;
     @Lob
-    private LinkedHashMap<Double,Double> mcr_n;
+    private LinkedHashMap<Double, Double> mcr_n;
 
-    public Variante(){
-        this.mcr_p = new LinkedHashMap<Double,Double>();
-        this.mcr_n = new LinkedHashMap<Double,Double>();
+    public Variante() {
+        this.mcr_p = new LinkedHashMap<Double, Double>();
+        this.mcr_n = new LinkedHashMap<Double, Double>();
     }
 
-    public Variante(int codigo, @NotNull Produto produto, @NotNull String nome, double weff_p, double weff_n, double ar, double sigmaC ) {
+    public Variante(int codigo, @NotNull Produto produto, @NotNull String nome, double weff_p, double weff_n, double ar, double sigmaC) {
         this.codigo = codigo;
         this.produto = produto;
         this.nome = nome;
@@ -45,8 +45,8 @@ public class Variante {
         this.ar = ar;
         this.sigmaC = sigmaC;
         this.pp = G * ar * Math.pow(10, -6);
-        this.mcr_p = new LinkedHashMap<Double,Double>();
-        this.mcr_n = new LinkedHashMap<Double,Double>();
+        this.mcr_p = new LinkedHashMap<Double, Double>();
+        this.mcr_n = new LinkedHashMap<Double, Double>();
     }
 
     public int getCodigo() {
@@ -121,11 +121,11 @@ public class Variante {
         this.mcr_p = mcr_p;
     }
 
-    public void addMcr_p(Double L, Double mcr_pValue){
+    public void addMcr_p(Double L, Double mcr_pValue) {
         mcr_p.put(L, mcr_pValue);
     }
 
-    public void removeMcr_p(Double LToRemove){
+    public void removeMcr_p(Double LToRemove) {
         mcr_p.remove(LToRemove);
     }
 
@@ -137,11 +137,11 @@ public class Variante {
         this.mcr_n = mcr_n;
     }
 
-    public void addMcr_n(Double L, Double mcr_nValue){
+    public void addMcr_n(Double L, Double mcr_nValue) {
         mcr_n.put(L, mcr_nValue);
     }
 
-    public void removeMcr_n(Double LToRemove){
+    public void removeMcr_n(Double LToRemove) {
         mcr_n.remove(LToRemove);
     }
 

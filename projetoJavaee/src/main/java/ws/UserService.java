@@ -1,12 +1,15 @@
 package ws;
 
 
-import dtos.*;
+import dtos.ClienteDTO;
+import dtos.PessoaDeContactoDTO;
+import dtos.ProjetistaDTO;
 import ejbs.ClienteBean;
 import ejbs.PessoaDeContactoBean;
 import ejbs.ProjetistaBean;
-import ejbs.ProjetoBean;
-import entities.*;
+import entities.Cliente;
+import entities.PessoaDeContacto;
+import entities.Projetista;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
@@ -44,7 +47,7 @@ public class UserService {
             Projetista projetista = projetistaBean.find(projetistaDTO.getUsername());
 
 
-            if(projetista == null){
+            if (projetista == null) {
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
             }
 
@@ -69,7 +72,7 @@ public class UserService {
             PessoaDeContacto pc = pessoaDeContactoBean.find(pessoaDeContactoDTO.getUsername());
 
 
-            if(pc == null){
+            if (pc == null) {
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
             }
 
@@ -94,7 +97,7 @@ public class UserService {
             Cliente c = clienteBean.find(clienteDTO.getEmail());
 
 
-            if(c == null){
+            if (c == null) {
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
             }
 
@@ -107,38 +110,38 @@ public class UserService {
         return Response.status(Response.Status.UNAUTHORIZED).build();
     }
 
-  @GET
-  @Path("/cliente/all")
-  public List<ClienteDTO> getAllClientesWS() {
-    List<ClienteDTO> clientesDTOS = clientesToDTOs(clienteBean.getAllClientes());
-    return clientesDTOS;
-  }
+    @GET
+    @Path("/cliente/all")
+    public List<ClienteDTO> getAllClientesWS() {
+        List<ClienteDTO> clientesDTOS = clientesToDTOs(clienteBean.getAllClientes());
+        return clientesDTOS;
+    }
 
-  private List<ClienteDTO> clientesToDTOs(List<Cliente> clientes) {
-    return clientes.stream().map(this::clienteToDto).collect(Collectors.toList());
-  }
+    private List<ClienteDTO> clientesToDTOs(List<Cliente> clientes) {
+        return clientes.stream().map(this::clienteToDto).collect(Collectors.toList());
+    }
 
-  private ClienteDTO clienteToDto(Cliente cliente) {
-    return new ClienteDTO(
-      cliente.getUsername(),
-      cliente.getEmail(),
-      cliente.getNome(),
-      cliente.getContactoTelefonico(),
-      cliente.getPassword(),
-      pessoaDeContactoToDTO(cliente.getPc()),
-      cliente.getMorada()
-    );
-  }
+    private ClienteDTO clienteToDto(Cliente cliente) {
+        return new ClienteDTO(
+                cliente.getUsername(),
+                cliente.getEmail(),
+                cliente.getNome(),
+                cliente.getContactoTelefonico(),
+                cliente.getPassword(),
+                pessoaDeContactoToDTO(cliente.getPc()),
+                cliente.getMorada()
+        );
+    }
 
-  private PessoaDeContactoDTO pessoaDeContactoToDTO(PessoaDeContacto pessoaDeContacto) {
-    return new PessoaDeContactoDTO(
-      pessoaDeContacto.getUsername(),
-      pessoaDeContacto.getEmail(),
-      pessoaDeContacto.getNome(),
-      pessoaDeContacto.getContactoTelefonico(),
-      pessoaDeContacto.getPassword()
-    );
-  }
+    private PessoaDeContactoDTO pessoaDeContactoToDTO(PessoaDeContacto pessoaDeContacto) {
+        return new PessoaDeContactoDTO(
+                pessoaDeContacto.getUsername(),
+                pessoaDeContacto.getEmail(),
+                pessoaDeContacto.getNome(),
+                pessoaDeContacto.getContactoTelefonico(),
+                pessoaDeContacto.getPassword()
+        );
+    }
 
 
 }

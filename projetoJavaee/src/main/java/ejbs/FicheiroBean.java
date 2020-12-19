@@ -11,7 +11,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.validation.ConstraintViolationException;
-import java.util.ArrayList;
 
 @Stateless(name = "DocumentEJB")
 public class FicheiroBean {
@@ -29,7 +28,7 @@ public class FicheiroBean {
             Ficheiro ficheiro = new Ficheiro(filepath, filename);
             Projeto projeto = projetoBean.find(idProjeto);
 
-            if(projeto == null){
+            if (projeto == null) {
                 throw new MyEntityNotFoundException();
             }
 
@@ -39,17 +38,16 @@ public class FicheiroBean {
 
             return ficheiro;
 
-        }catch (ConstraintViolationException e){
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
 
     }
 
-    public Ficheiro findficheiro(int id){
+    public Ficheiro findficheiro(int id) {
 
         return em.find(Ficheiro.class, id);
     }
-
 
 
 }

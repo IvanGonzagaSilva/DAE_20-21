@@ -5,7 +5,7 @@ import entities.Projeto;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
 import exceptions.MyEntityNotFoundException;
-import org.eclipse.persistence.sessions.Project;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -23,7 +23,7 @@ public class ProjetistaBean {
     public Projetista create(String username, String email, String nome, String contactoTelefonico, String password) throws MyEntityExistsException, MyConstraintViolationException {
         Projetista projetistaExists = em.find(Projetista.class, username);
 
-        if(projetistaExists != null){
+        if (projetistaExists != null) {
             throw new MyEntityExistsException();
         }
 
@@ -33,7 +33,7 @@ public class ProjetistaBean {
             em.persist(projetista);
 
             return projetista;
-        }catch (ConstraintViolationException e){
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
     }
@@ -67,7 +67,7 @@ public class ProjetistaBean {
         Projeto projeto = em.find(Projeto.class, projetoid);
 
         if (projeto == null) {
-          throw new MyEntityNotFoundException();
+            throw new MyEntityNotFoundException();
         }
 
         if (projetista.getProjetos().contains(projeto)) {

@@ -12,6 +12,7 @@ public class AuthBean {
     @PersistenceContext
 
     EntityManager em;
+
     public Pessoa authenticate(final String username, final String password) throws
             Exception {
         Pessoa user = em.find(Pessoa.class, username);

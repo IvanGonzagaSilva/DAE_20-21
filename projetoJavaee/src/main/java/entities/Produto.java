@@ -6,10 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 @NamedQueries({
-    @NamedQuery(
-        name = "getAllProdutos",
-        query = "SELECT p FROM Produto p ORDER BY p.nome" // JPQL
-    )
+        @NamedQuery(
+                name = "getAllProdutos",
+                query = "SELECT p FROM Produto p ORDER BY p.nome" // JPQL
+        )
 })
 
 @Entity

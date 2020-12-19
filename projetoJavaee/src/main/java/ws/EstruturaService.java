@@ -2,17 +2,15 @@ package ws;
 
 import dtos.*;
 import ejbs.EstruturaBean;
-import ejbs.ProjetoBean;
 import entities.*;
 
 import javax.ejb.EJB;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @Path("/estrutura") // relative url web path for this service
@@ -22,6 +20,8 @@ import java.util.stream.Collectors;
 
 public class EstruturaService {
 
+    private static final Logger log = Logger.getLogger(LoginService.class.getName());
+
     @EJB
     private EstruturaBean estruturaBean;
 
@@ -30,11 +30,14 @@ public class EstruturaService {
         AplicacaoDTO aplicacao = null;
 
         switch (estrutura.getAplicacao().getTipo()) {
-            case "Geral": aplicacao = aplicacaoGeralToDTO((AplicacaoGeral) estrutura.getAplicacao());
+            case "Geral":
+                aplicacao = aplicacaoGeralToDTO((AplicacaoGeral) estrutura.getAplicacao());
                 break;
-            case "Cobertura": aplicacao = aplicacaoCoberturaToDTO((AplicacaoCobertura)estrutura.getAplicacao());
+            case "Cobertura":
+                aplicacao = aplicacaoCoberturaToDTO((AplicacaoCobertura) estrutura.getAplicacao());
                 break;
-            case "Fachada":aplicacao = aplicacaoToDTO((AplicacaoFachada)estrutura.getAplicacao());
+            case "Fachada":
+                aplicacao = aplicacaoToDTO(estrutura.getAplicacao());
                 break;
         }
 
@@ -135,6 +138,7 @@ public class EstruturaService {
 
     private MaterialDTO materialToDTO(Material material) {
         return new MaterialDTO(
+                material.getId(),
                 material.getTipoDeMaterial()
         );
     }
@@ -164,8 +168,7 @@ public class EstruturaService {
     }
 
 
-
-    private List<VarianteDTO> variantesToDTOs(List<Variante> variantes){
+    private List<VarianteDTO> variantesToDTOs(List<Variante> variantes) {
         return variantes.stream().map(this::varianteToDTO).collect(Collectors.toList());
     }
 
@@ -178,5 +181,107 @@ public class EstruturaService {
     public List<EstruturaDTO> getAllEstruturasWS() {
         List<EstruturaDTO> estruturaDTOS = estruturaToDTOs(estruturaBean.getAllEstruturas());
         return estruturaDTOS;
+    }
+
+    @POST
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createEstruturaWS(EstruturaDTO estruturaDTO) {
+        try {
+            Estrutura estrutura = estruturaBean.create(
+                    estruturaDTO.getNome(),
+                    estruturaDTO.getGeometria().getId(),
+                    estruturaDTO.getAplicacao().getId(),
+                    estruturaDTO.getParametrosCalculo().getId());
+
+            return Response.status(Response.Status.CREATED).build();
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @DELETE
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response removeEstruturaWS(EstruturaDTO estruturaDTO) {
+        try {
+            estruturaBean.delete(estruturaDTO.getId());
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @PUT
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response atualizarEstruturaWS(EstruturaDTO estruturaDTO) {
+        try {
+            estruturaBean.update(
+                    estruturaDTO.getId(),
+                    estruturaDTO.getNome(),
+                    estruturaDTO.getGeometria().getId(),
+                    estruturaDTO.getAplicacao().getId(),
+                    estruturaDTO.getParametrosCalculo().getId());
+
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @PUT
+    @Path("{id}/add/material")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response adicionarMaterialAEstruturaWS(@PathParam("id") int idEstrutura, MaterialDTO materialDTO) {
+        try {
+            estruturaBean.addMaterial(idEstrutura, materialDTO.getId());
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @PUT
+    @Path("{id}/remove/material")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response removerMaterialAEstruturaWS(@PathParam("id") int idEstrutura, MaterialDTO materialDTO) {
+        try {
+            estruturaBean.addMaterial(idEstrutura, materialDTO.getId());
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @PUT
+    @Path("{id}/add/variante")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response adicionarMaterialAEstruturaWS(@PathParam("id") int idEstrutura, VarianteDTO varianteDTO) {
+        try {
+            estruturaBean.addVariante(idEstrutura, varianteDTO.getCodigo());
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @PUT
+    @Path("{id}/remove/variante")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response removerMaterialAEstruturaWS(@PathParam("id") int idEstrutura, VarianteDTO varianteDTO) {
+        try {
+            estruturaBean.addVariante(idEstrutura, varianteDTO.getCodigo());
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
     }
 }

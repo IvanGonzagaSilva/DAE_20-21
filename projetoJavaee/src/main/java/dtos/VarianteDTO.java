@@ -1,12 +1,5 @@
 package dtos;
 
-import entities.Produto;
-
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.LinkedHashMap;
 
@@ -21,15 +14,15 @@ public class VarianteDTO implements Serializable {
     private double sigmaC;
     private String nomeProduto;
     private double pp;
-    private LinkedHashMap<Double,Double> mcr_p;
-    private LinkedHashMap<Double,Double> mcr_n;
+    private LinkedHashMap<Double, Double> mcr_p;
+    private LinkedHashMap<Double, Double> mcr_n;
 
     public VarianteDTO() {
-        this.mcr_p = new LinkedHashMap<Double,Double>();
-        this.mcr_n = new LinkedHashMap<Double,Double>();
+        this.mcr_p = new LinkedHashMap<Double, Double>();
+        this.mcr_n = new LinkedHashMap<Double, Double>();
     }
 
-    public VarianteDTO(int codigo, String nome, double weff_p, double weff_n, double ar, double sigmaC, String nomeProduto ) {
+    public VarianteDTO(int codigo, String nome, double weff_p, double weff_n, double ar, double sigmaC, String nomeProduto) {
         this.codigo = codigo;
         this.nome = nome;
         this.weff_p = weff_p;

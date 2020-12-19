@@ -1,12 +1,10 @@
 package ws;
 
 
-import dtos.ProjetistaDTO;
 import dtos.SimulacaoDTO;
 import dtos.VarianteDTO;
 import ejbs.SimulacaoBean;
 import ejbs.VarianteBean;
-import entities.Projetista;
 import entities.Variante;
 
 import javax.ejb.EJB;
@@ -42,7 +40,7 @@ public class VarianteService {
 
             Variante variante = varianteBean.getVariante(varianteDTO.getCodigo());
 
-            if(variante == null){
+            if (variante == null) {
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
             }
 
@@ -64,23 +62,22 @@ public class VarianteService {
 
             Variante variante = varianteBean.getVariante(simulacaoDTO.getCodVariante());
 
-            if(variante == null){
+            if (variante == null) {
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
             }
 
             boolean simResult = simulacaoBean.simulaVariante(simulacaoDTO.getNb(), simulacaoDTO.getLVao(), simulacaoDTO.getQ(), variante);
 
             Response.Status status;
-            if (simResult){
+            if (simResult) {
 
                 status = Response.Status.ACCEPTED;
-            }else{
+            } else {
                 status = Response.Status.NOT_ACCEPTABLE;
             }
 
 
             return Response.status(status).build();
-
 
 
         } catch (Exception e) {

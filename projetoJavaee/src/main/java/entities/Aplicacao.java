@@ -4,10 +4,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @NamedQueries({
-    @NamedQuery(
-        name = "getAllAplicacoes",
-        query = "SELECT a FROM Aplicacao a ORDER BY a.id" // JPQL
-    )
+        @NamedQuery(
+                name = "getAllAplicacoes",
+                query = "SELECT a FROM Aplicacao a ORDER BY a.id" // JPQL
+        )
 })
 
 @Entity
@@ -37,10 +37,6 @@ public class Aplicacao implements Serializable {
         this.tipo = tipo;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getTipo() {
         return tipo;
     }
@@ -51,6 +47,10 @@ public class Aplicacao implements Serializable {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getCargaPermanente() {

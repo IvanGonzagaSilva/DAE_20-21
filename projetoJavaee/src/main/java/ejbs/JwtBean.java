@@ -16,6 +16,12 @@ import java.security.PrivateKey;
 
 @Stateless(name = "JwtEJB")
 public class JwtBean {
+    private static final PrivateKey privateKey;
+    private static final int TOKEN_VALIDITY = 14400;
+    private static final String CLAIM_ROLES = "groups";
+    private static final String ISSUER = "quickstart-jwt-issuer";
+    private static final String AUDIENCE = "jwt-audience";
+
     static {
         FileInputStream fis = null;
         char[] password = "secret".toCharArray();
@@ -37,22 +43,19 @@ public class JwtBean {
             if (fis != null) {
                 try {
                     fis.close();
-                } catch (IOException e) {}
+                } catch (IOException e) {
+                }
             }
         }
         privateKey = pk;
     }
 
-    private static final PrivateKey privateKey;
-    private static final int TOKEN_VALIDITY = 14400;
-    private static final String CLAIM_ROLES = "groups";
-    private static final String ISSUER = "quickstart-jwt-issuer";
-    private static final String AUDIENCE = "jwt-audience";
-
     public String createJwt(final String subject, final String[] roles) throws Exception {
         JWSSigner signer = new RSASSASigner(privateKey);
         JsonArrayBuilder rolesBuilder = Json.createArrayBuilder();
-        for (String role : roles) { rolesBuilder.add(role); }
+        for (String role : roles) {
+            rolesBuilder.add(role);
+        }
         JsonObjectBuilder claimsBuilder = Json.createObjectBuilder()
                 .add("sub", subject)
                 .add("iss", ISSUER)

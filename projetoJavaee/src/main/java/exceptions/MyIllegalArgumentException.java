@@ -1,4 +1,4 @@
 package exceptions;
 
-public class MyIllegalArgumentException extends Exception{
+public class MyIllegalArgumentException extends Exception {
 }

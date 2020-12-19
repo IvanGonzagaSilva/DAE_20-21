@@ -21,7 +21,7 @@ public class PessoaDeContactoBean {
     public PessoaDeContacto create(String username, String email, String name, String contactoTelefonico, String password) throws MyEntityExistsException, MyConstraintViolationException {
         PessoaDeContacto pc = this.find(username);
 
-        if(pc != null){
+        if (pc != null) {
             throw new MyEntityExistsException();
         }
 
@@ -31,7 +31,7 @@ public class PessoaDeContactoBean {
             em.persist(pc);
 
             return pc;
-        }catch (ConstraintViolationException e){
+        } catch (ConstraintViolationException e) {
             throw new MyConstraintViolationException(e);
         }
 

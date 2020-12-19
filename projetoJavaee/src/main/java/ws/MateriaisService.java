@@ -1,13 +1,8 @@
 package ws;
 
-import dtos.ClienteDTO;
 import dtos.MaterialDTO;
-import dtos.ProjetoDTO;
 import ejbs.MaterialBean;
-import ejbs.ProjetoBean;
-import entities.Cliente;
 import entities.Material;
-import entities.Projeto;
 
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -26,13 +21,14 @@ public class MateriaisService {
     @EJB
     private MaterialBean materialBean;
 
-    private MaterialDTO toDTO(Material material){
+    private MaterialDTO toDTO(Material material) {
         return new MaterialDTO(
+                material.getId(),
                 material.getTipoDeMaterial()
         );
     }
 
-    private List<MaterialDTO> materialToDTOs(List<Material> material){
+    private List<MaterialDTO> materialToDTOs(List<Material> material) {
         return material.stream().map(this::toDTO).collect(Collectors.toList());
     }
 
