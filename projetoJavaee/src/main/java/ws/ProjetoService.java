@@ -237,7 +237,7 @@ public class ProjetoService {
 
             Projeto projeto = projetoBean.create(projetoDTO.getNome(), projetoDTO.getUsernameProjetista());
 
-            return Response.status(Response.Status.CREATED).build();
+            return Response.status(Response.Status.CREATED).entity(toDTO(projeto)).build();
 
         } catch (Exception e) {
             log.info(e.getMessage());
@@ -246,12 +246,12 @@ public class ProjetoService {
     }
 
     @DELETE
-    @Path("/")
+    @Path("/delete/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response removeProjetoWS(ProjetoDTO projetoDTO){
+    public Response removeProjetoWS(@PathParam("id") int idProjeto){
         try {
 
-            projetoBean.delete(projetoDTO.getId());
+            projetoBean.delete(idProjeto);
 
             return Response.status(Response.Status.OK).build();
 
