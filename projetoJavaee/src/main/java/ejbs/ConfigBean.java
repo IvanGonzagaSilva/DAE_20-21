@@ -148,7 +148,7 @@ public class ConfigBean {
         System.out.println("creating familias...");
         //Familias
         Familia fam1 = familiaBean.create("Todas");
-        Familia fam2 = familiaBean.create("O");
+        Familia fam2 = familiaBean.create("Ω");
         familiaBean.create("C");
         familiaBean.create("Z");
 
