@@ -1,20 +1,15 @@
 package ws;
 
-import dtos.MaterialDTO;
-import dtos.ProdutoDTO;
-import dtos.VarianteDTO;
+import dtos.*;
 import ejbs.ProdutoBean;
-import entities.Material;
-import entities.Produto;
-import entities.Variante;
+import entities.*;
 
 import javax.ejb.EJB;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @Path("/produto")
@@ -22,6 +17,8 @@ import java.util.stream.Collectors;
 @Consumes({MediaType.APPLICATION_JSON})
 
 public class ProdutoService {
+
+    private static final Logger log = Logger.getLogger(LoginService.class.getName());
 
     @EJB
     private ProdutoBean produtoBean;
@@ -62,4 +59,82 @@ public class ProdutoService {
         List<ProdutoDTO> produtoDTOS = produtoToDTOs(produtoBean.getAllProdutos());
         return produtoDTOS;
     }
+
+    @POST
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createProdutoWS(ProdutoDTO produtoDTO) {
+        try {
+
+            Produto produto = produtoBean.find(produtoDTO.getNome());
+
+            if(produto == null){
+                return Response.status(Response.Status.BAD_REQUEST).build();
+            }
+
+            produtoBean.create(produtoDTO.getNome());
+
+            return Response.status(Response.Status.CREATED).build();
+
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @DELETE
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response removeProdutoWS(ProdutoDTO produtoDTO){
+        try {
+
+            produtoBean.delete(produtoDTO.getNome());
+
+            return Response.status(Response.Status.OK).build();
+
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+    @PUT
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response atualizarProdutoWS(ProdutoDTO produtoDTO){
+        try {
+            produtoBean.update(produtoDTO);
+
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
+  @PUT
+  @Path("{id}/add/variante")
+  @Consumes(MediaType.APPLICATION_JSON)
+  public Response adicionarVarianteAoProdutoWS(@PathParam("id") String nomeProduto, VarianteDTO varianteDTO){
+    try {
+      produtoBean.addVariante(nomeProduto, varianteDTO);
+      return Response.status(Response.Status.OK).build();
+    } catch (Exception e) {
+      log.info(e.getMessage());
+    }
+    return Response.status(Response.Status.UNAUTHORIZED).build();
+  }
+
+  @PUT
+  @Path("{id}/remove/variante")
+  @Consumes(MediaType.APPLICATION_JSON)
+  public Response removerVarianteAoProdutoWS(@PathParam("id") String nomeProduto, VarianteDTO varianteDTO){
+    try {
+      produtoBean.removeVariante(nomeProduto, varianteDTO);
+      return Response.status(Response.Status.OK).build();
+    } catch (Exception e) {
+      log.info(e.getMessage());
+    }
+    return Response.status(Response.Status.UNAUTHORIZED).build();
+  }
 }

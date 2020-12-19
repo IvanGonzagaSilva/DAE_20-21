@@ -2,6 +2,7 @@ package ejbs;
 
 import entities.Produto;
 import entities.Variante;
+import exceptions.MyEntityNotFoundException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -17,6 +18,16 @@ public class VarianteBean {
         Produto produto = em.find(Produto.class, nomeProduto);
         Variante p = new Variante(codigo, produto, name, weff_p, weff_n, ar, sigmaC);
         em.persist(p);
+    }
+
+    public Variante find(int id) throws MyEntityNotFoundException {
+      Variante variante = em.find(Variante.class, id);
+
+      if (variante == null) {
+        throw new MyEntityNotFoundException("Variante not found.");
+      }
+
+      return variante;
     }
 
     public Variante getVariante(int codigo){
