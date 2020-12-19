@@ -24,6 +24,7 @@
                     full-width
                     solo
                     label="Número de vãos"
+                    v-model="geometria.numeroVaos"
                     clearable
                 ></v-text-field>
 
@@ -31,14 +32,16 @@
                 <v-text-field
                     solo
                     class="mb-0"
-                    labe="Comprimento do vão (m)"
+                    label="Comprimento do vão (m)"
                     clearable
+                    v-model="geometria.comprimentoVao"
                 ></v-text-field>
 
                 <v-text-field
                     solo
                     class="mb-0"
                     label="Espaçamento entre vigas (m)"
+                    v-model="geometria.espacamentoVigas"
                     clearable
                 ></v-text-field>
 
@@ -58,9 +61,9 @@
                     <v-col class="pt-0">
                         <v-checkbox
                         class="mt-0"
-                        v-model="selected"
+                        v-model="selectedDadosPerfil"
                         label="Todas"
-                        value="Jacob"
+                        value="Todas"
                         ></v-checkbox>
 
                     </v-col>
@@ -68,9 +71,9 @@
                     <v-col class="pt-0">
                         <v-checkbox
                         class="mt-0"
-                        v-model="selected"
+                        v-model="selectedDadosPerfil"
                         label="Ω"
-                        value="Jacob"
+                        value="Ω"
                         ></v-checkbox>
                         
                     </v-col>
@@ -78,16 +81,16 @@
                     <v-col class="pt-0">
                         <v-checkbox
                         class="mt-0"
-                        v-model="selected"
+                        v-model="selectedDadosPerfil"
                         label="C"
-                        value="Jacob"
+                        value="C"
                         ></v-checkbox>
                     </v-col>
 
                     <v-col class="pt-0">
                         <v-checkbox
                         class="mt-0"
-                        v-model="selected"
+                        v-model="selectedDadosPerfil"
                         label="Z"
                         value="Jacob"
                         ></v-checkbox>
@@ -101,22 +104,9 @@
                     <v-spacer></v-spacer>
 
                     <v-btn
-                    class="mx-2"
-                    outlined
-                    depressed
-                    @click="tabClicked > 0 ? tabClicked-- : ''"
-                    color="primary"
-                    >
-                        <v-icon>
-                            mdi-chevron-left
-                        </v-icon>
-                        Passo Anterior
-                    </v-btn>
-
-                    <v-btn
                     class="mr-2"
                     depressed
-                    @click="tabClicked < 2 ? tabClicked++ : ''"
+                    @click="changeTab('forward')"
                     color="primary"
                     >
                         Próximo Passo
@@ -145,9 +135,9 @@
                     <v-col class="pt-0">
                         <v-checkbox
                         class="mt-0"
-                        v-model="selected"
+                        v-model="aplicacao.tipo"
                         label="Cobertura"
-                        value="Jacob"
+                        value="Cobertura"
                         ></v-checkbox>
                         
                     </v-col>
@@ -155,18 +145,18 @@
                     <v-col class="pt-0">
                         <v-checkbox
                         class="mt-0"
-                        v-model="selected"
+                        v-model="aplicacao.tipo"
                         label="Fachada"
-                        value="Jacob"
+                        value="Fachada"
                         ></v-checkbox>
                     </v-col>
 
                     <v-col class="pt-0">
                         <v-checkbox
                         class="mt-0"
-                        v-model="selected"
+                        v-model="aplicacao.tipo"
                         label="Z"
-                        value="Jacob"
+                        value="Z"
                         ></v-checkbox>
                     </v-col>
 
@@ -180,6 +170,7 @@
                             solo
                             class="mb-0"
                             label="Ângulo α"
+                            v-model="aplicacao.angulo"
                             clearable
                         ></v-text-field>
 
@@ -191,6 +182,7 @@
                             solo
                             class="mb-0"
                             label="Carga permanente (kN/m²)"
+                            v-model="aplicacao.cargaPermanente"
                             clearable
                         ></v-text-field>
 
@@ -208,6 +200,7 @@
                             solo
                             class="mb-0"
                             label="Sobrecarga (kN/m²)"
+                            v-model="aplicacao.sobrecarga"
                             clearable
                         ></v-text-field>
 
@@ -226,6 +219,7 @@
                             solo
                             class="mb-0"
                             label="Neve (kN/m²)"
+                            v-model="aplicacao.neve"
                             clearable
                         ></v-text-field>
 
@@ -240,16 +234,16 @@
                         <span class="text-subtitle text-uppercase font-weight-bold px-3" style="padding-top:6px;">Altitude do Local:</span>
                         <v-checkbox
                         class="mt-0 px-2"
-                        v-model="selected"
+                        v-model="selectedAltitude"
                         label="≤ 1000m"
-                        value="Jacob"
+                        value="≤ 1000m"
                         ></v-checkbox>
 
                         <v-checkbox
                         class="mt-0 px-2"
-                        v-model="selected"
+                        v-model="selectedAltitude"
                         label="> 1000m"
-                        value="Jacob"
+                        value="> 1000m"
                         ></v-checkbox>
 
                     </v-col>
@@ -264,6 +258,7 @@
                             solo
                             class="mb-0"
                             label="Vento - pressão (kN/m²)"
+                            v-model="aplicacao.ventoPressao"
                             clearable
                         ></v-text-field>
                         
@@ -275,6 +270,7 @@
                             solo
                             class="mb-0"
                             label="Vento - sucção (kN/m²)"
+                            v-model="aplicacao.ventoSucao"
                             clearable
                         ></v-text-field>
                         
@@ -299,7 +295,7 @@
 
                         <v-checkbox
                         class="mt-0 pt-3"
-                        v-model="ContraventamentoTotal"
+                        v-model="paramsContraventamentoTotal.contraventamentoTotal"
                         label="Contraventamento total"
                         value="Jacob"
                         ></v-checkbox>
@@ -308,9 +304,10 @@
 
                     <v-col class="pt-0">
                         <v-text-field
-                            v-show="!ContraventamentoTotal"
+                            v-show="!paramsContraventamentoTotal.contraventamentoTotal"
                             solo
                             class="mb-0"
+                            v-model="paramsContraventamentoTotal.verificacaoDeformacao"
                             label="Nº Contraventamentos Laterais"
                             clearable
                         ></v-text-field>
@@ -318,13 +315,13 @@
 
                 </v-row>
 
-                <v-row v-show="!ContraventamentoTotal">
+                <v-row v-show="!paramsContraventamentoTotal.contraventamentoTotal">
 
                     <v-col class="pt-0">
 
                         <v-checkbox
                         class="mt-0 pt-3"
-                        v-model="ContraventamentoChapaRevestimento"
+                        v-model="paramsContraventamentoTotal.contribuicaoChapaRevestimento"
                         label="Contribuição da chapa de revestimento"
                         value="Jacob"
                         ></v-checkbox>
@@ -338,8 +335,9 @@
                     <v-col class="pt-0">
 
                         <v-text-field
-                            v-show="!ContraventamentoTotal"
+                            v-show="paramsContraventamentoTotal.contribuicaoChapaRevestimento"
                             solo
+                            v-model="params.numeroFixacoes"
                             class="mb-0"
                             label="Nº de fixações"
                             clearable
@@ -350,7 +348,8 @@
                     <v-col class="pt-0">
 
                         <v-text-field
-                            v-show="!ContraventamentoTotal"
+                            v-show="paramsContraventamentoTotal.contribuicaoChapaRevestimento"
+                            v-model="params.inerciaChapaRevestimento"
                             solo
                             class="mb-0"
                             label="Inércia da Chapa de Revestimento (m4/m)"
@@ -371,7 +370,7 @@
                 class="mx-2"
                 outlined
                 depressed
-                @click="tabClicked > 0 ? tabClicked-- : ''"
+                @click="changeTab('backwards')"
                 color="primary"
                 >
                     <v-icon>
@@ -383,7 +382,7 @@
                 <v-btn
                 class="mr-2"
                 depressed
-                @click="tabClicked < 2 ? tabClicked++ : ''"
+                @click="changeTab('forward')"
                 color="primary"
                 >
                     Próximo Passo
@@ -409,37 +408,37 @@
 
                     <v-col class="pt-0" cols="5">
 
-                        <v-checkbox
+                        <!-- <v-checkbox
                         class="mt-0 pt-3"
-                        v-model="ContraventamentoTotal"
+                        v-model="params.contraventamentoTotal"
                         label="Contraventamento total"
                         value="Jacob"
-                        ></v-checkbox>
+                        ></v-checkbox> -->
 
                     </v-col>
 
                     <v-col class="pt-0">
-                        <v-text-field
-                            v-show="!ContraventamentoTotal"
+                        <!-- <v-text-field
+                            v-show="!params.contraventamentoTotal"
                             solo
                             class="mb-0"
                             label="Nº Contraventamentos Laterais"
                             clearable
-                        ></v-text-field>
+                        ></v-text-field> -->
                     </v-col>
 
                 </v-row>
 
-                <v-row v-show="!ContraventamentoTotal">
+                <v-row v-show="!params.contraventamentoTotal">
 
                     <v-col class="pt-0">
 
-                        <v-checkbox
+                        <!-- <v-checkbox
                         class="mt-0 pt-3"
-                        v-model="ContraventamentoChapaRevestimento"
+                        v-model="params.contribuicaoChapaRevestimento"
                         label="Contribuição da chapa de revestimento"
                         value="Jacob"
-                        ></v-checkbox>
+                        ></v-checkbox> -->
 
                     </v-col>
 
@@ -449,25 +448,25 @@
 
                     <v-col class="pt-0">
 
-                        <v-text-field
-                            v-show="!ContraventamentoTotal"
+                        <!-- <v-text-field
+                            v-show="!params.contraventamentoTotal"
                             solo
                             class="mb-0"
                             label="Nº de fixações"
                             clearable
-                        ></v-text-field>
+                        ></v-text-field> -->
 
                     </v-col>
 
                     <v-col class="pt-0">
 
-                        <v-text-field
-                            v-show="!ContraventamentoTotal"
+                        <!-- <v-text-field
+                            v-show="!params.contraventamentoTotal"
                             solo
                             class="mb-0"
                             label="Inércia da Chapa de Revestimento (m4/m)"
                             clearable
-                        ></v-text-field>
+                        ></v-text-field> -->
 
                     </v-col>
 
@@ -483,7 +482,7 @@
                 class="mx-2"
                 outlined
                 depressed
-                @click="tabClicked > 0 ? tabClicked-- : ''"
+                @click="changeTab('backwards')"
                 color="primary"
                 >
                     <v-icon>
@@ -495,12 +494,13 @@
                 <v-btn
                 class="mr-2"
                 depressed
-                @click="tabClicked < 2 ? tabClicked++ : ''"
-                color="primary"
+                 :disabled="index > 1"
+                @click="postResultado"
+                color="success"
                 >
-                    Próximo Passo
+                    Finish
                     <v-icon>
-                        mdi-chevron-right
+                        mdi-check
                     </v-icon>
                 </v-btn>
                 
@@ -514,15 +514,84 @@
 <script>
 export default {
     props:['title'],
-    methods: 
-    {
-        
-    },
     data: () => ({
         tabClicked: 0,
-        ContraventamentoTotal: false,
+        index: 0,
+        selectedAltitude: '',
+        geometria:
+        {
+            numeroVaos: '',
+            comprimentoVao: '',
+            espacamentoVigas: ''
+        },
+        aplicacao:
+        {
+            tipo: '',
+            angulo: '',
+            sobrecarga: '',
+            cargaPermanente: '',
+            ventoSucao: '',
+            ventoPressao: '',
+            categoriaSobrecarga: '',
+            neve: '',
+        },
+        //create parametros calculo se contraventamento total for true
+        paramsContraventamentoTotal:
+        {
+            contraventamentoTotal: '',
+            verificacaoDeformacao: '',
+            limiteDeformacao:'',
+        },
+        //create parametros calculo se o contraventamento total for false e contribuicao chapa revestimento true
+        params:
+        {
+            contraventamentoTotal: '',
+            contribuicaoChapaRevestimento: '',
+            numeroContraventamentosLaterais: '',
+            numeroFixacoes: '',
+            inerciaChapaRevestimento: '',
+            verificacaoDeformacao: '',
+            limiteDeformacao: ''
+        },
+        geometriaPosted: false,
+        aplicacaoPosted: false,
+        resultadoPosted: false,
+        selectedDadosPerfil: '',
     }),
-    
+    methods:
+    {
+        changeTab: function (type)
+        {
+            if (this.tabClicked === 0 && !this.geometriaPosted)
+                this.postGeometria();
+            else if (this.tabClicked === 1 && !this.aplicacaoPosted)
+                this.postAplicacao();
+            else if (this.tabClicked === 2 && !this.resultadoPosted)
+                this.postResultado();
+
+            if (type !== 'backwards')
+                this.tabClicked < 2 ? this.tabClicked++ : this.tabClicked--;
+            else
+                this.tabClicked > 0 && type === 'backwards' ? this.tabClicked-- : this.tabClicked++;
+        },
+        postGeometria: async function ()
+        {
+            await this.$axios.post('/api/geometria', this.geometria).then(response => this.geometriaPosted = true).catch(error => console.log(error.message));
+        },
+        postAplicacao: async function ()
+        {
+            await this.$axios.post('/api/aplicacao', this.aplicacao).then(response => this.aplicacaoPosted = true).catch(error => console.log(error.message));
+        },
+         postResultado: async function ()
+        {
+            //await this.$axios.post().then().catch();
+        } 
+    },
+    watch: {
+    tabClicked: function () {
+        console.log(this.tabClicked);
+    }
+  },
 }
 </script>
 

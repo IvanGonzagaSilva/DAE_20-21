@@ -11,6 +11,12 @@
   "LazyCreateStructure": {
     "description": "Auto imported from components/CreateStructure.vue"
   },
+  "ListProducts": {
+    "description": "Auto imported from components/ListProducts.vue"
+  },
+  "LazyListProducts": {
+    "description": "Auto imported from components/ListProducts.vue"
+  },
   "ProjectCard": {
     "description": "Auto imported from components/ProjectCard.vue"
   },

@@ -19,7 +19,7 @@
 
             </v-col>
 
-            <v-col class="sm:pr-2 sm:pl-2 pr-0 pl-3">
+            <v-col class="sm:pr-2 sm:pl-2 px-3">
 
                 <v-btn
                 class="m-2 py-6"
@@ -31,6 +31,54 @@
                     mdi-{{componentId != 3 ? "folder-plus": "chevron-left"}}
                 </v-icon>
                     {{componentId != 3 ? "Nova Estrutura": "Página Inicial"}}
+                </v-btn>
+
+            </v-col>
+
+            <v-col class="sm:pl-2 sm:pr-2 pl-3">
+
+                <v-btn
+                class="m-2 py-6"
+                color="primary"
+                block
+                @click="swapComponent(4)"
+                >
+                <v-icon dark class="pr-2">
+                    mdi-{{(componentId == 0 || componentId == 2) ? "chevron-left": "folder-plus"}}
+                </v-icon>
+                    {{(componentId == 0 || componentId == 2 || componentId == 3) ? "Página Inicial": "Novo Produto"}}
+                </v-btn>
+
+            </v-col>
+
+            <v-col class="sm:pl-2 sm:pr-2 pr-3">
+
+                <v-btn
+                class="m-2 py-6"
+                color="primary"
+                block
+                @click="swapComponent(5)"
+                >
+                <v-icon dark class="pr-2">
+                    mdi-{{(componentId == 0 || componentId == 2) ? "chevron-left": "folder-plus"}}
+                </v-icon>
+                    {{(componentId == 0 || componentId == 2) ? "Página Inicial": "Novo Variante"}}
+                </v-btn>
+
+            </v-col>
+
+            <v-col class="sm:pl-2 sm:pr-2 pr-3" cols="1">
+
+                <v-btn
+                class="m-2 py-6"
+                color="primary"
+                block
+                @click="swapComponent(6)"
+                >
+                <v-icon dark class="pr-2">
+                    mdi-{{(componentId == 0 || componentId == 2) ? "chevron-left": "menu"}}
+                </v-icon>
+                    {{(componentId == 0 || componentId == 2) ? "Página Inicial": "Lista Produtos"}}
                 </v-btn>
 
             </v-col>

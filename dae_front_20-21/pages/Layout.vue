@@ -1,7 +1,7 @@
 <template>
     <v-row class="fill-height" style="position: relative">
 
-        <v-col cols="6" class="mx-auto">
+        <v-col cols="8" class="mx-auto">
 
             <v-card flat>
 
@@ -45,6 +45,24 @@
 
                 </v-row>
 
+                <v-row v-if="componentId === 4">
+
+                    <create-project v-bind:title="'Criar Novo Produto'" v-bind:clickedProject="'empty'" v-bind:isProduct="true" class="mx-auto"/>
+
+                </v-row>
+
+                <v-row v-if="componentId === 5">
+
+                    <create-project v-bind:title="'Criar Nova Variante'" v-bind:clickedProject="'empty'" v-bind:isVariante="true" class="mx-auto"/>
+
+                </v-row>
+
+                <v-row v-if="componentId === 6">
+
+                    <list-products class="mx-auto" />
+
+                </v-row>
+
             </v-card-text>
 
             <v-card-actions>
@@ -68,6 +86,7 @@
 <script>
 import CreateProject from '../components/CreateProject.vue';
 import CreateStructure from '../components/CreateStructure.vue';
+import ListProducts from '../components/ListProducts.vue';
 import ProjectCard from '../components/ProjectCard.vue';
 import SearchBar from '../components/SearchBar.vue';
 
@@ -78,6 +97,7 @@ export default {
         ProjectCard,
         CreateProject,
         CreateStructure,
+        ListProducts
     },
     data: () =>( {
         materialsArray: [],

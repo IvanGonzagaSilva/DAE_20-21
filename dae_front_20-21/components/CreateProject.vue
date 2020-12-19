@@ -4,6 +4,7 @@
         <h2 class="text-h4 py-4 font-weight-bold text-uppercase text-center">{{title}}</h2>
 
         <v-text-field
+            v-if="isProduct ? !isProduct : !isVariante"
             v-model="projectData.nome"
             class="mb-0"
             full-width
@@ -13,8 +14,82 @@
             clearable
         ></v-text-field>
 
+        <v-text-field
+            v-if="isProduct"
+            v-model="produto.nome"
+            class="mb-0"
+            full-width
+            solo
+            label="Nome do Produto"
+            clearable
+        ></v-text-field>
 
         <v-text-field
+            v-if="isVariante"
+            v-model="variante.nome"
+            class="mb-0"
+            full-width
+            solo
+            label="Nome da Variante"
+            clearable
+        ></v-text-field>
+
+         <!--  -->
+
+
+        <v-text-field
+            v-if="isVariante"
+            v-model="variante.nomeProduto"
+            class="mb-0"
+            full-width
+            solo
+            label="Nome da Nome Produto"
+            clearable
+        ></v-text-field>
+
+        <v-text-field
+            v-if="isVariante"
+            v-model="variante.weff_p"
+            class="mb-0"
+            full-width
+            solo
+            label="Weff_p"
+            clearable
+        ></v-text-field>
+
+        <v-text-field
+            v-if="isVariante"
+            v-model="variante.weff_n"
+            class="mb-0"
+            full-width
+            solo
+            label="Weff_n"
+            clearable
+        ></v-text-field>
+
+        <v-text-field
+            v-if="isVariante"
+            v-model="variante.ar"
+            class="mb-0"
+            full-width
+            solo
+            label="ar"
+            clearable
+        ></v-text-field>
+
+        <v-text-field
+            v-if="isVariante"
+            v-model="variante.sigmaC"
+            class="mb-0"
+            full-width
+            solo
+            label="sigmaC"
+            clearable
+        ></v-text-field>
+
+
+        <v-text-field
+            v-show="isProduct ? !isProduct : !isVariante"
             v-model="projectData.usernameProjetista"
             solo
             class="mb-0"
@@ -43,7 +118,7 @@
         </span>
 
 
-        <span v-if="clickedProject !== 'empty'">
+        <span v-if="clickedProject !== 'empty' &&  !isVariante">
 
             <v-row v-for="cliente in clickedProject.clientes" :key="cliente.nome">
 
@@ -76,7 +151,8 @@
 
             </v-row>
 
-        <span v-if="projectData.clientes.filter(client => !projectData.clientes.includes(client.username)).length > 0">
+       
+        <span v-if="(projectData.clientes.length == 0 || projectData.clientes.filter(client => !projectData.clientes.includes(client.username)).length > 0)">
             <v-row v-for="i in index" :key="i">
 
                 <v-col cols="10" class="py-0">
@@ -99,7 +175,7 @@
                         @click="adicionarNovoCliente(i < index)"
                         >
                         <v-icon dark>
-                            {{(i < index) ? 'mdi-close' : 'mdi-account-plus'}}
+                            {{(index > i) ? 'mdi-close' : 'mdi-account-plus'}}
                         </v-icon>
                     </v-btn>
 
@@ -121,7 +197,7 @@
                     :loading="loading"
                     :disabled="loading"
                     color="success"
-                    @click="uploadData()"
+                    @click="!isProduct ? (isVariante ? uploadVariante() : uploadData()): postProduto()"
                     >
                     Submit
                     <template v-slot:loader>
@@ -150,9 +226,13 @@
 
 <script>
 export default {
-    props: ['clickedProject', 'projectsArray', 'username', 'componentId', 'title', 'clientNameArray'],
+    props: ['clickedProject', 'projectsArray', 'username', 'componentId', 'title', 'clientNameArray', 'isProduct', 'isVariante'],
     data: () => ({
         index: 1,
+        indexVariante: 1,
+        produto: {
+            nome: ''
+        },
         name: '',
         projectData: {
             nome: "",
@@ -166,7 +246,17 @@ export default {
         },
         loader: null,
         loading: false,
-        clientArray: []
+        clientArray: [],
+        variante:
+        {
+            nomeProduto: '',
+            nome: '',
+            weff_p: '',
+            weff_n: '',
+            ar: '',
+            sigmaC: ''
+        },
+        variantesArray: []
     }),
     created: function ()
     {
@@ -193,9 +283,17 @@ export default {
 
             this.$emit('back-to-homepage');
         },
+        uploadVariante: async function ()
+        {
+            await this.$axios.post('/api/variante', this.variante).then(response => console.log(response.message)).catch(error => console.log(error.message));
+        },
         deleteProject: async function ()
         {
             await this.$axios.delete('/api/projeto/delete/' + this.clickedProject.id).then( this.removeProjectFromArray(this.clickedProject.id) ).catch(error => console.log(error.message));
+        },
+        postProduto: async function ()
+        {
+            await this.$axios.post('/api/produto', this.produto).then(response => console.log(response.message)).catch(error => console.log(error.message));
         },
         removeClientProject: async function ( username )
         {
