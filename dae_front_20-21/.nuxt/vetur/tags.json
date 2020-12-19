@@ -5,6 +5,12 @@
   "LazyCreateProject": {
     "description": "Auto imported from components/CreateProject.vue"
   },
+  "CreateStructure": {
+    "description": "Auto imported from components/CreateStructure.vue"
+  },
+  "LazyCreateStructure": {
+    "description": "Auto imported from components/CreateStructure.vue"
+  },
   "ProjectCard": {
     "description": "Auto imported from components/ProjectCard.vue"
   },

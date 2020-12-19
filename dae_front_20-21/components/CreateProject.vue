@@ -1,8 +1,8 @@
 <template>
     <div style="width: 600px;">
 
-        <h2 class="text-h5 pb-4 font-weight-bold text-uppercase text-center">{{title}}</h2>
-
+        <h2 class="text-h4 py-4 font-weight-bold text-uppercase text-center">{{title}}</h2>
+        
         <v-text-field
             v-model="projectData.nome"
             class="mb-0"
@@ -29,7 +29,7 @@
                 <v-col cols="10" class="py-0">
 
                     <v-text-field
-                        v-model="cliente.nome"
+                        v-model="cliente.username"
                         solo
                         disabled
                         class="mb-0"
@@ -44,6 +44,7 @@
                         class="py-6 px-5"
                         color="error"
                         block
+                        @click="removeClientProject(cliente.username)"
                         >
                         <v-icon dark>
                             mdi-close
@@ -54,7 +55,7 @@
 
             </v-row>
 
-        <span v-if="clickedProject.clientes.filter(client => console.log(client.username)).length > 0">
+        <span v-if="clickedProject.clientes.length < 0 || (clickedProject.clientes.filter(client => projectData.clientes.includes(client.username)).length > 0)">
             <v-row v-for="i in index" :key="i">
 
                 <v-col cols="10" class="py-0">
@@ -151,8 +152,7 @@ export default {
             this.projectData = this.clickedProject;
 
         let username = localStorage.getItem('username')
-        if (this.componentId !== 3)
-            typeof username !== undefined ? this.projectData.usernameProjetista = username : this.getUser();
+        typeof username !== undefined ? this.projectData.usernameProjetista = username : this.getUser();
     },
     methods: {
         uploadData: async function ()
@@ -165,13 +165,17 @@ export default {
                 await this.$axios.put('/api/projeto/' + this.clickedProject.id + '/enrollclient', {username: this.projectData.clientes}).then(this.addProjectToArray()).catch(error => console.log(error.message));
             }
             else
-                await this.$axios.post("/api/projeto", this.projectData).then(this.addProjectToArray()).catch(error => console.log(error.message));
+                await this.$axios.post("/api/projeto/", this.projectData).then(this.addProjectToArray()).catch(error => console.log(error.message));
 
             this.$emit('back-to-homepage');
         },
         deleteProject: async function ()
         {
-            await this.$axios.delete('/api/projeto', {id: this.clickedProject.id}).then( this.removeProjectFromArray(this.clickedProject.id) ).catch(error => console.log(error.message));
+            await this.$axios.delete('/api/projeto/' + this.clickedProject.id).then( this.removeProjectFromArray(this.clickedProject.id) ).catch(error => console.log(error.message));
+        },
+        removeClientProject: async function (username)
+        {
+            await this.$axios.put('/api/projeto/' + this.clickedProject.id + '/unrollclient', {username: username}).then(this.addProjectToArray()).catch(error => console.log(error.message));
         },
         addProjectToArray: function ()
         {

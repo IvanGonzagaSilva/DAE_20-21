@@ -18261,3 +18261,15 @@ WFLYCTL0186:   Services which failed to start:      service jboss.deployment.uni
 2020-12-19 18:09:34,642 INFO  [ws.LoginService] (default task-2) Generating JWT for user projetista1
 2020-12-19 18:09:34,648 WARN  [org.eclipse.persistence.moxy] (default task-2) 
 2020-12-19 18:09:34,648 WARN  [org.eclipse.persistence.moxy] (default task-2) 
+2020-12-19 18:10:42,989 INFO  [ws.LoginService] (default task-9) Generating JWT for user projetista1
+2020-12-19 18:10:42,994 WARN  [org.eclipse.persistence.moxy] (default task-9) 
+2020-12-19 18:10:42,994 WARN  [org.eclipse.persistence.moxy] (default task-9) 
+2020-12-19 18:16:59,692 INFO  [ws.LoginService] (default task-10) Generating JWT for user projetista1
+2020-12-19 18:16:59,697 WARN  [org.eclipse.persistence.moxy] (default task-10) 
+2020-12-19 18:16:59,697 WARN  [org.eclipse.persistence.moxy] (default task-10) 
+2020-12-19 18:17:11,623 INFO  [ws.LoginService] (default task-2) Generating JWT for user projetista1
+2020-12-19 18:17:11,628 WARN  [org.eclipse.persistence.moxy] (default task-2) 
+2020-12-19 18:17:11,628 WARN  [org.eclipse.persistence.moxy] (default task-2) 
+2020-12-19 18:25:32,637 INFO  [ws.LoginService] (default task-16) Generating JWT for user projetista1
+2020-12-19 18:25:32,642 WARN  [org.eclipse.persistence.moxy] (default task-16) 
+2020-12-19 18:25:32,642 WARN  [org.eclipse.persistence.moxy] (default task-16) 
