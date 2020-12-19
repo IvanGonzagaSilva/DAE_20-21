@@ -2,6 +2,7 @@ package ejbs;
 
 import entities.Cliente;
 import entities.PessoaDeContacto;
+import entities.Projeto;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityExistsException;
 import exceptions.MyEntityNotFoundException;
@@ -10,6 +11,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.validation.ConstraintViolationException;
+import java.util.List;
 
 @Stateless(name = "ClienteEJB")
 public class ClienteBean {
@@ -20,7 +22,7 @@ public class ClienteBean {
     public ClienteBean() {
     }
 
-    public Cliente create(String nome, String usernamePc, String morada, String email)
+    public Cliente create(String nome, String usernamePc, String morada, String email, String username, String password)
             throws MyEntityExistsException, MyEntityNotFoundException, MyConstraintViolationException
     {
         Cliente cliente = em.find(Cliente.class, email);
@@ -36,7 +38,7 @@ public class ClienteBean {
         }
 
         try {
-            cliente = new Cliente(nome, pc, morada, email);
+            cliente = new Cliente(nome, pc, morada, email, username, password);
 
             em.persist(cliente);
 
@@ -55,5 +57,9 @@ public class ClienteBean {
         }
 
         return cliente;
+    }
+
+    public List<Projeto> getAllProjetos(int idClient) {
+      return em.createNamedQuery("getAllClientProjetos", Projeto.class).setParameter("idCliente", idClient).getResultList();
     }
 }

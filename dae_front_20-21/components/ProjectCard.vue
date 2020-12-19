@@ -34,7 +34,7 @@
 
                         <v-col class="pb-0">
 
-                            <b>Cliente</b>: {{project.cliente.nome}}
+                            <b>Cliente</b>: {{project.cliente}}
 
                         </v-col>
 
@@ -59,7 +59,7 @@
 
                         <v-col  class="pb-0">
 
-                            <b>Email</b>: {{project.cliente.email}}
+                            <b>Email</b>: {{project.cliente}}
 
                         </v-col>
 
@@ -69,7 +69,7 @@
 
                         <v-col  class="pb-0">
 
-                            <b>Morada</b>: {{project.cliente.morada}}
+                            <b>Morada</b>: {{project.cliente}}
 
                         </v-col>
 

@@ -23,9 +23,7 @@
                 <v-row v-show="componentId === 1">
 
                     <span v-for="(project, index) in projectsArray" :key="index" class="mx-3 my-2">
-
                         <project-card v-on:view-more-details="viewMoreDetails" v-bind:project="project"/>
-
                     </span>
 
                     <h1 v-if="projectsArray.length < 1" class="mx-auto text-uppercase my-6">No projects found</h1>
@@ -90,7 +88,9 @@ export default {
         },
         getProjects: async function ()
         {
-            await this.$axios.get('/api/projeto').then(response => this.projectsArray = response.data).catch(error => console.log(error.message));
+            await this.$axios.get('/api/projeto').then(response => {
+                this.projectsArray = response.data
+            }).catch(error => console.log(error.message));
         },
         swapComponents: function (value)
         {

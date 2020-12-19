@@ -175,5 +175,4 @@ public class ProjetoBean {
         cliente.removeProjeto(projeto);
 
     }
-
 }

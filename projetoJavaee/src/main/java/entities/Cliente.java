@@ -12,11 +12,22 @@ import java.util.Set;
         @NamedQuery(
                 name = "getAllClientes",
                 query = "SELECT c FROM Cliente c ORDER BY c.nome" // JPQL
-        )
+        ),
+        @NamedQuery(
+          name = "getAllClientProjetos",
+          query = "SELECT c.projetos FROM Cliente c where c.id = :idCliente" // JPQL
+        ),
 })
 public class Cliente implements Serializable {
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
     private String nome;
+
+    private String username;
+
+    private String password;
 
     @OneToOne
     private PessoaDeContacto pc; // feito com apenas uma pessoa, podemos mudar para várias pessoasdecontacto
@@ -34,15 +45,33 @@ public class Cliente implements Serializable {
         projetos = new LinkedHashSet<>();
     }
 
-    public Cliente(String nome, PessoaDeContacto pc, String morada, @Email String email) {
+    public Cliente(String nome, PessoaDeContacto pc, String morada, @Email String email, String username, String password) {
         this();
         this.nome = nome;
         this.pc = pc;
         this.morada = morada;
         this.email = email;
+        this.password = password;
+        this.username = username;
     }
 
-    public String getNome() {
+  public String getUsername() {
+    return username;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
+
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public String getNome() {
         return nome;
     }
 
@@ -97,4 +126,12 @@ public class Cliente implements Serializable {
 
         this.projetos.remove(projeto);
     }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
 }

@@ -95,7 +95,7 @@ public class UserService {
     public Response createClienteWS(ClienteDTO clienteDTO) {
         try {
 
-            clienteBean.create(clienteDTO.getNome(), clienteDTO.getPc().getUsername(), clienteDTO.getMorada(), clienteDTO.getEmail());
+            clienteBean.create(clienteDTO.getNome(), clienteDTO.getPc().getUsername(), clienteDTO.getMorada(), clienteDTO.getEmail(), clienteDTO.getUsername(), clienteDTO.getPassword());
 
 
             Cliente c = clienteBean.find(clienteDTO.getEmail());
