@@ -140,14 +140,14 @@ public class ProjetoBean {
         }
     }
 
-    public void enrollCliente(int idProjeto, String username) throws MyEntityNotFoundException {
+    public void enrollCliente(int idProjeto, String usernameCliente) throws MyEntityNotFoundException {
         Projeto projeto = this.find(idProjeto);
 
         if(projeto == null){
             throw new MyEntityNotFoundException();
         }
 
-        Cliente cliente = clienteBean.find(username);
+        Cliente cliente = clienteBean.find(usernameCliente);
 
         if(cliente == null){
             throw new MyEntityNotFoundException();
