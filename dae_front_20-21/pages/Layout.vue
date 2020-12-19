@@ -41,7 +41,7 @@
 
                 <v-row v-if="componentId === 3">
 
-                    <create-project v-on:back-to-homepage="componentId = 1" v-bind:clickedProject="'empty'" v-bind:componentId="componentId" v-bind:title="'Criar Nova Estrutura'" class="mx-auto" />
+                    <create-structure v-bind:title="'Criar Nova Estrutura'" class="mx-auto"/>
 
                 </v-row>
 
@@ -67,6 +67,7 @@
 
 <script>
 import CreateProject from '../components/CreateProject.vue';
+import CreateStructure from '../components/CreateStructure.vue';
 import ProjectCard from '../components/ProjectCard.vue';
 import SearchBar from '../components/SearchBar.vue';
 
@@ -76,6 +77,7 @@ export default {
         SearchBar,
         ProjectCard,
         CreateProject,
+        CreateStructure,
     },
     data: () =>( {
         materialsArray: [],
