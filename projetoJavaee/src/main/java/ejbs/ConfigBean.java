@@ -56,27 +56,30 @@ public class ConfigBean {
     public void populateDB()
             throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
 
-        System.out.println("Starting project...");
-
-
-
     try {
             System.out.println("Starting project...");
 
             //fazer os materiais
+            System.out.println("materiais!");
             Material material_chapa = materialBean.create(TipoDeMaterial.chapas);
             Material material_laje = materialBean.create(TipoDeMaterial.lajes);
             Material material_painel = materialBean.create(TipoDeMaterial.paineis);
             Material material_perfi = materialBean.create(TipoDeMaterial.perfis);
+            System.out.println("fim materiais!");
 
+            System.out.println("projetista!");
             projetistaBean.create("projetista1", "projetista@email.com", "projetista", "9143131615", "123abc");
+      System.out.println("pessoa contacto!");
             pessoaDeContactoBean.create("pc1", "pc1@mail.com", "pessoadecontacto1", "914313616", "123abc");
+      System.out.println("cliente!");
             clienteBean.create("cliente1", "pc1", "rua xpto", "clientex1@mail.com", "clientex", "123abc", "914313617");
-            Projeto projeto1 = projetoBean.create("projeto1", "projetista3");
+      System.out.println("projeto!");
+            Projeto projeto1 = projetoBean.create("projeto1", "projetista1");
+      System.out.println("enroll cliente no projeto");
             projetoBean.enrollCliente(projeto1.getId(), "clientex");
             //fazer bean para estruturas e adicionar estrutura ao projeto.
 
-//            CODIGO DO PROFESSOR
+            //CODIGO DO PROFESSOR
             System.out.println("####### A criar produtos...");
             produtoBean.create("Section C 220 BF");
             produtoBean.create("Section Z 220 BF");
@@ -197,8 +200,6 @@ public class ConfigBean {
         estruturaBean.addMaterial(estrutura.getId(), material_laje);
 
         projetoBean.addEstrutura(projeto1.getId(), estrutura.getId());
-
-        projeto1.addEstruturas(estrutura);
 
         }
         catch (Exception e){
