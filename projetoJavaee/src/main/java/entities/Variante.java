@@ -10,6 +10,7 @@ public class Variante {
     private static final double G = 78.5;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int codigo;
 
     @ManyToOne
@@ -36,8 +37,7 @@ public class Variante {
         this.mcr_n = new LinkedHashMap<Double, Double>();
     }
 
-    public Variante(int codigo, @NotNull Produto produto, @NotNull String nome, double weff_p, double weff_n, double ar, double sigmaC) {
-        this.codigo = codigo;
+    public Variante(@NotNull Produto produto, @NotNull String nome, double weff_p, double weff_n, double ar, double sigmaC) {
         this.produto = produto;
         this.nome = nome;
         this.weff_p = weff_p;

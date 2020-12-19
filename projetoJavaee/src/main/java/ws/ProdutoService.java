@@ -67,11 +67,7 @@ public class ProdutoService {
     public Response createProdutoWS(ProdutoDTO produtoDTO) {
         try {
 
-            Produto produto = produtoBean.find(produtoDTO.getNome());
 
-            if (produto == null) {
-                return Response.status(Response.Status.BAD_REQUEST).build();
-            }
 
             produtoBean.create(produtoDTO.getNome());
 

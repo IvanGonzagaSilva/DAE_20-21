@@ -36,22 +36,34 @@ public class VarianteService {
     public Response createVarianteWS(VarianteDTO varianteDTO) {
         try {
 
-            varianteBean.create(varianteDTO.getCodigo(), varianteDTO.getNomeProduto(), varianteDTO.getNome(), varianteDTO.getWeff_p(), varianteDTO.getWeff_n(), varianteDTO.getAr(), varianteDTO.getSigmaC());
+          Variante variante = varianteBean.create(varianteDTO.getNomeProduto(), varianteDTO.getNome(), varianteDTO.getWeff_p(), varianteDTO.getWeff_n(), varianteDTO.getAr(), varianteDTO.getSigmaC());
 
-            Variante variante = varianteBean.getVariante(varianteDTO.getCodigo());
 
-            if (variante == null) {
+          if (variante == null) {
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
             }
 
 
-            return Response.status(Response.Status.CREATED).build();
+            return Response.status(Response.Status.CREATED).entity(varianteToDTO(variante)).build();
 
         } catch (Exception e) {
             log.info(e.getMessage());
         }
         return Response.status(Response.Status.UNAUTHORIZED).build();
     }
+
+  private VarianteDTO varianteToDTO(Variante variante) {
+    return new VarianteDTO(
+      variante.getCodigo(),
+      variante.getNome(),
+      variante.getWeff_p(),
+      variante.getWeff_n(),
+      variante.getAr(),
+      variante.getSigmaC(),
+      variante.getPp(),
+      variante.getProduto().getNome()
+    );
+  }
 
 
     @POST

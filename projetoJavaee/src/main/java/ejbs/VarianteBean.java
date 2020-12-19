@@ -13,10 +13,11 @@ public class VarianteBean {
     @PersistenceContext
     EntityManager em;
 
-    public void create(int codigo, String nomeProduto, String name, double weff_p, double weff_n, double ar, double sigmaC) {
+    public Variante create(String nomeProduto, String name, double weff_p, double weff_n, double ar, double sigmaC) {
         Produto produto = em.find(Produto.class, nomeProduto);
-        Variante p = new Variante(codigo, produto, name, weff_p, weff_n, ar, sigmaC);
+        Variante p = new Variante(produto, name, weff_p, weff_n, ar, sigmaC);
         em.persist(p);
+        return p;
     }
 
     public Variante getVariante(int codigo) {

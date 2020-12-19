@@ -12,6 +12,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.LockModeType;
 import javax.persistence.PersistenceContext;
 import javax.validation.ConstraintViolationException;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Stateless
@@ -22,8 +23,13 @@ public class ProdutoBean {
 
     public void create(String nome) throws MyEntityExistsException, MyConstraintViolationException, MyEntityNotFoundException {
         try {
+          Produto produto = em.find(Produto.class, nome);
 
-            Produto produto = new Produto(nome);
+          if (produto != null) {
+            throw new MyEntityExistsException();
+          }
+
+            produto = new Produto(nome);
             em.persist(produto);
 
         } catch (ConstraintViolationException e) {

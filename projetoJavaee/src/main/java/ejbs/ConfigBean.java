@@ -89,12 +89,11 @@ public class ConfigBean {
 
             //PODE LER-SE OS VALORES DOS PRODUTOS/VARIANTES DE EXCELS OU CSVs (ver excels fornecidos)
             //Exemplo básico de adição de variantes "à mão"
-            varianteBean.create(1, "Section C 220 BF", "C 120/50/21 x 1.5", 13846, 13846, 375, 220000);
-            varianteBean.create(2, "Section C 220 BF", "C 120/60/13 x 2.0", 18738, 18738, 500, 220000);
+          Variante variante1 = varianteBean.create("Section C 220 BF", "C 120/50/21 x 1.5", 13846, 13846, 375, 220000);
+          Variante variante2 = varianteBean.create("Section C 220 BF", "C 120/60/13 x 2.0", 18738, 18738, 500, 220000);
 
-            //PODE LER-SE OS VALORES mcr_p E mcr_n A PARTIR DE UM EXCEL OU CSV (ver excels fornecidos para os produtos Perfil C e Z, que têm os valores mcr)
+          //PODE LER-SE OS VALORES mcr_p E mcr_n A PARTIR DE UM EXCEL OU CSV (ver excels fornecidos para os produtos Perfil C e Z, que têm os valores mcr)
             //Exemplo básico de adição de valores mcr "à mão"
-            Variante variante1 = varianteBean.getVariante(1);
             variante1.addMcr_p(3.0, 243.2123113);
             variante1.addMcr_p(4.0, 145.238784);
             variante1.addMcr_p(5.0, 99.15039028);
@@ -110,7 +109,6 @@ public class ConfigBean {
             //Válido para variantes simétricas, em que os mcr_p são iguais aos mcr_n
             variante1.setMcr_n((LinkedHashMap<Double, Double>) variante1.getMcr_p().clone());
 
-            Variante variante2 = varianteBean.getVariante(2);
             variante2.addMcr_p(3.0, 393.1408237);
             variante2.addMcr_p(4.0, 241.9157907);
             variante2.addMcr_p(5.0, 169.7815504);
