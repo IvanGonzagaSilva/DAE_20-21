@@ -195,6 +195,7 @@ public class ProjetoBean {
         }
 
         cliente.removeProjeto(projeto);
+        projeto.removeCliente(cliente);
 
     }
 }

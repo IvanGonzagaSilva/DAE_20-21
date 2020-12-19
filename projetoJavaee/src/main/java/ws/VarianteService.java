@@ -1,6 +1,7 @@
 package ws;
 
 
+import dtos.McrPDTO;
 import dtos.SimulacaoDTO;
 import dtos.VarianteDTO;
 import ejbs.SimulacaoBean;
@@ -8,12 +9,10 @@ import ejbs.VarianteBean;
 import entities.Variante;
 
 import javax.ejb.EJB;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 import java.util.logging.Logger;
 
 @Path("/variante") // relative url web path for this service
@@ -52,6 +51,30 @@ public class VarianteService {
         return Response.status(Response.Status.UNAUTHORIZED).build();
     }
 
+  @POST
+  @Path("/{id}/addvalues/")
+  @Consumes(MediaType.APPLICATION_JSON)
+  public Response addValueVarianteWS(@PathParam("id") int idVariante, List<McrPDTO> mcrPDTOs) {
+    try {
+
+      Variante variante = varianteBean.getVariante(idVariante);
+
+      if (variante == null) {
+        return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+      }
+
+      for (McrPDTO mcrPDTO : mcrPDTOs) {
+        variante.addMcr_p(mcrPDTO.getL(), mcrPDTO.getMcr_pValue());
+      }
+
+      return Response.status(Response.Status.CREATED).entity(varianteToDTO(variante)).build();
+
+    } catch (Exception e) {
+      log.info(e.getMessage());
+    }
+    return Response.status(Response.Status.UNAUTHORIZED).build();
+  }
+
   private VarianteDTO varianteToDTO(Variante variante) {
     return new VarianteDTO(
       variante.getCodigo(),
@@ -64,6 +87,8 @@ public class VarianteService {
       variante.getProduto().getNome()
     );
   }
+
+
 
 
     @POST
@@ -97,4 +122,6 @@ public class VarianteService {
         }
         return Response.status(Response.Status.UNAUTHORIZED).build();
     }
+
+
 }

@@ -16,6 +16,7 @@ public class VarianteBean {
     public Variante create(String nomeProduto, String name, double weff_p, double weff_n, double ar, double sigmaC) {
         Produto produto = em.find(Produto.class, nomeProduto);
         Variante p = new Variante(produto, name, weff_p, weff_n, ar, sigmaC);
+
         em.persist(p);
         return p;
     }
