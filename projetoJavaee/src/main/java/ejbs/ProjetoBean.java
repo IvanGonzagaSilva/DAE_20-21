@@ -96,14 +96,14 @@ public class ProjetoBean {
 
     }
 
-    public void addEstrutura(int idProjeto, EstruturaDTO estruturaDTO) throws MyEntityNotFoundException, MyConstraintViolationException {
+    public void addEstrutura(int idProjeto, int idEstrutura) throws MyEntityNotFoundException, MyConstraintViolationException {
         Projeto projeto = find(idProjeto);
 
         if(projeto == null){
             throw new MyEntityNotFoundException();
         }
 
-        Estrutura estrutura = estruturaBean.findEstrutura(estruturaDTO.getId());
+        Estrutura estrutura = estruturaBean.findEstrutura(idEstrutura);
 
         if(estrutura == null){
             throw new MyEntityNotFoundException();
@@ -119,14 +119,14 @@ public class ProjetoBean {
 
     }
 
-    public void removeEstrutura(int idProjeto, EstruturaDTO estruturaDTO) throws MyEntityNotFoundException, MyConstraintViolationException {
+    public void removeEstrutura(int idProjeto, int idEstrutura) throws MyEntityNotFoundException, MyConstraintViolationException {
         Projeto projeto = find(idProjeto);
 
         if(projeto == null){
             throw new MyEntityNotFoundException();
         }
 
-        Estrutura estrutura = estruturaBean.findEstrutura(estruturaDTO.getId());
+        Estrutura estrutura = estruturaBean.findEstrutura(idEstrutura);
 
         if(estrutura == null){
             throw new MyEntityNotFoundException();

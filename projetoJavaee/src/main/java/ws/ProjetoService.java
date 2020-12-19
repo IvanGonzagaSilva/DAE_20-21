@@ -285,7 +285,7 @@ public class ProjetoService {
     public Response adicionarEstruturaAoProjetoWS(@PathParam("id") int idProjeto, EstruturaDTO estruturaDTO){
         try {
 
-            projetoBean.addEstrutura(idProjeto, estruturaDTO);
+            projetoBean.addEstrutura(idProjeto, estruturaDTO.getId());
 
             return Response.status(Response.Status.OK).build();
 
@@ -302,7 +302,7 @@ public class ProjetoService {
     public Response removerEstruturaAoProjetoWS(@PathParam("id") int idProjeto, EstruturaDTO estruturaDTO){
         try {
 
-            projetoBean.removeEstrutura(idProjeto, estruturaDTO);
+            projetoBean.removeEstrutura(idProjeto, estruturaDTO.getId());
 
             return Response.status(Response.Status.OK).build();
 
