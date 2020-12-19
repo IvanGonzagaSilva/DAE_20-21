@@ -319,7 +319,7 @@ public class ProjetoService {
     public Response enrollClientProjetoWS(@PathParam("id") int idProjeto, ClienteDTO clienteDTO){
         try {
 
-            projetoBean.enrollCliente(idProjeto, clienteDTO.getEmail());
+            projetoBean.enrollCliente(idProjeto, clienteDTO.getUsername());
 
             return Response.status(Response.Status.OK).build();
 
@@ -337,7 +337,7 @@ public class ProjetoService {
     public Response unrollClientProjetoWS(@PathParam("id") int idProjeto, ClienteDTO clienteDTO){
         try {
 
-            projetoBean.unrollCliente(idProjeto, clienteDTO.getEmail());
+            projetoBean.unrollCliente(idProjeto, clienteDTO.getUsername());
 
             return Response.status(Response.Status.OK).build();
 
