@@ -141,7 +141,6 @@ public class ProjetoService {
                 break;
             case "Fachada":aplicacao = aplicacaoToDTO((AplicacaoFachada)estrutura.getAplicacao());
                 break;
-            default: //TODO throw new....
         }
 
 
@@ -183,10 +182,13 @@ public class ProjetoService {
 
     private ClienteDTO clienteToDTO(Cliente cliente){
         return new ClienteDTO(
+                cliente.getUsername(),
+                cliente.getEmail(),
                 cliente.getNome(),
+                cliente.getContactoTelefonico(),
+                cliente.getPassword(),
                 pessoaDeContactoToDTO(cliente.getPc()),
-                cliente.getMorada(),
-                cliente.getEmail()
+                cliente.getMorada()
         );
     }
 
@@ -209,6 +211,12 @@ public class ProjetoService {
     public List<ProjetoDTO> getAllProjetosWS() {
         return projetoToDTOs(projetoBean.getAllProjetos());
     }
+
+  @GET // means: to call this endpoint, we need to use the HTTP GET method
+  @Path("/{username}") // means: the relative url path is “/api/students/”
+  public List<ProjetoDTO> getAllProjetosByClientIdWS(@PathParam("username") String username) {
+    return projetoToDTOs(clienteBean.getAllProjetos(username));
+  }
 
     @POST
     @Path("/")

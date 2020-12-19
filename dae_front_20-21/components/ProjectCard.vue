@@ -34,7 +34,11 @@
 
                         <v-col class="pb-0">
 
+<<<<<<< HEAD
                             <b>Cliente</b>: 
+=======
+                            <b>Cliente</b>: {{project.cliente}}
+>>>>>>> bd494486db42fafdcaa5b07ae646ec9d4faa32e6
 
                         </v-col>
 

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
@@ -19,6 +20,7 @@ import java.util.logging.Logger;
 public class Pessoa implements Serializable {
 
     @Id
+    @NotNull
     private String username;
 
     @Email

@@ -19,6 +19,7 @@ public class Projeto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @NotNull
     private int id;
 
     private String nome;

@@ -26,7 +26,6 @@
                     <span v-for="(project, index) in projectsArray.filter( project => project.nome.toUpperCase().includes( searchName.toUpperCase()) /*&& project.cliente.username === searchClient*/ )" :key="index" class="mx-3 my-2">
 
                         <project-card v-on:view-more-details="viewMoreDetails" v-bind:project="project"/>
-
                     </span>
 
                     <h1 v-if="projectsArray.length < 1" class="mx-auto text-uppercase my-6">No projects found</h1>
@@ -98,7 +97,9 @@ export default {
         },
         getProjects: async function ()
         {
-            await this.$axios.get('/api/projeto').then(response => this.projectsArray = response.data).catch(error => console.log(error.message));
+            await this.$axios.get('/api/projeto').then(response => {
+                this.projectsArray = response.data
+            }).catch(error => console.log(error.message));
         },
         getUser: async function()
         {
