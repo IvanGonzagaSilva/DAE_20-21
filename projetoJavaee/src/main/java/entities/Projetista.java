@@ -1,9 +1,6 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -17,7 +14,7 @@ import java.util.Set;
 })
 public class Projetista extends Pessoa {
 
-    @OneToMany
+    @OneToMany(mappedBy = "Projetista", fetch = FetchType.EAGER)
     private Set<Projeto> projetos;
 
     public Projetista() {

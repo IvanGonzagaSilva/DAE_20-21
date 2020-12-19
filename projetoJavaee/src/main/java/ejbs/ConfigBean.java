@@ -69,11 +69,11 @@ public class ConfigBean {
             Material material_painel = materialBean.create(TipoDeMaterial.paineis);
             Material material_perfi = materialBean.create(TipoDeMaterial.perfis);
 
-            projetistaBean.create("projetista1", "projetista@email.com", "projetista", "9143131615", "123abc");
+            projetistaBean.create("projetista3", "projetista@email.com", "projetista", "9143131615", "123abc");
             pessoaDeContactoBean.create("pc1", "pc1@mail.com", "pessoadecontacto1", "914313616", "123abc");
-            clienteBean.create("cliente", "pc1", "rua xpto", "clientex@mail.com", "clientex", "123abc");
-            Projeto projeto1 = projetoBean.create("projeto1", "projetista1");
-            projetoBean.enrollCliente(projeto1.getId(), "clientex@mail.com");
+            clienteBean.create("cliente1", "pc1", "rua xpto", "clientex1@mail.com", "clientex", "123abc", "914313617");
+            Projeto projeto1 = projetoBean.create("projeto1", "projetista3");
+            projetoBean.enrollCliente(projeto1.getId(), "clientex");
             //fazer bean para estruturas e adicionar estrutura ao projeto.
 
 //            CODIGO DO PROFESSOR

@@ -182,13 +182,13 @@ public class ProjetoService {
 
     private ClienteDTO clienteToDTO(Cliente cliente){
         return new ClienteDTO(
-                cliente.getNome(),
-                pessoaDeContactoToDTO(cliente.getPc()),
-                cliente.getMorada(),
-                cliente.getEmail(),
                 cliente.getUsername(),
+                cliente.getEmail(),
+                cliente.getNome(),
+                cliente.getContactoTelefonico(),
                 cliente.getPassword(),
-                cliente.getId()
+                pessoaDeContactoToDTO(cliente.getPc()),
+                cliente.getMorada()
         );
     }
 
@@ -213,9 +213,9 @@ public class ProjetoService {
     }
 
   @GET // means: to call this endpoint, we need to use the HTTP GET method
-  @Path("/{id}") // means: the relative url path is “/api/students/”
-  public List<ProjetoDTO> getAllProjetosByClientIdWS(@PathParam("id") int idClient) {
-    return projetoToDTOs(clienteBean.getAllProjetos(idClient));
+  @Path("/{username}") // means: the relative url path is “/api/students/”
+  public List<ProjetoDTO> getAllProjetosByClientIdWS(@PathParam("username") String username) {
+    return projetoToDTOs(clienteBean.getAllProjetos(username));
   }
 
     @POST

@@ -22,7 +22,7 @@ public class ClienteBean {
     public ClienteBean() {
     }
 
-    public Cliente create(String nome, String usernamePc, String morada, String email, String username, String password)
+    public Cliente create(String nome, String usernamePc, String morada, String email, String username, String password, String telefone)
             throws MyEntityExistsException, MyEntityNotFoundException, MyConstraintViolationException
     {
         Cliente cliente = em.find(Cliente.class, email);
@@ -38,7 +38,7 @@ public class ClienteBean {
         }
 
         try {
-            cliente = new Cliente(nome, pc, morada, email, username, password);
+            cliente = new Cliente(nome, pc, morada, email, username, password, telefone);
 
             em.persist(cliente);
 
@@ -59,7 +59,11 @@ public class ClienteBean {
         return cliente;
     }
 
-    public List<Projeto> getAllProjetos(int idClient) {
-      return em.createNamedQuery("getAllClientProjetos", Projeto.class).setParameter("idCliente", idClient).getResultList();
+    public List<Projeto> getAllProjetos(String username) {
+      return em.createNamedQuery("getAllClientProjetos", Projeto.class).setParameter("username", username).getResultList();
+    }
+
+    public List<Cliente> getAllClientes() {
+      return em.createNamedQuery("getAllClientes", Cliente.class).getResultList();
     }
 }

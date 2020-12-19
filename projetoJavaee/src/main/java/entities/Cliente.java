@@ -15,68 +15,29 @@ import java.util.Set;
         ),
         @NamedQuery(
           name = "getAllClientProjetos",
-          query = "SELECT c.projetos FROM Cliente c where c.id = :idCliente" // JPQL
+          query = "SELECT c.projetos FROM Cliente c where c.username = :username" // JPQL
         ),
 })
-public class Cliente implements Serializable {
-
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
-    private String nome;
-
-    private String username;
-
-    private String password;
+public class Cliente extends Pessoa {
 
     @OneToOne
     private PessoaDeContacto pc; // feito com apenas uma pessoa, podemos mudar para várias pessoasdecontacto
 
     private String morada;
 
-    @Id
-    @Email
-    private String email;
-
-    @OneToMany
+    @ManyToMany
+    @JoinTable(name="cliente_projeto")
     private Set<Projeto> projetos;
 
     public Cliente() {
         projetos = new LinkedHashSet<>();
     }
 
-    public Cliente(String nome, PessoaDeContacto pc, String morada, @Email String email, String username, String password) {
-        this();
-        this.nome = nome;
-        this.pc = pc;
-        this.morada = morada;
-        this.email = email;
-        this.password = password;
-        this.username = username;
-    }
-
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public Cliente(String nome, PessoaDeContacto pc, String morada, @Email String email, String username, String password, String contactoTelefonico) {
+      super(username, email, nome, contactoTelefonico, password);
+      projetos = new LinkedHashSet<>();
+      this.pc = pc;
+      this.morada = morada;
     }
 
     public PessoaDeContacto getPc() {
@@ -93,14 +54,6 @@ public class Cliente implements Serializable {
 
     public void setMorada(String morada) {
         this.morada = morada;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public Set<Projeto> getProjetos() {
@@ -126,12 +79,4 @@ public class Cliente implements Serializable {
 
         this.projetos.remove(projeto);
     }
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
 }
