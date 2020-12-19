@@ -60,7 +60,7 @@ export default {
     methods: {
         async login(){
             localStorage.setItem('username', this.username);
-            await this.$axios.post('/api/login/token', {username: this.username, password: this.password})
+            await this.$axios.post('/api/login/token/', {username: this.username, password: this.password})
             .then(response => this.setToken(response.data))
             .catch(error => console.log(error.message));
         },
