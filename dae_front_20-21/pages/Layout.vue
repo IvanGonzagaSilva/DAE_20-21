@@ -28,7 +28,7 @@
                         <project-card v-on:view-more-details="viewMoreDetails" v-bind:project="project"/>
                     </span>
 
-                    <h1 v-if="projectsArray.length < 1" class="mx-auto text-uppercase my-6">No projects found</h1>
+                    <h1 v-if="projectsArray.length < 1 || projectsArray.filter( project => project.nome.toUpperCase().includes( searchName.toUpperCase())).length < 1" class="mx-auto text-uppercase my-6">No projects found</h1>
 
                 </v-row>
 

@@ -2,22 +2,22 @@
   {
     "name": "Layout",
     "path": "/Layout",
-    "component": "D:\\\\Aulas\\\\DAE\\\\projeto\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\Layout.vue",
+    "component": "C:\\\\Users\\\\ruben\\\\Documents\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\Layout.vue",
     "chunkName": "pages/Layout",
-    "_name": "_1e7dd4fa"
+    "_name": "_b1c1dc1e"
   },
   {
     "name": "LoginForm",
     "path": "/LoginForm",
-    "component": "D:\\\\Aulas\\\\DAE\\\\projeto\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\LoginForm.vue",
+    "component": "C:\\\\Users\\\\ruben\\\\Documents\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\LoginForm.vue",
     "chunkName": "pages/LoginForm",
-    "_name": "_83d670f8"
+    "_name": "_01574c56"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "D:\\\\Aulas\\\\DAE\\\\projeto\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\index.vue",
+    "component": "C:\\\\Users\\\\ruben\\\\Documents\\\\DAE_20-21\\\\dae_front_20-21\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_04a0d9a9"
+    "_name": "_2d0ad10a"
   }
 ]
