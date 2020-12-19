@@ -34,7 +34,11 @@
 
                         <v-col class="pb-0">
 
+<<<<<<< HEAD
+                            <b>Cliente</b>: 
+=======
                             <b>Cliente</b>: {{project.cliente}}
+>>>>>>> bd494486db42fafdcaa5b07ae646ec9d4faa32e6
 
                         </v-col>
 
@@ -47,7 +51,7 @@
                             <span v-for="(estrutura, index) in project.estruturas" :key="index">
 
                                 <b>Estrutura</b>: {{estrutura.id}}
-                                {{index > project.estruturas.length ? ',' : ''}}
+                                <!-- {{index > project.estruturas.length ? ',' : ''}} -->
 
                             </span>
 
@@ -59,7 +63,7 @@
 
                         <v-col  class="pb-0">
 
-                            <b>Email</b>: {{project.cliente}}
+                            <b>Email</b>: 
 
                         </v-col>
 
@@ -69,7 +73,7 @@
 
                         <v-col  class="pb-0">
 
-                            <b>Morada</b>: {{project.cliente}}
+                            <b>Morada</b>:
 
                         </v-col>
 
