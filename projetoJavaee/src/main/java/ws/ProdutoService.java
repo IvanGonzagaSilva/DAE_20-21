@@ -107,11 +107,11 @@ public class ProdutoService {
     }
 
     @PUT
-    @Path("{id}/add/variante")
+    @Path("{nome}/add/variante/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response adicionarVarianteAoProdutoWS(@PathParam("id") String nomeProduto, VarianteDTO varianteDTO) {
+    public Response adicionarVarianteAoProdutoWS(@PathParam("nome") String nomeProduto, @PathParam("id") int codigo) {
         try {
-            produtoBean.addVariante(nomeProduto, varianteDTO.getCodigo());
+            produtoBean.addVariante(nomeProduto, codigo);
             return Response.status(Response.Status.OK).build();
         } catch (Exception e) {
             log.info(e.getMessage());
