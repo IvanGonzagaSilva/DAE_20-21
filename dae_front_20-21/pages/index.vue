@@ -8,6 +8,13 @@ export default {
     components: {
         LoginForm
     },
+    created()
+    {
+/*       if ()
+      {
+
+      } */
+    }
 }
 </script>
 

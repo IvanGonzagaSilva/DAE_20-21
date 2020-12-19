@@ -82,7 +82,7 @@ export default {
     methods: {
         getMaterials: async function ()
         {
-            await this.$axios.get('materiais/').then(response => {
+            await this.$axios.get('/api/materiais').then(response => {
                     if (response.data)
                         response.data.forEach(resp => this.materialsArray.push(resp.tipoDeMaterial));
                 }
@@ -90,7 +90,7 @@ export default {
         },
         getProjects: async function ()
         {
-            await this.$axios.get('projeto').then(response => this.projectsArray = response.data).catch(error => console.log(error.message));
+            await this.$axios.get('/api/projeto').then(response => this.projectsArray = response.data).catch(error => console.log(error.message));
         },
         swapComponents: function (value)
         {

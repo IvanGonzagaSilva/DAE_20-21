@@ -235,11 +235,11 @@ export default {
             if (this.clickedProject !== 'empty')
                 this.projectData = this.clickedProject;
 
-            await this.$axios.post("projeto", this.projectData).then(this.addProjectToArray()).catch(error => console.log(error.message));
+            await this.$axios.post("/api/projeto", this.projectData).then(this.addProjectToArray()).catch(error => console.log(error.message));
         },
         deleteProject: async function ()
         {
-            await this.$axios.delete('projeto', this.project.id).then( this.removeProjectFromArray(this.project.id) ).catch(error => console.log(error.message));
+            await this.$axios.delete('/api/projeto', this.project.id).then( this.removeProjectFromArray(this.project.id) ).catch(error => console.log(error.message));
         },
         addProjectToArray: function ()
         {

@@ -36,16 +36,21 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/axios'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/axios'],
-
   axios: {
-    baseURL: 'http://localhost:8080/projetodae/api/',
-    proxyHeaders: false,
     proxy: true,
     credentials: true
+  },
+  proxy: {
+    '/api/': {
+      target: 'http://localhost:8080/projetodae/api/',
+      pathRewrite: {
+        '^/api/': ''
+      }
+    }
   },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)

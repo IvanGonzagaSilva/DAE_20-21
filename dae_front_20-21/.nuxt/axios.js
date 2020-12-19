@@ -161,7 +161,7 @@ export default (ctx, inject) => {
   // baseURL
   const baseURL = process.browser
     ? (runtimeConfig.browserBaseURL || runtimeConfig.baseURL || '/')
-      : (runtimeConfig.baseURL || process.env._AXIOS_BASE_URL_ || 'http://localhost:8080/projetodae/api/')
+      : (runtimeConfig.baseURL || process.env._AXIOS_BASE_URL_ || 'http://localhost:3000/')
 
   // Create fresh objects for all default header scopes
   // Axios creates only one which is shared across SSR requests!
@@ -181,6 +181,15 @@ export default (ctx, inject) => {
   const axiosOptions = {
     baseURL,
     headers
+  }
+
+  // Proxy SSR request headers headers
+  if (process.server && ctx.req && ctx.req.headers) {
+    const reqHeaders = { ...ctx.req.headers }
+    for (const h of ["accept","host","cf-ray","cf-connecting-ip","content-length","content-md5","content-type"]) {
+      delete reqHeaders[h]
+    }
+    axiosOptions.headers.common = { ...reqHeaders, ...axiosOptions.headers.common }
   }
 
   if (process.server) {
