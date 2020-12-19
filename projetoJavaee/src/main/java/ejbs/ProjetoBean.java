@@ -154,9 +154,7 @@ public class ProjetoBean {
         }
 
         cliente.addProjeto(projeto);
-
-        em.merge(cliente);
-
+        projeto.addCliente(cliente);
     }
 
 
