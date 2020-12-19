@@ -251,10 +251,9 @@ public class ProjetoService {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response removeProjetoWS(@PathParam("id") int idProjeto) {
         try {
+          projetoBean.delete(idProjeto);
 
-            projetoBean.delete(idProjeto);
-
-            return Response.status(Response.Status.OK).build();
+          return Response.status(Response.Status.OK).build();
 
         } catch (Exception e) {
             log.info(e.getMessage());

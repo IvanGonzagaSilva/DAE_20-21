@@ -77,6 +77,8 @@ public class ConfigBean {
             Projeto projeto1 = projetoBean.create("projeto1", "projetista1");
             System.out.println("enroll cliente no projeto");
             projetoBean.enrollCliente(projeto1.getId(), "clientex");
+            projetoBean.enrollCliente(projeto1.getId(), "clientex2");
+            projetoBean.enrollCliente(projeto1.getId(), "clientex3");
             //fazer bean para estruturas e adicionar estrutura ao projeto.
 
             //CODIGO DO PROFESSOR

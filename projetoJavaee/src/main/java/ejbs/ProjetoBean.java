@@ -1,10 +1,7 @@
 package ejbs;
 
 import dtos.ProjetoDTO;
-import entities.Cliente;
-import entities.Estrutura;
-import entities.Projetista;
-import entities.Projeto;
+import entities.*;
 import exceptions.MyConstraintViolationException;
 import exceptions.MyEntityNotFoundException;
 
@@ -13,6 +10,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.validation.ConstraintViolationException;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 @Stateless(name = "ProjetoEJB")
@@ -68,11 +66,37 @@ public class ProjetoBean {
     }
 
     public void delete(int idprojeto) throws MyEntityNotFoundException {
-        Projeto projeto = find(idprojeto);
+      Projeto projeto = find(idprojeto);
 
-        if (projeto != null) {
-            em.remove(projeto);
+      if(projeto == null){
+        throw new MyEntityNotFoundException();
+      }
+
+      if(!projeto.getClientes().isEmpty()){
+        for (Cliente cliente : projeto.getClientes()) {
+          cliente.removeProjeto(projeto);
         }
+        projeto.setClientes(new LinkedHashSet<>());
+      }
+
+
+      if (!projeto.getEstruturas().isEmpty()){
+        for (Estrutura estrutura : projeto.getEstruturas()) {
+          projeto.removeEstruturas(estrutura);
+        }
+      }
+
+      if (!projeto.getFicheiros().isEmpty()) {
+        for (Ficheiro ficheiro : projeto.getFicheiros()) {
+          projeto.removeFicheiro(ficheiro);
+        }
+      }
+
+      projeto.getProjetista().removeProjeto(projeto);
+
+
+      em.remove(projeto);
+
     }
 
 
