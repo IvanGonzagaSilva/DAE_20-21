@@ -165,22 +165,25 @@ export default {
                 await this.$axios.put('/api/projeto/' + this.clickedProject.id + '/enrollclient', {username: this.projectData.clientes}).then(this.addProjectToArray()).catch(error => console.log(error.message));
             }
             else
-                await this.$axios.post("/api/projeto/", this.projectData).then(this.addProjectToArray()).catch(error => console.log(error.message));
+                await this.$axios.post("/api/projeto/", this.projectData).then(response => this.addProjectToArray(response.data.id)).catch(error => console.log(error.message));
 
             this.$emit('back-to-homepage');
         },
         deleteProject: async function ()
         {
-            await this.$axios.delete('/api/projeto/' + this.clickedProject.id).then( this.removeProjectFromArray(this.clickedProject.id) ).catch(error => console.log(error.message));
+            await this.$axios.delete('/api/projeto/delete/' + this.clickedProject.id).then( this.removeProjectFromArray(this.clickedProject.id) ).catch(error => console.log(error.message));
         },
         removeClientProject: async function (username)
         {
             await this.$axios.put('/api/projeto/' + this.clickedProject.id + '/unrollclient', {username: username}).then(this.addProjectToArray()).catch(error => console.log(error.message));
         },
-        addProjectToArray: function ()
+        addProjectToArray: function (id)
         {
             if (this.clickedProject === "empty")
+            {
+                this.projectData.id = id;
                 this.projectsArray.push( this.projectData );
+            }
             else
             {
                 var index = this.projectsArray.findIndex(project => project.id == this.projectData.id);
